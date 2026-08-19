@@ -56,12 +56,14 @@ Landing pages, README badges, social-preview images, and documentation use the f
 
 | Context | Stack | Weight | Size guidance |
 |---|---|---|---|
-| Landing hero heading | System sans (`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif`) | 700 | `clamp(2.2rem, 5vw, 3.4rem)` |
-| Body | Same system sans | 400 | `1rem` / `16px`, line-height `1.6` |
+| Landing hero heading | `'Rajdhani', var(--font-sans)` | 700 | `clamp(2.2rem, 5vw, 3.4rem)` |
+| Section headings (h2, h3) | `'Rajdhani', var(--font-sans)` | 600 | `1.3rem` / `1rem` |
+| Feature card headings | `'Rajdhani', var(--font-sans)` | 600 | `1rem` |
+| Body | System sans (`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif`) | 400 | `1rem` / `16px`, line-height `1.6` |
 | Code / commands | `'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace` | 400 | `0.85rem` |
 | Plasma widget | `Kirigami.Theme.defaultFont` | — | Let Plasma decide |
 
-No custom web fonts. System stacks only. Fast loads, no FOUT.
+[Rajdhani](https://fonts.google.com/specimen/Rajdhani) is the shared heading typeface — squared, condensed, slightly futuristic. It loads via Google Fonts (`wght@600;700`) on landing pages. Body text stays on the system sans stack for readability and zero FOUT. Plasma widgets ignore Rajdhani entirely and use `Kirigami.Theme.defaultFont`.
 
 ---
 

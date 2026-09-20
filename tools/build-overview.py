@@ -84,21 +84,12 @@ def page(data, sites):
              f'<div class="fact"><b>{total}</b><span>{span("Projects", "Projekte")}</span></div>'
              f'<div class="fact"><b>{count("plasma")}</b><span>{span("Plasma widgets", "Plasma-Widgets")}</span></div>'
              f'<div class="fact"><b>{count("kimai")}</b><span>{span("Kimai plugins", "Kimai-Plugins")}</span></div>'
-             f'<div class="fact"><b>1</b><span>{span("Shared design system", "Gemeinsames Design-System")}</span></div>'
+             f'<div class="fact"><b>{count("tools")}</b><span>{span("Tools", "Werkzeuge")}</span></div>'
              '</section>\n')
-    design = ('<section class="section" id="design">'
-              + pair("h2", "One design for all pages", "Ein Design für alle Seiten")
-              + pair("p", "Every project page uses the same design system: a dark, Gruvbox-derived palette, Rajdhani headings, one shared stylesheet and an English page with a German switch. Its source lives in this repository.",
-                     "Jede Projektseite nutzt dasselbe Design-System: eine dunkle, von Gruvbox abgeleitete Palette, Rajdhani-Überschriften, ein gemeinsames Stylesheet und eine englische Seite mit deutschem Schalter. Der Quelltext liegt in diesem Repository.")
-              + '<ul lang="en">'
-              f'<li><a href="{GITHUB}/shrippen.github.io#readme">README</a>: palette, typography, layout and rules</li>'
-              f'<li><a href="{GITHUB}/shrippen.github.io/blob/main/templates/landing.html">Landing page template</a> to start a new project page</li>'
-              f'<li>Stylesheet: <code>{CENTRAL}shrippen.css</code></li>'
-              '</ul><ul lang="de">'
-              f'<li><a href="{GITHUB}/shrippen.github.io#readme">README</a>: Palette, Typografie, Layout und Regeln</li>'
-              f'<li><a href="{GITHUB}/shrippen.github.io/blob/main/templates/landing.html">Landing-Page-Vorlage</a>, um eine neue Projektseite zu starten</li>'
-              f'<li>Stylesheet: <code>{CENTRAL}shrippen.css</code></li>'
-              '</ul></section>\n')
+    notice = ('<div class="section"><div class="callout callout-warn">'
+              + span("<strong>Note:</strong> All projects here were built with AI assistance, from partly AI-assisted to completely vibe coded. Use them at your own risk.",
+                     "<strong>Hinweis:</strong> Alle Projekte hier sind mit KI-Unterstützung entstanden, von teilweise KI-gestützt bis komplett vibe-codiert. Nutzung auf eigene Gefahr.")
+              + '</div></div>\n')
     desc = "Open-source tools for KDE Plasma, Kimai and the desktop: Plasma widgets, Kimai plugins and small utilities."
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -129,7 +120,7 @@ def page(data, sites):
 <nav class="nav"><div class="nav-inner">
   <a class="nav-brand" href="#"><img src="icon.svg" alt="">shrippen</a>
   <div class="nav-links">
-    <a href="#plasma">{span("Plasma", "Plasma")}</a><a href="#kimai">Kimai</a><a href="#tools">{span("Tools", "Werkzeuge")}</a><a href="#design">{span("Design", "Design")}</a><a class="nav-hl" href="{GITHUB}">GitHub</a>
+    <a href="#plasma">{span("Plasma", "Plasma")}</a><a href="#kimai">Kimai</a><a href="#tools">{span("Tools", "Werkzeuge")}</a><a class="nav-hl" href="{GITHUB}">GitHub</a>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="de" aria-pressed="false">DE</button>
@@ -141,20 +132,20 @@ def page(data, sites):
   <img class="hero-wm" src="icon-mono.svg" alt="" aria-hidden="true">
   <div class="hero-main">
     <h1 style="--title-size:clamp(3rem,9vw,7rem);--title-size-narrow:clamp(2.5rem,24vw,13.1rem)">shrippen</h1>
-    {pair("p", "Open-source tools for KDE Plasma, Kimai and the desktop: widgets, plugins and small utilities. Built first for my own setup and shared in case they help someone else.", "Open-Source-Werkzeuge für KDE Plasma, Kimai und den Desktop: Widgets, Plugins und kleine Hilfsprogramme. Zuerst für mein eigenes Setup gebaut und geteilt, falls sie anderen helfen.", ' class="tagline"')}
+    {pair("p", "Open-source tools for KDE Plasma, Kimai and the desktop: widgets, plugins and small utilities.", "Open-Source-Werkzeuge für KDE Plasma, Kimai und den Desktop: Widgets, Plugins und kleine Hilfsprogramme.", ' class="tagline"')}
   </div>
   <div class="hero-side">
     <div class="install-card">
       <label>{span("Find me", "Zu finden unter")}</label>
-      {pair("p", "Every project has its own page and repository. The pages are in English with a German switch.", "Jedes Projekt hat eine eigene Seite und ein eigenes Repository. Die Seiten sind englisch mit deutschem Schalter.", ' class="install-note"')}
-      <div class="install-links"><a class="btn btn-primary" href="{GITHUB}">GitHub</a><a class="btn btn-ghost" href="#design">{span("Design system", "Design-System")}</a></div>
+      {pair("p", "Every project has its own page and repository. The pages are in English with a German switch.", "Jedes Projekt hat eine eigene Seite und ein eigenes Repository. Die Seiten sind auf Englisch mit einem Schalter für Deutsch.", ' class="install-note"')}
+      <div class="install-links"><a class="btn btn-primary" href="{GITHUB}">GitHub</a></div>
     </div>
   </div>
 </header>
 
 <main>
 
-{facts}{body}{design}</main>
+{notice}{facts}{body}</main>
 
 <footer class="foot">
   <div class="foot-inner">
@@ -164,7 +155,7 @@ def page(data, sites):
     </div>
     <nav class="foot-cols" aria-label="Footer">
       <div><h4>{span("Projects", "Projekte")}</h4><a href="#plasma">{span("Plasma widgets", "Plasma-Widgets")}</a><a href="#kimai">{span("Kimai plugins", "Kimai-Plugins")}</a><a href="#tools">{span("Tools", "Werkzeuge")}</a></div>
-      <div><h4>{span("Source", "Quelltext")}</h4><a href="{GITHUB}">GitHub</a><a href="{GITHUB}/shrippen.github.io">{span("Design system", "Design-System")}</a></div>
+      <div><h4>{span("Source", "Quelltext")}</h4><a href="{GITHUB}">GitHub</a></div>
     </nav>
   </div>
   <div class="foot-meta"><p>shrippen</p></div>

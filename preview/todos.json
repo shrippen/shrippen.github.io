@@ -1,0 +1,108 @@
+{
+  "_all": [
+    {
+      "level": "improve",
+      "text": "German texts were written by Claude and are not reviewed"
+    },
+    {
+      "level": "improve",
+      "text": "Enable GitHub Pages for DesignDefault (Settings → Pages → main, /docs). Until then the stylesheet only resolves in this preview"
+    },
+    {
+      "level": "info",
+      "text": "Version numbers in the footers are hard-coded; update them on each release"
+    },
+    {
+      "level": "info",
+      "text": "This preview removes the Umami script, so visits here are not counted"
+    },
+    {
+      "level": "info",
+      "text": "After a logo change: python3 tools/make-social.py regenerates docs/social-preview.png for all projects"
+    }
+  ],
+  "kurrent": [
+    {
+      "level": "improve",
+      "text": "README, STORE.md and the page differ in wording; Swimlanes, Project plan, KRunner and shortcuts are marked 'not yet verified' as in the CHANGELOG. Update the page when they are verified"
+    }
+  ],
+  "plasmai": [
+    {
+      "level": "improve",
+      "text": "Install command hard-codes Plasmai-1.6.3.plasmoid; update on release"
+    },
+    {
+      "level": "improve",
+      "text": "App icons (contents/images/icon.*, icons/) still show the old clock logo"
+    }
+  ],
+  "papertty": [
+    {
+      "level": "missing",
+      "text": "Own photo or screenshot of a display running PaperTTY (photos in pics/ are from upstream, not this fork)"
+    }
+  ],
+  "framewidge": [
+    {
+      "level": "missing",
+      "text": "Screenshot of the widget (panel icon, popup, fan curve editor)"
+    }
+  ],
+  "paperninja": [
+    {
+      "level": "missing",
+      "text": "Screenshot of the UI (To link view)"
+    },
+    {
+      "level": "improve",
+      "text": "App icons (app/static favicons, logo.png) still show the old green logo"
+    }
+  ],
+  "dolphin-davinci": [
+    {
+      "level": "info",
+      "text": "One screenshot (context menu); a conversion progress dialog would round it out"
+    }
+  ],
+  "kimai-holiday": [
+    {
+      "level": "missing",
+      "text": "Screenshot of the working times table with absences and the absence calendar"
+    }
+  ],
+  "companion-mpris": [
+    {
+      "level": "missing",
+      "text": "Screenshot of Companion with the MPRIS presets on buttons"
+    },
+    {
+      "level": "improve",
+      "text": "Link the release .tgz as the main install once it is published"
+    }
+  ],
+  "darktable-auto-crop": [
+    {
+      "level": "missing",
+      "text": "Before/after image of a cropped negative and a shot of the plugin panel"
+    },
+    {
+      "level": "missing",
+      "text": "No LICENSE file in the repo, so the footer shows no license"
+    },
+    {
+      "level": "improve",
+      "text": "No release yet; add a Download button when there is one"
+    }
+  ],
+  "kimai-abrechnung": [
+    {
+      "level": "missing",
+      "text": "Screenshot of the billing overview"
+    },
+    {
+      "level": "improve",
+      "text": "No release yet; add a Download button when there is one"
+    }
+  ]
+}

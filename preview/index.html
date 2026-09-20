@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>shrippen Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/dd/v1/shrippen.css">
+<style>
+html,body{height:100%}
+body{overflow:hidden}
+.app{display:grid;grid-template-columns:360px minmax(0,1fr);height:100%}
+
+/* sidebar */
+.side{display:flex;flex-direction:column;min-height:0;background:var(--bg-hard);border-right:1px solid var(--bg1)}
+.side-head{padding:1.1rem 1.25rem;border-bottom:1px solid var(--bg1);display:flex;align-items:baseline;justify-content:space-between}
+.side-head h1{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.side-head span{font-family:var(--font-mono);font-size:.7rem;color:var(--fg3)}
+.side-scroll{flex:1;overflow-y:auto;padding:.5rem 0 1rem}
+.site{border-bottom:1px solid var(--bg1)}
+.site-btn{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:.7rem;padding:.7rem 1.25rem;cursor:pointer;color:var(--fg2)}
+.site-btn:hover{background:var(--bg-panel)}
+.site-btn:focus-visible{outline:2px solid var(--yellow);outline-offset:-2px}
+.site.on .site-btn{background:var(--bg-panel);color:var(--fg0)}
+.site.on{border-left:3px solid var(--yellow)}
+.site-btn img{width:20px;height:20px;flex-shrink:0}
+.site-btn .ph{width:20px;height:20px;flex-shrink:0;border:1px dashed var(--bg2)}
+.site-name{flex:1;font-family:var(--font-heading);font-weight:600;font-size:1.05rem;letter-spacing:.03em}
+.badge{font-family:var(--font-mono);font-size:.68rem;padding:.05rem .4rem;color:var(--bg-void);font-weight:500}
+.b-missing{background:var(--red)}
+.b-improve{background:var(--yellow)}
+.b-ok{background:var(--aqua)}
+.todos{padding:.2rem 1.25rem 1rem 3.1rem;display:none}
+.site.on .todos{display:block}
+.meta{font-family:var(--font-mono);font-size:.68rem;color:var(--fg3);margin-bottom:.6rem}
+.todo{display:flex;gap:.55rem;font-size:.82rem;line-height:1.45;color:var(--fg2);margin-bottom:.5rem}
+.dot{flex-shrink:0;width:.55rem;height:.55rem;margin-top:.4rem}
+.l-missing{background:var(--red)}
+.l-improve{background:var(--yellow)}
+.l-info{background:var(--blue)}
+.tag{font-family:var(--font-mono);font-size:.62rem;color:var(--fg3);text-transform:uppercase;letter-spacing:.1em;margin-left:.35rem}
+.allbox{margin:1rem 1.25rem 0;padding-top:.9rem;border-top:1px solid var(--bg2)}
+.allbox h2{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fg3);margin-bottom:.7rem}
+.legend{display:flex;gap:1rem;margin:0 1.25rem;padding:.7rem 0 0;font-family:var(--font-mono);font-size:.68rem;color:var(--fg3)}
+.legend i{display:inline-block;width:.5rem;height:.5rem;margin-right:.35rem}
+
+/* viewport */
+.view{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--bg-void)}
+.bar{display:flex;align-items:center;gap:.6rem;padding:.55rem 1rem;border-bottom:1px solid var(--bg1);background:var(--bg-hard)}
+.bar .title{font-family:var(--font-mono);font-size:.78rem;color:var(--fg2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.seg{display:flex;border:1px solid var(--bg2)}
+.seg button,.bar .act{all:unset;box-sizing:border-box;padding:.3rem .7rem;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:var(--fg3);cursor:pointer}
+.seg button:hover,.bar .act:hover{color:var(--fg0)}
+.seg button[aria-pressed="true"]{background:var(--yellow);color:var(--bg-void)}
+.bar .act{border:1px solid var(--bg2)}
+.seg button:focus-visible,.bar .act:focus-visible{outline:2px solid var(--yellow)}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;background:var(--bg-void);padding:0}
+.stage.framed{padding:1rem 0;background:var(--bg-hard)}
+iframe{border:0;background:var(--bg-void);width:100%;height:100%}
+.framed iframe{border:1px solid var(--bg2)}
+.empty{margin:auto;color:var(--fg3);font-family:var(--font-mono);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="side-head"><h1>Preview</h1><span id="count"></span></div>
+    <div class="side-scroll">
+      <div id="list"></div>
+      <div class="legend"><span><i class="l-missing"></i>missing</span><span><i class="l-improve"></i>improve</span><span><i class="l-info"></i>info</span></div>
+      <div class="allbox" id="all"></div>
+    </div>
+  </aside>
+  <main class="view">
+    <div class="bar">
+      <span class="title" id="title">Select a site</span>
+      <div class="seg" role="group" aria-label="Viewport width">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Phone</button>
+      </div>
+      <button class="act" type="button" id="reload">Reload</button>
+      <a class="act" id="live" target="_blank" rel="noopener" hidden>Live URL ↗</a>
+    </div>
+    <div class="stage" id="stage"><div class="empty">← pick a site</div></div>
+  </main>
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { sites: [], all: [], current: null, width: '100%' };
+  var LABEL = { missing: 'missing', improve: 'improve', info: 'info' };
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function count(site, level) {
+    return site.todos.filter(function (t) { return t.level === level; }).length;
+  }
+  function todoHtml(t) {
+    return '<div class="todo"><span class="dot l-' + t.level + '"></span><span>' + esc(t.text) +
+      (t.auto ? '<span class="tag">auto</span>' : '') + '</span></div>';
+  }
+
+  function renderList() {
+    $('count').textContent = state.sites.length + ' sites';
+    $('list').innerHTML = state.sites.map(function (s) {
+      var miss = count(s, 'missing'), imp = count(s, 'improve');
+      var badges = (miss ? '<span class="badge b-missing">' + miss + '</span>' : '') +
+        (imp ? '<span class="badge b-improve">' + imp + '</span>' : '') +
+        (!miss && !imp ? '<span class="badge b-ok">ok</span>' : '');
+      var logo = s.logo ? '<img src="/site/' + s.id + '/' + s.logo + '" alt="">' : '<span class="ph"></span>';
+      var meta = s.branch ? 'branch ' + esc(s.branch) : 'no git branch';
+      return '<div class="site' + (s.id === state.current ? ' on' : '') + '" data-id="' + s.id + '">' +
+        '<button class="site-btn" type="button">' + logo + '<span class="site-name">' + esc(s.name) + '</span>' + badges + '</button>' +
+        '<div class="todos"><div class="meta">' + esc(s.dir) + '/docs · ' + meta + '</div>' +
+        (s.todos.length ? s.todos.map(todoHtml).join('') : '<div class="todo">Nothing open.</div>') + '</div></div>';
+    }).join('');
+    $('all').innerHTML = state.all.length
+      ? '<h2>All sites</h2>' + state.all.map(todoHtml).join('') : '';
+  }
+
+  function show() {
+    var s = state.sites.filter(function (x) { return x.id === state.current; })[0];
+    var stage = $('stage');
+    if (!s) { return; }
+    $('title').textContent = s.name + ' — ' + s.dir + '/docs/index.html';
+    $('live').href = s.url; $('live').hidden = false;
+    if (!s.exists) { stage.innerHTML = '<div class="empty">No docs/index.html for this project yet.</div>'; return; }
+    stage.classList.toggle('framed', state.width !== '100%');
+    stage.innerHTML = '<iframe id="frame" title="' + esc(s.name) + '" src="/site/' + s.id + '/" style="max-width:' + state.width + '"></iframe>';
+  }
+
+  function select(id) {
+    state.current = id;
+    history.replaceState(null, '', '#' + id);
+    renderList(); show();
+  }
+
+  function load(keep) {
+    return fetch('/api/sites').then(function (r) { return r.json(); }).then(function (d) {
+      state.sites = d.sites; state.all = d.all;
+      var hash = location.hash.slice(1);
+      if (!state.current) { state.current = state.sites.some(function (s) { return s.id === hash; }) ? hash : (state.sites[0] && state.sites[0].id); }
+      renderList();
+      if (!keep) { show(); }
+    });
+  }
+
+  $('list').addEventListener('click', function (e) {
+    var el = e.target.closest('.site'); if (el) { select(el.getAttribute('data-id')); }
+  });
+  document.querySelector('.seg').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) { return; }
+    state.width = b.getAttribute('data-w');
+    [].forEach.call(document.querySelectorAll('.seg button'), function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    show();
+  });
+  $('reload').addEventListener('click', function () { load(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') { return; }
+    var i = state.sites.findIndex(function (s) { return s.id === state.current; });
+    var n = Math.max(0, Math.min(state.sites.length - 1, i + (e.key === 'ArrowDown' ? 1 : -1)));
+    if (n !== i) { e.preventDefault(); select(state.sites[n].id); }
+  });
+
+  load(false);
+})();
+</script>
+</body>
+</html>

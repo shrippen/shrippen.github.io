@@ -71,7 +71,7 @@
     {
       "id": "kimai-abrechnung",
       "group": "kimai",
-      "page_live": false,
+      "page_live": true,
       "tagline": {
         "en": "A billing overview: open timesheet entries by customer and project, billed with one click.",
         "de": "Eine Abrechnungsübersicht: offene Zeiteinträge nach Kunde und Projekt, mit einem Klick abgerechnet."
@@ -111,7 +111,7 @@
     {
       "id": "companion-mpris",
       "group": "tools",
-      "page_live": false,
+      "page_live": true,
       "tagline": {
         "en": "Control Linux media players from Bitfocus Companion over D-Bus.",
         "de": "Steuere Linux-Mediaplayer aus Bitfocus Companion über D-Bus."
@@ -120,7 +120,7 @@
     {
       "id": "darktable-auto-crop",
       "group": "tools",
-      "page_live": false,
+      "page_live": true,
       "status": {
         "en": "Work in progress",
         "de": "In Arbeit"

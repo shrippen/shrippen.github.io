@@ -76,6 +76,10 @@ Opt-in for apps (not landing pages) via `<html data-theme="light">`, defined in 
 
 The ground sits between Gruvbox `light0` (`#fbf1c7`, too yellow) and `#f5f1e8` (too bright); cards are one step lighter than the ground but never white. **Sand** (`#ebe3cf` ground, `#f4eedd` cards) is the darker alternative. Semantic colors are the darkened counterparts, so all text pairs reach WCAG AA. The role tokens `--field`, `--score` (yellow) and `--hl` (orange) follow the theme. Icon: on light grounds use a dark square (`#3c3836`) with the yellow marks.
 
+### App components (`.tile`, `.stage`, `.band`, `.field`, `.pill`, `.dialog`, …)
+
+Landing pages do not need them; apps do (used by the Darktable Auto Crop companion UI). They follow the theme roles (`--field`, `--score`, `--hl`, `--scrim`), so they work in the dark default and in the light theme. Image stages stay dark in both themes on purpose (judging colour on a beige ground is misleading). Group colours: green `--aqua`, yellow `--yellow`, red `--red`; status is never colour alone. Reference cards live in `ds-bundle/components/App/`. Behaviour (dragging, handles, locking) is the app's job.
+
 ### Local theme override rule
 
 > Plasmoids **never hardcode** these hex values for interactive UI. Body text, highlight, selection, buttons, and scrollbars come from `Kirigami.Theme.*`. The shared palette is for **accent elements that survive a theme switch** — icon color fills, priority bands, project/label hashes, and the brand mark in the About/config header.

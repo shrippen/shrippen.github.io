@@ -119,6 +119,21 @@ Every project landing page follows the same vertical rhythm:
 └──────────────────────────────┘
 ```
 
+### Rule: website material lives in `docs/`
+
+Every project keeps **all screenshots and other material used by its landing page in the `docs/` folder of its own repository**, next to `docs/index.html`. That includes a version of the logo:
+
+```
+<project>/docs/
+├── index.html
+├── icon.svg        ← logo, cream with a yellow accent; used in the nav and as favicon
+├── icon-mono.svg   ← the same logo in one colour only (cream)
+├── screenshot.jpg  ← screenshots, referenced with relative paths
+└── social.png      ← optional social preview (og:image)
+```
+
+Every logo comes in two versions: `icon.svg` (cream with the yellow accent) and `icon-mono.svg` (a fully monochrome version, one colour). Recolour the mono file for light backgrounds or print. The pages are served from `docs/` on GitHub Pages, so pages never reference files outside it. If a project has no screenshot yet, the hero shows only the install box.
+
 ### CSS variables (shared)
 
 Every landing page imports these variables (or copies them):
@@ -217,12 +232,14 @@ https://img.shields.io/badge/<label>-<value>-<valueColor>?labelColor=1c1c20
 
 ## Social preview / OG image
 
+`docs/social-preview.png` in every project, referenced by `og:image` (plus `og:image:width/height` and `twitter:card=summary_large_image`). Generated, not hand-made: `python3 tools/make-social.py [id ...]` renders it from the project's `docs/icon.svg` (needs chromium). Run it again after a logo change. Also upload it under Settings → Social preview of the GitHub repo.
+
 - **Size**: 1280×640 px
 - **Background**: `--bg-hard` (`#1d2021`)
-- **Icon**: Project mark (cream), centered, 128 px
-- **Title**: `--fg0`, 48 px, system sans bold, below icon
-- **Tagline**: `--fg2`, 20 px, below title
-- **Bottom strip**: subtle `--bg2` line at ~580 px, then `--fg3` one-liner "github.com/shrippen/<project>"
+- **Logo**: colour version (`icon.svg`), centered, 144 px
+- **Title**: project name in Rajdhani 700, uppercase, spaced, `--fg0`, up to 76 px (shrinks for long names)
+- **Tagline**: `--fg2`, 26 px, system sans
+- **Bottom strip**: `--bg2` line at 580 px, then `--fg3` mono line `github.com/shrippen/<repo>`
 
 ---
 
@@ -231,6 +248,7 @@ https://img.shields.io/badge/<label>-<value>-<valueColor>?labelColor=1c1c20
 ```
 DesignDefault/
 ├── README.md              ← this document
+├── start.sh               ← local preview of all landing pages (preview/)
 ├── build.sh               ← concatenates tokens + css/ into docs/v1/shrippen.css
 ├── css/
 │   ├── base.css           ← reset, body, links
@@ -249,6 +267,16 @@ DesignDefault/
 
 ---
 
+## Local preview of all landing pages
+
+```bash
+./start.sh            # http://127.0.0.1:8080/, next free port if busy (PORT=9000 ./start.sh, NO_OPEN=1 ./start.sh)
+```
+
+Sidebar on the left lists every project page with what is missing or could be improved; the selected page opens in the viewport on the right (Desktop / Tablet / Phone width). Sites are listed in `preview/sites.json`, hand-written to-dos live in `preview/todos.json`; checks like missing files, placeholders, screenshot and og:image are derived from each project's `docs/`. The preview serves the local stylesheet instead of the GitHub Pages one and strips the Umami script. Only the Python standard library, bound to 127.0.0.1.
+
+---
+
 ## Using in another project
 
 **Landing page**: link the central stylesheet — no copy, changes propagate to every page:
@@ -259,9 +287,9 @@ DesignDefault/
 <script src="https://shrippen.github.io/DesignDefault/v1/shrippen.js"></script>  <!-- in <head>, not deferred -->
 ```
 
-`shrippen.js` handles the language switch, the nav brand reveal and the copy button. Pages are **English by default** with a DE switch: every visible text exists twice (`lang="en"` / `lang="de"`), the choice is stored in `localStorage`. The project name in the nav fades in once the hero has left the viewport. The Rajdhani font link now also loads JetBrains Mono (see the template).
+`shrippen.js` handles the language switch, the nav brand reveal and the copy button. Pages are **English by default** with a DE switch: every visible text exists twice (`lang="en"` / `lang="de"`), the choice is stored in `localStorage`. The project name in the nav fades in once the hero has left the viewport. The hero carries a **watermark**: `<img class="hero-wm" src="icon-mono.svg" alt="" aria-hidden="true">` as the first child of `header.hero` (huge, 7 % opacity, bleeding off the right edge and, on a short hero, below it; scrolls with the page, never fixed). The page ends with a **signature footer** (`footer.foot`): the colour logo (`icon.svg`), project name and tagline, two link columns (Project / Source) and, under a short yellow line, license · author · version. On tablet and phone (≤900px) the hero is one column: `<br class="split">` line breaks in the name are dropped, so the name is written out in full, and its size follows the width (`--title-size-narrow`, about `154/longest-word-length` vw). The Rajdhani font link now also loads JetBrains Mono (see the template).
 
-Start from `templates/landing.html`. Components: nav (with `.lang` switch), hero (big name left, yellow install box and screenshot right, both the same width), buttons, feature boxes with a colour bar on top (`data-tier="red|yellow|blue"`), prose section, steps, table, codeblock, callout, footer with a short yellow line. All boxes have only the top-right corner cut (`--chamfer`). Page ground is `--bg-void`, cards are `--bg-panel`. Breaking changes ship as `/v2/`; `/v1/` stays stable.
+Start from `templates/landing.html`. Components: nav (with `.lang` switch), facts strip (`.facts`), showcase rows (`.showcase`, screenshot beside text), architecture flow (`.flow`), input-syntax tokens (`.tokens`), FAQ (`.faq`), `<kbd>`, hero (big name left, yellow install box and screenshot right, both the same width), buttons, feature boxes with a colour bar on top (`data-tier="red|yellow|blue"`), prose section, steps, table, codeblock, callout, footer with a short yellow line. All boxes have only the top-right corner cut (`--chamfer`). Page ground is `--bg-void`, cards are `--bg-panel`. Breaking changes ship as `/v2/`; `/v1/` stays stable.
 
 **Plasma widget**: reference the palette philosophy (accent cream, deterministic project hashes, priority bands). Do not import CSS — use `Kirigami.Theme.*` for all dynamic colors and only hardcode the shared accent (`#E8DCC4`) for brand elements.
 

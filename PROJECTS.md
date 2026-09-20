@@ -1,6 +1,6 @@
 # Projects using the shrippen design system
 
-Tracking list and to-do list: which landing pages follow (or still need to be migrated to) the shared design. The central stylesheet is
+Tracking list: which landing pages follow the shared design. The central stylesheet is
 `https://shrippen.github.io/DesignDefault/v1/shrippen.css` (see [README](README.md)).
 
 **Status legend**
@@ -9,29 +9,40 @@ Tracking list and to-do list: which landing pages follow (or still need to be mi
 - `palette` — uses the shared palette and badge colors, but not yet the central stylesheet
 - `todo` — not yet checked or migrated
 
-| Project | Page | Status | Known deviations / to do |
+| Project | Page | Status | Notes |
 |---|---|---|---|
-| Plasmai | https://shrippen.github.io/Plasmai/ | palette | Backend table needs the `.table` component |
-| Kurrent | https://shrippen.github.io/Kurrent/ | palette | Plasma badge uses `#3daee9`, should be `#83a598` |
-| PaperTTY | https://shrippen.github.io/PaperTTY/ | palette | Emojis as feature icons, replace with inline SVG (`.feat-icon`); displays table needs `.table` |
-| FrameWidge | https://shrippen.github.io/FrameWidge/ | palette | Release badge uses `#b8bb26`, should be `#e8dcc4`; AI-disclaimer fits `.callout-warn` |
-| PaperNinja | https://shrippen.github.io/PaperNinja/ | palette | Uses a nav bar (`.nav`), numbered setup (`.steps`), emoji feature icons, architecture diagram (`.codeblock`) |
-| dolphin-davinci-audio-tools | https://shrippen.github.io/dolphin-davinci-audio-tools/ | todo | Design not verified; has nav and a conversions table |
-| kimai-holiday-bundle | https://shrippen.github.io/kimai-holiday-bundle/ | palette | Permissions and REST endpoint tables need `.table` |
+| Plasmai | https://shrippen.github.io/Plasmai/ | central | Extended page in `Plasmai/docs/index.html` (showcases, flow, FAQ, roadmap); not yet committed |
+| Kurrent | https://shrippen.github.io/Kurrent/ | central | Extended page in `Kurrent/docs/index.html` (views, Quick Add, flow, FAQ, roadmap; v0.4.0); not yet committed |
+| PaperTTY | https://shrippen.github.io/PaperTTY/ | central | Migrated locally; emojis replaced by text tags, displays table uses `.table` |
+| FrameWidge | https://shrippen.github.io/FrameWidge/ | central | Migrated locally in `Framework Control Plasmoid/docs/index.html`; notices are `.callout` |
+| PaperNinja | https://shrippen.github.io/PaperNinja/ | central | Migrated locally; steps use `.steps`, architecture is a `.codeblock` |
+| dolphin-davinci-audio-tools | https://shrippen.github.io/dolphin-davinci-audio-tools/ | central | Migrated locally; conversions table uses `.table` |
+| kimai-holiday-bundle | https://shrippen.github.io/kimai-holiday-bundle/ | central | Migrated locally in `Kimai Holiday Plugin/docs/index.html`; permissions table and API `.codeblock` |
+| companion-mpris | https://shrippen.github.io/companion-mpris/ | central | New page in `companion/mpris/docs/`; no screenshot yet |
+| darktable-auto-crop | https://shrippen.github.io/darktable-auto-crop/ | central | New page in `darktable-automatic-negative-cropping/docs/`; no screenshot yet |
+| kimai-abrechnung-bundle | https://shrippen.github.io/kimai-abrechnung-bundle/ | central | New page in `Kimai Abrechnung/AbrechnungBundle/docs/`; no screenshot yet |
 
-## To do: projects to bring into the system
+"central" means the page in the project's working copy links the central stylesheet and script. **Nothing is deployed
+yet**: the project changes are uncommitted, and the stylesheet only resolves once GitHub Pages is enabled for this repo.
 
-Repositories that should get the design system later. No landing page is tracked yet, so their status is `todo`.
-When one gets a page, move it into the table above.
+## Website material (`docs/`)
 
-| Project | Repository | Status | Note |
-|---|---|---|---|
-| companion-mpris | https://github.com/shrippen/companion-mpris | todo | Add later; page URL not yet known |
-| darktable-auto-crop | https://github.com/shrippen/darktable-auto-crop | todo | Add later; page URL not yet known |
-| kimai-abrechnung-bundle | https://github.com/shrippen/kimai-abrechnung-bundle | todo | Add later; page URL not yet known. Sibling of kimai-holiday-bundle, should share its layout |
+Rule: screenshots, the logo (`icon.svg`) with its monochrome twin (`icon-mono.svg`) and everything else the page uses live in the project's own `docs/` folder.
 
-"palette" is inferred from the badge colors visible on each page. Whether a page actually loads the shared tokens
-or Rajdhani has not been checked in its source. Update the status when a page is migrated.
+| Project | Logo | Screenshots in `docs/` |
+|---|---|---|
+| Kurrent | Check and wave (A) | yes (4, plus 3 detail crops) |
+| Plasmai | Half ring clock (B) | yes (3, plus 1 detail crop) |
+| PaperNinja | Mask badge (E) | no |
+| PaperTTY | Ink drop (F) | no. Upstream photos exist in `pics/` but are not this fork's own |
+| FrameWidge | Chip with fan (B) | no |
+| kimai-holiday-bundle | Umbrella (C) | no |
+| dolphin-davinci-audio-tools | Fin (B) | no |
+| companion-mpris | Key cap (C) | no |
+| darktable-auto-crop | Film cell (F) | no |
+| kimai-abrechnung-bundle | Receipt (A) | no |
+
+Every project also has `docs/social-preview.png` (generated by `tools/make-social.py`, referenced by `og:image`). Logos were picked from the Logo Studio artifact. Each has `icon.svg` and `icon-mono.svg` in `docs/`. Old landing-page logos are removed (`PaperNinja/docs/logo.png` and `social.png`; its README and DESIGN.md point to the new files). App icons are separate and still show the old logos: PaperNinja `app/static/` (favicons, `logo.png`), Plasmai `contents/images/icon.*` and `icons/`, Kurrent `icons/`.
 
 ## Adding a project
 

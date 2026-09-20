@@ -11,8 +11,8 @@ Tracking list: which landing pages follow the shared design. The central stylesh
 
 | Project | Page | Status | Notes |
 |---|---|---|---|
-| Plasmai | https://shrippen.github.io/Plasmai/ | central | Extended page in `Plasmai/docs/index.html` (showcases, flow, FAQ, roadmap); not yet committed |
-| Kurrent | https://shrippen.github.io/Kurrent/ | central | Extended page in `Kurrent/docs/index.html` (views, Quick Add, flow, FAQ, roadmap; v0.4.0); not yet committed |
+| Plasmai | https://shrippen.github.io/Plasmai/ | central | Extended page in `Plasmai/docs/index.html` (showcases, flow, FAQ, roadmap); on branch `landing-page-redesign` |
+| Kurrent | https://shrippen.github.io/Kurrent/ | central | Extended page in `Kurrent/docs/index.html` (views, Quick Add, flow, FAQ, roadmap; v0.4.0); on branch `landing-page-redesign` |
 | PaperTTY | https://shrippen.github.io/PaperTTY/ | central | Migrated locally; emojis replaced by text tags, displays table uses `.table` |
 | FrameWidge | https://shrippen.github.io/FrameWidge/ | central | Migrated locally in `Framework Control Plasmoid/docs/index.html`; notices are `.callout` |
 | PaperNinja | https://shrippen.github.io/PaperNinja/ | central | Migrated locally; steps use `.steps`, architecture is a `.codeblock` |
@@ -22,8 +22,7 @@ Tracking list: which landing pages follow the shared design. The central stylesh
 | darktable-auto-crop | https://shrippen.github.io/darktable-auto-crop/ | central | New page in `darktable-automatic-negative-cropping/docs/`; no screenshot yet |
 | kimai-abrechnung-bundle | https://shrippen.github.io/kimai-abrechnung-bundle/ | central | New page in `Kimai Abrechnung/AbrechnungBundle/docs/`; no screenshot yet |
 
-"central" means the page in the project's working copy links the central stylesheet and script. **Nothing is deployed
-yet**: the project changes are uncommitted, and the stylesheet only resolves once GitHub Pages is enabled for this repo.
+"central" means the page links the central stylesheet and script. **Not live yet**: every project has the new page on the branch `landing-page-redesign` (pushed to the Gitea `origin`, based on `main`, or `master` for kimai-holiday-bundle), so nothing goes live before it is merged. The stylesheet only resolves once GitHub Pages is enabled for this repo (Settings → Pages → `main`, `/docs`); enable that first, then merge the branches.
 
 ## Website material (`docs/`)
 

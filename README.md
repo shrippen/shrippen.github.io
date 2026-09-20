@@ -167,6 +167,7 @@ Every landing page imports these variables (or copies them):
 - **Links & primary buttons**: `--blue`. Hover darkens 10%.
 - **Install card**: `--bg1` surface, `--bg2` border, `--bg-hard` inner code box, command text in `--blue`.
 - **Copy button**: `--bg2` bg, on success flash `--aqua` border + text for 1.5 s.
+- **Icons in feature cards**: inline SVG (`.feat-icon`, 24×24, stroke `currentColor`) — no emojis.
 - **Feature grid**: `--bg1` cards, `--bg2` border, `1.2rem` gap, `auto-fit minmax(240px, 1fr)`.
 - **Screenshot**: `--radius` corners, `1px --bg2` border, deep `box-shadow`.
 - **Badges**: shields.io with `labelColor=1c1c20` and value color `e8dcc4` (version), `83a598` (tech tag), `a89984` (license).
@@ -230,6 +231,11 @@ https://img.shields.io/badge/<label>-<value>-<valueColor>?labelColor=1c1c20
 ```
 DesignDefault/
 ├── README.md              ← this document
+├── build.sh               ← concatenates tokens + css/ into docs/v1/shrippen.css
+├── css/
+│   ├── base.css           ← reset, body, links
+│   └── components.css     ← all landing-page components
+├── docs/v1/shrippen.css   ← built artifact, served via GitHub Pages
 ├── tokens/
 │   ├── variables.css      ← CSS custom properties
 │   ├── palette.json       ← machine-readable palette
@@ -244,7 +250,14 @@ DesignDefault/
 
 ## Using in another project
 
-**Landing page**: copy `tokens/variables.css` into your `docs/` or inline the `:root` block. Follow the layout template.
+**Landing page**: link the central stylesheet — no copy, changes propagate to every page:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://shrippen.github.io/DesignDefault/v1/shrippen.css">
+```
+
+Start from `templates/landing.html`. Components: nav, hero, badges, install card, buttons, screenshot, feature grid (with optional `.feat-icon` SVG), prose section, steps, table, codeblock, callout, footer. Breaking changes ship as `/v2/`; `/v1/` stays stable.
 
 **Plasma widget**: reference the palette philosophy (accent cream, deterministic project hashes, priority bands). Do not import CSS — use `Kirigami.Theme.*` for all dynamic colors and only hardcode the shared accent (`#E8DCC4`) for brand elements.
 

@@ -235,7 +235,8 @@ DesignDefault/
 ├── css/
 │   ├── base.css           ← reset, body, links
 │   └── components.css     ← all landing-page components
-├── docs/v1/shrippen.css   ← built artifact, served via GitHub Pages
+├── js/shrippen.js         ← language switch, nav brand reveal, copy button
+├── docs/v1/               ← built artifacts (shrippen.css, shrippen.js), served via GitHub Pages
 ├── tokens/
 │   ├── variables.css      ← CSS custom properties
 │   ├── palette.json       ← machine-readable palette
@@ -255,9 +256,12 @@ DesignDefault/
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://shrippen.github.io/DesignDefault/v1/shrippen.css">
+<script src="https://shrippen.github.io/DesignDefault/v1/shrippen.js"></script>  <!-- in <head>, not deferred -->
 ```
 
-Start from `templates/landing.html`. Components: nav, hero, badges, install card, buttons, screenshot, feature grid (with optional `.feat-icon` SVG), prose section, steps, table, codeblock, callout, footer. Breaking changes ship as `/v2/`; `/v1/` stays stable.
+`shrippen.js` handles the language switch, the nav brand reveal and the copy button. Pages are **English by default** with a DE switch: every visible text exists twice (`lang="en"` / `lang="de"`), the choice is stored in `localStorage`. The project name in the nav fades in once the hero has left the viewport. The Rajdhani font link now also loads JetBrains Mono (see the template).
+
+Start from `templates/landing.html`. Components: nav (with `.lang` switch), hero (big name left, yellow install box and screenshot right, both the same width), buttons, feature boxes with a colour bar on top (`data-tier="red|yellow|blue"`), prose section, steps, table, codeblock, callout, footer with a short yellow line. All boxes have only the top-right corner cut (`--chamfer`). Page ground is `--bg-void`, cards are `--bg-panel`. Breaking changes ship as `/v2/`; `/v1/` stays stable.
 
 **Plasma widget**: reference the palette philosophy (accent cream, deterministic project hashes, priority bands). Do not import CSS — use `Kirigami.Theme.*` for all dynamic colors and only hardcode the shared accent (`#E8DCC4`) for brand elements.
 

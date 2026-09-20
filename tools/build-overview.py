@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""Builds docs/index.html (the overview of all projects) from projects.json.
+
+Also copies each project's docs/icon.svg to docs/assets/icons/<id>.svg when the project
+folder sits next to this repo. Names, folders and page URLs come from preview/sites.json.
+Usage: python3 tools/build-overview.py   (build.sh runs it)
+"""
+import json
+import shutil
+from html import escape
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+ROOT = REPO.parent
+DOCS = REPO / "docs"
+ICONS = DOCS / "assets" / "icons"
+GITHUB = "https://github.com/shrippen"
+TIERS = ("red", "yellow", "blue")
+UMAMI = '<script defer src="https://um.arianw.de/script.js" data-website-id="056d39ee-6a9d-4b14-9902-5a1ac399df08"></script>'
+CENTRAL = "https://shrippen.github.io/v1/"
+
+
+def pair(tag, en, de, attrs=""):
+    return f'<{tag}{attrs} lang="en">{en}</{tag}><{tag}{attrs} lang="de">{de}</{tag}>'
+
+
+def span(en, de):
+    return f'<span lang="en">{en}</span><span lang="de">{de}</span>'
+
+
+def load(name):
+    return json.loads((REPO / name).read_text(encoding="utf-8"))
+
+
+def sync_icon(site):
+    source = ROOT / site["dir"] / "docs" / "icon.svg"
+    target = ICONS / f'{site["id"]}.svg'
+    if source.exists():
+        shutil.copy(source, target)
+    return target.exists()
+
+
+def card(project, site, group, tier):
+    repo = site["url"].rstrip("/").rsplit("/", 1)[-1]
+    name = escape(project.get("name") or site["name"])
+    tag_en = group["tag_en"]
+    tag_de = group["tag_de"]
+    status = project.get("status")
+    if status:
+        tag_en += " · " + status["en"]
+        tag_de += " · " + status["de"]
+    icon = ""
+    if sync_icon(site):
+        icon = f'<img class="feat-img" src="assets/icons/{site["id"]}.svg" alt="" width="40" height="40">'
+    page = (f'<a href="{site["url"]}">{span("Page", "Seite")} →</a>' if project["page_live"]
+            else f'<span class="feat-muted">{span("Page soon", "Seite folgt")}</span>')
+    links = f'<p class="feat-links">{page} · <a href="{GITHUB}/{repo}">GitHub</a></p>'
+    return (f'  <div class="feat" data-tier="{tier}">\n'
+            f'    <span class="feat-tag">{span(tag_en, tag_de)}</span>\n'
+            f'    {icon}\n'
+            f'    <h3>{name}</h3>\n'
+            f'    {pair("p", escape(project["tagline"]["en"]), escape(project["tagline"]["de"]))}\n'
+            f'    {links}\n'
+            f'  </div>\n')
+
+
+def group_html(group, projects, sites):
+    cards = ""
+    for index, project in enumerate(projects):
+        cards += card(project, sites[project["id"]], group, TIERS[index % len(TIERS)])
+    heading = pair("h2", group["en"], group["de"])
+    return f'<section class="section" id="{group["id"]}">{heading}</section>\n<section class="features">\n{cards}</section>\n'
+
+
+def page(data, sites):
+    groups = {g["id"]: g for g in data["groups"]}
+    body = ""
+    for group in data["groups"]:
+        members = [p for p in data["projects"] if p["group"] == group["id"]]
+        body += group_html(group, members, sites)
+    total = len(data["projects"])
+    count = lambda gid: sum(1 for p in data["projects"] if p["group"] == gid)
+    facts = ('<section class="facts">'
+             f'<div class="fact"><b>{total}</b><span>{span("Projects", "Projekte")}</span></div>'
+             f'<div class="fact"><b>{count("plasma")}</b><span>{span("Plasma widgets", "Plasma-Widgets")}</span></div>'
+             f'<div class="fact"><b>{count("kimai")}</b><span>{span("Kimai plugins", "Kimai-Plugins")}</span></div>'
+             f'<div class="fact"><b>1</b><span>{span("Shared design system", "Gemeinsames Design-System")}</span></div>'
+             '</section>\n')
+    design = ('<section class="section" id="design">'
+              + pair("h2", "One design for all pages", "Ein Design für alle Seiten")
+              + pair("p", "Every project page uses the same design system: a dark, Gruvbox-derived palette, Rajdhani headings, one shared stylesheet and an English page with a German switch. Its source lives in this repository.",
+                     "Jede Projektseite nutzt dasselbe Design-System: eine dunkle, von Gruvbox abgeleitete Palette, Rajdhani-Überschriften, ein gemeinsames Stylesheet und eine englische Seite mit deutschem Schalter. Der Quelltext liegt in diesem Repository.")
+              + '<ul lang="en">'
+              f'<li><a href="{GITHUB}/shrippen.github.io#readme">README</a>: palette, typography, layout and rules</li>'
+              f'<li><a href="{GITHUB}/shrippen.github.io/blob/main/templates/landing.html">Landing page template</a> to start a new project page</li>'
+              f'<li>Stylesheet: <code>{CENTRAL}shrippen.css</code></li>'
+              '</ul><ul lang="de">'
+              f'<li><a href="{GITHUB}/shrippen.github.io#readme">README</a>: Palette, Typografie, Layout und Regeln</li>'
+              f'<li><a href="{GITHUB}/shrippen.github.io/blob/main/templates/landing.html">Landing-Page-Vorlage</a>, um eine neue Projektseite zu starten</li>'
+              f'<li>Stylesheet: <code>{CENTRAL}shrippen.css</code></li>'
+              '</ul></section>\n')
+    desc = "Open-source tools for KDE Plasma, Kimai and the desktop: Plasma widgets, Kimai plugins and small utilities."
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>shrippen — Open-source tools</title>
+<meta name="description" content="{desc}">
+<meta property="og:title" content="shrippen — Open-source tools">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="https://shrippen.github.io/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://shrippen.github.io/">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<!-- Generated by tools/build-overview.py from projects.json. Do not edit by hand. -->
+<!-- Umami tracker: mandatory on every landing page, same tag and ID everywhere, do not change -->
+{UMAMI}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{CENTRAL}shrippen.css">
+<script src="{CENTRAL}shrippen.js"></script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-brand" href="#"><img src="icon.svg" alt="">shrippen</a>
+  <div class="nav-links">
+    <a href="#plasma">{span("Plasma", "Plasma")}</a><a href="#kimai">Kimai</a><a href="#tools">{span("Tools", "Werkzeuge")}</a><a href="#design">{span("Design", "Design")}</a><a class="nav-hl" href="{GITHUB}">GitHub</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <img class="hero-wm" src="icon-mono.svg" alt="" aria-hidden="true">
+  <div class="hero-main">
+    <h1 style="--title-size:clamp(3rem,9vw,7rem);--title-size-narrow:clamp(2.5rem,24vw,13.1rem)">shrippen</h1>
+    {pair("p", "Open-source tools for KDE Plasma, Kimai and the desktop: widgets, plugins and small utilities. Built first for my own setup and shared in case they help someone else.", "Open-Source-Werkzeuge für KDE Plasma, Kimai und den Desktop: Widgets, Plugins und kleine Hilfsprogramme. Zuerst für mein eigenes Setup gebaut und geteilt, falls sie anderen helfen.", ' class="tagline"')}
+  </div>
+  <div class="hero-side">
+    <div class="install-card">
+      <label>{span("Find me", "Zu finden unter")}</label>
+      {pair("p", "Every project has its own page and repository. The pages are in English with a German switch.", "Jedes Projekt hat eine eigene Seite und ein eigenes Repository. Die Seiten sind englisch mit deutschem Schalter.", ' class="install-note"')}
+      <div class="install-links"><a class="btn btn-primary" href="{GITHUB}">GitHub</a><a class="btn btn-ghost" href="#design">{span("Design system", "Design-System")}</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+{facts}{body}{design}</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img src="icon.svg" alt="">
+      <div><span class="foot-name">shrippen</span><span class="foot-tag">{span("Open-source tools", "Open-Source-Werkzeuge")}</span></div>
+    </div>
+    <nav class="foot-cols" aria-label="Footer">
+      <div><h4>{span("Projects", "Projekte")}</h4><a href="#plasma">{span("Plasma widgets", "Plasma-Widgets")}</a><a href="#kimai">{span("Kimai plugins", "Kimai-Plugins")}</a><a href="#tools">{span("Tools", "Werkzeuge")}</a></div>
+      <div><h4>{span("Source", "Quelltext")}</h4><a href="{GITHUB}">GitHub</a><a href="{GITHUB}/shrippen.github.io">{span("Design system", "Design-System")}</a></div>
+    </nav>
+  </div>
+  <div class="foot-meta"><p>shrippen</p></div>
+</footer>
+
+</body>
+</html>
+'''
+
+
+def main():
+    ICONS.mkdir(parents=True, exist_ok=True)
+    data = load("projects.json")
+    sites = {s["id"]: s for s in json.loads((REPO / "preview" / "sites.json").read_text(encoding="utf-8"))}
+    (DOCS / "index.html").write_text(page(data, sites), encoding="utf-8")
+    print(f"built docs/index.html ({len(data['projects'])} projects)")
+
+
+if __name__ == "__main__":
+    main()

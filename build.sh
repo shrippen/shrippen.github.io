@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
-# Builds the files all landing pages link to.
-# Output: docs/v1/shrippen.css and docs/v1/shrippen.js
-#         → https://shrippen.github.io/DesignDefault/v1/
+# Builds everything GitHub Pages serves from docs/.
+#   1. Design system: docs/v1/shrippen.css and shrippen.js
+#      -> https://shrippen.github.io/v1/  (all landing pages link this URL)
+#   2. Overview page: docs/index.html from projects.json (tools/build-overview.py)
 set -euo pipefail
 cd "$(dirname "$0")"
-mkdir -p docs/v1
+OUT=docs/v1
+mkdir -p "$OUT"
 {
-  echo "/* shrippen Design Default v1 — https://github.com/shrippen/DesignDefault */"
+  echo "/* shrippen Design Default v1 — https://github.com/shrippen/shrippen.github.io */"
   cat tokens/variables.css css/base.css css/components.css
-} > docs/v1/shrippen.css
-cp js/shrippen.js docs/v1/shrippen.js
-echo "built docs/v1/shrippen.css ($(wc -c < docs/v1/shrippen.css) bytes), shrippen.js"
+} > "$OUT/shrippen.css"
+cp js/shrippen.js "$OUT/shrippen.js"
+echo "built $OUT/shrippen.css ($(wc -c < "$OUT/shrippen.css") bytes), shrippen.js"
+python3 tools/build-overview.py

@@ -22,12 +22,13 @@ HOST = "127.0.0.1"
 START_PORT = int(os.environ.get("PORT", "8080"))
 MAX_PORT_TRIES = 100
 
-CENTRAL_BASE = "https://shrippen.github.io/DesignDefault/v1/"
+CENTRAL_BASE = "https://shrippen.github.io/v1/"
 LOCAL_BASE = "/dd/v1/"
+UMAMI_ID = 'data-website-id="056d39ee-6a9d-4b14-9902-5a1ac399df08"'
 UMAMI_TAG = re.compile(r"<script[^>]*um\.arianw\.de[^>]*></script>\s*")
 LARGE_IMAGE_BYTES = 800 * 1024
 IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"}
-NO_SCREENSHOT = "No screenshot on the page"
+NO_SCREENSHOT = "No hero screenshot on the page"
 PLACEHOLDER = re.compile(r"\[(?:INSTALL|LICENSE|LIZENZ|VERSION)[^\]]*\]|PROJECT_[A-Z_]+")
 
 
@@ -70,6 +71,9 @@ def auto_todos(site):
     if not fav:
         add("missing", "No favicon / logo referenced")
 
+    if UMAMI_ID not in html:
+        add("missing", "Umami tracker script missing (every landing page needs it)")
+
     if not (docs / "icon-mono.svg").exists():
         add("improve", "No monochrome logo (icon-mono.svg)")
 
@@ -87,7 +91,7 @@ def auto_todos(site):
         add("missing", "Placeholders left in page: " + ", ".join(left))
 
     files = [p for p in docs.rglob("*") if p.is_file() and p != index]
-    unused = sorted(p.name for p in files if p.name not in html and p.name != "icon-mono.svg")
+    unused = sorted(p.name for p in files if p.name not in html and p.name != "icon-mono.svg" and not p.name.startswith("."))
     if unused:
         add("info", "Files in docs/ not used by the page: " + ", ".join(unused))
 

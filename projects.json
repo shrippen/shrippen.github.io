@@ -1,0 +1,134 @@
+{
+  "groups": [
+    {
+      "id": "plasma",
+      "en": "Plasma widgets",
+      "de": "Plasma-Widgets",
+      "tag_en": "Plasma widget",
+      "tag_de": "Plasma-Widget"
+    },
+    {
+      "id": "kimai",
+      "en": "Kimai plugins",
+      "de": "Kimai-Plugins",
+      "tag_en": "Kimai plugin",
+      "tag_de": "Kimai-Plugin"
+    },
+    {
+      "id": "tools",
+      "en": "Tools",
+      "de": "Werkzeuge",
+      "tag_en": "Tool",
+      "tag_de": "Werkzeug"
+    }
+  ],
+  "projects": [
+    {
+      "id": "kurrent",
+      "group": "plasma",
+      "page_live": true,
+      "tagline": {
+        "en": "A task manager for the KDE Plasma 6 panel and desktop, powered by Akonadi.",
+        "de": "Ein Aufgabenmanager für Panel und Desktop von KDE Plasma 6, auf Basis von Akonadi."
+      }
+    },
+    {
+      "id": "plasmai",
+      "group": "plasma",
+      "page_live": true,
+      "tagline": {
+        "en": "Time tracking in the panel with Kimai, Clockify, Toggl Track and SolidTime.",
+        "de": "Zeiterfassung im Panel mit Kimai, Clockify, Toggl Track und SolidTime."
+      }
+    },
+    {
+      "id": "framewidge",
+      "group": "plasma",
+      "page_live": true,
+      "status": {
+        "en": "Beta",
+        "de": "Beta"
+      },
+      "tagline": {
+        "en": "Fan curves, power profiles and battery limits for Framework laptops.",
+        "de": "Lüfterkurven, Energieprofile und Ladelimits für Framework-Laptops."
+      }
+    },
+    {
+      "id": "kimai-holiday",
+      "group": "kimai",
+      "page_live": true,
+      "status": {
+        "en": "Experimental",
+        "de": "Experimentell"
+      },
+      "tagline": {
+        "en": "Working hours, absences and public holidays, an open alternative to WorkContractBundle.",
+        "de": "Arbeitszeiten, Abwesenheiten und Feiertage, eine offene Alternative zum WorkContractBundle."
+      },
+      "name": "Working Hours & Holidays"
+    },
+    {
+      "id": "kimai-abrechnung",
+      "group": "kimai",
+      "page_live": false,
+      "tagline": {
+        "en": "A billing overview: open timesheet entries by customer and project, billed with one click.",
+        "de": "Eine Abrechnungsübersicht: offene Zeiteinträge nach Kunde und Projekt, mit einem Klick abgerechnet."
+      }
+    },
+    {
+      "id": "paperninja",
+      "group": "tools",
+      "page_live": true,
+      "tagline": {
+        "en": "Links Invoice Ninja expenses to Paperless-ngx documents, so receipts live in one place.",
+        "de": "Verknüpft Invoice-Ninja-Ausgaben mit Paperless-ngx-Dokumenten, damit Belege an einem Ort liegen."
+      }
+    },
+    {
+      "id": "papertty",
+      "group": "tools",
+      "page_live": true,
+      "status": {
+        "en": "Fork",
+        "de": "Fork"
+      },
+      "tagline": {
+        "en": "A Linux terminal on SPI e-ink displays, updated for current Raspberry Pi OS.",
+        "de": "Ein Linux-Terminal auf SPI-E-Ink-Displays, aktualisiert für aktuelles Raspberry Pi OS."
+      }
+    },
+    {
+      "id": "dolphin-davinci",
+      "group": "tools",
+      "page_live": true,
+      "tagline": {
+        "en": "Right-click conversions in Dolphin so DaVinci Resolve on Linux gets audio it can play.",
+        "de": "Konvertierungen per Rechtsklick in Dolphin, damit DaVinci Resolve unter Linux Audio abspielen kann."
+      }
+    },
+    {
+      "id": "companion-mpris",
+      "group": "tools",
+      "page_live": false,
+      "tagline": {
+        "en": "Control Linux media players from Bitfocus Companion over D-Bus.",
+        "de": "Steuere Linux-Mediaplayer aus Bitfocus Companion über D-Bus."
+      }
+    },
+    {
+      "id": "darktable-auto-crop",
+      "group": "tools",
+      "page_live": false,
+      "status": {
+        "en": "Work in progress",
+        "de": "In Arbeit"
+      },
+      "tagline": {
+        "en": "A Darktable plugin that crops camera scans of film negatives to the frame.",
+        "de": "Ein Darktable-Plugin, das digitalisierte Filmnegative auf den Rahmen zuschneidet."
+      }
+    }
+  ]
+}

@@ -1,3 +1,14 @@
+# shrippen.github.io
+
+This repository is the user site of [shrippen](https://github.com/shrippen) and has two jobs:
+
+1. **Overview page** of all projects at <https://shrippen.github.io/>. It is generated from [`projects.json`](projects.json) by `tools/build-overview.py`.
+2. **shrippen Design Default**, the shared design system that every project landing page links to (documented below). The built stylesheet is served at `https://shrippen.github.io/v1/shrippen.css`.
+
+GitHub Pages serves the `docs/` folder (Settings → Pages → `main`, `/docs`). Run `./build.sh` after every change to `css/`, `js/`, `tokens/` or `projects.json`, and commit the result in `docs/`.
+
+---
+
 # shrippen Design Default
 
 Shared design language for [shrippen](https://github.com/shrippen) projects.
@@ -267,21 +278,27 @@ https://img.shields.io/badge/<label>-<value>-<valueColor>?labelColor=1c1c20
 ## File structure of this repo
 
 ```
-DesignDefault/
+shrippen.github.io/
 ├── README.md              ← this document
+├── projects.json          ← projects shown on the overview page (name, group, tagline, page live or soon)
 ├── start.sh               ← local preview of all landing pages (preview/)
-├── build.sh               ← concatenates tokens + css/ into docs/v1/shrippen.css
+├── build.sh               ← builds docs/v1/ and the overview page docs/index.html
 ├── css/
 │   ├── base.css           ← reset, body, links
 │   └── components.css     ← all landing-page components
 ├── js/shrippen.js         ← language switch, nav brand reveal, copy button
-├── docs/v1/               ← built artifacts (shrippen.css, shrippen.js), served via GitHub Pages
+├── docs/                  ← GitHub Pages source, served at https://shrippen.github.io/
+│   ├── index.html         ← overview page (generated, do not edit by hand)
+│   ├── icon.svg, icon-mono.svg, social-preview.png
+│   ├── assets/icons/      ← project icons copied by tools/build-overview.py
+│   └── v1/                ← built artifacts (shrippen.css, shrippen.js)
 ├── tokens/
 │   ├── variables.css      ← CSS custom properties
 │   ├── palette.json       ← machine-readable palette
 │   └── palette.qml        ← QML QtObject for Plasma widgets
 ├── templates/
 │   └── landing.html       ← starter landing page
+├── tools/                 ← make-social.py (social previews), build-overview.py
 └── examples/
     └── badge-strip.svg    ← sample badge layout
 ```
@@ -304,13 +321,13 @@ Sidebar on the left lists every project page with what is missing or could be im
 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://shrippen.github.io/DesignDefault/v1/shrippen.css">
-<script src="https://shrippen.github.io/DesignDefault/v1/shrippen.js"></script>  <!-- in <head>, not deferred -->
+<link rel="stylesheet" href="https://shrippen.github.io/v1/shrippen.css">
+<script src="https://shrippen.github.io/v1/shrippen.js"></script>  <!-- in <head>, not deferred -->
 ```
 
-`shrippen.js` handles the language switch, the nav brand reveal and the copy button. Pages are **English by default** with a DE switch: every visible text exists twice (`lang="en"` / `lang="de"`), the choice is stored in `localStorage`. The project name in the nav fades in once the hero has left the viewport. The hero carries a **watermark**: `<img class="hero-wm" src="icon-mono.svg" alt="" aria-hidden="true">` as the first child of `header.hero` (huge, 7 % opacity, bleeding off the right edge and, on a short hero, below it; scrolls with the page, never fixed). The page ends with a **signature footer** (`footer.foot`): the colour logo (`icon.svg`), project name and tagline, two link columns (Project / Source) and, under a short yellow line, license · author · version. On tablet and phone (≤900px) the hero is one column: `<br class="split">` line breaks in the name are dropped, so the name is written out in full, and its size follows the width (`--title-size-narrow`, about `154/longest-word-length` vw). The Rajdhani font link now also loads JetBrains Mono (see the template).
+`shrippen.js` handles the language switch, the nav brand reveal and the copy button. Pages are **English by default** with a DE switch: every visible text exists twice (`lang="en"` / `lang="de"`), the choice is stored in `localStorage`. The project name in the nav fades in once the hero has left the viewport. The hero carries a **watermark**: `<img class="hero-wm" src="icon-mono.svg" alt="" aria-hidden="true">` as the first child of `header.hero` (huge, 7 % opacity, bleeding off the right edge and, on a short hero, below it; scrolls with the page, never fixed). The page ends with a **signature footer** (`footer.foot`): the colour logo (`icon.svg`), project name and tagline, two link columns (Project / Source) and, under a short yellow line, license · author · version. A project that is not ready yet puts a full-width **banner** (`.banner` with `.banner-inner`, `.banner-title`, `.banner-text`; `.banner-danger` for red) as the very first element of `<body>`, above the nav. Hazard stripes on its top and bottom edge come from the component itself. A vibe-coded, experimental or unofficial project shows one notice as `<div class="section"><div class="callout callout-warn">` that is always the **first element in `<main>`**, before the facts strip and the features. A project built on or forked from another one adds “based on” or “fork of” to that line, and the name is always a link to the upstream repository (in both languages, for example `<span lang="en">based on <a href="…">name</a></span><span lang="de">basiert auf <a href="…">name</a></span>`). On tablet and phone (≤900px) the hero is one column: `<br class="split">` line breaks in the name are dropped, so the name is written out in full, and its size follows the width (`--title-size-narrow`, about `154/longest-word-length` vw). The Rajdhani font link now also loads JetBrains Mono (see the template).
 
-Start from `templates/landing.html`. Components: nav (with `.lang` switch), facts strip (`.facts`), showcase rows (`.showcase`, screenshot beside text), architecture flow (`.flow`), input-syntax tokens (`.tokens`), FAQ (`.faq`), `<kbd>`, hero (big name left, yellow install box and screenshot right, both the same width), buttons, feature boxes with a colour bar on top (`data-tier="red|yellow|blue"`), prose section, steps, table, codeblock, callout, footer with a short yellow line. All boxes have only the top-right corner cut (`--chamfer`). Page ground is `--bg-void`, cards are `--bg-panel`. Breaking changes ship as `/v2/`; `/v1/` stays stable.
+**Every landing page carries the Umami tracker** in its `<head>`, the same tag with the same website ID on all pages (`<script defer src="https://um.arianw.de/script.js" data-website-id="056d39ee-6a9d-4b14-9902-5a1ac399df08"></script>`); it is already in the template, so do not remove or change it. The local preview strips the script, so visits there are not counted. Start from `templates/landing.html`. Components: nav (with `.lang` switch), facts strip (`.facts`), showcase rows (`.showcase`, screenshot beside text), architecture flow (`.flow`), input-syntax tokens (`.tokens`), FAQ (`.faq`), `<kbd>`, hero (big name left, yellow install box and screenshot right, both the same width), buttons, feature boxes with a colour bar on top (`data-tier="red|yellow|blue"`), prose section, steps, table, codeblock, callout, footer with a short yellow line. All boxes have only the top-right corner cut (`--chamfer`). Page ground is `--bg-void`, cards are `--bg-panel`. Breaking changes ship as `/v2/`; `/v1/` stays stable.
 
 **Plasma widget**: reference the palette philosophy (accent cream, deterministic project hashes, priority bands). Do not import CSS — use `Kirigami.Theme.*` for all dynamic colors and only hardcode the shared accent (`#E8DCC4`) for brand elements.
 
@@ -321,3 +338,7 @@ Start from `templates/landing.html`. Components: nav (with `.lang` switch), fact
 ---
 
 *Palette derived from [Gruvbox](https://github.com/morhetz/gruvbox) by morhetz (MIT). Adapted with a warm-cream brand accent for the shrippen project family.*
+
+## License
+
+All rights reserved. This design system is public for reference only and is not intended for public use. See [LICENSE](LICENSE).

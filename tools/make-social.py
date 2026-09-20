@@ -21,6 +21,7 @@ CHAR_WIDTH = 0.6  # rough Rajdhani caps advance incl. letter-spacing, in em
 
 # id -> (title, tagline)
 COPY = {
+    "overview": ("shrippen", "Open-source tools for KDE Plasma, Kimai and the desktop"),
     "kurrent": ("Kurrent", "A KDE Plasma 6 task manager"),
     "plasmai": ("Plasmai", "Time tracking for KDE Plasma"),
     "papertty": ("PaperTTY", "Linux terminal on e-ink"),

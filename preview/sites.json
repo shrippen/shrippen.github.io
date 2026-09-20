@@ -1,8 +1,9 @@
 [
+  {"id": "overview", "name": "shrippen", "dir": "shrippen.github.io", "url": "https://shrippen.github.io/"},
   {"id": "kurrent", "name": "Kurrent", "dir": "Kurrent", "url": "https://shrippen.github.io/Kurrent/"},
   {"id": "plasmai", "name": "Plasmai", "dir": "Plasmai", "url": "https://shrippen.github.io/Plasmai/"},
   {"id": "papertty", "name": "PaperTTY", "dir": "PaperTTY", "url": "https://shrippen.github.io/PaperTTY/"},
-  {"id": "framewidge", "name": "FrameWidge", "dir": "Framework Control Plasmoid", "url": "https://shrippen.github.io/FrameWidge/"},
+  {"id": "framewidge", "name": "FrameWidge", "dir": "FrameWidge", "url": "https://shrippen.github.io/FrameWidge/"},
   {"id": "paperninja", "name": "PaperNinja", "dir": "PaperNinja", "url": "https://shrippen.github.io/PaperNinja/"},
   {"id": "dolphin-davinci", "name": "Dolphin Davinci Audio Tools", "dir": "dolphin-davinci-audio-tools", "url": "https://shrippen.github.io/dolphin-davinci-audio-tools/"},
   {"id": "kimai-holiday", "name": "Kimai Holiday Bundle", "dir": "Kimai Holiday Plugin", "url": "https://shrippen.github.io/kimai-holiday-bundle/"},

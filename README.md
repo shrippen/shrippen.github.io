@@ -44,6 +44,27 @@ The palette is a **warm-shifted Gruvbox Dark** subset.
 - **Primary action** color is Gruvbox `bright_blue` (`#83a598`), not KDE's Breeze blue — but in Plasma widgets the native `Kirigami.Theme.highlightColor` takes over; the shared blue only applies to web pages and standalone assets.
 - The remaining Gruvbox brights slot into semantic roles (aqua = success, orange = highlight, red = error, etc.) so every project draws from the same well without inventing one-off hues.
 
+### Light theme ("Leinen")
+
+Opt-in for apps (not landing pages) via `<html data-theme="light">`, defined in [`tokens/variables.css`](tokens/variables.css). Token names describe **roles, not lightness**: `--bg-void` is always the page ground, `--bg-panel` the cards, `--bg2` the borders, `--fg1` the body text. Switching the theme only swaps values.
+
+| Token | Dark | Light | Role |
+|---|---|---|---|
+| `bg-void` | `#141312` | `#f0e9d6` | Page ground |
+| `bg-panel` | `#2a2826` | `#f7f2e4` | Cards, panels |
+| `bg1` | `#3c3836` | `#fbf8ee` | Elevated / fields |
+| `bg-hard` | `#1d2021` | `#e6dec6` | Sunk areas, tracks |
+| `bg2` | `#504945` | `#d3c8ac` | Borders |
+| `fg1` | `#ebdbb2` | `#3c3836` | Body text |
+| `fg2` | `#d5c4a1` | `#665c54` | Secondary text |
+| `blue` | `#83a598` | `#076678` | Action, links |
+| `aqua` | `#8ec07c` | `#427b58` | Success, bars |
+| `yellow` | `#fabd2f` | `#8a5a00` | Score, warnings |
+| `orange` | `#fe8019` | `#af3a03` | Active / highlight |
+| `red` | `#fb4934` | `#9d0006` | Error |
+
+The ground sits between Gruvbox `light0` (`#fbf1c7`, too yellow) and `#f5f1e8` (too bright); cards are one step lighter than the ground but never white. **Sand** (`#ebe3cf` ground, `#f4eedd` cards) is the darker alternative. Semantic colors are the darkened counterparts, so all text pairs reach WCAG AA. The role tokens `--field`, `--score` (yellow) and `--hl` (orange) follow the theme. Icon: on light grounds use a dark square (`#3c3836`) with the yellow marks.
+
 ### Local theme override rule
 
 > Plasmoids **never hardcode** these hex values for interactive UI. Body text, highlight, selection, buttons, and scrollbars come from `Kirigami.Theme.*`. The shared palette is for **accent elements that survive a theme switch** — icon color fills, priority bands, project/label hashes, and the brand mark in the About/config header.
@@ -188,7 +209,7 @@ Every landing page imports these variables (or copies them):
 - **Badges**: shields.io with `labelColor=1c1c20` and value color `e8dcc4` (version), `83a598` (tech tag), `a89984` (license).
 - **OG image**: dark card on `--bg-hard`, project icon centered, name below in `--fg0`, tagline in `--fg2`.
 - **Max content width**: `--max-w` (`860px`). Centered with `margin: 0 auto`.
-- **No light mode** for landing pages (matches the dark-first palette). Plasma widgets use whatever the user's Plasma theme provides.
+- **No light mode** for landing pages (matches the dark-first palette). Apps may opt in to the Light theme below; Plasma widgets use whatever the user's Plasma theme provides.
 - **Mobile**: Install command box font shrinks to `0.75rem`, hero padding reduces. Feature grid collapses to 1 col.
 
 ---

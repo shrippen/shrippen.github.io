@@ -45,10 +45,6 @@
       "id": "framewidge",
       "group": "plasma",
       "page_live": true,
-      "status": {
-        "en": "Beta",
-        "de": "Beta"
-      },
       "tagline": {
         "en": "Fan curves, power profiles and battery limits for Framework laptops.",
         "de": "Lüfterkurven, Energieprofile und Ladelimits für Framework-Laptops."
@@ -58,10 +54,6 @@
       "id": "kimai-holiday",
       "group": "kimai",
       "page_live": true,
-      "status": {
-        "en": "Experimental",
-        "de": "Experimentell"
-      },
       "tagline": {
         "en": "Working hours, absences and public holidays, an open alternative to WorkContractBundle.",
         "de": "Arbeitszeiten, Abwesenheiten und Feiertage, eine offene Alternative zum WorkContractBundle."

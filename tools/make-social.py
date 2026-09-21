@@ -32,6 +32,7 @@ COPY = {
     "companion-mpris": ("Companion MPRIS", "Media player control for Bitfocus Companion"),
     "darktable-auto-crop": ("Auto Crop Negative", "Darktable plugin to crop film negatives"),
     "kimai-abrechnung": ("Kimai Abrechnung", "Billing overview for Kimai"),
+    "kimai-drehzettel": ("Drehzettel", "Film crew timesheets for Kimai"),
 }
 
 

@@ -8,7 +8,7 @@
   {"id": "dolphin-davinci", "name": "Dolphin Davinci Audio Tools", "dir": "dolphin-davinci-audio-tools", "url": "https://shrippen.github.io/dolphin-davinci-audio-tools/"},
   {"id": "kimai-holiday", "name": "Kimai Holiday Bundle", "dir": "Kimai Holiday Plugin", "url": "https://shrippen.github.io/kimai-holiday-bundle/"},
   {"id": "companion-mpris", "name": "Companion MPRIS", "dir": "companion/mpris", "url": "https://shrippen.github.io/companion-mpris/"},
-  {"id": "darktable-auto-crop", "name": "Auto Crop Negative", "dir": "darktable-automatic-negative-cropping", "url": "https://shrippen.github.io/darktable-auto-crop/"},
+  {"id": "kader", "name": "Kader", "dir": "kader", "url": "https://shrippen.github.io/kader/"},
   {"id": "kimai-abrechnung", "name": "Kimai Abrechnung", "dir": "Kimai Abrechnung/AbrechnungBundle", "url": "https://shrippen.github.io/kimai-abrechnung-bundle/"},
   {"id": "kimai-drehzettel", "name": "Drehzettel", "dir": "Kimai Drehzettel", "url": "https://shrippen.github.io/kimai-drehzettel-bundle/"}
 ]

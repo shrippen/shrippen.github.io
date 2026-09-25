@@ -110,7 +110,7 @@
       }
     },
     {
-      "id": "darktable-auto-crop",
+      "id": "kader",
       "group": "tools",
       "page_live": true,
       "status": {
@@ -118,8 +118,8 @@
         "de": "In Arbeit"
       },
       "tagline": {
-        "en": "A Darktable plugin that crops camera scans of film negatives to the frame.",
-        "de": "Ein Darktable-Plugin, das digitalisierte Filmnegative auf den Rahmen zuschneidet."
+        "en": "Crops camera scans of film negatives to the frame, with a web UI for review. darktable is optional.",
+        "de": "Schneidet abfotografierte Filmnegative auf den Rahmen zu, mit Web-Oberfläche zur Kontrolle. darktable ist optional."
       }
     },
     {

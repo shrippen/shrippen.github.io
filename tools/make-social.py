@@ -30,7 +30,7 @@ COPY = {
     "dolphin-davinci": ("Dolphin Davinci Audio Tools", "Audio and video tools for Davinci Resolve"),
     "kimai-holiday": ("Working Hours & Holidays", "Kimai plugin for working hours and holidays"),
     "companion-mpris": ("Companion MPRIS", "Media player control for Bitfocus Companion"),
-    "darktable-auto-crop": ("Auto Crop Negative", "Darktable plugin to crop film negatives"),
+    "kader": ("Kader", "Crops film negative scans to the frame"),
     "kimai-abrechnung": ("Kimai Abrechnung", "Billing overview for Kimai"),
     "kimai-drehzettel": ("Drehzettel", "Film crew timesheets for Kimai"),
 }

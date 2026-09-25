@@ -19,7 +19,7 @@ Tracking list: which landing pages follow the shared design. The central stylesh
 | dolphin-davinci-audio-tools | https://shrippen.github.io/dolphin-davinci-audio-tools/ | central | Migrated locally; conversions table uses `.table`; has a "Why this exists" section (Resolve on Linux has no AAC) |
 | kimai-holiday-bundle | https://shrippen.github.io/kimai-holiday-bundle/ | central | Extended page in `Kimai Holiday Plugin/docs/index.html` (absences, working times, calendar, holidays, install, FAQ); permissions table and API `.codeblock` |
 | companion-mpris | https://shrippen.github.io/companion-mpris/ | central | New page in `companion/mpris/docs/`; one screenshot |
-| darktable-auto-crop | https://shrippen.github.io/darktable-auto-crop/ | central | Extended page in `darktable-automatic-negative-cropping/docs/` (status banner "not ready for primetime", four placeholder graphics instead of screenshots, roll consensus, labels, status, FAQ) |
+| kader (formerly darktable-auto-crop) | https://shrippen.github.io/kader/ | central | Extended page in `kader/docs/` (status banner "Work in progress", standalone web UI first, targets table, darktable plugin as one option, three install routes incl. Windows/Linux packages, placeholder graphics instead of screenshots, FAQ) |
 | kimai-abrechnung-bundle | https://shrippen.github.io/kimai-abrechnung-bundle/ | central | Extended page in `Kimai Abrechnung/AbrechnungBundle/docs/` (workflow, billing levels, FAQ) |
 | kimai-drehzettel-bundle | https://shrippen.github.io/kimai-drehzettel-bundle/ | central | New page in `Kimai Drehzettel/docs/index.html` (status banner "Early development", features with ready/planned tags, timesheet showcase, flow, TV FFS rules `.table`, phases, FAQ); mockup SVG instead of a screenshot; page is on `main`, not on `landing-page-redesign` |
 
@@ -39,7 +39,7 @@ Rule: screenshots, the logo (`icon.svg`) with its monochrome twin (`icon-mono.sv
 | kimai-holiday-bundle | Umbrella (C) | yes (3: absence page, working times, absence calendar; names and hours pixelated) |
 | dolphin-davinci-audio-tools | Fin (B) | yes (2: context menu with the KDE Connect device name pixelated, progress dialog with file names pixelated) |
 | companion-mpris | Key cap (C) | yes (1: button page; track info pixelated) |
-| darktable-auto-crop | Film cell (F) | no. Four placeholder SVGs (`placeholder-*.svg`) stand in for before/after, detection debug image, lighttable labels and the panel |
+| kader | Film cell (F) | no. Four placeholder SVGs (`placeholder-*.svg`) stand in for before/after, detection debug image, results by label and the darktable panel |
 | kimai-abrechnung-bundle | Receipt (A) | yes (1: billing overview; customers, projects, tasks and employees pixelated) |
 | kimai-drehzettel-bundle | Film frame with check (E) | no. `timesheet-preview.svg` (made-up data, A4 landscape mockup of the PDF) stands in for a screenshot |
 

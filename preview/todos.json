@@ -40,26 +40,22 @@
       "text": "One screenshot (context menu); a conversion progress dialog would round it out"
     }
   ],
-  "darktable-auto-crop": [
+  "kader": [
     {
       "level": "missing",
-      "text": "Replace the placeholder graphics (docs/placeholder-*.svg) with a real before/after image, the detection debug image, the lighttable with labels and a shot of the panel"
-    },
-    {
-      "level": "missing",
-      "text": "No LICENSE file in the repo, so the footer shows no license"
+      "text": "Replace the placeholder graphics (docs/placeholder-*.svg) with a real before/after image, the detection debug image and screenshots of the web UI and the darktable panel. placeholder-panel.svg still shows the old button set (no Review starten / Plan anwenden)"
     },
     {
       "level": "improve",
-      "text": "No release yet; add a Download button when there is one"
-    },
-    {
-      "level": "improve",
-      "text": "README still describes the old behaviour (0.7 threshold, red/green only, init.lua install); code uses green 0.5 / yellow 0.3 and the Script Manager. The page follows the code"
+      "text": "The Download button points to releases/latest; the Windows/Linux packages are only built from the next v* tag on (CHANGELOG: Unreleased). Tag a release so the button leads to the packages"
     },
     {
       "level": "info",
-      "text": "Banner \"Not ready for primetime\" at the top of the page: remove it when the detection is reliable"
+      "text": "Numbers on the page (87 % hit rate, 96 % correct greens, 62 rolls, 209 hand crops) come from roadmap.md and CHANGELOG 0.2.0; update them when the detection changes"
+    },
+    {
+      "level": "info",
+      "text": "Banner \"Work in progress\" at the top of the page: remove it when the detection is reliable"
     }
   ],
   "overview": [

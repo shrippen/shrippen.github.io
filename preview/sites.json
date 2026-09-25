@@ -10,5 +10,6 @@
   {"id": "companion-mpris", "name": "Companion MPRIS", "dir": "companion/mpris", "url": "https://shrippen.github.io/companion-mpris/"},
   {"id": "kader", "name": "Kader", "dir": "kader", "url": "https://shrippen.github.io/kader/"},
   {"id": "kimai-abrechnung", "name": "Kimai Abrechnung", "dir": "Kimai Abrechnung/AbrechnungBundle", "url": "https://shrippen.github.io/kimai-abrechnung-bundle/"},
-  {"id": "kimai-drehzettel", "name": "Drehzettel", "dir": "Kimai Drehzettel", "url": "https://shrippen.github.io/kimai-drehzettel-bundle/"}
+  {"id": "kimai-drehzettel", "name": "Drehzettel", "dir": "Kimai Drehzettel", "url": "https://shrippen.github.io/kimai-drehzettel-bundle/"},
+  {"id": "kimai-anfahrten", "name": "Anfahrten", "dir": "Kimai Anfahrten", "url": "https://shrippen.github.io/kimai-anfahrten/"}
 ]

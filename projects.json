@@ -134,6 +134,15 @@
         "en": "Timesheets for employed film crew: TV FFS overtime, night and weekend surcharges, weekly and monthly PDF.",
         "de": "Arbeitszeitnachweise für angestellte Filmschaffende: TV-FFS-Überstunden, Nacht- und Wochenendzuschläge, Wochen- und Monats-PDF."
       }
+    },
+    {
+      "id": "kimai-anfahrten",
+      "group": "kimai",
+      "page_live": false,
+      "tagline": {
+        "en": "Trips and travel costs: detected from your Dawarich GPS history, with logbook and yearly tax summary.",
+        "de": "Fahrten und Fahrtkosten: aus der GPS-Historie von Dawarich erkannt, mit Fahrtenbuch und Jahres-Steueraufstellung."
+      }
     }
   ]
 }

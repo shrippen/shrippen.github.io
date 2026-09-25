@@ -33,6 +33,7 @@ COPY = {
     "kader": ("Kader", "Crops film negative scans to the frame"),
     "kimai-abrechnung": ("Kimai Abrechnung", "Billing overview for Kimai"),
     "kimai-drehzettel": ("Drehzettel", "Film crew timesheets for Kimai"),
+    "kimai-anfahrten": ("Anfahrten", "Trips and travel costs for Kimai"),
 }
 
 

@@ -324,6 +324,8 @@ Both sides use the same palette values (`tools/check-tokens.py` fails if `palett
 - **Shape:** square controls, cut top-right corner on cards and dialogs only, accent bar on top of active cards and dialogs.
 - **Type:** titles and buttons uppercase Rajdhani, figures and small labels JetBrains Mono, body text stays the platform font.
 - **Brightness follows the platform theme** (dark Gruvbox / light Leinen); an app that forces a dark platform style sets `preferDark`.
+- **Material style (Android):** set `KanteStyle.materialStyle`. Kirigami then takes its colors from the Material attached properties, so hand Kante's colors to those on the window; `KanteScope` stays off, because Kirigami's Material bridge would pin `Material.theme` Light and fixed colors on every item whose Kirigami colors change.
+- **Restore, do not freeze:** a `Binding` restores a color as a fixed value. For theme colors that must follow the platform again (`Kirigami.Theme` in `KanteScope`), assign `undefined` to reset them.
 - **Test both kinds:** `tools/check-qml.sh` loads every component in System and Kante and checks that switching back restores the heading.
 
 ---

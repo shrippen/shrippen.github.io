@@ -3,16 +3,17 @@
 This repository is the user site of [shrippen](https://github.com/shrippen) and has two jobs:
 
 1. **Overview page** of all projects at <https://shrippen.github.io/>. It is generated from [`projects.json`](projects.json) by `tools/build-overview.py`.
-2. **shrippen Design Default**, the shared design system that every project landing page links to (documented below). The built stylesheet is served at `https://shrippen.github.io/v1/shrippen.css`.
+2. **Kante**, the shared design system of all projects (documented below): the landing pages link the built stylesheet at `https://shrippen.github.io/v1/shrippen.css`, apps use the QML module in [`qml/Kante`](qml/Kante). Kante was called *shrippen Design Default* before; file names and URLs keep the old `shrippen` prefix so nothing that links them breaks.
 
-GitHub Pages serves the `docs/` folder (Settings → Pages → `main`, `/docs`). Run `./build.sh` after every change to `css/`, `js/`, `tokens/` or `projects.json`, and commit the result in `docs/`.
+GitHub Pages serves the `docs/` folder (Settings → Pages → `main`, `/docs`). Run `./build.sh` after every change to `css/`, `js/`, `tokens/`, `qml/` or `projects.json`, and commit the result in `docs/` and `qml/Kante/`.
 
 ---
 
-# shrippen Design Default
+# Kante
 
-Shared design language for [shrippen](https://github.com/shrippen) projects.
-Each project keeps its own local Plasma/Kirigami/GTK theme integration — this document defines the **shared accent palette, typographic rules, icon style, and landing-page layout** that make the family feel cohesive.
+Shared design language for [shrippen](https://github.com/shrippen) projects, **one style for the web and for apps**: the same palette, type, shapes and roles on landing pages (CSS) and in Qt Quick / Kirigami apps and Plasma widgets (QML). The name is the signature shape: every box has its top-right corner cut (*Kante*, edge).
+
+This document defines the **palette, typographic rules, icon style, landing-page layout and app foundation** that make the family feel cohesive. `tokens/palette.json` is the single source for both sides; see [Kante in apps](#kante-in-apps-qt-quick--kirigami).
 
 Gruvbox-inspired, warm, dark-first.
 
@@ -85,6 +86,8 @@ Landing pages do not need them; apps do (used by the Kader companion UI). They f
 > Plasmoids **never hardcode** these hex values for interactive UI. Body text, highlight, selection, buttons, and scrollbars come from `Kirigami.Theme.*`. The shared palette is for **accent elements that survive a theme switch** — icon color fills, priority bands, project/label hashes, and the brand mark in the About/config header.
 
 Landing pages, README badges, social-preview images, and documentation use the full shared palette directly.
+
+> **Exception: the opt-in Kante style in apps.** When a widget or app offers Kante as a style and the user picks it, colours come from `KanteStyle` (`qml/Kante`), generated from the same tokens — never hardcoded in the app. The platform theme stays the default.
 
 ---
 
@@ -231,9 +234,7 @@ Every landing page imports these variables (or copies them):
 
 ## Plasma widget rules
 
-Inside a KDE Plasma widget, the **shared palette is secondary**. Plasma themes control surfaces, text, and interactive colors.
-
-Use the shared design for:
+A Plasma widget follows the **user's Plasma theme by default**: surfaces, text, buttons, selection and scrollbars come from `Kirigami.Theme.*`, and the shared palette is only for brand elements:
 
 | Element | Source |
 |---|---|
@@ -243,10 +244,67 @@ Use the shared design for:
 | Badge backgrounds (version label) | `#E8DCC4` on `#1c1c20` |
 | `PluginMissing` / onboarding | Layout follows landing page install-card pattern (copy button, monospace command, link to GitHub) |
 
-Do **not** use the shared palette for:
+A widget may offer **Kante as an opt-in style** (a "Style: System / Kante" setting, System stays the default). Then it uses the QML module below: with System it looks exactly like a plain Plasma widget, with Kante it breaks with Breeze on purpose. Plasmai is the reference.
 
-- Button backgrounds, text colors, selection, scrollbars, list backgrounds → `Kirigami.Theme.*`
-- Anything the user expects to change with their Plasma color scheme
+---
+
+## Kante in apps (Qt Quick / Kirigami)
+
+`qml/Kante` is the app side of Kante, taken from Plasmai (Plasma widget and Kirigami app for Android / Plasma Mobile). Copy the folder into the project (a Plasma Store package cannot use import paths) or add it to the app's qrc, then `import Kante` (or `import "Kante"`).
+
+```qml
+import Kante
+
+Binding { target: KanteStyle; property: "kind"; value: settings.visualStyle }   // 0 System, 1 Kante
+KanteScope { target: root.contentItem }          // Kante colours for every Kirigami/QQC2 control below
+KanteButton { text: i18n("Stop"); emphasis: KanteButton.Emphasis.Destructive }
+QQC2.CheckBox { KanteCheckSkin { control: parent } }
+```
+
+### What the module has
+
+| Part | Purpose |
+|---|---|
+| `KanteStyle` | Singleton: all colour, font and shape roles. `kind` System forwards `Kirigami.Theme`; Kante reads `KantePalette` (dark, or "Leinen" when the platform theme is light; `preferDark` forces dark, e.g. Android Material Dark) |
+| `KantePalette` | Generated from `tokens/palette.json` (`tools/build-qml.py`), never edited by hand |
+| `KanteScope` | Hands the Kante colours to an item's `Kirigami.Theme`, so plain controls below follow. Popups need their own |
+| `KanteCard` | Card with the cut corner and an optional accent bar (`chamfer`, `barColor`) |
+| `KanteButton`, `KanteToolButton`, `KanteTextField`, `KanteHeading`, `KanteDialog` | Wrappers: the platform control in System; in Kante square, uppercase Rajdhani, sunken fields, accent-filled primary (`emphasis`) |
+| `KanteCheckSkin`, `KanteFieldSkin`, `KanteSliderSkin`, `KantePopupSkin`, `KanteMessageSkin`, `KanteDialogSkin`, `KantePageTitle` | Skins placed *inside* an existing control (check box, switch, combo/spin box, text area, slider, menu, `Kirigami.InlineMessage`, Kirigami dialog, page header) |
+| `KantePullToRefresh` | Pull to refresh for a `Kirigami.Page` with a `QQC2.ScrollView` |
+| `fonts/` | Rajdhani 600/700, JetBrains Mono 400/500 (SIL OFL), loaded by `KanteStyle`, never installed |
+
+### Web ↔ app
+
+Both sides use the same palette values (`tools/check-tokens.py` fails if `palette.json` and `variables.css` drift apart). Apps add alpha to surfaces, because a translucent or blurred platform ground sits behind them.
+
+| Role | Web (CSS) | App (`KanteStyle`) | Dark | Light (Leinen) |
+|---|---|---|---|---|
+| Page ground | `--bg-void` / `--bg0` | `backgroundColor` | `#1d2021` | `#f0e9d6` |
+| Card | `--bg-panel` | `cardColor` | `--bg1` at 60 % | `--bg1` at 70 % |
+| Sunken (fields, tracks) | `--field` / `--bg-hard` | `sunkenColor` | `--bg-void` at 50 % | `--bg-hard` at 60 % |
+| Border | `--bg2` | `frameColor` | `--fg1` at 16 % | `--fg1` at 18 % |
+| Body text | `--fg1` | `textColor` | `#ebdbb2` | `#3c3836` |
+| Headings | `--fg0` | `strongTextColor` | `#fbf1c7` | `#282828` |
+| Secondary text | `--fg2` / `--fg3` | `mutedTextColor` | `#bdae93` (on glass) | `--fg2` |
+| Accent (primary, active) | `--yellow` | `accentColor` / `accentTextColor` | `#fabd2f` | fill `#d79921`, text `#8a5a00` |
+| Success / warning / error | `--aqua` / `--orange` / `--red` | `positive…` / `neutral…` / `negativeTextColor` | bright | darkened |
+| Links, info | `--blue` | `infoColor` | `#83a598` | `#076678` |
+| Cut corner | `--chamfer` (16px) | `chamfer`, `chamferSmall` | 16 / 10 px at a grid unit of 18 | same |
+| Headings font | `--font-heading`, uppercase | `headingFont(size)` | Rajdhani 700, +0.08em | same |
+| Labels | small uppercase mono | `labelFont()` | JetBrains Mono, +0.14em | same |
+| Figures | `--font-mono` | `monoFont(size, bold)` | JetBrains Mono | same |
+
+### Rules for apps
+
+- **System is the default and stays pixel-identical.** Every Kante change is a `Binding { when: KanteStyle.active }` or a part that is only visible in Kante; nothing is assigned once. Switching back restores the platform look.
+- **Draw over, do not mutate.** Wrappers and skins hide the platform part (opacity) and draw their own frame, text or indicator. Rebinding a control's `font` or `color` does not restore reliably when the app starts in Kante.
+- **Tint, do not paint.** Kante never paints the window or popup ground of a translucent host (Plasma blur); surfaces are tints (card 60 %, sunken 50 %, dialog 97 %). Colour only in small opaque areas: project bars, chart segments, the accent timer, primary buttons.
+- **Muted text one step lighter on glass** (`#bdae93`), 4.5:1 against the darkest tint.
+- **Shape:** square controls, cut top-right corner on cards and dialogs only, accent bar on top of active cards and dialogs.
+- **Type:** titles and buttons uppercase Rajdhani, figures and small labels JetBrains Mono, body text stays the platform font.
+- **Brightness follows the platform theme** (dark Gruvbox / light Leinen); an app that forces a dark platform style sets `preferDark`.
+- **Test both kinds:** `tools/check-qml.sh` loads every component in System and Kante and checks that switching back restores the heading.
 
 ---
 
@@ -297,12 +355,16 @@ shrippen.github.io/
 │   ├── assets/icons/      ← project icons copied by tools/build-overview.py
 │   └── v1/                ← built artifacts (shrippen.css, shrippen.js)
 ├── tokens/
-│   ├── variables.css      ← CSS custom properties
-│   ├── palette.json       ← machine-readable palette
-│   └── palette.qml        ← QML QtObject for Plasma widgets
+│   ├── variables.css      ← CSS custom properties (web)
+│   ├── palette.json       ← the palette for web and apps, incl. app roles
+│   └── palette.qml        ← flat QML palette for Plasma widgets (generated)
+├── qml/
+│   ├── Kante/             ← QML module for apps (KanteStyle, wrappers, skins, fonts; KantePalette generated)
+│   └── tests/             ← module test (tools/check-qml.sh)
+├── fonts/                 ← Rajdhani, JetBrains Mono + OFL.txt
 ├── templates/
 │   └── landing.html       ← starter landing page
-├── tools/                 ← make-social.py (social previews), build-overview.py
+├── tools/                 ← make-social.py, build-overview.py, build-qml.py, check-tokens.py, check-qml.sh
 └── examples/
     └── badge-strip.svg    ← sample badge layout
 ```
@@ -333,7 +395,7 @@ Sidebar on the left lists every project page with what is missing or could be im
 
 **Every landing page carries the Umami tracker** in its `<head>`, the same tag with the same website ID on all pages (`<script defer src="https://um.arianw.de/script.js" data-website-id="056d39ee-6a9d-4b14-9902-5a1ac399df08"></script>`); it is already in the template, so do not remove or change it. The local preview strips the script, so visits there are not counted. Start from `templates/landing.html`. Components: nav (with `.lang` switch), facts strip (`.facts`), showcase rows (`.showcase`, screenshot beside text), architecture flow (`.flow`), input-syntax tokens (`.tokens`), FAQ (`.faq`), `<kbd>`, hero (big name left, yellow install box and screenshot right, both the same width), buttons, feature boxes with a colour bar on top (`data-tier="red|yellow|blue"`), prose section, steps, table, codeblock, callout, footer with a short yellow line. All boxes have only the top-right corner cut (`--chamfer`). Page ground is `--bg-void`, cards are `--bg-panel`. Breaking changes ship as `/v2/`; `/v1/` stays stable.
 
-**Plasma widget**: reference the palette philosophy (accent cream, deterministic project hashes, priority bands). Do not import CSS — use `Kirigami.Theme.*` for all dynamic colors and only hardcode the shared accent (`#E8DCC4`) for brand elements.
+**Plasma widget / Kirigami app**: follow the platform theme by default and use the shared accent (`#E8DCC4`) only for brand elements; for the opt-in Kante style use `qml/Kante` (see [Kante in apps](#kante-in-apps-qt-quick--kirigami)). Do not import CSS.
 
 **README badges**: use the badge format above.
 

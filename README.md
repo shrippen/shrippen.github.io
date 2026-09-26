@@ -244,13 +244,17 @@ A Plasma widget follows the **user's Plasma theme by default**: surfaces, text, 
 | Badge backgrounds (version label) | `#E8DCC4` on `#1c1c20` |
 | `PluginMissing` / onboarding | Layout follows landing page install-card pattern (copy button, monospace command, link to GitHub) |
 
-A widget may offer **Kante as an opt-in style** (a "Style: System / Kante" setting, System stays the default). Then it uses the QML module below: with System it looks exactly like a plain Plasma widget, with Kante it breaks with Breeze on purpose. Plasmai is the reference.
+A widget may offer **Kante or Kante Light as opt-in styles** (a "Style: System / Kante / Kante Light" setting, System stays the default). Then it uses the QML module below: with System it looks exactly like a plain Plasma widget, with Kante it breaks with Breeze on purpose. Plasmai is the reference.
 
 ---
 
 ## Kante in apps (Qt Quick / Kirigami)
 
 `qml/Kante` is the app side of Kante, taken from Plasmai (Plasma widget and Kirigami app for Android / Plasma Mobile). Copy the folder into the project (a Plasma Store package cannot use import paths) or add it to the app's qrc, then `import Kante` (or `import "Kante"`).
+
+`qml/KantePlasma` holds the Plasma widget variants of the wrappers that sit on PlasmaComponents3 instead of QQC2 (`KantePlasmaButton`, `KantePlasmaToolButton`, `KantePlasmaHeading`). They import `"../Kante"`, so copy both folders side by side.
+
+Import the module one way only in a project (all directory imports, or all `import Kante`): Qt registers a directory import and a module import as different types, and `KanteStyle` would exist twice.
 
 ```qml
 import Kante
@@ -265,14 +269,30 @@ QQC2.CheckBox { KanteCheckSkin { control: parent } }
 
 | Part | Purpose |
 |---|---|
-| `KanteStyle` | Singleton: all colour, font and shape roles. `kind` System forwards `Kirigami.Theme`; Kante reads `KantePalette` (dark, or "Leinen" when the platform theme is light; `preferDark` forces dark, e.g. Android Material Dark) |
+| `KanteStyle` | Singleton: all colour, font and shape roles. `kind` System and KanteLight forward `Kirigami.Theme` colours; Kante reads `KantePalette` (dark, or "Leinen" when the platform theme is light; `preferDark` forces dark, e.g. Android Material Dark) |
 | `KantePalette` | Generated from `tokens/palette.json` (`tools/build-qml.py`), never edited by hand |
 | `KanteScope` | Hands the Kante colours to an item's `Kirigami.Theme`, so plain controls below follow. Popups need their own |
 | `KanteCard` | Card with the cut corner and an optional accent bar (`chamfer`, `barColor`) |
 | `KanteButton`, `KanteToolButton`, `KanteTextField`, `KanteHeading`, `KanteDialog` | Wrappers: the platform control in System; in Kante square, uppercase Rajdhani, sunken fields, accent-filled primary (`emphasis`) |
 | `KanteCheckSkin`, `KanteFieldSkin`, `KanteSliderSkin`, `KantePopupSkin`, `KanteMessageSkin`, `KanteDialogSkin`, `KantePageTitle` | Skins placed *inside* an existing control (check box, switch, combo/spin box, text area, slider, menu, `Kirigami.InlineMessage`, Kirigami dialog, page header) |
 | `KantePullToRefresh` | Pull to refresh for a `Kirigami.Page` with a `QQC2.ScrollView` |
+| `../KantePlasma` | `KantePlasmaButton`, `KantePlasmaToolButton`, `KantePlasmaHeading`: the same wrappers on PlasmaComponents3 / PlasmaExtras for Plasma widgets |
 | `fonts/` | Rajdhani 600/700, JetBrains Mono 400/500 (SIL OFL), loaded by `KanteStyle`, never installed |
+
+### Kante Light
+
+The quieter variant for apps that should sit next to Breeze / Kirigami apps and still read as Kante. **Every color comes from the platform:** in Qt `KanteStyle` forwards `Kirigami.Theme` live (any color scheme, light or dark, switched at runtime); on the web the Breeze palette follows `prefers-color-scheme`. Kante contributes shape and type only:
+
+| From the platform | From Kante |
+|---|---|
+| All colors (text, surfaces, highlight, positive/neutral/negative) | Top-right cut corner and accent bar (in the highlight color) on cards and tiles |
+| Buttons, fields, check boxes, switches, menus, dialogs | Page and app titles in uppercase Rajdhani (`titleFont`, `KantePageTitle`, `KanteHeading { pageTitle: true }`) |
+| Body text and card headings (system font) | Figures (times, durations, counts) and section labels in JetBrains Mono, sections with a thin rule |
+| Other headings (`KanteHeading` without `pageTitle`) | The Kante layouts an app offers (tiles, time lines) |
+
+- Qt: `KanteStyle.kind = KanteStyle.Kind.KanteLight`. `KanteStyle.active` is true for Kante and Kante Light (shapes, type, layouts); `KanteStyle.themed` only for Kante (palette, control skins). Views branch on `active` for layout and read colors from the roles, which stay the theme's in Kante Light. Control wrappers and skins only draw in `themed`.
+- Web: `<html data-kante="light">` with the regular stylesheet. Tokens in `tokens/variables.css` (Breeze light, and dark under `prefers-color-scheme: dark`), shape and type rules in the "Kante Light" block of `css/components.css`. App CSS uses the roles (`--primary`, `--on-primary`, `--hl`, `--bg-panel`, …), never `--yellow` for "active".
+- Kante Light has no palette of its own in `palette.json`: there is nothing to keep in sync, the platform owns the colors.
 
 ### Web ↔ app
 
@@ -297,7 +317,7 @@ Both sides use the same palette values (`tools/check-tokens.py` fails if `palett
 
 ### Rules for apps
 
-- **System is the default and stays pixel-identical.** Every Kante change is a `Binding { when: KanteStyle.active }` or a part that is only visible in Kante; nothing is assigned once. Switching back restores the platform look.
+- **System is the default and stays pixel-identical.** Every Kante change is a `Binding { when: KanteStyle.active }` (shapes, type, layouts) or `when: KanteStyle.themed` (palette, controls) or a part that is only visible in Kante; nothing is assigned once. Switching back restores the platform look.
 - **Draw over, do not mutate.** Wrappers and skins hide the platform part (opacity) and draw their own frame, text or indicator. Rebinding a control's `font` or `color` does not restore reliably when the app starts in Kante.
 - **Tint, do not paint.** Kante never paints the window or popup ground of a translucent host (Plasma blur); surfaces are tints (card 60 %, sunken 50 %, dialog 97 %). Colour only in small opaque areas: project bars, chart segments, the accent timer, primary buttons.
 - **Muted text one step lighter on glass** (`#bdae93`), 4.5:1 against the darkest tint.
@@ -360,6 +380,7 @@ shrippen.github.io/
 │   └── palette.qml        ← flat QML palette for Plasma widgets (generated)
 ├── qml/
 │   ├── Kante/             ← QML module for apps (KanteStyle, wrappers, skins, fonts; KantePalette generated)
+│   ├── KantePlasma/       ← Plasma widget variants of the wrappers (PlasmaComponents3)
 │   └── tests/             ← module test (tools/check-qml.sh)
 ├── fonts/                 ← Rajdhani, JetBrains Mono + OFL.txt
 ├── templates/

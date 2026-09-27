@@ -88,7 +88,23 @@ tools/.venv/bin/python tools/screenshots.py --list
 ```
 
 Each project lists its shots in `demo/shots.json` (format in the docstring of
-`tools/screenshots.py`). Images go to `<project>/docs/shots/<name>-<lang>[-<theme>].webp`.
+`tools/screenshots.py`). Images go to `<project>/docs/shots/<name>-<lang>[-<theme>].webp`;
+`tools/use-shots.py` puts them into the landing pages (the `page` map in `shots.json`).
+
+How the shots are taken:
+
+- **Web apps** (PaperNinja, kader, andon, Kimai plugins): Playwright with `/usr/bin/chromium`.
+  The Kimai plugins share one run per language and theme (`default` and `knust`).
+- **Plasma widgets** (Kurrent, Plasmai, FrameWidge): offscreen `plasmoidviewer` with a scratch
+  config home; the widget grabs itself with `grabToImage` (Kurrent through `tests/screenshot.sh`,
+  Plasmai and FrameWidge through a `ScreenshotRunner.qml` that only acts when a plan is present).
+- **PaperTTY**: the real Bitmap driver renders the demo session, drawn into an e-ink panel.
+- **By hand** (listed as `manual`): the Dolphin context menu and progress dialog (native KDE
+  windows; `demo/start.sh convert` prepares them) and the Companion button page (the module does
+  not start as a dev module in Companion 5.0.6 in Docker; the demo mode itself works).
+
+Apps on the real clock (Kimai, Kurrent, Plasmai, andon) place the data around the real today;
+the others use `screenshot_today`.
 
 ## Not included
 

@@ -4,4 +4,4 @@
 # PORT=9000 ./start.sh   changes the first port tried; NO_OPEN=1 ./start.sh   skips opening the browser.
 set -euo pipefail
 cd "$(dirname "$0")"
-exec python3 preview/server.py
+exec python3 overview/preview/server.py

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Copies the built demo world (demo/dist/) into the projects.
 
-Usage: python3 tools/sync-demo.py [--check] [id ...]   (default: all targets below)
+Usage: python3 demo/tools/sync-demo.py [--check] [id ...]   (default: all targets below)
 
 Builds demo/dist/ first (demo/world.py build), then copies the files each project
 needs to the place it reads them from. --check writes nothing and exits 1 if a
-copy is missing or out of date (tools/check-demo.py is the same as --check).
+copy is missing or out of date (demo/tools/check-demo.py is the same as --check).
 Projects stay self-contained: they never read this repo at runtime.
 """
 import filecmp
@@ -14,7 +14,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parent.parent.parent
 ROOT = REPO.parent
 DIST = REPO / "demo" / "dist"
 
@@ -65,7 +65,7 @@ def main(argv):
                 shutil.copyfile(src, dst)
                 print(f"updated {folder}/{rel}")
     if check and stale:
-        sys.exit(f"{stale} demo file(s) out of date, run tools/sync-demo.py")
+        sys.exit(f"{stale} demo file(s) out of date, run demo/tools/sync-demo.py")
     if not stale:
         print("demo world is up to date everywhere")
 

@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 # Builds everything GitHub Pages serves from docs/.
-#   1. Design system: docs/v1/shrippen.css and shrippen.js
+#   1. Kante for the web: docs/v1/shrippen.css and shrippen.js from kante/
 #      -> https://shrippen.github.io/v1/  (all landing pages link this URL)
-#   2. Overview page: docs/index.html from projects.json (tools/build-overview.py)
-#   3. Kante for apps: qml/Kante/KantePalette.qml, tokens/palette.qml and the
-#      bundled fonts, generated from tokens/palette.json (tools/build-qml.py)
-#   4. Token check: no raw colours or fonts outside tokens/, and palette.json
-#      matches variables.css (tools/check-tokens.py)
-#   5. QML module test: qml/tests, if qmltestrunner is installed (tools/check-qml.sh)
-#   6. Claude Design upload: ds-bundle/ (.design-sync/make-bundle.py, gitignored)
+#   2. Overview page: docs/index.html from overview/projects.json (overview/tools/build-overview.py)
+#   3. Kante for apps: kante/qml/Kante/KantePalette.qml, kante/tokens/palette.qml and the
+#      bundled fonts, generated from kante/tokens/palette.json (kante/tools/build-qml.py)
+#   4. Token check: no raw colours or fonts outside kante/tokens/, and palette.json
+#      matches variables.css (kante/tools/check-tokens.py)
+#   5. QML module test: kante/qml/tests, if qmltestrunner is installed (kante/tools/check-qml.sh)
+#   6. Claude Design upload: kante/ds-bundle/ (.design-sync/make-bundle.py, gitignored)
 set -euo pipefail
 cd "$(dirname "$0")"
 OUT=docs/v1
 mkdir -p "$OUT"
 {
   echo "/* Kante v1 — https://github.com/shrippen/shrippen.github.io */"
-  cat tokens/variables.css css/base.css css/components.css
+  cat kante/tokens/variables.css kante/css/base.css kante/css/components.css
 } > "$OUT/shrippen.css"
-cp js/shrippen.js "$OUT/shrippen.js"
+cp kante/js/shrippen.js "$OUT/shrippen.js"
 echo "built $OUT/shrippen.css ($(wc -c < "$OUT/shrippen.css") bytes), shrippen.js"
-python3 tools/build-overview.py
-python3 tools/build-qml.py
-python3 tools/check-tokens.py
-tools/check-qml.sh
+python3 overview/tools/build-overview.py
+python3 kante/tools/build-qml.py
+python3 kante/tools/check-tokens.py
+kante/tools/check-qml.sh
 python3 .design-sync/make-bundle.py

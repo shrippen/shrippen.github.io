@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Checks that every project has the current demo world. Same as tools/sync-demo.py --check."""
+"""Checks that every project has the current demo world. Same as demo/tools/sync-demo.py --check."""
 import runpy
 import sys
 

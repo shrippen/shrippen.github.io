@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Puts the demo screenshots (docs/shots/) into the landing pages (docs/index.html).
 
-Usage: python3 tools/use-shots.py [id ...] [--check]
+Usage: python3 demo/tools/use-shots.py [id ...] [--check]
 
 Each project's demo/shots.json may have
   "page": {"old-image.jpg": "shot-name", ...}    images on the page to replace
@@ -16,9 +16,9 @@ import re
 import sys
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parent.parent.parent
 ROOT = REPO.parent
-sys.path.insert(0, str(REPO / "tools"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 screenshots = __import__("screenshots")
 
 CAPTION_FIXES = [
@@ -73,7 +73,7 @@ def main(argv):
         theme = m.get("page_theme", themes[0])
         new, missing = rewrite(html, m["page"], langs, theme, m.get("format", "webp"), folder / "docs")
         if missing:
-            print(f"{site['id']}: missing {', '.join(missing)} (run tools/screenshots.py {site['id']})")
+            print(f"{site['id']}: missing {', '.join(missing)} (run demo/tools/screenshots.py {site['id']})")
             stale += 1
             continue
         if new == html:

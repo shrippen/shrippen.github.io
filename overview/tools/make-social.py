@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Renders docs/social-preview.png (1280x640) for every project from its docs/icon.svg.
 
-Usage: python3 tools/make-social.py [id ...]   (ids from preview/sites.json; default: all)
+Usage: python3 overview/tools/make-social.py [id ...]   (ids from overview/sites.json; default: all)
 Needs chromium. Layout follows the README: dark card, colour logo, name, tagline, bottom strip.
 """
 import json
@@ -11,7 +11,8 @@ import tempfile
 from html import escape
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+OVERVIEW = Path(__file__).resolve().parent.parent
+REPO = OVERVIEW.parent
 ROOT = REPO.parent
 WIDTH, HEIGHT = 1280, 640
 LOGO_PX = 144
@@ -39,7 +40,7 @@ COPY = {
 
 def card(title, tagline, repo, logo):
     size = min(MAX_TITLE_PX, int(TITLE_BUDGET_PX / (len(title) * CHAR_WIDTH)))
-    fonts = REPO / "fonts"
+    fonts = REPO / "kante" / "fonts"
     return f"""<!doctype html><meta charset="utf-8"><style>
 @font-face{{font-family:R;font-weight:700;src:url(file://{fonts}/Rajdhani-700.ttf)}}
 @font-face{{font-family:M;font-weight:400;src:url(file://{fonts}/JetBrainsMono-400.ttf)}}
@@ -80,7 +81,7 @@ def render(site):
 
 
 def main():
-    sites = json.loads((REPO / "preview" / "sites.json").read_text(encoding="utf-8"))
+    sites = json.loads((OVERVIEW / "sites.json").read_text(encoding="utf-8"))
     wanted = set(sys.argv[1:])
     for site in sites:
         if not wanted or site["id"] in wanted:

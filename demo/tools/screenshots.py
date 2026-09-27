@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Takes the landing-page screenshots of every project from its demo data.
 
-Usage: tools/.venv/bin/python tools/screenshots.py [id ...] [--lang de,en] [--theme T]
+Usage: demo/tools/.venv/bin/python demo/tools/screenshots.py [id ...] [--lang de,en] [--theme T]
                                                    [--list] [--dry-run] [--keep-running]
-Setup once: python3 -m venv tools/.venv && tools/.venv/bin/pip install playwright pillow
+Setup once: python3 -m venv demo/tools/.venv && demo/tools/.venv/bin/pip install playwright pillow
 (Chromium comes from /usr/bin/chromium, no Playwright browser download.)
 
 Every project describes its shots in <project>/demo/shots.json (ids and folders
-from preview/sites.json plus EXTRA below). Images land in
+from overview/sites.json plus EXTRA below). Images land in
 <project>/docs/shots/<name>-<lang>[-<theme>].<format>.
 
 shots.json:
@@ -47,12 +47,12 @@ import time
 import urllib.request
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parent.parent.parent
 ROOT = REPO.parent
 WORLD = json.loads((REPO / "demo" / "world.json").read_text(encoding="utf-8"))
 CHROMIUM = os.environ.get("CHROMIUM", "/usr/bin/chromium")
 READY_TIMEOUT = 300
-# Projects with a demo that are not on the overview page (preview/sites.json).
+# Projects with a demo that are not on the overview page (overview/sites.json).
 EXTRA = [
     {"id": "andon", "dir": "andon"},
     {"id": "kimai-farbfaecher", "dir": "Kimai Farbfächer"},
@@ -60,7 +60,7 @@ EXTRA = [
 
 
 def sites():
-    listed = json.loads((REPO / "preview" / "sites.json").read_text(encoding="utf-8"))
+    listed = json.loads((REPO / "overview" / "sites.json").read_text(encoding="utf-8"))
     return [s for s in listed if s["id"] != "overview"] + EXTRA
 
 

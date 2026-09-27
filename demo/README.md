@@ -2,7 +2,7 @@
 
 Every shrippen project can start with the same made-up data, so screenshots look
 consistent and never show real customers, people or files. `world.json` is the single
-source; `tools/screenshots.py` takes the landing-page screenshots from it.
+source; `demo/tools/screenshots.py` takes the landing-page screenshots from it.
 
 ## The world
 
@@ -57,11 +57,11 @@ Screenshots are taken once per language.
 | `world.json` | the source, edit this |
 | `world.py` | `build` expands it into `dist/`; also a Python library (`World`) |
 | `lib/world.js`, `lib/DemoWorld.php` | the same helpers for QML/Node and PHP |
-| `dist/` | built files that `tools/sync-demo.py` copies into the projects (committed) |
+| `dist/` | built files that `demo/tools/sync-demo.py` copies into the projects (committed) |
 | `kimai/` | one Kimai instance with all plugins and the demo data |
 
-After editing `world.json`: `python3 tools/sync-demo.py`, then commit the copies in the
-projects. `python3 tools/check-demo.py` reports stale copies.
+After editing `world.json`: `python3 demo/tools/sync-demo.py`, then commit the copies in the
+projects. `python3 demo/tools/check-demo.py` reports stale copies.
 
 ## Starting a project with demo data
 
@@ -81,15 +81,15 @@ projects. `python3 tools/check-demo.py` reports stale copies.
 ## Screenshots
 
 ```sh
-python3 -m venv tools/.venv && tools/.venv/bin/pip install playwright pillow   # once
-tools/.venv/bin/python tools/screenshots.py              # all projects, de + en
-tools/.venv/bin/python tools/screenshots.py kurrent --lang en
-tools/.venv/bin/python tools/screenshots.py --list
+python3 -m venv demo/tools/.venv && demo/tools/.venv/bin/pip install playwright pillow   # once
+demo/tools/.venv/bin/python demo/tools/screenshots.py              # all projects, de + en
+demo/tools/.venv/bin/python demo/tools/screenshots.py kurrent --lang en
+demo/tools/.venv/bin/python demo/tools/screenshots.py --list
 ```
 
 Each project lists its shots in `demo/shots.json` (format in the docstring of
-`tools/screenshots.py`). Images go to `<project>/docs/shots/<name>-<lang>[-<theme>].webp`;
-`tools/use-shots.py` puts them into the landing pages (the `page` map in `shots.json`).
+`demo/tools/screenshots.py`). Images go to `<project>/docs/shots/<name>-<lang>[-<theme>].webp`;
+`demo/tools/use-shots.py` puts them into the landing pages (the `page` map in `shots.json`).
 
 How the shots are taken:
 

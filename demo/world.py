@@ -3,7 +3,7 @@
 
 demo/world.json is the source. `python3 demo/world.py build` expands it into
 demo/dist/world.json (plus world.js with the data embedded, for QML and Node,
-and DemoWorld.php), which tools/sync-demo.py copies into every project:
+and DemoWorld.php), which demo/tools/sync-demo.py copies into every project:
 the week templates become one row per timesheet, so no project has to repeat
 that logic. Every date in the built file is still a day offset from the anchor.
 

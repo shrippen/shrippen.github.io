@@ -16,7 +16,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent
+OVERVIEW = HERE.parent
+REPO = OVERVIEW.parent
 PROJECTS_ROOT = REPO.parent
 HOST = "127.0.0.1"
 START_PORT = int(os.environ.get("PORT", "8080"))
@@ -33,7 +34,7 @@ PLACEHOLDER = re.compile(r"\[(?:INSTALL|LICENSE|LIZENZ|VERSION)[^\]]*\]|PROJECT_
 
 
 def load_json(name):
-    return json.loads((HERE / name).read_text(encoding="utf-8"))
+    return json.loads((OVERVIEW / name if name == "sites.json" else HERE / name).read_text(encoding="utf-8"))
 
 
 def docs_dir(site):

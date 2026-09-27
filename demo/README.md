@@ -28,7 +28,10 @@ addresses use `example.test`, brands and products are invented.
 Activities: shooting, pre-production, editing, sound mix, travel, meeting, bookkeeping.
 Places are real Hamburg areas (Landungsbrücken, Övelgönne, HafenCity …) with made-up
 street addresses. Media: the score *Harbour Lights (Original Score)* by Theo Lindqvist,
-generated audio clips, synthetic film rolls, receipts from invented vendors.
+generated audio clips, synthetic film rolls, receipts from invented vendors. Suppliers the
+studio pays regularly (`vendors`: mobile, hosting, software, energy, music) and its IT (`inventory`:
+assets, licences, disks) are invented too; only the edit laptop is a real model, as in
+FrameWidge.
 
 Colours come from the Kante palette. Kimai Farbfächer uses `clash_color` instead, so its
 demo has the colour clashes the plugin is there to fix.

@@ -33,7 +33,7 @@ TARGETS = {
     "dolphin-davinci": ("dolphin-davinci-audio-tools", [("world.json", "demo/world.json")]),
     "companion-mpris": ("companion/mpris", [("world.js", "src/demo/world.cjs")]),
     "kader": ("kader", [("world.json", "companion/demo/world.json")]),
-    "andon": ("andon", [("world.json", "internal/services/seed/demo/world.json")]),
+    "andon": ("andon", [("world.json", "internal/sources/demoworld/world.json")]),
 }
 # The shared Kimai demo instance lives in this repo and reads demo/dist/ directly.
 

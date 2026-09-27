@@ -30,10 +30,11 @@
   ],
 
   "customers": [
-    {"id": "northlight", "name": "Northlight Pictures", "color": "#d65d0e", "clash_color": "#fe8019", "city": "Hamburg-Altona", "kind": {"de": "Produktionsfirma", "en": "Production company"}},
-    {"id": "elbgruen", "name": "Elbgrün Stiftung", "color": "#689d6a", "clash_color": "#8ec07c", "city": "Hamburg-HafenCity", "kind": {"de": "Stiftung", "en": "Foundation"}},
-    {"id": "speiche", "name": "Speiche Fahrradmanufaktur", "color": "#458588", "clash_color": "#83a598", "city": "Hamburg-Wilhelmsburg", "kind": {"de": "Fahrradmanufaktur", "en": "Bicycle maker"}},
-    {"id": "studio", "name": "Studio Weber", "color": "#a89984", "clash_color": "#a89984", "city": "Hamburg-Ottensen", "kind": {"de": "Intern", "en": "Internal"}}
+    {"id": "northlight", "name": "Northlight Pictures", "color": "#d65d0e", "clash_color": "#fe8019", "city": "Hamburg-Altona", "country": "DE", "vat_id": "DE318204417", "kind": {"de": "Produktionsfirma", "en": "Production company"}},
+    {"id": "elbgruen", "name": "Elbgrün Stiftung", "color": "#689d6a", "clash_color": "#8ec07c", "city": "Hamburg-HafenCity", "country": "DE", "vat_id": "", "kind": {"de": "Stiftung", "en": "Foundation"}},
+    {"id": "speiche", "name": "Speiche Fahrradmanufaktur", "color": "#458588", "clash_color": "#83a598", "city": "Hamburg-Wilhelmsburg", "country": "DE", "vat_id": "DE294117820", "kind": {"de": "Fahrradmanufaktur", "en": "Bicycle maker"}},
+    {"id": "studio", "name": "Studio Weber", "color": "#a89984", "clash_color": "#a89984", "city": "Hamburg-Ottensen", "country": "DE", "vat_id": "", "kind": {"de": "Intern", "en": "Internal"}},
+    {"id": "donaulicht", "name": "Donaulicht Film", "color": "#d79921", "clash_color": "#fabd2f", "city": "Wien", "country": "AT", "vat_id": "", "kind": {"de": "Koproduzent in Österreich", "en": "Co-producer in Austria"}}
   ],
 
   "projects": [
@@ -41,6 +42,7 @@
     {"id": "tidenhub", "customer": "elbgruen", "name": {"de": "Imagefilm Tidenhub", "en": "Tidenhub image film"}, "short": "Tidenhub", "color": "#8ec07c", "clash_color": "#689d6a", "hourly_rate": 90, "billable": true},
     {"id": "spring", "customer": "speiche", "name": {"de": "Frühjahrsspot", "en": "Spring commercial"}, "short": "Speiche Spot", "color": "#83a598", "clash_color": "#458588", "hourly_rate": 95, "billable": true},
     {"id": "showreel", "customer": "studio", "name": {"de": "Showreel 2026", "en": "Showreel 2026"}, "short": "Showreel", "color": "#d3869b", "clash_color": "#b16286", "hourly_rate": 0, "billable": false},
+    {"id": "trailer", "customer": "donaulicht", "name": {"de": "Trailer Donaulicht", "en": "Donaulicht trailer"}, "short": "Donaulicht", "color": "#d79921", "clash_color": "#fabd2f", "hourly_rate": 90, "billable": true},
     {"id": "admin", "customer": "studio", "name": {"de": "Verwaltung", "en": "Admin"}, "short": "Admin", "color": "#a89984", "clash_color": "#928374", "hourly_rate": 0, "billable": false}
   ],
 
@@ -71,7 +73,8 @@
           [2, "admin", "bookkeeping", "14:00", "16:00", {"de": "Belege zuordnen", "en": "Match receipts"}],
           [3, "harbour", "shoot", "08:00", "18:00", {"de": "Dreh Övelgönne", "en": "Shoot at Övelgönne"}],
           [4, "showreel", "edit", "10:00", "12:00", {"de": "Showreel: neue Szenen", "en": "Showreel: new scenes"}],
-          [4, "tidenhub", "meeting", "13:00", "14:30", {"de": "Rohschnitt-Abnahme Elbgrün", "en": "Rough cut review with Elbgrün"}]
+          [4, "tidenhub", "meeting", "13:00", "14:30", {"de": "Rohschnitt-Abnahme Elbgrün", "en": "Rough cut review with Elbgrün"}],
+          [4, "trailer", "edit", "14:45", "17:30", {"de": "Trailer-Schnitt für Donaulicht", "en": "Trailer edit for Donaulicht"}]
         ],
         [
           [0, "admin", "meeting", "09:00", "09:45", {"de": "Wochenplanung mit dem Team", "en": "Weekly planning with the team"}],

@@ -27,7 +27,7 @@ shots.json:
   viewport   [w, h], scale (device pixel ratio, default 2), format (webp|png|jpg, default webp)
   setup      actions once per start (login), each shot: {name, url, wait, clip, full_page,
              viewport, actions, manual}. Actions: {"fill": sel, "value": v}, {"click": sel},
-             {"press": key}, {"wait": sel}, {"sleep": ms}, {"goto": url}, {"eval": js}.
+             {"dblclick": sel}, {"press": key}, {"wait": sel}, {"sleep": ms}, {"goto": url}, {"eval": js}.
              Strings in actions may use {lang}, {base}, {user}, {password}.
   manual     a shot that is still taken by hand: listed in the summary, never taken.
 """
@@ -83,8 +83,9 @@ def free_port():
 
 
 def fmt(value, ctx):
+    """Fills {name} placeholders from ctx; other braces (JS, shell) stay as they are."""
     if isinstance(value, str):
-        return value.format(**ctx)
+        return re.sub(r"\{(\w+)\}", lambda m: str(ctx[m.group(1)]) if m.group(1) in ctx else m.group(0), value)
     if isinstance(value, list):
         return [fmt(v, ctx) for v in value]
     if isinstance(value, dict):
@@ -190,7 +191,9 @@ def run_actions(page, actions, ctx):
         if "fill" in a:
             page.fill(a["fill"], a["value"])
         elif "click" in a:
-            page.click(a["click"])
+            page.locator(a["click"]).first.click()
+        elif "dblclick" in a:
+            page.locator(a["dblclick"]).first.dblclick()
         elif "press" in a:
             page.keyboard.press(a["press"])
         elif "wait" in a:

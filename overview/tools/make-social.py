@@ -35,6 +35,8 @@ COPY = {
     "kimai-abrechnung": ("Kimai Abrechnung", "Billing overview for Kimai"),
     "kimai-drehzettel": ("Drehzettel", "Film crew timesheets for Kimai"),
     "kimai-anfahrten": ("Anfahrten", "Trips and travel costs for Kimai"),
+    "kimai-farbfaecher": ("Farbfächer", "Color clashes and suggestions for Kimai"),
+    "kimai-knust": ("Knust", "A Kimai theme in the shrippen design"),
 }
 
 

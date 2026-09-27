@@ -12,5 +12,7 @@
   {"id": "kimai-abrechnung", "name": "Kimai Abrechnung", "dir": "Kimai Abrechnung", "url": "https://shrippen.github.io/kimai-abrechnung-bundle/"},
   {"id": "kimai-drehzettel", "name": "Drehzettel", "dir": "Kimai Drehzettel", "url": "https://shrippen.github.io/kimai-drehzettel-bundle/"},
   {"id": "kimai-anfahrten", "name": "Anfahrten", "dir": "Kimai Anfahrten", "url": "https://shrippen.github.io/kimai-anfahrten/"},
+  {"id": "kimai-farbfaecher", "name": "Farbfächer", "dir": "Kimai Farbfächer", "url": "https://shrippen.github.io/kimai-farbfaecher-bundle/"},
+  {"id": "kimai-knust", "name": "Knust", "dir": "Kimai Knust", "url": "https://shrippen.github.io/kimai-knust-bundle/"},
   {"id": "andon", "name": "Andon", "dir": "andon", "url": "https://shrippen.github.io/andon/"}
 ]

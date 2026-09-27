@@ -72,7 +72,7 @@
     {
       "id": "andon",
       "group": "tools",
-      "page_live": false,
+      "page_live": true,
       "status": {
         "en": "In development",
         "de": "In Entwicklung"
@@ -155,10 +155,28 @@
     {
       "id": "kimai-anfahrten",
       "group": "kimai",
-      "page_live": false,
+      "page_live": true,
       "tagline": {
         "en": "Trips and travel costs: detected from your Dawarich GPS history, with logbook and yearly tax summary.",
         "de": "Fahrten und Fahrtkosten: aus der GPS-Historie von Dawarich erkannt, mit Fahrtenbuch und Jahres-Steueraufstellung."
+      }
+    },
+    {
+      "id": "kimai-farbfaecher",
+      "group": "kimai",
+      "page_live": true,
+      "tagline": {
+        "en": "Finds color clashes between Kimai customers, projects and activities, and suggests colors that stay distinct.",
+        "de": "Findet Farb-Clashes zwischen Kimai-Kunden, -Projekten und -Tätigkeiten und schlägt unterscheidbare Farben vor."
+      }
+    },
+    {
+      "id": "kimai-knust",
+      "group": "kimai",
+      "page_live": true,
+      "tagline": {
+        "en": "A Kimai theme in the shrippen design: Gruvbox dark and „Leinen“ light on top of Tabler.",
+        "de": "Ein Kimai-Theme im shrippen-Design: Gruvbox dunkel und „Leinen“ hell über Tabler."
       }
     }
   ]

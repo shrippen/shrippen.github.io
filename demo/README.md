@@ -6,8 +6,10 @@ source; `demo/tools/screenshots.py` takes the landing-page screenshots from it.
 
 ## The world
 
-**Studio Weber** is a small film and media studio in Hamburg-Ottensen, run by Mara Weber.
-Everything is fictional: people, companies, addresses, number plates, receipts. Mail
+**Studio Weber** is a small film and sound studio in Hamburg-Ottensen, run by Mara Weber.
+It likes to shoot at night: fog on the Elbe, harbour lights, beacons. Its work in Hamburg is
+ordinary, but it leads to Graufeld (below), and a quiet thread runs under the ordinary data
+(the hidden layer). Everything is fictional: people, companies, addresses, number plates, receipts. Mail
 addresses use `example.test`, brands and products are invented.
 
 | Person | Role | Kimai role | Shows up in |
@@ -15,20 +17,21 @@ addresses use `example.test`, brands and products are invented.
 | Mara Weber | Owner, producer | super admin | Plasmai, Kurrent, PaperNinja, Abrechnung, Anfahrten, andon |
 | Jonas Brandt | Camera | user | Drehzettel (employed by Northlight for Harbour Lights), Anfahrten |
 | Selin Aydın | Editing | user | Holiday (holidays), running timer |
-| Theo Lindqvist | Sound | user | Holiday (sick days), score in companion-mpris, audio in dolphin |
+| Theo Lindqvist | Sound and music | user | Holiday (sick days), score in companion-mpris, audio in dolphin |
 | Lena Kraus | Production assistant | team lead | approvals in Holiday and Anfahrten |
 
 | Customer | Project |
 |---|---|
-| Northlight Pictures (production company) | Harbour Lights – Season 2 (TV series) |
-| Elbgrün Stiftung (foundation) | Tidenhub image film |
-| Speiche Fahrradmanufaktur (bicycle maker) | Spring commercial |
+| Northlight Pictures (production company) | Harbour Lights – Season 2, a noir series in the port at night (episode 3 “Irrlicht”, 4 “Nebelhorn”, 5 “Drei Uhr dreizehn”) |
+| Stiftung Elbfeuer (foundation for lighthouses and light vessels) | Image film “Feuer an der Elbe”, shot on a light vessel in HafenCity |
+| Speiche Fahrradmanufaktur (bicycle maker) | Autumn spot “Licht an”: the lights go out, the dynamo light comes on |
 | Studio Weber (internal) | Showreel 2026, Admin |
 | Sendehaus Graufeld (regional broadcaster) | Nachtwache – miniseries |
 
 Activities: shooting, pre-production, editing, sound mix, travel, meeting, bookkeeping.
 Places are real Hamburg areas (Landungsbrücken, Övelgönne, HafenCity …) with made-up
-street addresses. Media: the score *Harbour Lights (Original Score)* by Theo Lindqvist,
+street addresses. Media: the score *Harbour Lights (Original Score)* by Theo Lindqvist (Ebbe, Nebelhorn,
+Leuchtfeuer, Drei Uhr dreizehn),
 generated audio clips, synthetic film rolls, receipts from invented vendors. Suppliers the
 studio pays regularly (`vendors`: mobile, hosting, software, energy, music) and its IT (`inventory`:
 assets, licences, disks) are invented too; only the edit laptop is a real model, as in
@@ -51,17 +54,24 @@ people and names stay as they are.
 logs, backups, sensors, notes. Never explain it in the UI. The motif is **03:13 and seven
 minutes**:
 
-- manuscript pages found in the studio, at the Moorhof and at the lighthouse, each describing
-  something the data shows later (the night recording that is too long, the detour on the
-  way back, the light going out);
+- manuscript pages found at the Landungsbrücken, in the studio, at the Moorhof and at the
+  lighthouse, each describing something the data shows (the silent foghorn, the night
+  recording that is too long, the detour on the way back, the light going out);
 - the Sendehaus stream drops out every night at 03:13 for seven minutes (`night_outage`), and
   the lighthouse beacon flickers then (`flicker`);
 - a deleted file comes back in the next backup (`returning_file`).
 
-The same thread runs through ordinary data: Theo's night recording at the Kolk
+The same thread runs through ordinary data: the foghorn cue at 03:13 in Theo's score and
+the track *Drei Uhr dreizehn*, the edit laptop rendering “the Kolk, night 3”, the terminal
+listing `seite-7.pdf`, task t15 (a deleted file is back), Theo's night recording at the Kolk
 (`nw_atmo_kolk_nacht3.m4a`, task t22), the return trip from the lighthouse that is 19 km
 longer than the way there, receipt 11 (two floodlights, 40 batteries), task t23 (a manuscript
 page on the edit desk that is not from the script).
+
+Ids and the names that projects use in code or tests (people, Studio Weber, Northlight
+Pictures, Harbour Lights, Speiche, the vendors, Elbstrand Övelgönne, the film rolls 03 and 04,
+the van's plate) stay stable; change them only together with those projects. Texts
+(timesheet descriptions, tasks, notes, tracks, the terminal) are free to change.
 
 Colours come from the Kante palette. Kimai Farbfächer uses `clash_color` instead, so its
 demo has the colour clashes the plugin is there to fix.

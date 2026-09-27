@@ -10,11 +10,13 @@ final class DemoWorld
     public \DateTimeImmutable $anchor;
     public int $todayOffset;
 
+    /** $today: YYYY-MM-DD, "today" for the real date; null reads DEMO_TODAY. */
     public function __construct(public string $lang = 'de', ?string $path = null, ?string $today = null)
     {
         $this->data = json_decode(file_get_contents($path ?? __DIR__ . '/world.json'), true, 512, JSON_THROW_ON_ERROR);
         $tz = new \DateTimeZone($this->data['timezone']);
         $fixed = $today ?? (getenv('DEMO_TODAY') ?: null);
+        $fixed = $fixed === 'today' ? null : $fixed;
         $this->today = new \DateTimeImmutable($fixed ?: 'today', $tz);
         $this->today = $this->today->setTime(0, 0);
         $this->anchor = $this->today->modify('-' . ((int) $this->today->format('N') - 1) . ' days');

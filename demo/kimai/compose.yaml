@@ -1,0 +1,32 @@
+# Kimai 2.67 with the shrippen plugins and the Studio Weber demo data. Not for production.
+# Start with reset.sh (it adds the plugin mounts in .plugins.yaml), not with compose directly.
+name: shrippen-demo-kimai
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: kimai
+      MARIADB_USER: kimai
+      MARIADB_PASSWORD: kimai-demo
+      MARIADB_ROOT_PASSWORD: root-demo
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 3s
+      retries: 40
+
+  kimai:
+    image: kimai/kimai2:2.67.0
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${KIMAI_PORT:-8095}:8001"
+    environment:
+      ADMINMAIL: mara@studio-weber.example.test
+      ADMINPASS: demo-password-1
+      DATABASE_URL: mysql://kimai:kimai-demo@db/kimai?charset=utf8mb4&serverVersion=11.0.0-MariaDB
+      TRUSTED_HOSTS: '^(localhost|127\.0\.0\.1)$$'
+    volumes:
+      - ..:/opt/demo:ro

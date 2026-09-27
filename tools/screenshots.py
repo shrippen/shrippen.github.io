@@ -14,7 +14,8 @@ shots.json:
   kind       "web": start the demo, then Playwright visits the shots.
              "command": the start command writes <name>.png files to $SHOT_DIR itself
              (Plasma widgets, PaperTTY, native windows).
-  start      shell command, run in the project folder. Placeholders {lang} {theme} {port} {root}.
+  start      shell command, run in the project folder. Placeholders {lang} {theme} {port} {root} {repo};
+             URLs also {year} {month} {week} {lastweek} {lastweek_year} (from today).
              Env: DEMO_TODAY, DEMO_LANG, DEMO_THEME, SHOT_DIR, SHOT_PLAN (the shots as JSON), PORT.
   detach     true if start returns after the demo runs in the background (docker).
   stop       optional shell command after the shots (with detach).
@@ -23,7 +24,8 @@ shots.json:
   base       base URL for relative shot URLs ({port}).
   group      projects with the same group share one start per lang/theme (the Kimai plugins).
   langs      default ["de", "en"];  themes: default [""] (no suffix)
-  today      DEMO_TODAY for this project, default demo/world.json screenshot_today
+  today      DEMO_TODAY for this project, default demo/world.json screenshot_today;
+             "real" for apps on the real clock (data placed around the real today)
   viewport   [w, h], scale (device pixel ratio, default 2), format (webp|png|jpg, default webp)
   setup      actions once per start (login), each shot: {name, url, wait, clip, full_page,
              viewport, actions, manual}. Actions: {"fill": sel, "value": v}, {"click": sel},
@@ -167,6 +169,15 @@ class Demo:
                     os.killpg(self.proc.pid, signal.SIGKILL)
                 except ProcessLookupError:
                     pass
+
+
+def date_placeholders(today):
+    """{year} {month} {week} and {lastweek} {lastweek_year} (ISO) for shot URLs."""
+    import datetime as dt
+    day = dt.date.today() if today == "real" else dt.date.fromisoformat(today)
+    last = day - dt.timedelta(days=7)
+    return {"year": day.year, "month": day.month, "week": day.isocalendar()[1],
+            "lastweek": last.isocalendar()[1], "lastweek_year": last.isocalendar()[0]}
 
 
 def save_image(png_path, out_path, fmt_name):
@@ -315,14 +326,18 @@ def main(argv):
         for (key, lang, theme), jobs in runs.items():
             site, folder, m = jobs[0]
             log(f"== {key} [{lang}{'/' + theme if theme else ''}]")
+            today = m.get("today", WORLD["screenshot_today"])
             port = free_port()
             shot_dir = tempfile.mkdtemp(prefix=f"shots-{site['id']}-")
             ctx = {"lang": lang, "theme": theme, "port": port, "root": str(ROOT), "repo": str(REPO),
                    "user": m.get("user", ""), "password": m.get("password", WORLD["demo_password"])}
+            ctx.update(date_placeholders(today))
             ctx["base"] = fmt(m.get("base", "http://127.0.0.1:{port}"), ctx)
-            env = dict(os.environ, DEMO_TODAY=m.get("today", WORLD["screenshot_today"]), DEMO_LANG=lang,
+            env = dict(os.environ, DEMO_LANG=lang,
                        DEMO_THEME=theme or "default", SHOT_DIR=shot_dir, PORT=str(port),
                        SHOT_PLAN=json.dumps([s for s in m["shots"] if not s.get("manual")]))
+            if today != "real":        # "real": the app runs on the real clock (Kimai, andon)
+                env["DEMO_TODAY"] = today
             demo = Demo(folder, m, ctx, env, log)
             try:
                 demo.start()

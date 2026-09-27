@@ -98,15 +98,18 @@ projects. `python3 demo/tools/check-demo.py` reports stale copies.
 
 ## Starting a project with demo data
 
+The demo is internal: it only exists to take screenshots and never ships (no option, command or
+data in releases; each project's release build checks that).
+
 | Project | Command |
 |---|---|
-| Kurrent | `demo/start.sh` (`KURRENT_DEMO=1`, no Akonadi) |
+| Kurrent | `demo/start.sh` (builds `build-demo/` with `-DKURRENT_DEMO=ON`, no Akonadi) |
 | Plasmai | `demo/start.sh` (profile "Demo", in-memory Kimai) |
 | FrameWidge | `demo/start.sh` (demo backend instead of framework-control) |
 | Kimai plugins | `demo/start.sh [de\|en] [default\|knust]` (shared instance from `demo/kimai/`) |
-| PaperNinja | `./start.sh demo` |
-| kader | `kader demo` |
-| companion-mpris | `demo/start.sh` (`MPRIS_DEMO=1`, Companion in Docker) |
+| PaperNinja | `demo/start.sh` (the app has no demo code; `demo/run.py` wires it up) |
+| kader | `demo/start.sh` (draws the rolls, then `kader open`) |
+| companion-mpris | dev module entry `demo/main.js` (demo players; screenshot by hand) |
 | dolphin-davinci-audio-tools | `demo/start.sh` (generated clips) |
 | PaperTTY | `demo/start.sh` (renders the demo session with the Bitmap driver) |
 | andon | `./start.sh demo` |

@@ -28,11 +28,11 @@ TARGETS = {
     "kimai-drehzettel": ("Kimai Drehzettel", [("world.json", "demo/world.json"), ("DemoWorld.php", "demo/DemoWorld.php")]),
     "kimai-anfahrten": ("Kimai Anfahrten", [("world.json", "demo/world.json"), ("DemoWorld.php", "demo/DemoWorld.php")]),
     "kimai-farbfaecher": ("Kimai Farbfächer", [("world.json", "demo/world.json"), ("DemoWorld.php", "demo/DemoWorld.php")]),
-    "paperninja": ("PaperNinja", [("world.json", "app/demo/world.json")]),
+    "paperninja": ("PaperNinja", [("world.json", "demo/world.json")]),
     "papertty": ("PaperTTY", [("world.json", "demo/world.json")]),
     "dolphin-davinci": ("dolphin-davinci-audio-tools", [("world.json", "demo/world.json")]),
-    "companion-mpris": ("companion/mpris", [("world.js", "src/demo/world.cjs")]),
-    "kader": ("kader", [("world.json", "companion/demo/world.json")]),
+    "companion-mpris": ("companion/mpris", [("world.js", "demo/world.cjs")]),
+    "kader": ("kader", [("world.json", "demo/world.json")]),
     "andon": ("andon", [("world.json", "internal/sources/demoworld/world.json")]),
 }
 # The shared Kimai demo instance lives in this repo and reads demo/dist/ directly.

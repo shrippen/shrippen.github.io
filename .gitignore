@@ -1,2 +1,3 @@
 ds-bundle/
 tools/.venv/
+tools/__pycache__/

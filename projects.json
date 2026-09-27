@@ -73,6 +73,10 @@
       "id": "paperninja",
       "group": "tools",
       "page_live": true,
+      "status": {
+        "en": "Archived, now part of Andon",
+        "de": "Archiviert, jetzt Teil von Andon"
+      },
       "tagline": {
         "en": "Links Invoice Ninja expenses to Paperless-ngx documents, so receipts live in one place.",
         "de": "Verknüpft Invoice-Ninja-Ausgaben mit Paperless-ngx-Dokumenten, damit Belege an einem Ort liegen."

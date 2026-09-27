@@ -54,7 +54,6 @@ CHROMIUM = os.environ.get("CHROMIUM", "/usr/bin/chromium")
 READY_TIMEOUT = 300
 # Projects with a demo that are not on the overview page (overview/sites.json).
 EXTRA = [
-    {"id": "andon", "dir": "andon"},
     {"id": "kimai-farbfaecher", "dir": "Kimai Farbfächer"},
 ]
 

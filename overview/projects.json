@@ -70,6 +70,19 @@
       }
     },
     {
+      "id": "andon",
+      "group": "tools",
+      "page_live": false,
+      "status": {
+        "en": "In development",
+        "de": "In Entwicklung"
+      },
+      "tagline": {
+        "en": "A self-hosted start page that reads Kimai, Invoice Ninja and your homelab, and tells you what needs doing.",
+        "de": "Selbst gehostete Startseite, die Kimai, Invoice Ninja und dein Homelab liest und sagt, was zu tun ist."
+      }
+    },
+    {
       "id": "paperninja",
       "group": "tools",
       "page_live": true,

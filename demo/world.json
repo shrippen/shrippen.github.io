@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "about": "Shared demo data of all shrippen projects: Studio Weber, a small film and media studio in Hamburg. Everything is made up. Dates are day offsets from the anchor (Monday of the week that contains 'today', DEMO_TODAY=YYYY-MM-DD fixes 'today'). Texts are {de, en}. Edit this file, then run demo/tools/sync-demo.py. See demo/README.md.",
+  "about": "Shared demo data of all shrippen projects: Studio Weber, a small film and media studio in Hamburg, currently also shooting a mystery series in Graufeld, a foggy stretch of marsh at the Elbe mouth. Everything is made up. Dates are day offsets from the anchor (Monday of the week that contains 'today', DEMO_TODAY=YYYY-MM-DD fixes 'today'). Texts are {de, en}. Edit this file, then run demo/tools/sync-demo.py. See demo/README.md.",
   "screenshot_today": "2026-09-16",
   "timezone": "Europe/Berlin",
   "currency": "EUR",
@@ -34,7 +34,8 @@
     {"id": "elbgruen", "name": "Elbgrün Stiftung", "color": "#689d6a", "clash_color": "#8ec07c", "city": "Hamburg-HafenCity", "country": "DE", "vat_id": "", "kind": {"de": "Stiftung", "en": "Foundation"}},
     {"id": "speiche", "name": "Speiche Fahrradmanufaktur", "color": "#458588", "clash_color": "#83a598", "city": "Hamburg-Wilhelmsburg", "country": "DE", "vat_id": "DE294117820", "kind": {"de": "Fahrradmanufaktur", "en": "Bicycle maker"}},
     {"id": "studio", "name": "Studio Weber", "color": "#a89984", "clash_color": "#a89984", "city": "Hamburg-Ottensen", "country": "DE", "vat_id": "", "kind": {"de": "Intern", "en": "Internal"}},
-    {"id": "donaulicht", "name": "Donaulicht Film", "color": "#d79921", "clash_color": "#fabd2f", "city": "Wien", "country": "AT", "vat_id": "", "kind": {"de": "Koproduzent in Österreich", "en": "Co-producer in Austria"}}
+    {"id": "donaulicht", "name": "Donaulicht Film", "color": "#d79921", "clash_color": "#fabd2f", "city": "Wien", "country": "AT", "vat_id": "", "kind": {"de": "Koproduzent in Österreich", "en": "Co-producer in Austria"}},
+    {"id": "sendehaus", "name": "Sendehaus Graufeld", "color": "#b16286", "clash_color": "#d3869b", "city": "Graufeld", "country": "DE", "vat_id": "DE301177313", "kind": {"de": "Regionalsender", "en": "Regional broadcaster"}}
   ],
 
   "projects": [
@@ -43,7 +44,8 @@
     {"id": "spring", "customer": "speiche", "name": {"de": "Frühjahrsspot", "en": "Spring commercial"}, "short": "Speiche Spot", "color": "#83a598", "clash_color": "#458588", "hourly_rate": 95, "billable": true},
     {"id": "showreel", "customer": "studio", "name": {"de": "Showreel 2026", "en": "Showreel 2026"}, "short": "Showreel", "color": "#d3869b", "clash_color": "#b16286", "hourly_rate": 0, "billable": false},
     {"id": "trailer", "customer": "donaulicht", "name": {"de": "Trailer Donaulicht", "en": "Donaulicht trailer"}, "short": "Donaulicht", "color": "#d79921", "clash_color": "#fabd2f", "hourly_rate": 90, "billable": true},
-    {"id": "admin", "customer": "studio", "name": {"de": "Verwaltung", "en": "Admin"}, "short": "Admin", "color": "#a89984", "clash_color": "#928374", "hourly_rate": 0, "billable": false}
+    {"id": "admin", "customer": "studio", "name": {"de": "Verwaltung", "en": "Admin"}, "short": "Admin", "color": "#a89984", "clash_color": "#928374", "hourly_rate": 0, "billable": false},
+    {"id": "nachtwache", "customer": "sendehaus", "name": {"de": "Nachtwache – Miniserie", "en": "Nightwatch – miniseries"}, "short": "Nachtwache", "color": "#fb4934", "clash_color": "#cc241d", "hourly_rate": 90, "billable": true}
   ],
 
   "activities": [
@@ -84,7 +86,8 @@
           [2, "admin", "bookkeeping", "13:00", "15:30", {"de": "Rechnungen Northlight", "en": "Invoices for Northlight"}],
           [3, "harbour", "prep", "09:30", "13:00", {"de": "Dispo Folge 5", "en": "Call sheet episode 5"}],
           [3, "tidenhub", "shoot", "14:00", "18:00", {"de": "Dreh HafenCity", "en": "Shoot in HafenCity"}],
-          [4, "spring", "edit", "09:00", "13:00", {"de": "Schnittfassung 1", "en": "Edit version 1"}]
+          [4, "spring", "edit", "09:00", "13:00", {"de": "Schnittfassung 1", "en": "Edit version 1"}],
+          [4, "nachtwache", "meeting", "14:00", "16:00", {"de": "Auftakt mit dem Sendehaus Graufeld", "en": "Kick-off with Sendehaus Graufeld"}]
         ]
       ],
       "jonas": [
@@ -93,7 +96,8 @@
           [1, "harbour", "shoot", "07:00", "18:30", {"de": "Dreh Landungsbrücken", "en": "Shoot at Landungsbrücken"}],
           [2, "harbour", "shoot", "07:00", "17:00", {"de": "Dreh Fischmarkt", "en": "Shoot at the fish market"}],
           [3, "harbour", "shoot", "08:00", "19:00", {"de": "Dreh Övelgönne", "en": "Shoot at Övelgönne"}],
-          [4, "showreel", "edit", "10:00", "13:00", {"de": "Kamera-Reel sichten", "en": "Review the camera reel"}]
+          [4, "showreel", "edit", "10:00", "13:00", {"de": "Kamera-Reel sichten", "en": "Review the camera reel"}],
+          [4, "nachtwache", "prep", "14:00", "18:00", {"de": "Motivsuche Leuchtturm Graufeld", "en": "Location scout at the Graufeld lighthouse"}]
         ],
         [
           [0, "spring", "prep", "09:00", "13:00", {"de": "Licht-Setup testen", "en": "Test the lighting setup"}],
@@ -115,7 +119,8 @@
           [0, "harbour", "edit", "09:00", "17:00", {"de": "Schnitt Folge 4", "en": "Edit episode 4"}],
           [1, "harbour", "edit", "09:00", "17:00", {"de": "Schnitt Folge 4", "en": "Edit episode 4"}],
           [2, "tidenhub", "edit", "09:00", "13:00", {"de": "Feinschnitt", "en": "Fine cut"}],
-          [3, "showreel", "edit", "09:00", "15:00", {"de": "Showreel-Schnitt", "en": "Showreel edit"}]
+          [3, "showreel", "edit", "09:00", "15:00", {"de": "Showreel-Schnitt", "en": "Showreel edit"}],
+          [4, "nachtwache", "edit", "09:00", "12:00", {"de": "Kolk-Aufnahmen sichten", "en": "Review the Kolk footage"}]
         ]
       ],
       "theo": [
@@ -128,7 +133,8 @@
         [
           [0, "spring", "sound", "10:00", "15:00", {"de": "Sounddesign Spot", "en": "Sound design for the spot"}],
           [2, "harbour", "sound", "10:00", "17:00", {"de": "Mischung Folge 3", "en": "Mix episode 3"}],
-          [3, "tidenhub", "shoot", "13:00", "18:30", {"de": "Originalton HafenCity", "en": "Location sound in HafenCity"}]
+          [3, "tidenhub", "shoot", "13:00", "18:30", {"de": "Originalton HafenCity", "en": "Location sound in HafenCity"}],
+          [1, "nachtwache", "sound", "21:00", "23:30", {"de": "Nachtatmo am Kolk", "en": "Night ambience at the Kolk"}]
         ]
       ],
       "lena": [
@@ -146,7 +152,8 @@
           [1, "spring", "shoot", "07:30", "16:30", {"de": "Set-Aufnahmeleitung", "en": "Set management"}],
           [2, "harbour", "travel", "08:00", "09:00", {"de": "Fahrt Northlight-Büro", "en": "Drive to the Northlight office"}],
           [2, "harbour", "meeting", "09:00", "11:30", {"de": "Produktionsbesprechung", "en": "Production meeting"}],
-          [3, "tidenhub", "prep", "09:00", "15:00", {"de": "Genehmigung HafenCity", "en": "HafenCity permit"}]
+          [3, "tidenhub", "prep", "09:00", "15:00", {"de": "Genehmigung HafenCity", "en": "HafenCity permit"}],
+          [4, "nachtwache", "prep", "09:00", "13:00", {"de": "Drehgenehmigung Leuchtturm", "en": "Lighthouse shooting permit"}]
         ]
       ]
     }
@@ -242,7 +249,11 @@
     {"id": "northlight-office", "name": "Northlight Pictures", "address": "Museumstraße 20, 22765 Hamburg", "lat": 53.5489, "lon": 9.9362, "kind": "customer", "customer": "northlight"},
     {"id": "elbgruen-office", "name": "Elbgrün Stiftung", "address": "Am Kaiserkai 40, 20457 Hamburg", "lat": 53.5413, "lon": 9.9842, "kind": "customer", "customer": "elbgruen"},
     {"id": "speiche-workshop", "name": "Speiche Fahrradmanufaktur", "address": "Veringstraße 88, 21107 Hamburg", "lat": 53.5048, "lon": 10.0027, "kind": "customer", "customer": "speiche"},
-    {"id": "rental-station", "name": "Mietwagen Nord", "address": "Holstenstraße 1, 22767 Hamburg", "lat": 53.5555, "lon": 9.9480, "kind": "other"}
+    {"id": "rental-station", "name": "Mietwagen Nord", "address": "Holstenstraße 1, 22767 Hamburg", "lat": 53.5555, "lon": 9.9480, "kind": "other"},
+    {"id": "graufeld-lighthouse", "name": {"de": "Leuchtturm Graufeld", "en": "Graufeld lighthouse"}, "address": "Deichweg 1, 21762 Graufeld", "lat": 53.8431, "lon": 8.9024, "kind": "location"},
+    {"id": "kolk", "name": {"de": "Der Kolk", "en": "The Kolk"}, "address": "Moorweg, 21762 Graufeld", "lat": 53.8217, "lon": 8.9391, "kind": "location"},
+    {"id": "moorhof", "name": "Moorhof-Rast", "address": "Landstraße 14, 21762 Graufeld", "lat": 53.8302, "lon": 8.9265, "kind": "other"},
+    {"id": "sendehaus", "name": "Sendehaus Graufeld", "address": "Am Sendemast 2, 21762 Graufeld", "lat": 53.8365, "lon": 8.9188, "kind": "customer", "customer": "sendehaus"}
   ],
 
   "vehicles": [
@@ -263,7 +274,10 @@
     {"user": "jonas", "day": -8, "from": "studio", "to": "ferry", "km": 12.7, "vehicle": "van", "project": "harbour", "purpose": {"de": "Dreh Hafenfähre", "en": "Shoot on the ferry"}, "status": "submitted"},
     {"user": "jonas", "day": -8, "from": "ferry", "to": "studio", "km": 12.9, "vehicle": "van", "project": "harbour", "purpose": {"de": "Rückfahrt", "en": "Return"}, "status": "submitted"},
     {"user": "lena", "day": -5, "from": "studio", "to": "speicherstadt", "km": 6.3, "vehicle": "van", "project": "harbour", "purpose": {"de": "Nachtdreh Speicherstadt", "en": "Night shoot in Speicherstadt"}, "status": "submitted"},
-    {"user": "lena", "day": -5, "from": "speicherstadt", "to": "studio", "km": 6.5, "vehicle": "van", "project": "harbour", "purpose": {"de": "Rückfahrt", "en": "Return"}, "status": "submitted"}
+    {"user": "lena", "day": -5, "from": "speicherstadt", "to": "studio", "km": 6.5, "vehicle": "van", "project": "harbour", "purpose": {"de": "Rückfahrt", "en": "Return"}, "status": "submitted"},
+    {"user": "mara", "day": -10, "from": "studio", "to": "graufeld-lighthouse", "km": 112.4, "vehicle": "van", "project": "nachtwache", "purpose": {"de": "Motivbesichtigung Leuchtturm", "en": "Lighthouse location visit"}, "status": "approved"},
+    {"user": "mara", "day": -10, "from": "graufeld-lighthouse", "to": "studio", "km": 131.7, "vehicle": "van", "project": "nachtwache", "purpose": {"de": "Rückfahrt, Umweg im Nebel", "en": "Return, detour in the fog"}, "status": "approved"},
+    {"user": "jonas", "day": 3, "from": "studio", "to": "graufeld-lighthouse", "km": 112.4, "vehicle": "van", "project": "nachtwache", "purpose": {"de": "Nachtdreh Leuchtturm", "en": "Night shoot at the lighthouse"}, "status": "draft"}
   ],
 
   "rentals": [
@@ -278,7 +292,10 @@
     {"id": 5, "vendor": "Tankstelle Elbchaussee", "day": -9, "amount": 72.14, "number": "0048812", "category": {"de": "Kraftstoff", "en": "Fuel"}, "project": "spring", "note": {"de": "Diesel Transporter", "en": "Diesel for the van"}, "state": "suggested"},
     {"id": 6, "vendor": "Druckerei Nordlicht", "day": -7, "amount": 58.00, "number": "DN-3391", "category": {"de": "Druck", "en": "Printing"}, "project": "spring", "note": {"de": "Storyboards A3", "en": "A3 storyboards"}, "state": "open"},
     {"id": 7, "vendor": "Kombüse Catering", "day": -5, "amount": 212.00, "number": "2026-121", "category": {"de": "Catering", "en": "Catering"}, "project": "harbour", "note": {"de": "Nachtdreh-Verpflegung", "en": "Night shoot catering"}, "state": "open"},
-    {"id": 8, "vendor": "Kabelwerk Studiobedarf", "day": -2, "amount": 129.00, "number": "KW-56107", "category": {"de": "Technik", "en": "Equipment"}, "project": "tidenhub", "note": {"de": "Ansteckmikrofon", "en": "Lavalier microphone"}, "state": "ignored"}
+    {"id": 8, "vendor": "Kabelwerk Studiobedarf", "day": -2, "amount": 129.00, "number": "KW-56107", "category": {"de": "Technik", "en": "Equipment"}, "project": "tidenhub", "note": {"de": "Ansteckmikrofon", "en": "Lavalier microphone"}, "state": "ignored"},
+    {"id": 9, "vendor": "Moorhof-Rast", "day": -10, "amount": 64.80, "number": "MR-0313", "category": {"de": "Verpflegung", "en": "Meals"}, "project": "nachtwache", "note": {"de": "Abendessen und Kaffee, Motivbesichtigung", "en": "Dinner and coffee, location visit"}, "state": "suggested"},
+    {"id": 10, "vendor": "Wattfähre Graufeld", "day": -10, "amount": 95.00, "number": "WF-26-118", "category": {"de": "Fahrzeug", "en": "Vehicle"}, "project": "nachtwache", "note": {"de": "Boot zum Leuchtturm, Hin und zurück", "en": "Boat to the lighthouse and back"}, "state": "open"},
+    {"id": 11, "vendor": "Kabelwerk Studiobedarf", "day": -4, "amount": 146.80, "number": "KW-56244", "category": {"de": "Technik", "en": "Equipment"}, "project": "nachtwache", "note": {"de": "Zwei Handscheinwerfer, 40 Batterien", "en": "Two handheld floodlights, 40 batteries"}, "state": "open"}
   ],
 
   "vendors": [
@@ -307,7 +324,8 @@
       {"id": "harbour", "name": "Harbour Lights", "color": "#fe8019"},
       {"id": "spring", "name": "Speiche Spot", "color": "#83a598"},
       {"id": "studio", "name": "Studio", "color": "#d3869b"},
-      {"id": "private", "name": {"de": "Privat", "en": "Personal"}, "color": "#b8bb26"}
+      {"id": "private", "name": {"de": "Privat", "en": "Personal"}, "color": "#b8bb26"},
+      {"id": "nachtwache", "name": "Nachtwache", "color": "#fb4934"}
     ],
     "labels": [
       {"id": "shoot", "name": {"de": "Dreh", "en": "Shoot"}},
@@ -335,13 +353,20 @@
       {"uid": "t17", "collection": "private", "summary": {"de": "Geschenk für Theo", "en": "Present for Theo"}, "due": 9, "priority": 5, "labels": []},
       {"uid": "t18", "collection": "harbour", "summary": {"de": "Kostüme Folge 5 abnehmen", "en": "Approve costumes for episode 5"}, "due": -1, "priority": 5, "labels": ["shoot"], "completed": -1},
       {"uid": "t19", "collection": "studio", "summary": {"de": "Angebot Elbgrün Teil 2", "en": "Quote for Elbgrün part 2"}, "due": 6, "priority": 1, "labels": ["orga"]},
-      {"uid": "t20", "collection": "harbour", "summary": {"de": "Tonaufnahmen an Theo übergeben", "en": "Hand location sound over to Theo"}, "completed": -3, "due": -3, "priority": 5, "labels": ["post"]}
+      {"uid": "t20", "collection": "harbour", "summary": {"de": "Tonaufnahmen an Theo übergeben", "en": "Hand location sound over to Theo"}, "completed": -3, "due": -3, "priority": 5, "labels": ["post"]},
+      {"uid": "t21", "collection": "nachtwache", "summary": {"de": "Drehgenehmigung Leuchtturm Graufeld", "en": "Graufeld lighthouse shooting permit"}, "due": 2, "priority": 1, "labels": ["orga"]},
+      {"uid": "t22", "collection": "nachtwache", "summary": {"de": "Nachtaufnahmen vom Kolk sichten", "en": "Review the night recordings from the Kolk"}, "due": -9, "priority": 5, "labels": ["post"], "percent": 90, "description": {"de": "Nacht 3 ist länger als die Nacht war. Nochmal prüfen.", "en": "Night 3 runs longer than the night did. Check again."}},
+      {"uid": "t23", "collection": "nachtwache", "summary": {"de": "Gefundene Manuskriptseite einscannen", "en": "Scan the manuscript page we found"}, "due": 0, "priority": 5, "labels": ["post"], "description": {"de": "Lag heute früh auf dem Schnittplatz. Nicht aus unserem Drehbuch.", "en": "Was on the edit desk this morning. Not from our script."}},
+      {"uid": "t24", "collection": "nachtwache", "summary": {"de": "Batterien für die Handscheinwerfer nachkaufen", "en": "Buy more batteries for the floodlights"}, "due": 3, "priority": 5, "labels": ["shoot"]},
+      {"uid": "t25", "collection": "nachtwache", "summary": {"de": "Mitschnitt „Graufeld nach Mitternacht“ anfragen", "en": "Request a recording of “Graufeld after Midnight”"}, "due": 5, "priority": 9, "labels": ["calls"]}
     ],
     "events": [
       {"day": 0, "start": "09:00", "end": "09:45", "summary": {"de": "Wochenplanung", "en": "Weekly planning"}, "collection": "studio"},
       {"day": 0, "start": "14:00", "end": "15:00", "summary": {"de": "Call mit Speiche", "en": "Call with Speiche"}, "collection": "spring"},
       {"day": 1, "start": "07:00", "end": "17:30", "summary": {"de": "Dreh Landungsbrücken", "en": "Shoot at Landungsbrücken"}, "collection": "harbour"},
-      {"day": 2, "start": "11:00", "end": "12:00", "summary": {"de": "Rohschnitt-Abnahme Elbgrün", "en": "Rough cut review with Elbgrün"}, "collection": "studio"}
+      {"day": 2, "start": "11:00", "end": "12:00", "summary": {"de": "Rohschnitt-Abnahme Elbgrün", "en": "Rough cut review with Elbgrün"}, "collection": "studio"},
+      {"day": 3, "start": "20:00", "end": "23:59", "summary": {"de": "Nachtdreh Leuchtturm Graufeld", "en": "Night shoot at the Graufeld lighthouse"}, "collection": "nachtwache"},
+      {"day": 4, "start": "14:00", "end": "15:00", "summary": {"de": "Call mit dem Sendehaus", "en": "Call with the Sendehaus"}, "collection": "nachtwache"}
     ]
   },
 
@@ -362,11 +387,14 @@
       {"name": "hl_s02e03_atmo_landungsbruecken.m4a", "seconds": 30, "tone": 330},
       {"name": "hl_s02e04_nebelhorn_take2.aac", "seconds": 18, "tone": 110},
       {"name": "tidenhub_interview_stiftung.m4a", "seconds": 55, "tone": 262},
-      {"name": "speiche_spot_voiceover_v3.m4a", "seconds": 24, "tone": 294}
+      {"name": "speiche_spot_voiceover_v3.m4a", "seconds": 24, "tone": 294},
+      {"name": "nw_atmo_kolk_nacht3.m4a", "seconds": 47, "tone": 98},
+      {"name": "nw_sendehaus_jingle_mitternacht.m4a", "seconds": 13, "tone": 392}
     ],
     "film_rolls": [
       {"name": "Rolle 03 – Övelgönne", "frames": 12, "stock": "Farbnegativ 35 mm"},
-      {"name": "Rolle 04 – Speiche", "frames": 10, "stock": "Farbnegativ 35 mm"}
+      {"name": "Rolle 04 – Speiche", "frames": 10, "stock": "Farbnegativ 35 mm"},
+      {"name": "Rolle 05 – Graufeld", "frames": 8, "stock": "Farbnegativ 35 mm"}
     ]
   },
 
@@ -405,6 +433,33 @@
   "dashboard": {
     "title": "Studio Weber",
     "services": ["Kimai", "Invoice Ninja", "Paperless-ngx", "Dawarich", "Immich", "Nextcloud", "Gitea", "Uptime Kuma"]
+  },
+
+  "graufeld": {
+    "note": "Second shooting area: fog, marsh and mud flats at the Elbe mouth, about 110 km from the studio. Places: graufeld-lighthouse, kolk, moorhof, sendehaus.",
+    "description": {"de": "Moor- und Wattlandschaft an der Elbmündung, oft im Nebel. Ein stillgelegter Leuchtturm, ein Kolk im Moor, ein Rasthof und das alte Sendehaus.", "en": "Marsh and mud flats at the Elbe mouth, often in fog. A disused lighthouse, a pool in the moor, a roadside inn and the old broadcasting house."},
+    "series": {"de": "Nachtwache: Eine Krimiautorin verschwindet in Graufeld. Ihre Manuskriptseiten tauchen wieder auf und beschreiben, was noch nicht passiert ist.", "en": "Nightwatch: a crime writer vanishes in Graufeld. Her manuscript pages turn up again and describe what has not happened yet."},
+    "author": "Ilva Brandes",
+    "contact": {"name": "Hinnerk Aalders", "role": {"de": "Leuchtturmwärter a. D., Sendehaus", "en": "Retired lighthouse keeper, Sendehaus"}},
+    "radio_show": {"name": "Graufeld nach Mitternacht", "slot": "00:00–03:00", "about": {"de": "Nachtprogramm des Sendehauses: Anrufe, Sagen, Seewetter.", "en": "The Sendehaus night programme: calls, legends, shipping forecast."}},
+    "weather": [
+      {"day": -10, "place": "graufeld-lighthouse", "from": "17:00", "to": "10:00", "event": {"de": "NEBEL", "en": "FOG"}, "headline": {"de": "Amtliche WARNUNG vor NEBEL", "en": "Official WARNING of FOG"}, "severity": "moderate"},
+      {"day": 3, "place": "graufeld-lighthouse", "from": "18:00", "to": "09:00", "event": {"de": "NEBEL", "en": "FOG"}, "headline": {"de": "Amtliche WARNUNG vor NEBEL", "en": "Official WARNING of FOG"}, "severity": "moderate"}
+    ]
+  },
+
+  "oddities": {
+    "note": "Hidden layer, an homage to Alan Wake. Use it quietly in corners of a demo (logs, backups, sensors, notes), never explain it in the UI. Motif: 03:13 and seven minutes.",
+    "time": "03:13",
+    "minutes": 7,
+    "manuscript_pages": [
+      {"page": 7, "found": -5, "place": "studio", "text": {"de": "Theo nahm die Nacht am Kolk auf. Auf dem Band war es länger dunkel, als die Nacht dauerte.", "en": "Theo recorded the night at the Kolk. On the tape it stayed dark longer than the night lasted."}},
+      {"page": 12, "found": -2, "place": "moorhof", "text": {"de": "Der Transporter fand den Weg zurück nicht. Er nahm einen anderen.", "en": "The van could not find the way back. It took another one."}},
+      {"page": 19, "found": 0, "place": "graufeld-lighthouse", "text": {"de": "Wenn das Licht um 3:13 erlischt, zähl bis sieben.", "en": "When the light goes out at 3:13, count to seven."}}
+    ],
+    "night_outage": {"service": {"de": "Sendehaus-Stream", "en": "Sendehaus stream"}, "place": "sendehaus", "nights": [-6, -5, -4, -3, -2, -1]},
+    "flicker": {"place": "graufeld-lighthouse", "sensor": {"de": "Leuchtfeuer", "en": "Beacon"}},
+    "returning_file": {"path": "/srv/footage/nachtwache/seite-7.pdf", "deleted": -5, "back": -4}
   },
 
   "known_but_internal": ["Kintsugi"]

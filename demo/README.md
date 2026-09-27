@@ -24,6 +24,7 @@ addresses use `example.test`, brands and products are invented.
 | Elbgrün Stiftung (foundation) | Tidenhub image film |
 | Speiche Fahrradmanufaktur (bicycle maker) | Spring commercial |
 | Studio Weber (internal) | Showreel 2026, Admin |
+| Sendehaus Graufeld (regional broadcaster) | Nachtwache – miniseries |
 
 Activities: shooting, pre-production, editing, sound mix, travel, meeting, bookkeeping.
 Places are real Hamburg areas (Landungsbrücken, Övelgönne, HafenCity …) with made-up
@@ -32,6 +33,35 @@ generated audio clips, synthetic film rolls, receipts from invented vendors. Sup
 studio pays regularly (`vendors`: mobile, hosting, software, energy, music) and its IT (`inventory`:
 assets, licences, disks) are invented too; only the edit laptop is a real model, as in
 FrameWidge.
+
+### Graufeld
+
+The second shooting area, about 110 km from the studio: fog, marsh and mud flats at the Elbe
+mouth (`graufeld`, places `graufeld-lighthouse`, `kolk`, `moorhof`, `sendehaus`). The studio
+shoots *Nachtwache* there for the Sendehaus Graufeld, a small regional broadcaster in an old
+radio station: a crime writer (Ilva Brandes) vanishes, and her manuscript pages turn up
+describing what has not happened yet. The Sendehaus runs a night programme, *Graufeld nach
+Mitternacht*. Contact is Hinnerk Aalders, a retired lighthouse keeper. Fog warnings for the
+shooting days are in `graufeld.weather`. Graufeld adds to the world; the Hamburg projects,
+people and names stay as they are.
+
+### The hidden layer
+
+`oddities` is a quiet homage to Alan Wake, for the corners of a demo that few people read:
+logs, backups, sensors, notes. Never explain it in the UI. The motif is **03:13 and seven
+minutes**:
+
+- manuscript pages found in the studio, at the Moorhof and at the lighthouse, each describing
+  something the data shows later (the night recording that is too long, the detour on the
+  way back, the light going out);
+- the Sendehaus stream drops out every night at 03:13 for seven minutes (`night_outage`), and
+  the lighthouse beacon flickers then (`flicker`);
+- a deleted file comes back in the next backup (`returning_file`).
+
+The same thread runs through ordinary data: Theo's night recording at the Kolk
+(`nw_atmo_kolk_nacht3.m4a`, task t22), the return trip from the lighthouse that is 19 km
+longer than the way there, receipt 11 (two floodlights, 40 batteries), task t23 (a manuscript
+page on the edit desk that is not from the script).
 
 Colours come from the Kante palette. Kimai Farbfächer uses `clash_color` instead, so its
 demo has the colour clashes the plugin is there to fix.

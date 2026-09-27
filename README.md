@@ -263,6 +263,7 @@ Binding { target: KanteStyle; property: "kind"; value: settings.visualStyle }   
 KanteScope { target: root.contentItem }          // Kante colours for every Kirigami/QQC2 control below
 KanteButton { text: i18n("Stop"); emphasis: KanteButton.Emphasis.Destructive }
 QQC2.CheckBox { KanteCheckSkin { control: parent } }
+QQC2.RadioButton { KanteCheckSkin { control: parent; shape: KanteCheckSkin.Shape.Radio } }
 ```
 
 ### What the module has
@@ -274,7 +275,7 @@ QQC2.CheckBox { KanteCheckSkin { control: parent } }
 | `KanteScope` | Hands the Kante colours to an item's `Kirigami.Theme`, so plain controls below follow. Popups need their own |
 | `KanteCard` | Card with the cut corner and an optional accent bar (`chamfer`, `barColor`) |
 | `KanteButton`, `KanteToolButton`, `KanteTextField`, `KanteHeading`, `KanteDialog` | Wrappers: the platform control in System; in Kante square, uppercase Rajdhani, sunken fields, accent-filled primary (`emphasis`) |
-| `KanteCheckSkin`, `KanteFieldSkin`, `KanteSliderSkin`, `KantePopupSkin`, `KanteMessageSkin`, `KanteDialogSkin`, `KantePageTitle` | Skins placed *inside* an existing control (check box, switch, combo/spin box, text area, slider, menu, `Kirigami.InlineMessage`, Kirigami dialog, page header) |
+| `KanteCheckSkin`, `KanteFieldSkin`, `KanteSliderSkin`, `KantePopupSkin`, `KanteMessageSkin`, `KanteDialogSkin`, `KantePageTitle` | Skins placed *inside* an existing control (check box, radio button, switch, combo/spin box, text area, slider, menu, `Kirigami.InlineMessage`, Kirigami dialog, page header) |
 | `KantePullToRefresh` | Pull to refresh for a `Kirigami.Page` with a `QQC2.ScrollView` |
 | `../KantePlasma` | `KantePlasmaButton`, `KantePlasmaToolButton`, `KantePlasmaHeading`: the same wrappers on PlasmaComponents3 / PlasmaExtras for Plasma widgets |
 | `fonts/` | Rajdhani 600/700, JetBrains Mono 400/500 (SIL OFL), loaded by `KanteStyle`, never installed |

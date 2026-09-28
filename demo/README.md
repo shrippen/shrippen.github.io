@@ -48,6 +48,15 @@ Mitternacht*. Contact is Hinnerk Aalders, a retired lighthouse keeper. Fog warni
 shooting days are in `graufeld.weather`. Graufeld adds to the world; the Hamburg projects,
 people and names stay as they are.
 
+### IT documentation
+
+`it_docs` is the studio's Obsidian vault for Hansei: three hosts named after Elbe sea marks
+(Nebelhorn = the NAS, Feuerschiff = the rented Nordhost server, Boje = the Raspberry Pi),
+service notes, a rulebook (`IT/Design.md`) and prepared review batches. Every Hansei check finds
+something (a plain-text password and token, the old code names SW-NAS01/SW-VPS/SW-PI, a missing
+frontmatter key, an old review date, a dead link, a compose copy). Dates are `{{day:N}}`
+placeholders. The restore note mentions the returning file.
+
 ### The hidden layer
 
 `oddities` is a quiet homage to Alan Wake, for the corners of a demo that few people read:
@@ -123,6 +132,7 @@ data in releases; each project's release build checks that).
 | dolphin-davinci-audio-tools | `demo/start.sh` (generated clips) |
 | PaperTTY | `demo/start.sh` (renders the demo session with the Bitmap driver) |
 | andon | `./start.sh demo` |
+| Hansei | `demo/start.sh [de\|en] [tui]` (demo build, own vault from `it_docs`, scripted AI) |
 
 ## Screenshots
 

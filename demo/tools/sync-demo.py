@@ -34,6 +34,7 @@ TARGETS = {
     "companion-mpris": ("companion/mpris", [("world.js", "demo/world.cjs")]),
     "kader": ("kader", [("world.json", "demo/world.json")]),
     "andon": ("andon", [("world.json", "internal/sources/demoworld/world.json")]),
+    "hansei": ("hansei", [("world.json", "internal/demo/world.json")]),
 }
 # The shared Kimai demo instance lives in this repo and reads demo/dist/ directly.
 

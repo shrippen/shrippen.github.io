@@ -3,6 +3,8 @@
 Tracking list: which landing pages follow the shared design. The central stylesheet is
 `https://shrippen.github.io/v1/shrippen.css` (see [README](README.md)).
 
+**GUI rule.** Every project's GUI is generated from Kante, not inspired by it; missing elements are added to Kante first. Kimai plugins are the exception: they use Knust, Kante's spinoff for Kimai. Text for each project's `agent.md`: [`kante/AGENT-RULE.md`](../kante/AGENT-RULE.md).
+
 **Status legend**
 
 - `central` — links the central stylesheet

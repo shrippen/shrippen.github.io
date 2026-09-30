@@ -13,3 +13,10 @@
 - Tokens live in `kante/tokens/palette.json` and `variables.css`; they must match (`check-tokens.py`).
 - New motion goes into the `prefers-reduced-motion: no-preference` block at the end of `components.css` and follows `KanteStyle.motion` in QML.
 - Every new QML component gets a test in `kante/qml/tests` and an entry in `kante/qml/demo/Gallery.qml`.
+
+## Repository rule
+
+- This repository lives on Gitea (`git.arianw.de`). GitHub is only a push mirror of it.
+- Changes arrive as pull requests only: work on a branch, open a PR, leave the merge to the owner (who merges on Gitea; the mirror follows).
+- Never merge a PR, push to `main` (or any default branch), push tags or publish releases on GitHub. A merge there is overwritten by the next Gitea push.
+- Never force-push a branch that someone else's PR depends on.

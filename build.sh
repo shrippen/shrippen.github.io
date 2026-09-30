@@ -5,10 +5,12 @@
 #   2. Overview page: docs/index.html from overview/projects.json (overview/tools/build-overview.py)
 #   3. Kante for apps: kante/qml/Kante/KantePalette.qml, kante/tokens/palette.qml and the
 #      bundled fonts, generated from kante/tokens/palette.json (kante/tools/build-qml.py)
-#   4. Token check: no raw colours or fonts outside kante/tokens/, and palette.json
+#   4. Knust palette: docs/v1/knust-palette.css (--shr-* for the Kimai theme) from palette.json and
+#      variables.css (kante/tools/build-knust.py) -> https://shrippen.github.io/v1/knust-palette.css
+#   5. Token check: no raw colours or fonts outside kante/tokens/, and palette.json
 #      matches variables.css (kante/tools/check-tokens.py)
-#   5. QML module test: kante/qml/tests, if qmltestrunner is installed (kante/tools/check-qml.sh)
-#   6. Claude Design upload: kante/ds-bundle/ (.design-sync/make-bundle.py, gitignored)
+#   6. QML module test: kante/qml/tests, if qmltestrunner is installed (kante/tools/check-qml.sh)
+#   7. Claude Design upload: kante/ds-bundle/ (.design-sync/make-bundle.py, gitignored)
 set -euo pipefail
 cd "$(dirname "$0")"
 OUT=docs/v1
@@ -25,6 +27,7 @@ cp kante/css/fonts.css "$OUT/fonts.css"
 echo "built $OUT/shrippen.css ($(wc -c < "$OUT/shrippen.css") bytes), shrippen.js"
 python3 overview/tools/build-overview.py
 python3 kante/tools/build-qml.py
+python3 kante/tools/build-knust.py
 python3 kante/tools/check-tokens.py
 kante/tools/check-qml.sh
 python3 .design-sync/make-bundle.py

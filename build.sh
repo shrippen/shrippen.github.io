@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Builds everything GitHub Pages serves from docs/.
-#   1. Kante for the web: docs/v1/shrippen.css and shrippen.js from kante/
+#   1. Kante for the web: docs/v1/shrippen.css, shrippen.js, fonts.css and fonts/ from kante/
 #      -> https://shrippen.github.io/v1/  (all landing pages link this URL)
 #   2. Overview page: docs/index.html from overview/projects.json (overview/tools/build-overview.py)
 #   3. Kante for apps: kante/qml/Kante/KantePalette.qml, kante/tokens/palette.qml and the
@@ -18,6 +18,10 @@ mkdir -p "$OUT"
   cat kante/tokens/variables.css kante/css/base.css kante/css/components.css
 } > "$OUT/shrippen.css"
 cp kante/js/shrippen.js "$OUT/shrippen.js"
+# Offline fonts: fonts.css plus the font files next to it (opt-in, apps that must work without Google Fonts)
+mkdir -p "$OUT/fonts"
+cp kante/fonts/*.ttf kante/fonts/OFL.txt "$OUT/fonts/"
+cp kante/css/fonts.css "$OUT/fonts.css"
 echo "built $OUT/shrippen.css ($(wc -c < "$OUT/shrippen.css") bytes), shrippen.js"
 python3 overview/tools/build-overview.py
 python3 kante/tools/build-qml.py

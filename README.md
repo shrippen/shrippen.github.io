@@ -8,6 +8,8 @@ This repository is the user site of [shrippen](https://github.com/shrippen) and 
 | [`kante/`](kante) | **Kante**, the shared design system of all projects: landing pages link the built stylesheet at `https://shrippen.github.io/v1/shrippen.css`, apps use the QML module in `kante/qml/Kante` | [kante/README.md](kante/README.md) |
 | [`demo/`](demo) | **Demo data and screenshots**: the shared demo world „Studio Weber“, the Kimai demo instance and the tools that sync the world into the projects and take their landing-page screenshots | [demo/README.md](demo/README.md) |
 
+**Rule for all projects:** every GUI is generated from Kante, not inspired by it, and a missing element is added to Kante first. Kimai plugins are the one exception, they use Knust, Kante's spinoff for Kimai. See [`kante/AGENT-RULE.md`](kante/AGENT-RULE.md).
+
 Kante was called *shrippen Design Default* before; file names and URLs keep the old `shrippen` prefix so nothing that links them breaks.
 
 GitHub Pages serves the `docs/` folder (Settings → Pages → `main`, `/docs`). Run `./build.sh` after every change to `kante/` or `overview/projects.json`, and commit the result in `docs/` and `kante/qml/Kante/`.

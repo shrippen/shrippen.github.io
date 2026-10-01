@@ -22,7 +22,7 @@ mkdir -p "$OUT"
 cp kante/js/shrippen.js "$OUT/shrippen.js"
 # Offline fonts: fonts.css plus the font files next to it (opt-in, apps that must work without Google Fonts)
 mkdir -p "$OUT/fonts"
-cp kante/fonts/*.ttf kante/fonts/OFL.txt "$OUT/fonts/"
+cp kante/fonts/*.ttf kante/fonts/*.woff2 kante/fonts/OFL.txt "$OUT/fonts/"
 cp kante/css/fonts.css "$OUT/fonts.css"
 echo "built $OUT/shrippen.css ($(wc -c < "$OUT/shrippen.css") bytes), shrippen.js"
 python3 overview/tools/build-overview.py

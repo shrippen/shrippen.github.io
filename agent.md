@@ -5,6 +5,7 @@
 - Kante is the source of every shrippen GUI. Every project generates its GUI from Kante, not inspired by it; see [`kante/AGENT-RULE.md`](kante/AGENT-RULE.md) for the rule as it goes into each project's `agent.md`.
 - A missing element is added here first (CSS or QML, README, catalogue in `kante/proposals`), then used by the projects. Do not let a project solve it locally.
 - Kimai plugins are the exception: they use Knust (`shrippen/kimai-knust-bundle`), Kante's spinoff. Keep Knust's tokens, shapes and roles in step with Kante.
+- Kintsugi is the second exception: it uses Kante Gold (`data-kante="gold"`), a variant inside Kante. Gold changes go into the Gold tokens in `kante/tokens/` and the "Kante Gold" block of `kante/css/components.css`.
 - No raw colours or fonts in `kante/css`; `kante/tools/check-tokens.py` enforces it.
 
 ## Working on Kante

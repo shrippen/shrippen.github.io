@@ -3,7 +3,7 @@
 Tracking list: which landing pages follow the shared design. The central stylesheet is
 `https://shrippen.github.io/v1/shrippen.css` (see [README](README.md)).
 
-**GUI rule.** Every project's GUI is generated from Kante, not inspired by it; missing elements are added to Kante first. Kimai plugins are the exception: they use Knust, Kante's spinoff for Kimai. Text for each project's `agent.md`: [`kante/AGENT-RULE.md`](../kante/AGENT-RULE.md).
+**GUI rule.** Every project's GUI is generated from Kante, not inspired by it; missing elements are added to Kante first. Kimai plugins are the exception: they use Knust, Kante's spinoff for Kimai. Text for each project's `agent.md`: [`AGENT-RULE.md`](https://github.com/shrippen/Kante/blob/main/AGENT-RULE.md) in Kante.
 
 **Status legend**
 
@@ -61,7 +61,7 @@ Companion 5.0.6). Kintsugi is known but stays internal, so it has no demo and no
 
 ## Adding a project
 
-1. Start from [`kante/templates/landing.html`](../kante/templates/landing.html) and link the central stylesheet.
+1. Start from [`templates/landing.html`](https://github.com/shrippen/Kante/blob/main/templates/landing.html) in Kante and link the central stylesheet.
 2. Add a row to the table above.
 3. Add the project to `overview/sites.json` (id, name, folder, page URL) and to `overview/projects.json` (group, tagline, `page_live`), then run `./build.sh` so it appears on the overview page. Set `page_live` to `true` once its GitHub Pages site is enabled and merged.
 4. Give it a demo mode on the shared demo world (`demo/tools/sync-demo.py`, add the project to `TARGETS`) and a `demo/shots.json`, then take the screenshots with `demo/tools/screenshots.py <id>`.

@@ -37,12 +37,13 @@ COPY = {
     "kimai-anfahrten": ("Anfahrten", "Trips and travel costs for Kimai"),
     "kimai-farbfaecher": ("Farbfächer", "Color clashes and suggestions for Kimai"),
     "kimai-knust": ("Knust", "A Kimai theme in the shrippen design"),
+    "kante": ("Kante", "The shrippen design system"),
 }
 
 
 def card(title, tagline, repo, logo):
     size = min(MAX_TITLE_PX, int(TITLE_BUDGET_PX / (len(title) * CHAR_WIDTH)))
-    fonts = REPO / "kante" / "fonts"
+    fonts = ROOT / "Kante" / "fonts"
     return f"""<!doctype html><meta charset="utf-8"><style>
 @font-face{{font-family:R;font-weight:700;src:url(file://{fonts}/Rajdhani-700.ttf)}}
 @font-face{{font-family:M;font-weight:400;src:url(file://{fonts}/JetBrainsMono-400.ttf)}}

@@ -65,7 +65,7 @@ rm -rf .plugins
         active+=("$entry")
     done
     if [ "$THEME" = knust ]; then
-        stage "$ROOT/Kimai Knust" KnustBundle
+        stage "$ROOT/Kante/kimai/knust" KnustBundle
         echo "      - ./.plugins/KnustBundle:/opt/kimai/var/plugins/KnustBundle:ro"
     fi
 } > .plugins.yaml

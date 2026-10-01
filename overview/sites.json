@@ -13,6 +13,7 @@
   {"id": "kimai-drehzettel", "name": "Drehzettel", "dir": "Kimai Drehzettel", "url": "https://shrippen.github.io/kimai-drehzettel-bundle/"},
   {"id": "kimai-anfahrten", "name": "Anfahrten", "dir": "Kimai Anfahrten", "url": "https://shrippen.github.io/kimai-anfahrten/"},
   {"id": "kimai-farbfaecher", "name": "Farbfächer", "dir": "Kimai Farbfächer", "url": "https://shrippen.github.io/kimai-farbfaecher-bundle/"},
-  {"id": "kimai-knust", "name": "Knust", "dir": "Kimai Knust", "url": "https://shrippen.github.io/kimai-knust-bundle/"},
+  {"id": "kimai-knust", "name": "Knust", "dir": "Kante/kimai/knust", "url": "https://shrippen.github.io/Kante/knust/", "repo": "Kante/tree/main/kimai/knust"},
+  {"id": "kante", "name": "Kante", "dir": "Kante", "url": "https://shrippen.github.io/Kante/"},
   {"id": "andon", "name": "Andon", "dir": "andon", "url": "https://shrippen.github.io/andon/"}
 ]

@@ -42,7 +42,8 @@ def sync_icon(site):
 
 
 def card(project, site, group, tier):
-    repo = site["url"].rstrip("/").rsplit("/", 1)[-1]
+    # repository = first path segment of the page URL, or "repo" in sites.json (a page inside another repo)
+    repo = site.get("repo") or site["url"].split("shrippen.github.io/", 1)[1].split("/", 1)[0]
     name = escape(project.get("name") or site["name"])
     tag_en = group["tag_en"]
     tag_de = group["tag_de"]

@@ -8,7 +8,7 @@ The overview of all projects at <https://shrippen.github.io/>, plus the local pr
 | `overview/sites.json` | every project with a landing page: id, name, folder next to this repo, page URL. Also read by `demo/tools/screenshots.py` and `overview/tools/make-social.py` |
 | `overview/PROJECTS.md` | status of the landing pages and the checklist for adding a project |
 | `overview/tools/build-overview.py` | builds `docs/index.html` and copies each project's `docs/icon.svg` to `docs/assets/icons/` (`./build.sh` runs it) |
-| `overview/tools/make-social.py` | renders `docs/social-preview.png` for every project (needs chromium; spec in [Kante](../kante/README.md#social-preview--og-image)) |
+| `overview/tools/make-social.py` | renders `docs/social-preview.png` for every project (needs chromium; spec in [Kante](https://github.com/shrippen/Kante/blob/main/README.md#social-preview--og-image)) |
 | `overview/preview/` | the local preview (`server.py`, `index.html`, hand-written to-dos in `todos.json`) |
 
 `docs/index.html` is generated: edit `projects.json` and run `./build.sh`.

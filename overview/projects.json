@@ -178,6 +178,15 @@
         "en": "A Kimai theme in the shrippen design: Gruvbox dark and „Leinen“ light on top of Tabler.",
         "de": "Ein Kimai-Theme im shrippen-Design: Gruvbox dunkel und „Leinen“ hell über Tabler."
       }
+    },
+    {
+      "id": "kante",
+      "group": "tools",
+      "page_live": true,
+      "tagline": {
+        "en": "The shrippen design system: one palette, type and shape for the web, Qt Quick / Kirigami apps and Plasma widgets.",
+        "de": "Das shrippen-Designsystem: eine Palette, Schrift und Form für Web, Qt-Quick-/Kirigami-Apps und Plasma-Widgets."
+      }
     }
   ]
 }

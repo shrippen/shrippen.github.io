@@ -83,6 +83,32 @@
       }
     },
     {
+      "id": "hansei",
+      "group": "tools",
+      "page_live": true,
+      "status": {
+        "en": "In development",
+        "de": "In Entwicklung"
+      },
+      "tagline": {
+        "en": "An AI proposes edits to your Obsidian notes; you review every change as a diff, and only what you accept is written.",
+        "de": "Eine KI schlägt Änderungen an deinen Obsidian-Notizen vor; du prüfst jede als Diff, geschrieben wird nur, was du annimmst."
+      }
+    },
+    {
+      "id": "leuchtfeuer",
+      "group": "tools",
+      "page_live": true,
+      "status": {
+        "en": "In development",
+        "de": "In Entwicklung"
+      },
+      "tagline": {
+        "en": "Turns any small computer with a speaker into a smart speaker: Spotify, AirPlay, UPnP, Cast, Bluetooth, alarms and Home Assistant.",
+        "de": "Macht aus jedem kleinen Rechner mit Lautsprecher einen Smartspeaker: Spotify, AirPlay, UPnP, Cast, Bluetooth, Wecker und Home Assistant."
+      }
+    },
+    {
       "id": "paperninja",
       "group": "tools",
       "page_live": true,

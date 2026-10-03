@@ -38,6 +38,8 @@ COPY = {
     "kimai-farbfaecher": ("Farbfächer", "Color clashes and suggestions for Kimai"),
     "kimai-knust": ("Knust", "A Kimai theme in the shrippen design"),
     "kante": ("Kante", "The shrippen design system"),
+    "hansei": ("Hansei", "Review every AI edit to your notes"),
+    "leuchtfeuer": ("Leuchtfeuer", "A smart speaker from any small computer"),
 }
 
 

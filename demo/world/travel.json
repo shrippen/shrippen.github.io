@@ -1,0 +1,454 @@
+{
+  "places": [
+    {
+      "id": "studio",
+      "name": "Studio Weber",
+      "address": "Kranichweg 12, 22765 Hamburg",
+      "lat": 53.5537,
+      "lon": 9.9275,
+      "kind": "office"
+    },
+    {
+      "id": "home-mara",
+      "name": {
+        "de": "Zuhause",
+        "en": "Home"
+      },
+      "address": "Lotsenstieg 3, 22605 Hamburg",
+      "lat": 53.5582,
+      "lon": 9.8849,
+      "kind": "home"
+    },
+    {
+      "id": "harbour-pier",
+      "name": "Landungsbrücken",
+      "address": "St. Pauli Landungsbrücken, 20359 Hamburg",
+      "lat": 53.5456,
+      "lon": 9.9669,
+      "kind": "location"
+    },
+    {
+      "id": "fishmarket",
+      "name": {
+        "de": "Fischmarkt",
+        "en": "Fish market"
+      },
+      "address": "Große Elbstraße 9, 22767 Hamburg",
+      "lat": 53.5454,
+      "lon": 9.9515,
+      "kind": "location"
+    },
+    {
+      "id": "beach",
+      "name": "Elbstrand Övelgönne",
+      "address": "Övelgönne, 22605 Hamburg",
+      "lat": 53.5445,
+      "lon": 9.9106,
+      "kind": "location"
+    },
+    {
+      "id": "ferry",
+      "name": {
+        "de": "Fähranleger Finkenwerder",
+        "en": "Finkenwerder ferry pier"
+      },
+      "address": "Finkenwerder, 21129 Hamburg",
+      "lat": 53.5373,
+      "lon": 9.8763,
+      "kind": "location"
+    },
+    {
+      "id": "speicherstadt",
+      "name": "Speicherstadt",
+      "address": "Brooktorkai, 20457 Hamburg",
+      "lat": 53.5437,
+      "lon": 9.9937,
+      "kind": "location"
+    },
+    {
+      "id": "hafencity",
+      "name": "HafenCity",
+      "address": "Am Sandtorkai, 20457 Hamburg",
+      "lat": 53.5419,
+      "lon": 9.9888,
+      "kind": "location"
+    },
+    {
+      "id": "northlight-office",
+      "name": "Northlight Pictures",
+      "address": "Museumstraße 20, 22765 Hamburg",
+      "lat": 53.5489,
+      "lon": 9.9362,
+      "kind": "customer",
+      "customer": "northlight"
+    },
+    {
+      "id": "elbgruen-office",
+      "name": "Stiftung Elbfeuer",
+      "address": "Am Kaiserkai 40, 20457 Hamburg",
+      "lat": 53.5413,
+      "lon": 9.9842,
+      "kind": "customer",
+      "customer": "elbgruen"
+    },
+    {
+      "id": "speiche-workshop",
+      "name": "Speiche Fahrradmanufaktur",
+      "address": "Veringstraße 88, 21107 Hamburg",
+      "lat": 53.5048,
+      "lon": 10.0027,
+      "kind": "customer",
+      "customer": "speiche"
+    },
+    {
+      "id": "rental-station",
+      "name": "Mietwagen Nord",
+      "address": "Holstenstraße 1, 22767 Hamburg",
+      "lat": 53.5555,
+      "lon": 9.948,
+      "kind": "other"
+    },
+    {
+      "id": "graufeld-lighthouse",
+      "name": {
+        "de": "Leuchtturm Graufeld",
+        "en": "Graufeld lighthouse"
+      },
+      "address": "Deichweg 1, 21762 Graufeld",
+      "lat": 53.8431,
+      "lon": 8.9024,
+      "kind": "location"
+    },
+    {
+      "id": "kolk",
+      "name": {
+        "de": "Der Kolk",
+        "en": "The Kolk"
+      },
+      "address": "Moorweg, 21762 Graufeld",
+      "lat": 53.8217,
+      "lon": 8.9391,
+      "kind": "location"
+    },
+    {
+      "id": "moorhof",
+      "name": "Moorhof-Rast",
+      "address": "Landstraße 14, 21762 Graufeld",
+      "lat": 53.8302,
+      "lon": 8.9265,
+      "kind": "other"
+    },
+    {
+      "id": "sendehaus",
+      "name": "Sendehaus Graufeld",
+      "address": "Am Sendemast 2, 21762 Graufeld",
+      "lat": 53.8365,
+      "lon": 8.9188,
+      "kind": "customer",
+      "customer": "sendehaus"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "van",
+      "name": {
+        "de": "Transporter",
+        "en": "Van"
+      },
+      "plate": "HH-SW 204",
+      "owner": "studio",
+      "fuel": "diesel",
+      "odometer_start": 48210
+    },
+    {
+      "id": "bike",
+      "name": {
+        "de": "Lastenrad",
+        "en": "Cargo bike"
+      },
+      "plate": "",
+      "owner": "studio",
+      "fuel": "none",
+      "odometer_start": 0
+    }
+  ],
+  "trips": [
+    {
+      "user": "mara",
+      "day": -14,
+      "from": "studio",
+      "to": "harbour-pier",
+      "km": 5.1,
+      "vehicle": "van",
+      "project": "harbour",
+      "purpose": {
+        "de": "Technik zum Set",
+        "en": "Gear to the set"
+      },
+      "status": "approved"
+    },
+    {
+      "user": "mara",
+      "day": -14,
+      "from": "harbour-pier",
+      "to": "studio",
+      "km": 5.3,
+      "vehicle": "van",
+      "project": "harbour",
+      "purpose": {
+        "de": "Technik zurück, Scheinwerfer gezählt",
+        "en": "Gear back, floodlights counted"
+      },
+      "status": "approved"
+    },
+    {
+      "user": "mara",
+      "day": -12,
+      "from": "studio",
+      "to": "beach",
+      "km": 2.4,
+      "vehicle": "bike",
+      "project": "harbour",
+      "purpose": {
+        "de": "Drehort Övelgönne",
+        "en": "Location Övelgönne"
+      },
+      "status": "approved"
+    },
+    {
+      "user": "mara",
+      "day": -9,
+      "from": "studio",
+      "to": "speiche-workshop",
+      "km": 9.8,
+      "vehicle": "van",
+      "project": "spring",
+      "purpose": {
+        "de": "Motivbesichtigung",
+        "en": "Location visit"
+      },
+      "status": "approved"
+    },
+    {
+      "user": "mara",
+      "day": -9,
+      "from": "speiche-workshop",
+      "to": "studio",
+      "km": 10.2,
+      "vehicle": "van",
+      "project": "spring",
+      "purpose": {
+        "de": "Rückfahrt",
+        "en": "Return"
+      },
+      "status": "approved"
+    },
+    {
+      "user": "mara",
+      "day": -6,
+      "from": "studio",
+      "to": "hafencity",
+      "km": 5.6,
+      "vehicle": "van",
+      "project": "tidenhub",
+      "purpose": {
+        "de": "Dreh am Feuerschiff, HafenCity",
+        "en": "Shoot on the light vessel, HafenCity"
+      },
+      "status": "submitted"
+    },
+    {
+      "user": "mara",
+      "day": -6,
+      "from": "hafencity",
+      "to": "studio",
+      "km": 5.9,
+      "vehicle": "van",
+      "project": "tidenhub",
+      "purpose": {
+        "de": "Rückfahrt",
+        "en": "Return"
+      },
+      "status": "submitted"
+    },
+    {
+      "user": "mara",
+      "day": -3,
+      "from": "studio",
+      "to": "northlight-office",
+      "km": 1.6,
+      "vehicle": "bike",
+      "project": "harbour",
+      "purpose": {
+        "de": "Produktionsbesprechung",
+        "en": "Production meeting"
+      },
+      "status": "draft"
+    },
+    {
+      "user": "mara",
+      "day": 1,
+      "from": "studio",
+      "to": "harbour-pier",
+      "km": 5.1,
+      "vehicle": "van",
+      "project": "harbour",
+      "purpose": {
+        "de": "Technik zum Set",
+        "en": "Gear to the set"
+      },
+      "status": "draft"
+    },
+    {
+      "user": "jonas",
+      "day": -8,
+      "from": "studio",
+      "to": "ferry",
+      "km": 12.7,
+      "vehicle": "van",
+      "project": "harbour",
+      "purpose": {
+        "de": "Dreh Hafenfähre im Nebel",
+        "en": "Shoot on the ferry in fog"
+      },
+      "status": "submitted"
+    },
+    {
+      "user": "jonas",
+      "day": -8,
+      "from": "ferry",
+      "to": "studio",
+      "km": 12.9,
+      "vehicle": "van",
+      "project": "harbour",
+      "purpose": {
+        "de": "Rückfahrt",
+        "en": "Return"
+      },
+      "status": "submitted"
+    },
+    {
+      "user": "lena",
+      "day": -5,
+      "from": "studio",
+      "to": "speicherstadt",
+      "km": 6.3,
+      "vehicle": "van",
+      "project": "harbour",
+      "purpose": {
+        "de": "Nachtdreh Speicherstadt",
+        "en": "Night shoot in Speicherstadt"
+      },
+      "status": "submitted"
+    },
+    {
+      "user": "lena",
+      "day": -5,
+      "from": "speicherstadt",
+      "to": "studio",
+      "km": 6.5,
+      "vehicle": "van",
+      "project": "harbour",
+      "purpose": {
+        "de": "Rückfahrt",
+        "en": "Return"
+      },
+      "status": "submitted"
+    },
+    {
+      "user": "mara",
+      "day": -10,
+      "from": "studio",
+      "to": "graufeld-lighthouse",
+      "km": 112.4,
+      "vehicle": "van",
+      "project": "nachtwache",
+      "purpose": {
+        "de": "Motivbesichtigung Leuchtturm",
+        "en": "Lighthouse location visit"
+      },
+      "status": "approved"
+    },
+    {
+      "user": "mara",
+      "day": -10,
+      "from": "graufeld-lighthouse",
+      "to": "studio",
+      "km": 131.7,
+      "vehicle": "van",
+      "project": "nachtwache",
+      "purpose": {
+        "de": "Rückfahrt, Umweg im Nebel",
+        "en": "Return, detour in the fog"
+      },
+      "status": "approved"
+    },
+    {
+      "user": "jonas",
+      "day": 3,
+      "from": "studio",
+      "to": "graufeld-lighthouse",
+      "km": 112.4,
+      "vehicle": "van",
+      "project": "nachtwache",
+      "purpose": {
+        "de": "Nachtdreh Leuchtturm",
+        "en": "Night shoot at the lighthouse"
+      },
+      "status": "draft"
+    }
+  ],
+  "rentals": [
+    {
+      "user": "mara",
+      "from": -16,
+      "to": -15,
+      "provider": "Mietwagen Nord",
+      "car": {
+        "de": "Kombi mit Dachträger",
+        "en": "Estate car with roof rack"
+      },
+      "plate": "HH-MN 1187",
+      "km": 138,
+      "cost": 164.9,
+      "project": "spring",
+      "pickup": "rental-station"
+    }
+  ],
+  "location": {
+    "note": "Dawarich: Mara's visits at Northlight on the client days (bookkeeping), the areas home and Northlight, yearly stats; the track drives home → Northlight before a visit and back after it.",
+    "url": "https://dawarich.demo",
+    "home": "home-mara",
+    "site": "northlight-office",
+    "visit": {
+      "from": "08:30",
+      "to": "17:45",
+      "minutes": 555
+    },
+    "areas": [
+      {
+        "id": 1,
+        "place": "home-mara",
+        "radius": 100
+      },
+      {
+        "id": 2,
+        "place": "northlight-office",
+        "radius": 150
+      }
+    ],
+    "stats": {
+      "total_km": 18450,
+      "year_km": 3100,
+      "countries": 2,
+      "cities": 14,
+      "month_km": 412,
+      "last_month_km": 530
+    },
+    "last_point": "@-2h",
+    "route": {
+      "steps": 24,
+      "step_minutes": 2
+    }
+  }
+}

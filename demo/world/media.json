@@ -1,0 +1,180 @@
+{
+  "media": {
+    "album": {
+      "title": "Harbour Lights (Original Score)",
+      "artist": "Theo Lindqvist",
+      "year": 2026
+    },
+    "tracks": [
+      {
+        "title": "Ebbe",
+        "length_s": 184
+      },
+      {
+        "title": "Nebelhorn",
+        "length_s": 236
+      },
+      {
+        "title": "Leuchtfeuer",
+        "length_s": 201
+      },
+      {
+        "title": "Drei Uhr dreizehn",
+        "length_s": 193
+      }
+    ],
+    "players": [
+      {
+        "identity": "Elisa",
+        "status": "Playing",
+        "track": "Nebelhorn"
+      },
+      {
+        "identity": "VLC media player",
+        "status": "Paused",
+        "track": "Ebbe"
+      }
+    ],
+    "audio_files": [
+      {
+        "name": "hl_s02e03_interview_hafenmeister.m4a",
+        "seconds": 42,
+        "tone": 220
+      },
+      {
+        "name": "hl_s02e03_atmo_landungsbruecken.m4a",
+        "seconds": 30,
+        "tone": 330
+      },
+      {
+        "name": "hl_s02e04_nebelhorn_take2.aac",
+        "seconds": 18,
+        "tone": 110
+      },
+      {
+        "name": "tidenhub_interview_stiftung.m4a",
+        "seconds": 55,
+        "tone": 262
+      },
+      {
+        "name": "speiche_spot_voiceover_v3.m4a",
+        "seconds": 24,
+        "tone": 294
+      },
+      {
+        "name": "nw_atmo_kolk_nacht3.m4a",
+        "seconds": 47,
+        "tone": 98
+      },
+      {
+        "name": "nw_sendehaus_jingle_mitternacht.m4a",
+        "seconds": 13,
+        "tone": 392
+      }
+    ],
+    "film_rolls": [
+      {
+        "name": "Rolle 03 – Övelgönne",
+        "frames": 12,
+        "stock": "Farbnegativ 35 mm"
+      },
+      {
+        "name": "Rolle 04 – Speiche",
+        "frames": 10,
+        "stock": "Farbnegativ 35 mm"
+      },
+      {
+        "name": "Rolle 05 – Graufeld",
+        "frames": 8,
+        "stock": "Farbnegativ 35 mm"
+      }
+    ]
+  },
+  "photos": {
+    "note": "Immich: the disk is nearly full, face detection failed three times, an update is out.",
+    "url": "https://photos.demo",
+    "photos": 48213,
+    "videos": 1920,
+    "disk_percent": 87.4,
+    "disk_available": "412 GiB",
+    "failed_jobs": {
+      "faceDetection": 3
+    },
+    "version": "v1.131.0",
+    "latest": "v1.132.3",
+    "users": [
+      {
+        "name": "{{people.mara.alias}}",
+        "photos": 30112,
+        "videos": 1210,
+        "bytes": 1400000000000.0
+      },
+      {
+        "name": "{{people.lena.alias}}",
+        "photos": 18101,
+        "videos": 710,
+        "bytes": 900000000000.0
+      }
+    ]
+  },
+  "library": {
+    "note": "Jellyfin: two streams; plays = a month of evenings (1-3 a day, three more at weekends) and plays per title.",
+    "url": "https://jellyfin.demo",
+    "kind": "jellyfin",
+    "version": "10.10.7",
+    "movies": 1204,
+    "series": 86,
+    "episodes": 4310,
+    "streams": [
+      {
+        "user": "{{people.selin.alias}}",
+        "title": "{{projects.harbour.name}}"
+      },
+      {
+        "user": "{{people.theo.alias}}",
+        "title": "{{media.album.title}}"
+      }
+    ],
+    "titles": [
+      {
+        "title": "{{projects.harbour.name}}",
+        "plays": 9
+      },
+      {
+        "title": "{{media.album.title}}",
+        "plays": 6
+      },
+      {
+        "title": "{{projects.spring.name}}",
+        "plays": 4
+      }
+    ]
+  },
+  "series": {
+    "note": "Sonarr: an episode is stuck, an indexer is down.",
+    "url": "https://sonarr.demo",
+    "app": "Sonarr",
+    "version": "4.0.15",
+    "queue": 3,
+    "missing": 12,
+    "stuck": [
+      "{{projects.harbour.short}} S02E04"
+    ],
+    "health": [
+      {
+        "level": "warning",
+        "message": "Indexer Elbindex is unavailable"
+      }
+    ],
+    "upcoming": [
+      {
+        "title": "{{projects.harbour.short}} 2x05",
+        "at": "@+26h"
+      },
+      {
+        "title": "{{projects.harbour.short}} 2x06",
+        "at": "@+80h"
+      }
+    ]
+  }
+}

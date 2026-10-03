@@ -1,0 +1,1803 @@
+{
+  "customers": [
+    {
+      "id": "northlight",
+      "name": "Northlight Pictures",
+      "color": "#d65d0e",
+      "clash_color": "#fe8019",
+      "city": "Hamburg-Altona",
+      "country": "DE",
+      "vat_id": "DE318204417",
+      "kind": {
+        "de": "Produktionsfirma",
+        "en": "Production company"
+      }
+    },
+    {
+      "id": "elbgruen",
+      "name": "Stiftung Elbfeuer",
+      "color": "#689d6a",
+      "clash_color": "#8ec07c",
+      "city": "Hamburg-HafenCity",
+      "country": "DE",
+      "vat_id": "",
+      "kind": {
+        "de": "Stiftung für Leuchtfeuer und Feuerschiffe",
+        "en": "Foundation for lighthouses and light vessels"
+      }
+    },
+    {
+      "id": "speiche",
+      "name": "Speiche Fahrradmanufaktur",
+      "color": "#458588",
+      "clash_color": "#83a598",
+      "city": "Hamburg-Wilhelmsburg",
+      "country": "DE",
+      "vat_id": "DE294117820",
+      "kind": {
+        "de": "Fahrradmanufaktur",
+        "en": "Bicycle maker"
+      }
+    },
+    {
+      "id": "studio",
+      "name": "Studio Weber",
+      "color": "#a89984",
+      "clash_color": "#a89984",
+      "city": "Hamburg-Ottensen",
+      "country": "DE",
+      "vat_id": "",
+      "kind": {
+        "de": "Intern",
+        "en": "Internal"
+      }
+    },
+    {
+      "id": "donaulicht",
+      "name": "Donaulicht Film",
+      "color": "#d79921",
+      "clash_color": "#fabd2f",
+      "city": "Wien",
+      "country": "AT",
+      "vat_id": "",
+      "kind": {
+        "de": "Koproduzent in Österreich",
+        "en": "Co-producer in Austria"
+      }
+    },
+    {
+      "id": "sendehaus",
+      "name": "Sendehaus Graufeld",
+      "color": "#b16286",
+      "clash_color": "#d3869b",
+      "city": "Graufeld",
+      "country": "DE",
+      "vat_id": "DE301177313",
+      "kind": {
+        "de": "Regionalsender",
+        "en": "Regional broadcaster"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "harbour",
+      "customer": "northlight",
+      "name": {
+        "de": "Harbour Lights – Staffel 2",
+        "en": "Harbour Lights – Season 2"
+      },
+      "short": "Harbour Lights",
+      "color": "#fe8019",
+      "clash_color": "#d65d0e",
+      "hourly_rate": 85,
+      "billable": true
+    },
+    {
+      "id": "tidenhub",
+      "customer": "elbgruen",
+      "name": {
+        "de": "Imagefilm „Feuer an der Elbe“",
+        "en": "Image film “Fire on the Elbe”"
+      },
+      "short": "Elbfeuer",
+      "color": "#8ec07c",
+      "clash_color": "#689d6a",
+      "hourly_rate": 90,
+      "billable": true
+    },
+    {
+      "id": "spring",
+      "customer": "speiche",
+      "name": {
+        "de": "Herbstspot „Licht an“",
+        "en": "Autumn spot “Lights on”"
+      },
+      "short": "Speiche Spot",
+      "color": "#83a598",
+      "clash_color": "#458588",
+      "hourly_rate": 95,
+      "billable": true
+    },
+    {
+      "id": "showreel",
+      "customer": "studio",
+      "name": {
+        "de": "Showreel 2026",
+        "en": "Showreel 2026"
+      },
+      "short": "Showreel",
+      "color": "#d3869b",
+      "clash_color": "#b16286",
+      "hourly_rate": 0,
+      "billable": false
+    },
+    {
+      "id": "trailer",
+      "customer": "donaulicht",
+      "name": {
+        "de": "Trailer Donaulicht",
+        "en": "Donaulicht trailer"
+      },
+      "short": "Donaulicht",
+      "color": "#d79921",
+      "clash_color": "#fabd2f",
+      "hourly_rate": 90,
+      "billable": true
+    },
+    {
+      "id": "admin",
+      "customer": "studio",
+      "name": {
+        "de": "Verwaltung",
+        "en": "Admin"
+      },
+      "short": "Admin",
+      "color": "#a89984",
+      "clash_color": "#928374",
+      "hourly_rate": 0,
+      "billable": false
+    },
+    {
+      "id": "nachtwache",
+      "customer": "sendehaus",
+      "name": {
+        "de": "Nachtwache – Miniserie",
+        "en": "Nightwatch – miniseries"
+      },
+      "short": "Nachtwache",
+      "color": "#fb4934",
+      "clash_color": "#cc241d",
+      "hourly_rate": 90,
+      "billable": true
+    }
+  ],
+  "activities": [
+    {
+      "id": "shoot",
+      "name": {
+        "de": "Dreh",
+        "en": "Shooting"
+      },
+      "color": "#fabd2f"
+    },
+    {
+      "id": "prep",
+      "name": {
+        "de": "Vorproduktion",
+        "en": "Pre-production"
+      },
+      "color": "#d3869b"
+    },
+    {
+      "id": "edit",
+      "name": {
+        "de": "Schnitt",
+        "en": "Editing"
+      },
+      "color": "#83a598"
+    },
+    {
+      "id": "sound",
+      "name": {
+        "de": "Tonmischung",
+        "en": "Sound mix"
+      },
+      "color": "#8ec07c"
+    },
+    {
+      "id": "travel",
+      "name": {
+        "de": "Fahrt",
+        "en": "Travel"
+      },
+      "color": "#b8bb26"
+    },
+    {
+      "id": "meeting",
+      "name": {
+        "de": "Besprechung",
+        "en": "Meeting"
+      },
+      "color": "#b16286"
+    },
+    {
+      "id": "bookkeeping",
+      "name": {
+        "de": "Buchhaltung",
+        "en": "Bookkeeping"
+      },
+      "color": "#689d6a"
+    }
+  ],
+  "film_engagement": {
+    "user": "jonas",
+    "project": "harbour",
+    "activity": "shoot",
+    "employer": "northlight",
+    "position": {
+      "de": "1. Kameraassistenz",
+      "en": "1st camera assistant"
+    },
+    "ruleset": "tv-ffs",
+    "weekly_gage": 1850,
+    "from": -21,
+    "to": 25,
+    "days": [
+      {
+        "day": -14,
+        "call": "07:00",
+        "wrap": "18:30",
+        "break_min": 60,
+        "location": "harbour-pier",
+        "note": {
+          "de": "Folge 3, Szenen 12–18",
+          "en": "Episode 3, scenes 12–18"
+        }
+      },
+      {
+        "day": -13,
+        "call": "07:00",
+        "wrap": "17:00",
+        "break_min": 60,
+        "location": "fishmarket",
+        "note": {
+          "de": "Folge 3, Szenen 19–24",
+          "en": "Episode 3, scenes 19–24"
+        }
+      },
+      {
+        "day": -12,
+        "call": "08:00",
+        "wrap": "19:00",
+        "break_min": 60,
+        "location": "beach",
+        "note": {
+          "de": "Folge 3, Strand bei Ebbe",
+          "en": "Episode 3, beach at low tide"
+        }
+      },
+      {
+        "day": -11,
+        "call": "10:00",
+        "wrap": "20:30",
+        "break_min": 45,
+        "location": "harbour-pier",
+        "note": {
+          "de": "Folge 3, Anschlüsse",
+          "en": "Episode 3, pick-ups"
+        }
+      },
+      {
+        "day": -8,
+        "call": "06:00",
+        "wrap": "16:00",
+        "break_min": 60,
+        "location": "ferry",
+        "note": {
+          "de": "Folge 4, Hafenfähre im Nebel",
+          "en": "Episode 4, harbour ferry in fog"
+        }
+      },
+      {
+        "day": -7,
+        "call": "07:00",
+        "wrap": "18:00",
+        "break_min": 60,
+        "location": "harbour-pier",
+        "note": {
+          "de": "Folge 4, Szenen 1–9",
+          "en": "Episode 4, scenes 1–9"
+        }
+      },
+      {
+        "day": -6,
+        "call": "13:00",
+        "wrap": "18:30",
+        "break_min": 30,
+        "location": "hafencity",
+        "note": {
+          "de": "Folge 4, Außen HafenCity",
+          "en": "Episode 4, exterior HafenCity"
+        }
+      },
+      {
+        "day": -5,
+        "call": "15:00",
+        "wrap": "23:30",
+        "break_min": 60,
+        "location": "speicherstadt",
+        "note": {
+          "de": "Nachtdreh Speicherstadt",
+          "en": "Night shoot in Speicherstadt"
+        }
+      },
+      {
+        "day": -2,
+        "call": "09:00",
+        "wrap": "19:30",
+        "break_min": 60,
+        "location": "beach",
+        "note": {
+          "de": "Samstagsdreh Övelgönne",
+          "en": "Saturday shoot at Övelgönne"
+        }
+      },
+      {
+        "day": 0,
+        "call": "07:00",
+        "wrap": "17:30",
+        "break_min": 60,
+        "location": "harbour-pier",
+        "note": {
+          "de": "Folge 5, Leuchtfeuer, Szenen 1–7",
+          "en": "Episode 5, beacon, scenes 1–7"
+        }
+      },
+      {
+        "day": 1,
+        "call": "07:00",
+        "wrap": "18:00",
+        "break_min": 60,
+        "location": "fishmarket",
+        "note": {
+          "de": "Folge 5, Szenen 8–15",
+          "en": "Episode 5, scenes 8–15"
+        }
+      },
+      {
+        "day": 2,
+        "call": "08:00",
+        "wrap": "19:15",
+        "break_min": 60,
+        "location": "beach",
+        "note": {
+          "de": "Folge 5, Strand bei Nebel",
+          "en": "Episode 5, beach in fog"
+        }
+      }
+    ]
+  },
+  "vendors": [
+    {
+      "id": "elbnetz",
+      "name": "Elbnetz Mobilfunk",
+      "kind": {
+        "de": "Mobilfunk",
+        "en": "Mobile network"
+      },
+      "domain": "elbnetz.example.test",
+      "contract": {
+        "de": "Mobilfunkvertrag",
+        "en": "Mobile contract"
+      },
+      "monthly": 39.95
+    },
+    {
+      "id": "nordhost",
+      "name": "Nordhost Server",
+      "kind": {
+        "de": "Hosting",
+        "en": "Hosting"
+      },
+      "domain": "nordhost.example.test",
+      "contract": {
+        "de": "Server-Miete",
+        "en": "Server rental"
+      },
+      "monthly": 41.65
+    },
+    {
+      "id": "farbraum",
+      "name": "Farbraum Software",
+      "kind": {
+        "de": "Software",
+        "en": "Software"
+      },
+      "domain": "farbraum.example.test",
+      "contract": {
+        "de": "Farbraum Grade, Abo",
+        "en": "Farbraum Grade subscription"
+      },
+      "monthly": 66.45
+    },
+    {
+      "id": "elbstrom",
+      "name": "Elbstrom",
+      "kind": {
+        "de": "Energie",
+        "en": "Energy"
+      },
+      "domain": "elbstrom.example.test",
+      "contract": {
+        "de": "Ökostrom Studio",
+        "en": "Green power for the studio"
+      },
+      "monthly": 72.0
+    },
+    {
+      "id": "wellenklang",
+      "name": "Wellenklang",
+      "kind": {
+        "de": "Unterhaltung",
+        "en": "Entertainment"
+      },
+      "domain": "wellenklang.example.test",
+      "contract": {
+        "de": "Musik-Streaming",
+        "en": "Music streaming"
+      },
+      "monthly": 10.99
+    }
+  ],
+  "receipts": [
+    {
+      "id": 1,
+      "vendor": "Fotohaus Elbe",
+      "day": -18,
+      "amount": 342.0,
+      "number": "FE-2026-0917",
+      "category": {
+        "de": "Filmmaterial",
+        "en": "Film stock"
+      },
+      "project": "showreel",
+      "note": {
+        "de": "10 Rollen Farbnegativfilm 35 mm",
+        "en": "10 rolls of 35 mm colour negative film"
+      },
+      "state": "linked"
+    },
+    {
+      "id": 2,
+      "vendor": "Kabelwerk Studiobedarf",
+      "day": -15,
+      "amount": 89.7,
+      "number": "KW-55821",
+      "category": {
+        "de": "Technik",
+        "en": "Equipment"
+      },
+      "project": "harbour",
+      "note": {
+        "de": "XLR-Kabel, Gaffa, 5 l Nebelfluid",
+        "en": "XLR cables, gaffer tape, 5 l fog fluid"
+      },
+      "state": "linked"
+    },
+    {
+      "id": 3,
+      "vendor": "Kombüse Catering",
+      "day": -14,
+      "amount": 486.5,
+      "number": "2026-114",
+      "category": {
+        "de": "Catering",
+        "en": "Catering"
+      },
+      "project": "harbour",
+      "note": {
+        "de": "Catering Drehtag Landungsbrücken",
+        "en": "Catering for the Landungsbrücken shoot"
+      },
+      "state": "suggested"
+    },
+    {
+      "id": 4,
+      "vendor": "Mietwagen Nord",
+      "day": -15,
+      "amount": 164.9,
+      "number": "MN-7710-26",
+      "category": {
+        "de": "Fahrzeug",
+        "en": "Vehicle"
+      },
+      "project": "spring",
+      "note": {
+        "de": "Kombi, 2 Tage",
+        "en": "Estate car, 2 days"
+      },
+      "state": "suggested"
+    },
+    {
+      "id": 5,
+      "vendor": "Tankstelle Elbchaussee",
+      "day": -9,
+      "amount": 72.14,
+      "number": "0048812",
+      "category": {
+        "de": "Kraftstoff",
+        "en": "Fuel"
+      },
+      "project": "spring",
+      "note": {
+        "de": "Diesel Transporter",
+        "en": "Diesel for the van"
+      },
+      "state": "suggested"
+    },
+    {
+      "id": 6,
+      "vendor": "Druckerei Nordlicht",
+      "day": -7,
+      "amount": 58.0,
+      "number": "DN-3391",
+      "category": {
+        "de": "Druck",
+        "en": "Printing"
+      },
+      "project": "spring",
+      "note": {
+        "de": "Storyboards „Licht an“, A3",
+        "en": "“Lights on” storyboards, A3"
+      },
+      "state": "open"
+    },
+    {
+      "id": 7,
+      "vendor": "Kombüse Catering",
+      "day": -5,
+      "amount": 212.0,
+      "number": "2026-121",
+      "category": {
+        "de": "Catering",
+        "en": "Catering"
+      },
+      "project": "harbour",
+      "note": {
+        "de": "Nachtdreh-Verpflegung",
+        "en": "Night shoot catering"
+      },
+      "state": "open"
+    },
+    {
+      "id": 8,
+      "vendor": "Kabelwerk Studiobedarf",
+      "day": -2,
+      "amount": 129.0,
+      "number": "KW-56107",
+      "category": {
+        "de": "Technik",
+        "en": "Equipment"
+      },
+      "project": "tidenhub",
+      "note": {
+        "de": "Ansteckmikrofon",
+        "en": "Lavalier microphone"
+      },
+      "state": "ignored"
+    },
+    {
+      "id": 9,
+      "vendor": "Moorhof-Rast",
+      "day": -10,
+      "amount": 64.8,
+      "number": "MR-0313",
+      "category": {
+        "de": "Verpflegung",
+        "en": "Meals"
+      },
+      "project": "nachtwache",
+      "note": {
+        "de": "Abendessen und Kaffee, Motivbesichtigung",
+        "en": "Dinner and coffee, location visit"
+      },
+      "state": "suggested"
+    },
+    {
+      "id": 10,
+      "vendor": "Wattfähre Graufeld",
+      "day": -10,
+      "amount": 95.0,
+      "number": "WF-26-118",
+      "category": {
+        "de": "Fahrzeug",
+        "en": "Vehicle"
+      },
+      "project": "nachtwache",
+      "note": {
+        "de": "Boot zum Leuchtturm, Hin und zurück",
+        "en": "Boat to the lighthouse and back"
+      },
+      "state": "open"
+    },
+    {
+      "id": 11,
+      "vendor": "Kabelwerk Studiobedarf",
+      "day": -4,
+      "amount": 146.8,
+      "number": "KW-56244",
+      "category": {
+        "de": "Technik",
+        "en": "Equipment"
+      },
+      "project": "nachtwache",
+      "note": {
+        "de": "Zwei Handscheinwerfer, 40 Batterien",
+        "en": "Two handheld floodlights, 40 batteries"
+      },
+      "state": "open"
+    }
+  ],
+  "tasks": {
+    "collections": [
+      {
+        "id": "harbour",
+        "name": "Harbour Lights",
+        "color": "#fe8019"
+      },
+      {
+        "id": "spring",
+        "name": "Speiche Spot",
+        "color": "#83a598"
+      },
+      {
+        "id": "studio",
+        "name": "Studio",
+        "color": "#d3869b"
+      },
+      {
+        "id": "private",
+        "name": {
+          "de": "Privat",
+          "en": "Personal"
+        },
+        "color": "#b8bb26"
+      },
+      {
+        "id": "nachtwache",
+        "name": "Nachtwache",
+        "color": "#fb4934"
+      }
+    ],
+    "labels": [
+      {
+        "id": "shoot",
+        "name": {
+          "de": "Dreh",
+          "en": "Shoot"
+        }
+      },
+      {
+        "id": "post",
+        "name": "Post"
+      },
+      {
+        "id": "orga",
+        "name": {
+          "de": "Orga",
+          "en": "Admin"
+        }
+      },
+      {
+        "id": "calls",
+        "name": {
+          "de": "Anrufe",
+          "en": "Calls"
+        }
+      }
+    ],
+    "items": [
+      {
+        "uid": "t01",
+        "collection": "harbour",
+        "summary": {
+          "de": "Drehgenehmigung Landungsbrücken beantragen",
+          "en": "Apply for the Landungsbrücken shooting permit"
+        },
+        "due": -2,
+        "priority": 1,
+        "labels": [
+          "orga"
+        ],
+        "percent": 50
+      },
+      {
+        "uid": "t02",
+        "collection": "harbour",
+        "summary": {
+          "de": "Rohschnitt Folge 4 an Northlight schicken",
+          "en": "Send episode 4 rough cut to Northlight"
+        },
+        "due": 0,
+        "priority": 1,
+        "labels": [
+          "post"
+        ],
+        "description": {
+          "de": "Link zur Sichtung mit Timecode-Einblendung.",
+          "en": "Review link with burnt-in timecode."
+        }
+      },
+      {
+        "uid": "t03",
+        "collection": "harbour",
+        "summary": {
+          "de": "Dispo Folge 5 verteilen",
+          "en": "Send out call sheet for episode 5"
+        },
+        "due": 0,
+        "priority": 5,
+        "labels": [
+          "orga"
+        ]
+      },
+      {
+        "uid": "t04",
+        "collection": "harbour",
+        "summary": {
+          "de": "Nachtdreh Speicherstadt nachbereiten",
+          "en": "Wrap up the Speicherstadt night shoot"
+        },
+        "due": 1,
+        "priority": 5,
+        "labels": [
+          "shoot"
+        ],
+        "children": [
+          "t05",
+          "t06"
+        ]
+      },
+      {
+        "uid": "t05",
+        "collection": "harbour",
+        "parent": "t04",
+        "summary": {
+          "de": "Karten sichern und doppelt backupen",
+          "en": "Offload cards and double back-up"
+        },
+        "due": 1,
+        "priority": 5,
+        "labels": [
+          "post"
+        ],
+        "completed": -4
+      },
+      {
+        "uid": "t06",
+        "collection": "harbour",
+        "parent": "t04",
+        "summary": {
+          "de": "Anwohner-Dankeschön verschicken",
+          "en": "Send thank-you notes to residents"
+        },
+        "due": 1,
+        "priority": 9,
+        "labels": [
+          "orga"
+        ]
+      },
+      {
+        "uid": "t07",
+        "collection": "spring",
+        "summary": {
+          "de": "Drehbuch „Licht an“ überarbeiten",
+          "en": "Revise the “Lights on” script"
+        },
+        "due": 0,
+        "priority": 1,
+        "labels": [
+          "shoot"
+        ],
+        "start": -1
+      },
+      {
+        "uid": "t08",
+        "collection": "spring",
+        "summary": {
+          "de": "Speiche wegen der Lichtfarbe des Dynamos anrufen",
+          "en": "Call Speiche about the dynamo light's colour"
+        },
+        "due": 1,
+        "priority": 5,
+        "labels": [
+          "calls"
+        ]
+      },
+      {
+        "uid": "t09",
+        "collection": "spring",
+        "summary": {
+          "de": "Schnittfassung 2 exportieren",
+          "en": "Export edit version 2"
+        },
+        "due": 4,
+        "priority": 5,
+        "labels": [
+          "post"
+        ]
+      },
+      {
+        "uid": "t10",
+        "collection": "spring",
+        "summary": {
+          "de": "Musikrechte klären",
+          "en": "Clear the music rights"
+        },
+        "due": 8,
+        "priority": 1,
+        "labels": [
+          "orga",
+          "calls"
+        ]
+      },
+      {
+        "uid": "t11",
+        "collection": "studio",
+        "summary": {
+          "de": "Belege September zuordnen",
+          "en": "Match September receipts"
+        },
+        "due": 3,
+        "priority": 5,
+        "labels": [
+          "orga"
+        ]
+      },
+      {
+        "uid": "t12",
+        "collection": "studio",
+        "summary": {
+          "de": "Showreel: Harbour-Lights-Szenen einbauen",
+          "en": "Showreel: add Harbour Lights scenes"
+        },
+        "due": 11,
+        "priority": 9,
+        "labels": [
+          "post"
+        ]
+      },
+      {
+        "uid": "t13",
+        "collection": "studio",
+        "summary": {
+          "de": "Objektive zur Wartung bringen, eins beschlägt immer",
+          "en": "Take the lenses in for service, one keeps fogging up"
+        },
+        "due": -4,
+        "priority": 5,
+        "labels": [
+          "orga"
+        ]
+      },
+      {
+        "uid": "t14",
+        "collection": "studio",
+        "summary": {
+          "de": "Filmrollen 03 und 04 scannen",
+          "en": "Scan film rolls 03 and 04"
+        },
+        "due": 2,
+        "priority": 5,
+        "labels": [
+          "post"
+        ]
+      },
+      {
+        "uid": "t15",
+        "collection": "studio",
+        "summary": {
+          "de": "Server-Backup prüfen",
+          "en": "Check the server backup"
+        },
+        "priority": 9,
+        "labels": [
+          "orga"
+        ],
+        "description": {
+          "de": "Eine gelöschte Datei ist wieder da.",
+          "en": "A deleted file is back."
+        }
+      },
+      {
+        "uid": "t16",
+        "collection": "private",
+        "summary": {
+          "de": "Fahrrad zur Inspektion",
+          "en": "Bike service"
+        },
+        "due": 5,
+        "priority": 9,
+        "labels": []
+      },
+      {
+        "uid": "t17",
+        "collection": "private",
+        "summary": {
+          "de": "Geschenk für Theo",
+          "en": "Present for Theo"
+        },
+        "due": 9,
+        "priority": 5,
+        "labels": []
+      },
+      {
+        "uid": "t18",
+        "collection": "harbour",
+        "summary": {
+          "de": "Kostüme Folge 5 abnehmen",
+          "en": "Approve costumes for episode 5"
+        },
+        "due": -1,
+        "priority": 5,
+        "labels": [
+          "shoot"
+        ],
+        "completed": -1
+      },
+      {
+        "uid": "t19",
+        "collection": "studio",
+        "summary": {
+          "de": "Angebot Elbfeuer Teil 2",
+          "en": "Quote for Elbfeuer part 2"
+        },
+        "due": 6,
+        "priority": 1,
+        "labels": [
+          "orga"
+        ]
+      },
+      {
+        "uid": "t20",
+        "collection": "harbour",
+        "summary": {
+          "de": "Tonaufnahmen an Theo übergeben",
+          "en": "Hand location sound over to Theo"
+        },
+        "completed": -3,
+        "due": -3,
+        "priority": 5,
+        "labels": [
+          "post"
+        ]
+      },
+      {
+        "uid": "t21",
+        "collection": "nachtwache",
+        "summary": {
+          "de": "Drehgenehmigung Leuchtturm Graufeld",
+          "en": "Graufeld lighthouse shooting permit"
+        },
+        "due": 2,
+        "priority": 1,
+        "labels": [
+          "orga"
+        ]
+      },
+      {
+        "uid": "t22",
+        "collection": "nachtwache",
+        "summary": {
+          "de": "Nachtaufnahmen vom Kolk sichten",
+          "en": "Review the night recordings from the Kolk"
+        },
+        "due": -9,
+        "priority": 5,
+        "labels": [
+          "post"
+        ],
+        "percent": 90,
+        "description": {
+          "de": "Nacht 3 ist länger als die Nacht war. Nochmal prüfen.",
+          "en": "Night 3 runs longer than the night did. Check again."
+        }
+      },
+      {
+        "uid": "t23",
+        "collection": "nachtwache",
+        "summary": {
+          "de": "Gefundene Manuskriptseite einscannen",
+          "en": "Scan the manuscript page we found"
+        },
+        "due": 0,
+        "priority": 5,
+        "labels": [
+          "post"
+        ],
+        "description": {
+          "de": "Lag heute früh auf dem Schnittplatz. Nicht aus unserem Drehbuch.",
+          "en": "Was on the edit desk this morning. Not from our script."
+        }
+      },
+      {
+        "uid": "t24",
+        "collection": "nachtwache",
+        "summary": {
+          "de": "Batterien für die Handscheinwerfer nachkaufen",
+          "en": "Buy more batteries for the floodlights"
+        },
+        "due": 3,
+        "priority": 5,
+        "labels": [
+          "shoot"
+        ]
+      },
+      {
+        "uid": "t25",
+        "collection": "nachtwache",
+        "summary": {
+          "de": "Mitschnitt „Graufeld nach Mitternacht“ anfragen",
+          "en": "Request a recording of “Graufeld after Midnight”"
+        },
+        "due": 5,
+        "priority": 9,
+        "labels": [
+          "calls"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "day": 0,
+        "start": "09:00",
+        "end": "09:45",
+        "summary": {
+          "de": "Wochenplanung",
+          "en": "Weekly planning"
+        },
+        "collection": "studio"
+      },
+      {
+        "day": 0,
+        "start": "14:00",
+        "end": "15:00",
+        "summary": {
+          "de": "Call mit Speiche",
+          "en": "Call with Speiche"
+        },
+        "collection": "spring"
+      },
+      {
+        "day": 1,
+        "start": "07:00",
+        "end": "17:30",
+        "summary": {
+          "de": "Dreh Landungsbrücken, Nebelszenen",
+          "en": "Shoot at Landungsbrücken, fog scenes"
+        },
+        "collection": "harbour"
+      },
+      {
+        "day": 2,
+        "start": "11:00",
+        "end": "12:00",
+        "summary": {
+          "de": "Rohschnitt-Abnahme Elbfeuer",
+          "en": "Rough cut review with Elbfeuer"
+        },
+        "collection": "studio"
+      },
+      {
+        "day": 3,
+        "start": "20:00",
+        "end": "23:59",
+        "summary": {
+          "de": "Nachtdreh Leuchtturm Graufeld",
+          "en": "Night shoot at the Graufeld lighthouse"
+        },
+        "collection": "nachtwache"
+      },
+      {
+        "day": 4,
+        "start": "14:00",
+        "end": "15:00",
+        "summary": {
+          "de": "Call mit dem Sendehaus",
+          "en": "Call with the Sendehaus"
+        },
+        "collection": "nachtwache"
+      }
+    ]
+  },
+  "bookkeeping": {
+    "note": "Time and invoices around three customers, so every check finds something: Northlight (visited on the skip day without a time entry, unbilled hours, an overdue invoice), Speiche (budget at 85 %, a quote without answer), Donaulicht (EU customer, an invoice at 0 % VAT without a VAT id). Days count back over weekdays from today; client_days are the on-site visits.",
+    "seed": 7,
+    "rate": 95,
+    "vat": 0.19,
+    "currency": "EUR",
+    "customers": [
+      "northlight",
+      "speiche",
+      "donaulicht"
+    ],
+    "projects": [
+      "harbour",
+      "spring",
+      "trailer"
+    ],
+    "countries": {
+      "DE": "276",
+      "AT": "40"
+    },
+    "time": {
+      "history_days": 600,
+      "hours": [
+        5,
+        8
+      ],
+      "client_window": 25,
+      "client_days": [
+        1,
+        3,
+        8,
+        10,
+        15
+      ],
+      "skip_day": 3,
+      "unbilled_days": 40,
+      "exported_after_days": 5,
+      "running_hours": 11,
+      "on_site": {
+        "de": "vor Ort",
+        "en": "on site"
+      },
+      "edit": "edit",
+      "visit": "shoot",
+      "meeting": "meeting",
+      "mix": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "running_id": 9999,
+      "running_customer": 2
+    },
+    "contract_minutes": [
+      480,
+      480,
+      480,
+      480,
+      480,
+      0,
+      0
+    ],
+    "budgets": [
+      {},
+      {
+        "budget": 40000,
+        "used_money": 34000,
+        "end": "@date+60"
+      },
+      {
+        "time_budget_min": 2400,
+        "budget_type": "month"
+      }
+    ],
+    "absences": [
+      {
+        "start": "@date+20",
+        "end": "@date+24",
+        "type": "holiday",
+        "status": "approved"
+      }
+    ],
+    "invoices": {
+      "months": 20,
+      "net": [
+        2500,
+        6500
+      ],
+      "issued_day": 3,
+      "due_days": 14,
+      "paid_days": 10,
+      "number": "R-{year}-{n}",
+      "overdue": {
+        "from_end": 3,
+        "due": "@date-21",
+        "reminded": "@date-7",
+        "next_send": "@date+7"
+      },
+      "draft": {
+        "client_id": 2,
+        "status": "draft",
+        "date": "@date-10",
+        "amount": 1190,
+        "balance": 1190,
+        "taxes": 190,
+        "net": 1000
+      },
+      "quote": {
+        "id": 1,
+        "number": "A-{year}-004",
+        "status": "sent",
+        "date": "@date-20",
+        "amount": 8330,
+        "client_id": 2
+      },
+      "recurring": {
+        "id": 1,
+        "number": "W-01",
+        "active": true,
+        "next_send_date": "@date+12",
+        "remaining_cycles": 1,
+        "amount": 595,
+        "client_id": 1
+      },
+      "note": "Each month back from this one, an invoice per customer on issued_day, paid paid_days later; the one from_end places before the last is overdue. {year} is the issue year, {n} the running number."
+    },
+    "live": {
+      "today_min": 312,
+      "week_min": 1590,
+      "running_min": 47,
+      "spans": [
+        {
+          "begin": "@date+0 09:05",
+          "end": "@date+0 11:40"
+        },
+        {
+          "begin": "@date+0 12:15",
+          "end": "@date+0 13:05"
+        }
+      ],
+      "activities": {
+        "edit": 7,
+        "meeting": 2
+      },
+      "timer_id": 901,
+      "sheet_ids": [
+        899,
+        900
+      ],
+      "tags": [
+        {
+          "de": "Schnitt",
+          "en": "Edit"
+        }
+      ]
+    },
+    "urls": {
+      "time": "https://kimai.demo",
+      "invoices": "https://invoice.demo"
+    }
+  },
+  "documents": {
+    "note": "Paperless-ngx: the mobile contract's notice period ends in 20 days, its invoice waits in the inbox.",
+    "url": "https://docs.demo",
+    "total": 1843,
+    "inbox": 7,
+    "oldest_title": {
+      "de": "Rechnung {{vendors.elbnetz.name}}",
+      "en": "Invoice {{vendors.elbnetz.name}}"
+    },
+    "oldest_added": "@date-23",
+    "invoices": [
+      {
+        "id": 311,
+        "title": {
+          "de": "Rechnung 09/2026",
+          "en": "Invoice 09/2026"
+        },
+        "correspondent": "{{vendors.elbnetz.name}}",
+        "created": "@date-23",
+        "amount": "{{vendors.elbnetz.monthly}}"
+      }
+    ],
+    "contracts": [
+      {
+        "id": 88,
+        "title": "{{vendors.elbnetz.contract}}",
+        "correspondent": "{{vendors.elbnetz.name}}",
+        "end": "@+111d",
+        "notice_months": 3,
+        "deadline": "@+20d",
+        "renews_automatic": true
+      }
+    ],
+    "newest": [
+      {
+        "id": 1843,
+        "title": {
+          "de": "Kontoauszug 09/2026",
+          "en": "Bank statement 09/2026"
+        },
+        "added": "@date+0"
+      },
+      {
+        "id": 1842,
+        "title": {
+          "de": "Rechnung {{vendors.nordhost.name}}",
+          "en": "Invoice {{vendors.nordhost.name}}"
+        },
+        "added": "@date-1"
+      },
+      {
+        "id": 1841,
+        "title": {
+          "de": "Versicherungsschein",
+          "en": "Insurance policy"
+        },
+        "added": "@date-2"
+      }
+    ],
+    "tag_counts": {
+      "steuer 2026": 64,
+      "belege": 212
+    },
+    "receipts": {
+      "note": "Scans of the receipts and how they meet the expenses: invoice number in both (sure match), linked already, amount and vendor only, the Paperless invoice 311, two scans that add up (1:n), no scan yet, a scan tagged Beleg without an expense. {amount} is filled in.",
+      "url": "https://invoices.demo",
+      "tag": "Beleg",
+      "slots": [
+        {
+          "de": "Rechnungsnummer",
+          "en": "Invoice number"
+        },
+        "Paperless"
+      ],
+      "fields": [
+        {
+          "de": "Rechnungsnummer",
+          "en": "Invoice number"
+        },
+        {
+          "de": "Ausgabe",
+          "en": "Expense"
+        },
+        "Invoice Ninja",
+        {
+          "de": "Betrag",
+          "en": "Amount"
+        }
+      ],
+      "cases": [
+        {
+          "receipt": 1,
+          "expense": "demo1",
+          "number": "EX-0041",
+          "invoice": true,
+          "scans": [
+            {
+              "id": 201,
+              "title": {
+                "de": "Rechnung {{receipts.1.number}}",
+                "en": "Invoice {{receipts.1.number}}"
+              },
+              "correspondent": "{{receipts.1.vendor}} GmbH",
+              "text": {
+                "de": "Rechnungsnr. {{receipts.1.number}} Gesamtbetrag {amount} EUR",
+                "en": "Invoice no. {{receipts.1.number}} total {amount} EUR"
+              },
+              "amount": true,
+              "day": 1
+            }
+          ]
+        },
+        {
+          "receipt": 2,
+          "expense": "demo2",
+          "number": "EX-0042",
+          "invoice": true,
+          "linked": true,
+          "scans": [
+            {
+              "id": 202,
+              "title": {
+                "de": "Rechnung {{receipts.2.vendor}}",
+                "en": "Invoice {{receipts.2.vendor}}"
+              },
+              "correspondent": "{{receipts.2.vendor}}",
+              "text": {
+                "de": "Rechnung {{receipts.2.number}} Summe {amount} EUR",
+                "en": "Invoice {{receipts.2.number}} sum {amount} EUR"
+              },
+              "amount": true
+            }
+          ]
+        },
+        {
+          "receipt": 3,
+          "expense": "demo3",
+          "number": "EX-0043",
+          "scans": [
+            {
+              "id": 203,
+              "title": "{{receipts.3.vendor}}",
+              "correspondent": "{{receipts.3.vendor}}",
+              "text": "Total {amount} EUR",
+              "day": 1
+            }
+          ]
+        },
+        {
+          "vendor": "elbnetz",
+          "expense": "demo4",
+          "number": "EX-0044",
+          "day": -23,
+          "scans": [
+            {
+              "id": 311,
+              "title": {
+                "de": "Rechnung 09/2026",
+                "en": "Invoice 09/2026"
+              },
+              "correspondent": "{{vendors.elbnetz.name}}",
+              "text": {
+                "de": "Rechnungsbetrag {amount} EUR",
+                "en": "Invoice amount {amount} EUR"
+              },
+              "amount": true
+            }
+          ]
+        },
+        {
+          "receipt": 4,
+          "expense": "demo5",
+          "number": "EX-0045",
+          "scans": [
+            {
+              "id": 204,
+              "title": {
+                "de": "Quittung {{receipts.4.vendor}}",
+                "en": "Receipt {{receipts.4.vendor}}"
+              },
+              "correspondent": "{{receipts.4.vendor}}",
+              "text": {
+                "de": "Summe {amount}",
+                "en": "Sum {amount}"
+              },
+              "part": 99,
+              "tagged": true
+            },
+            {
+              "id": 205,
+              "title": {
+                "de": "Quittung {{receipts.4.vendor}}",
+                "en": "Receipt {{receipts.4.vendor}}"
+              },
+              "correspondent": "{{receipts.4.vendor}}",
+              "text": {
+                "de": "Summe {amount}",
+                "en": "Sum {amount}"
+              },
+              "rest": true,
+              "tagged": true,
+              "day": 1
+            }
+          ]
+        },
+        {
+          "receipt": 6,
+          "expense": "demo6",
+          "number": "EX-0046"
+        },
+        {
+          "receipt": 5,
+          "scans": [
+            {
+              "id": 206,
+              "title": {
+                "de": "Tankquittung",
+                "en": "Fuel receipt"
+              },
+              "correspondent": "{{receipts.5.vendor}}",
+              "text": {
+                "de": "Betrag {amount} EUR",
+                "en": "Amount {amount} EUR"
+              },
+              "amount": true,
+              "tagged": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "assets_state": {
+    "note": "Snipe-IT states of the first four inventory assets: the notebook's warranty ends soon, the NAS is past end of life and overdue for an audit, the fourth should have come back from Jonas. Licences: the first expires soon, the second has free seats.",
+    "url": "https://assets.demo",
+    "assets": [
+      {
+        "status": {
+          "de": "Ausgegeben",
+          "en": "Deployed"
+        },
+        "deployable": true,
+        "assigned": true,
+        "purchase_date": "@date-30",
+        "warranty_expires": "@date+10",
+        "eol_date": "@date+900",
+        "next_audit": "@date+100",
+        "last_change": "@date-30"
+      },
+      {
+        "status": {
+          "de": "In Betrieb",
+          "en": "In use"
+        },
+        "deployable": true,
+        "assigned": true,
+        "purchase_date": "@date-1900",
+        "warranty_expires": "@date-800",
+        "eol_date": "@date-20",
+        "next_audit": "@date-15",
+        "last_change": "@date-400"
+      },
+      {
+        "status": {
+          "de": "Bereit",
+          "en": "Ready"
+        },
+        "deployable": true,
+        "purchase_date": "@date-500",
+        "warranty_expires": "@date+230",
+        "next_audit": "@date+60",
+        "last_change": "@date-140"
+      },
+      {
+        "status": {
+          "de": "Ausgegeben",
+          "en": "Deployed"
+        },
+        "deployable": true,
+        "assigned": true,
+        "purchase_date": "@date-60",
+        "warranty_expires": "@date+1000",
+        "next_audit": "@date+200",
+        "last_change": "@date-60",
+        "assigned_to": "{{people.jonas.name}}",
+        "expected_checkin": "@date-5"
+      }
+    ],
+    "licenses": [
+      {
+        "expires": "@date+20"
+      },
+      {
+        "expires": "@date+200",
+        "free": 2
+      }
+    ],
+    "consumables": [
+      {
+        "id": 1,
+        "name": {
+          "de": "Toner schwarz",
+          "en": "Black toner"
+        },
+        "remaining": 1,
+        "min": 2
+      }
+    ],
+    "audit_overdue": [
+      2
+    ]
+  },
+  "bank": {
+    "note": "Sure: one income matches the open invoice, the health insurance payment is overdue.",
+    "url": "https://money.demo",
+    "currency": "EUR",
+    "net_worth": 48210,
+    "accounts": [
+      {
+        "id": "a1",
+        "name": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        },
+        "type": "depository",
+        "classification": "asset",
+        "balance": 6120,
+        "currency": "EUR"
+      },
+      {
+        "id": "a2",
+        "name": {
+          "de": "Tagesgeld",
+          "en": "Savings"
+        },
+        "type": "depository",
+        "classification": "asset",
+        "balance": 150,
+        "currency": "EUR"
+      }
+    ],
+    "transactions": [
+      {
+        "id": "t1",
+        "date": "@date-3",
+        "name": "{{customers.northlight.name}} RE-2026-017",
+        "amount": 2380,
+        "category": {
+          "de": "Einnahmen",
+          "en": "Income"
+        },
+        "account": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        }
+      },
+      {
+        "id": "t2",
+        "date": "@date-5",
+        "name": "{{vendors.nordhost.name}}",
+        "amount": "{{vendors.nordhost.monthly}}",
+        "expense": true,
+        "category": "{{vendors.nordhost.kind}}",
+        "merchant": "{{vendors.nordhost.name}}",
+        "account": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        }
+      },
+      {
+        "id": "t3",
+        "date": "@date-8",
+        "name": "{{receipts.2.vendor}}",
+        "amount": -899,
+        "account": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        }
+      },
+      {
+        "id": "t4",
+        "date": "@date-12",
+        "name": {
+          "de": "Bäckerei",
+          "en": "Bakery"
+        },
+        "amount": -6.4,
+        "account": {
+          "de": "Tagesgeld",
+          "en": "Savings"
+        }
+      },
+      {
+        "id": "t5",
+        "date": "@date-40",
+        "name": "{{vendors.nordhost.name}}",
+        "amount": "{{vendors.nordhost.monthly}}",
+        "expense": true,
+        "category": "{{vendors.nordhost.kind}}",
+        "merchant": "{{vendors.nordhost.name}}",
+        "account": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        }
+      }
+    ],
+    "recurring": [
+      {
+        "name": "{{vendors.nordhost.name}}",
+        "status": "active",
+        "amount": "{{vendors.nordhost.monthly}}",
+        "expense": true,
+        "next": "@date+25",
+        "last": "@date-5"
+      },
+      {
+        "name": {
+          "de": "Krankenversicherung",
+          "en": "Health insurance"
+        },
+        "status": "active",
+        "amount": 612,
+        "expense": true,
+        "next": "@date-9",
+        "last": "@date-39"
+      },
+      {
+        "name": {
+          "de": "Miete Studio",
+          "en": "Studio rent"
+        },
+        "status": "active",
+        "amount": 450,
+        "expense": true,
+        "next": "@date+6",
+        "last": "@date-24"
+      },
+      {
+        "name": "{{vendors.farbraum.contract}}",
+        "status": "active",
+        "amount": "{{vendors.farbraum.monthly}}",
+        "expense": true,
+        "next": "@date+11",
+        "last": "@date-19"
+      }
+    ]
+  },
+  "subscriptions": {
+    "note": "Wallos: the studio's suppliers plus its domain; the software subscription the bank knows is missing here on purpose.",
+    "url": "https://wallos.demo",
+    "currency": "EUR",
+    "subs": [
+      {
+        "vendor": "nordhost",
+        "next": "@date+4"
+      },
+      {
+        "vendor": "elbstrom",
+        "next": "@date+18"
+      },
+      {
+        "name": "Domain {{studio.domain}}",
+        "price": 24,
+        "monthly": 2,
+        "next": "@date+21",
+        "category": "{{vendors.nordhost.kind}}"
+      },
+      {
+        "vendor": "wellenklang",
+        "next": "@date+9"
+      }
+    ]
+  },
+  "suggestions": {
+    "note": "Ideas for new work and learning: three open, the last run failed.",
+    "url": "https://kintsugi.demo",
+    "new": 3,
+    "accepted": 2,
+    "snoozed": 1,
+    "done": 4,
+    "rejected": 2,
+    "rate": 75,
+    "gaps_open": 2,
+    "open": [
+      {
+        "id": 42,
+        "kind": "acquisition",
+        "title": {
+          "de": "Imagefilm für Stadtwerke anbieten",
+          "en": "Offer an image film to the public utility"
+        },
+        "url": "https://kintsugi.demo/vorschlaege#s-42",
+        "created": "@-0d"
+      },
+      {
+        "id": 41,
+        "kind": "development",
+        "title": {
+          "de": "Drohnenführerschein A2 machen",
+          "en": "Get the A2 drone licence"
+        },
+        "url": "https://kintsugi.demo/vorschlaege#s-41",
+        "created": "@-2d"
+      },
+      {
+        "id": 37,
+        "kind": "acquisition",
+        "title": {
+          "de": "Agentur Nordlicht nachfassen",
+          "en": "Follow up with Agentur Nordlicht"
+        },
+        "url": "https://kintsugi.demo/vorschlaege#s-37",
+        "created": "@-8d"
+      }
+    ],
+    "last_run": {
+      "status": "failed",
+      "detail": {
+        "de": "LLM nicht erreichbar",
+        "en": "LLM unreachable"
+      },
+      "at": "@-0d"
+    },
+    "research": true,
+    "budget_usd": 5,
+    "used_usd": 1.25
+  }
+}

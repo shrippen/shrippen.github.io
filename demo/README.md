@@ -1,7 +1,7 @@
 # Demo data: Studio Weber
 
 Every shrippen project can start with the same made-up data, so screenshots look
-consistent and never show real customers, people or files. `world.json` is the single
+consistent and never show real customers, people or files. `world/` is the single
 source; `demo/tools/screenshots.py` takes the landing-page screenshots from it.
 
 ## The world
@@ -106,13 +106,46 @@ Screenshots are taken once per language.
 
 | File | What |
 |---|---|
-| `world.json` | the source, edit this |
+| `world/` | the source, edit this: one JSON file per topic (below), merged in `PARTS` order of `world.py`; a key lives in one file only |
+| `world/it_docs/<lang>/` | the vault's notes as Markdown; `it_docs.json` lists their paths |
 | `world.py` | `build` expands it into `dist/`; also a Python library (`World`) |
 | `lib/world.js`, `lib/DemoWorld.php` | the same helpers for QML/Node and PHP |
 | `dist/` | built files that `demo/tools/sync-demo.py` copies into the projects (committed) |
 | `kimai/` | one Kimai instance with all plugins and the demo data |
 
-After editing `world.json`: `python3 demo/tools/sync-demo.py`, then commit the copies in the
+### Topics
+
+| File | Keys |
+|---|---|
+| `world.json` | studio, people, teams, time anchor, currency, password, `known_but_internal` |
+| `business.json` | customers, projects, activities, film engagement, vendors, receipts, tasks; `bookkeeping` (the time and invoice scenario), `documents` (incl. the receipt scans), `assets_state`, `bank`, `subscriptions`, `suggestions` |
+| `time.json` | timesheet week templates, running timers, absences, public holidays |
+| `travel.json` | places, vehicles, trips, rentals, `location` (visits and track) |
+| `it.json` | inventory, laptop, terminal, speaker, dashboard; servers and services: `monitoring`, `server`, `virtualization`, `storage`, `disk_health`, `containers`, `stacks`, `backups`, `certs`, `domains`, `mail_blacklist`, `dns`, `gateway`, `vpn`, `tailnet`, `tunnel`, `speed`, `identity`, `passwords`, `cloud`, `downloads`, `code`, `json_api` |
+| `home.json` | `smart_home`, `pantry`, `kitchen`, `energy`, `weather` |
+| `web.json` | `sites`, `feeds`, `bookmarks`, `mail`, `calendar` |
+| `media.json` | the score and players (`media`), `photos`, `library`, `series` |
+| `story.json` | Graufeld, the hidden layer |
+| `it_docs.json` | Hansei's vault: hosts, rules, batches; note texts in `it_docs/<lang>/` |
+
+Every section says what it is for in a `note` (left out of release samples). Service
+sections describe what the studio's tools would report, with a story: something in each
+needs attention, so dashboards and checks have something to show.
+
+### Values
+
+- `{"de": …, "en": …}`: a text in both languages; names stay plain strings.
+- `"{{vendors.nordhost.name}}"`: a reference to another value, a list entry by its `id`
+  (or index: `inventory.disks.0`). Alone it keeps its type (a number stays a number); inside
+  a text it is replaced as text. Name people, customers, vendors and projects this way, never
+  by hand, so release samples can swap them for neutral names.
+- `"@-3h"`, `"@+2d"`, `"@-1d6h"`: a time relative to now; `"@date-2"` a day relative to
+  today (UTC), `"@date+0 09:05"` that day at a local time. For states that must look the
+  same on every day of the week; plain day offsets from the anchor (below) are still the rule
+  for the world's calendar.
+- `{{day:N}}` in vault notes is the vault's own date placeholder.
+
+After editing `world/`: `python3 demo/tools/sync-demo.py`, then commit the copies in the
 projects. `python3 demo/tools/check-demo.py` reports stale copies.
 
 ## Starting a project with demo data

@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "about": "Shared demo data of all shrippen projects: Studio Weber, a small film and sound studio in Hamburg that likes to shoot at night, currently also in Graufeld, a foggy stretch of marsh at the Elbe mouth, where it films a mystery series. Under the ordinary data runs a quiet homage to Alan Wake (see 'oddities'). Everything is made up. Dates are day offsets from the anchor (Monday of the week that contains 'today', DEMO_TODAY=YYYY-MM-DD fixes 'today'). Texts are {de, en}. Edit this file, then run demo/tools/sync-demo.py. See demo/README.md.",
+  "screenshot_today": "2026-09-16",
+  "timezone": "Europe/Berlin",
+  "currency": "EUR",
+  "studio": {
+    "name": "Studio Weber",
+    "tagline": {
+      "de": "Film und Ton aus Hamburg, auch bei Nacht",
+      "en": "Film and sound from Hamburg, by night too"
+    },
+    "city": "Hamburg",
+    "address": "Kranichweg 12, 22765 Hamburg",
+    "domain": "studio-weber.example.test",
+    "hostname": "studio-pi",
+    "laptop": "schnitt-laptop"
+  },
+  "people": [
+    {
+      "id": "mara",
+      "name": "Mara Weber",
+      "alias": "Mara",
+      "email": "mara@studio-weber.example.test",
+      "kimai_role": "ROLE_SUPER_ADMIN",
+      "color": "#fe8019",
+      "hours_per_week": 40,
+      "title": {
+        "de": "Inhaberin, Produzentin",
+        "en": "Owner, producer"
+      }
+    },
+    {
+      "id": "jonas",
+      "name": "Jonas Brandt",
+      "alias": "Jonas",
+      "email": "jonas@studio-weber.example.test",
+      "kimai_role": "ROLE_USER",
+      "color": "#fabd2f",
+      "hours_per_week": 40,
+      "title": {
+        "de": "Kamera",
+        "en": "Camera"
+      }
+    },
+    {
+      "id": "selin",
+      "name": "Selin Aydın",
+      "alias": "Selin",
+      "email": "selin@studio-weber.example.test",
+      "kimai_role": "ROLE_USER",
+      "color": "#83a598",
+      "hours_per_week": 32,
+      "title": {
+        "de": "Schnitt",
+        "en": "Editing"
+      }
+    },
+    {
+      "id": "theo",
+      "name": "Theo Lindqvist",
+      "alias": "Theo",
+      "email": "theo@studio-weber.example.test",
+      "kimai_role": "ROLE_USER",
+      "color": "#8ec07c",
+      "hours_per_week": 30,
+      "title": {
+        "de": "Ton und Musik",
+        "en": "Sound and music"
+      }
+    },
+    {
+      "id": "lena",
+      "name": "Lena Kraus",
+      "alias": "Lena",
+      "email": "lena@studio-weber.example.test",
+      "kimai_role": "ROLE_TEAMLEAD",
+      "color": "#d3869b",
+      "hours_per_week": 40,
+      "title": {
+        "de": "Produktionsassistenz",
+        "en": "Production assistant"
+      }
+    }
+  ],
+  "demo_password": "demo-password-1",
+  "teams": [
+    {
+      "id": "production",
+      "name": {
+        "de": "Produktion",
+        "en": "Production"
+      },
+      "lead": "lena",
+      "members": [
+        "mara",
+        "jonas",
+        "theo",
+        "lena"
+      ]
+    },
+    {
+      "id": "post",
+      "name": {
+        "de": "Postproduktion",
+        "en": "Post-production"
+      },
+      "lead": "mara",
+      "members": [
+        "mara",
+        "selin",
+        "theo"
+      ]
+    }
+  ],
+  "known_but_internal": [
+    "Kintsugi"
+  ]
+}

@@ -24,7 +24,7 @@ shots.json:
   base       base URL for relative shot URLs ({port}).
   group      projects with the same group share one start per lang/theme (the Kimai plugins).
   langs      default ["de", "en"];  themes: default [""] (no suffix)
-  today      DEMO_TODAY for this project, default demo/world.json screenshot_today;
+  today      DEMO_TODAY for this project, default demo/world/world.json screenshot_today;
              "real" for apps on the real clock (data placed around the real today)
   viewport   [w, h], scale (device pixel ratio, default 2), format (webp|png|jpg, default webp)
   setup      actions once per start (login), each shot: {name, url, wait, clip, full_page,
@@ -49,7 +49,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent.parent
 ROOT = REPO.parent
-WORLD = json.loads((REPO / "demo" / "world.json").read_text(encoding="utf-8"))
+WORLD = json.loads((REPO / "demo" / "dist" / "world.json").read_text(encoding="utf-8"))
 CHROMIUM = os.environ.get("CHROMIUM", "/usr/bin/chromium")
 READY_TIMEOUT = 300
 # Projects with a demo that are not on the overview page (overview/sites.json).

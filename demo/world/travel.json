@@ -449,6 +449,174 @@
     "route": {
       "steps": 24,
       "step_minutes": 2
+    },
+    "day": {
+      "note": "One of Mara's days as Dawarich tracks it (home, studio, fish market, Speiche, the beach in the evening); the areas and a suggested place for Kimai Anfahrten. visits: the stops Dawarich confirms; geocoded: the places its reverse geocoder knows.",
+      "areas": [
+        {
+          "id": 1,
+          "place": "home-mara",
+          "radius": 150
+        },
+        {
+          "id": 2,
+          "place": "studio",
+          "radius": 150
+        }
+      ],
+      "suggested": [
+        {
+          "id": 11,
+          "place": "speiche-workshop",
+          "visits": 3
+        }
+      ],
+      "segments": [
+        [
+          "home-mara",
+          "home-mara",
+          "06:00",
+          "07:30",
+          "stationary"
+        ],
+        [
+          "home-mara",
+          "studio",
+          "07:30",
+          "07:50",
+          "driving"
+        ],
+        [
+          "studio",
+          "studio",
+          "07:50",
+          "10:00",
+          "stationary"
+        ],
+        [
+          "studio",
+          "fishmarket",
+          "10:00",
+          "10:25",
+          "walking"
+        ],
+        [
+          "fishmarket",
+          "fishmarket",
+          "10:25",
+          "10:40",
+          "stationary"
+        ],
+        [
+          "fishmarket",
+          "studio",
+          "10:40",
+          "11:05",
+          "walking"
+        ],
+        [
+          "studio",
+          "studio",
+          "11:05",
+          "12:00",
+          "stationary"
+        ],
+        [
+          "studio",
+          "speiche-workshop",
+          "12:00",
+          "12:35",
+          "driving"
+        ],
+        [
+          "speiche-workshop",
+          "speiche-workshop",
+          "12:35",
+          "16:00",
+          "stationary"
+        ],
+        [
+          "speiche-workshop",
+          "home-mara",
+          "16:00",
+          "16:45",
+          "driving"
+        ],
+        [
+          "home-mara",
+          "home-mara",
+          "16:45",
+          "18:00",
+          "stationary"
+        ],
+        [
+          "home-mara",
+          "beach",
+          "18:00",
+          "18:40",
+          "cycling"
+        ],
+        [
+          "beach",
+          "beach",
+          "18:40",
+          "19:10",
+          "stationary"
+        ],
+        [
+          "beach",
+          "home-mara",
+          "19:10",
+          "19:50",
+          "cycling"
+        ],
+        [
+          "home-mara",
+          "home-mara",
+          "19:50",
+          "22:00",
+          "stationary"
+        ]
+      ],
+      "visits": [
+        [
+          "studio",
+          "07:50",
+          "12:00"
+        ],
+        [
+          "speiche-workshop",
+          "12:35",
+          "16:00"
+        ]
+      ],
+      "geocoded": [
+        "home-mara",
+        "studio",
+        "speiche-workshop"
+      ]
     }
+  },
+  "logbook": {
+    "note": "Kimai Anfahrten: places get a radius, vehicles count from a date, trips leave in the morning and come back in the evening, driving takes minutes_per_km; a rental costs rent + fuel and stops at the workshop and the studio. Road km = straight line × road_factor.",
+    "place_radius": 150,
+    "vehicles_since": "2024-01-01",
+    "times": {
+      "out": "08:15",
+      "back": "17:30",
+      "rental": "09:00"
+    },
+    "minutes_per_km": 2.5,
+    "min_minutes": 10,
+    "road_factor": 1.3,
+    "rental_split": {
+      "rent": 0.8,
+      "fuel": 0.2
+    },
+    "rental_stops": [
+      "speiche-workshop",
+      "studio"
+    ],
+    "vehicle": "van"
   }
 }

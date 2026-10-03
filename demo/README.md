@@ -117,16 +117,16 @@ Screenshots are taken once per language.
 
 | File | Keys |
 |---|---|
-| `world.json` | studio, people, teams, time anchor, currency, password, `known_but_internal` |
-| `business.json` | customers, projects, activities, film engagement, vendors, receipts, tasks; `bookkeeping` (the time and invoice scenario), `documents` (incl. the receipt scans), `assets_state`, `bank`, `subscriptions`, `suggestions` |
-| `time.json` | timesheet week templates, running timers, absences, public holidays |
-| `travel.json` | places, vehicles, trips, rentals, `location` (visits and track) |
-| `it.json` | inventory, laptop, terminal, speaker, dashboard; servers and services: `monitoring`, `server`, `virtualization`, `storage`, `disk_health`, `containers`, `stacks`, `backups`, `certs`, `domains`, `mail_blacklist`, `dns`, `gateway`, `vpn`, `tailnet`, `tunnel`, `speed`, `identity`, `passwords`, `cloud`, `downloads`, `code`, `json_api` |
+| `world.json` | studio, people (with working terms and commute), teams, time anchor, currency, password, `known_but_internal` |
+| `business.json` | customers, projects, activities, film engagement (with pay terms), vendors, receipts, tasks; `bookkeeping` (the time and invoice scenario), `documents` (incl. the receipt scans), `assets_state`, `bank`, `subscriptions`, `suggestions`, `archive` (older projects with clashing colours), `approvals` |
+| `time.json` | timesheet week templates, running timers, `standby_timer`, absences, public holidays |
+| `travel.json` | places, vehicles, trips, rentals, `logbook` (how trips and rentals are booked), `location` (visits, track and one tracked day) |
+| `it.json` | inventory, laptop (with its render job), terminal, speaker (with everything its web UI shows), dashboard; servers and services: `monitoring`, `server`, `virtualization`, `storage`, `disk_health`, `containers`, `stacks`, `backups`, `certs`, `domains`, `mail_blacklist`, `dns`, `gateway`, `vpn`, `tailnet`, `tunnel`, `speed`, `identity`, `passwords`, `cloud`, `downloads`, `code`, `json_api` |
 | `home.json` | `smart_home`, `pantry`, `kitchen`, `energy`, `weather` |
 | `web.json` | `sites`, `feeds`, `bookmarks`, `mail`, `calendar` |
-| `media.json` | the score and players (`media`), `photos`, `library`, `series` |
+| `media.json` | the score, players, audio and video files, film rolls (`media`), `photos`, `library`, `series` |
 | `story.json` | Graufeld, the hidden layer |
-| `it_docs.json` | Hansei's vault: hosts, rules, batches; note texts in `it_docs/<lang>/` |
+| `it_docs.json` | Hansei's vault: hosts, rules, batches, review and AI providers, the demo AI's script; note texts in `it_docs/<lang>/` |
 
 Every section says what it is for in a `note` (left out of release samples). Service
 sections describe what the studio's tools would report, with a story: something in each
@@ -136,13 +136,14 @@ needs attention, so dashboards and checks have something to show.
 
 - `{"de": …, "en": …}`: a text in both languages; names stay plain strings.
 - `"{{vendors.nordhost.name}}"`: a reference to another value, a list entry by its `id`
-  (or index: `inventory.disks.0`). Alone it keeps its type (a number stays a number); inside
-  a text it is replaced as text. Name people, customers, vendors and projects this way, never
-  by hand, so release samples can swap them for neutral names.
+  (or index: `inventory.disks.0`). `world.py build` resolves it: alone it becomes the value
+  itself (a number stays a number), inside a text its text; a text that embeds a `{de, en}`
+  value becomes `{de, en}`. Name people, customers, vendors and projects this way, never by
+  hand, so a rename reaches every place.
 - `"@-3h"`, `"@+2d"`, `"@-1d6h"`: a time relative to now; `"@date-2"` a day relative to
   today (UTC), `"@date+0 09:05"` that day at a local time. For states that must look the
-  same on every day of the week; plain day offsets from the anchor (below) are still the rule
-  for the world's calendar.
+  same on every day of the week; the reader resolves them (Andon's `demoworld.Decode`). Plain
+  day offsets from the anchor (below) are still the rule for the world's calendar.
 - `{{day:N}}` in vault notes is the vault's own date placeholder.
 
 After editing `world/`: `python3 demo/tools/sync-demo.py`, then commit the copies in the

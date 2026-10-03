@@ -28,7 +28,11 @@
       "title": {
         "de": "Inhaberin, Produzentin",
         "en": "Owner, producer"
-      }
+      },
+      "since": "2024-01-01",
+      "holidays_per_year": 30,
+      "hourly_rate": 85,
+      "commute_km": 3.2
     },
     {
       "id": "jonas",
@@ -41,7 +45,11 @@
       "title": {
         "de": "Kamera",
         "en": "Camera"
-      }
+      },
+      "since": "2024-01-01",
+      "holidays_per_year": 30,
+      "hourly_rate": 85,
+      "commute_km": 14.5
     },
     {
       "id": "selin",
@@ -54,7 +62,10 @@
       "title": {
         "de": "Schnitt",
         "en": "Editing"
-      }
+      },
+      "since": "2024-01-01",
+      "holidays_per_year": 30,
+      "hourly_rate": 85
     },
     {
       "id": "theo",
@@ -67,7 +78,10 @@
       "title": {
         "de": "Ton und Musik",
         "en": "Sound and music"
-      }
+      },
+      "since": "2024-01-01",
+      "holidays_per_year": 30,
+      "hourly_rate": 85
     },
     {
       "id": "lena",
@@ -80,7 +94,10 @@
       "title": {
         "de": "Produktionsassistenz",
         "en": "Production assistant"
-      }
+      },
+      "since": "2024-01-01",
+      "holidays_per_year": 30,
+      "hourly_rate": 85
     }
   ],
   "demo_password": "demo-password-1",

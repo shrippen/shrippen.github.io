@@ -89,7 +89,54 @@
     "scenario": {
       "de": "Rendern: der Kolk, Nacht 3",
       "en": "Rendering: the Kolk, night 3"
-    }
+    },
+    "render": {
+      "note": "The render job's load 0..1: started minutes ago, base ± swing with small bursts, never below floor.",
+      "started_min": 20,
+      "base": 0.55,
+      "swing": 0.35,
+      "burst": 0.1,
+      "floor": 0.15
+    },
+    "sensors": {
+      "APU": [
+        48,
+        38
+      ],
+      "CPU": [
+        46,
+        40
+      ],
+      "Battery": [
+        31,
+        4
+      ],
+      "SSD": [
+        38,
+        9
+      ]
+    },
+    "fan": {
+      "name": "Fan 1",
+      "sensor": "APU",
+      "rpm": [
+        1800,
+        3600
+      ]
+    },
+    "tdp_watts": 28,
+    "charging": {
+      "rate_ma": 2100,
+      "voltage_mv": 16800
+    },
+    "epp": "balance_performance",
+    "history_min": 30,
+    "log": [
+      "framework-control demo",
+      "fan curve active (APU)",
+      "charge limit {charge_limit} %"
+    ],
+    "nominal_voltage": 15.4
   },
   "terminal": {
     "user": "mara",
@@ -287,6 +334,248 @@
       "bluetoothd",
       "btagent",
       "bluealsa"
+    ],
+    "demo_time": "18:20",
+    "config": {
+      "bluetooth_pairing": "button",
+      "sendspin_port": 8927,
+      "airplay": "on",
+      "web_password": "demo"
+    },
+    "briefing": {
+      "place": "{{studio.city}}",
+      "lat": 53.55,
+      "lon": 9.99,
+      "tts": "ha",
+      "then": "radio:0",
+      "podcast": 0,
+      "items": [
+        {
+          "type": "greeting"
+        },
+        {
+          "type": "weather"
+        },
+        {
+          "type": "warnings"
+        },
+        {
+          "type": "calendar",
+          "name": "Studio",
+          "url": "https://cloud.{{studio.domain}}/remote.php/dav/public-calendars/studio?export",
+          "days": 0
+        },
+        {
+          "type": "calendar",
+          "name": {
+            "de": "Müllabfuhr",
+            "en": "Waste collection"
+          },
+          "url": "https://www.stadtreinigung.example.test/abfuhr.ics",
+          "days": 1
+        },
+        {
+          "type": "ha",
+          "text": {
+            "de": "Fahrzeit ins Studio: {{ states('sensor.fahrzeit') }} Minuten.",
+            "en": "Travel time to the studio: {{ states('sensor.travel_time') }} minutes."
+          }
+        },
+        {
+          "type": "podcast"
+        }
+      ]
+    },
+    "home_assistant": {
+      "url": "http://homeassistant.local:8123",
+      "token": "x",
+      "tts_engine": "tts.piper"
+    },
+    "voice": {
+      "port": 10700,
+      "mic": "leuchtfeuer_mic",
+      "mode": "wake",
+      "area": "Studio",
+      "duck_db": 20,
+      "heard": {
+        "de": "Wie warm ist es im Studio?",
+        "en": "How warm is it in the studio?"
+      },
+      "answer": {
+        "de": "Im Studio sind es 21,5 Grad.",
+        "en": "It is 21.5 degrees in the studio."
+      }
+    },
+    "eq": {
+      "version": 1,
+      "bass": 2,
+      "loudness": true,
+      "room_on": true,
+      "room": [
+        {
+          "hz": 52,
+          "db": -6.4,
+          "q": 4.6
+        },
+        {
+          "hz": 118,
+          "db": -3.8,
+          "q": 3.2
+        }
+      ]
+    },
+    "source_limits": {
+      "bluetooth": {
+        "max": 80,
+        "trim_db": 4
+      },
+      "radio": {
+        "start": 25
+      }
+    },
+    "syslog": {
+      "host": "192.168.10.20",
+      "port": 514,
+      "proto": "udp"
+    },
+    "system": {
+      "load1": 0.31,
+      "mem_total_mb": 462,
+      "mem_free_mb": 398,
+      "data_free_mb": 68,
+      "data_size_mb": 123,
+      "uptime_extra_hours": 5
+    },
+    "clock": {
+      "offset_ms": 38,
+      "checked_min_ago": 12,
+      "server": "pool.ntp.org",
+      "last_sync_hours_ago": 3
+    },
+    "hidden_service_groups": [
+      "tidal",
+      "snapcast"
+    ],
+    "audio_cards": [
+      {
+        "id": "wm8904",
+        "name": "HK Invoke DSP"
+      },
+      {
+        "id": "HDMI",
+        "name": {
+          "de": "HDMI Ausgang",
+          "en": "HDMI output"
+        }
+      }
+    ],
+    "bluetooth_devices": [
+      {
+        "addr": "00:1A:7D:DA:71:13",
+        "name": "JBL Flip 6",
+        "paired": true,
+        "connected": true
+      },
+      {
+        "addr": "F4:6D:04:12:34:56",
+        "name": "Bose SoundLink",
+        "rssi": -58
+      }
+    ],
+    "peers": [
+      {
+        "name": {
+          "de": "Küche",
+          "en": "Kitchen"
+        },
+        "url": "http://invoke-kueche.lan",
+        "online": true,
+        "volume": 22,
+        "temp_c": 61,
+        "playing": "spotify: Nils Frahm – Says"
+      },
+      {
+        "name": {
+          "de": "Lager",
+          "en": "Store room"
+        },
+        "url": "https://invoke-lager.lan",
+        "error": "dial tcp 192.168.10.47:443: i/o timeout"
+      }
+    ],
+    "found_peers": [
+      {
+        "id": "aabbccddeeff",
+        "name": {
+          "de": "Empfang",
+          "en": "Reception"
+        },
+        "url": "http://192.168.10.53"
+      }
+    ],
+    "logs": [
+      {
+        "ago_secs": 95,
+        "source": "hook",
+        "text": {
+          "de": "Dienst librespot gestartet (pid 2817)",
+          "en": "Service librespot started (pid 2817)"
+        }
+      },
+      {
+        "ago_secs": 80,
+        "source": "librespot",
+        "text": "[INFO librespot_playback::player] Loading <Says> with Spotify URI <spotify:track:1C1Z1Ry9Lo6pKyx1Rj5DnN>"
+      },
+      {
+        "ago_secs": 62,
+        "source": "leuchtfeuerd",
+        "text": {
+          "de": "Quelle radio stumm (andere Quelle hat Vorrang)",
+          "en": "Source radio muted (another source has priority)"
+        }
+      },
+      {
+        "ago_secs": 41,
+        "source": "bluetooth-4-aplay",
+        "text": "underrun!!! (at least 3.412 ms long)"
+      },
+      {
+        "ago_secs": 12,
+        "source": "leuchtfeuerd",
+        "text": {
+          "de": "Webradio http://stream.example/radio: error, neuer Versuch in 2s",
+          "en": "Web radio http://stream.example/radio: error, retry in 2s"
+        }
+      },
+      {
+        "ago_secs": 9,
+        "source": "leuchtfeuerd",
+        "text": {
+          "de": "Briefing für 06:45 vorbereitet (4 Abschnitte)",
+          "en": "Briefing for 06:45 prepared (4 sections)"
+        }
+      }
+    ],
+    "ssh_keys": [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKLvR49qGA+o0okpI4l2wDksoS1Vptf26qrGl9IK/0uh {{people.mara.id}}@{{studio.laptop}}",
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFcHtOPWPaWZCXPIgw0tkATbFTkDx1MQn982m5FMFiI7 backup@nebelhorn"
+    ],
+    "vendor_sounds": {
+      "power_on.wav": 2.4,
+      "network_error.wav": 1.1,
+      "bt_connected.wav": 0.8,
+      "setup_mode.wav": 1.6
+    },
+    "tokens": [
+      {
+        "name": "Home Assistant",
+        "scope": "full"
+      },
+      {
+        "name": "Prometheus",
+        "scope": "read"
+      }
     ]
   },
   "dashboard": {

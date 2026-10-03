@@ -955,5 +955,16 @@
         "en": "Boxing Day"
       }
     }
+  },
+  "standby_timer": {
+    "note": "Jonas' timer when no shoot day is running (Plasmai).",
+    "user": "jonas",
+    "project": "showreel",
+    "activity": "edit",
+    "minutes_ago": 85,
+    "description": {
+      "de": "Kamera-Reel schneiden",
+      "en": "Cut the camera reel"
+    }
   }
 }

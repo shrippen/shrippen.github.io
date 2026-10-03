@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Studio Weber, the shared demo world of all shrippen projects.
 
-demo/world/ is the source: one file per topic, merged in PARTS order, and the
+demo/world/ is the source: one file per topic, merged in PARTS order ({{path}}
+references resolved, see resolve()), and the
 IT vault as Markdown (world/it_docs/<lang>/<path>). `python3 demo/world.py build`
 merges and expands it into
 demo/dist/world.json (plus world.js with the data embedded, for QML and Node,
@@ -20,6 +21,7 @@ This module also works as a library: `from world import World`.
 import datetime as dt
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -108,8 +110,43 @@ def load():
     return world
 
 
+REF = re.compile(r"\{\{([a-z_]+(?:\.[A-Za-z0-9_-]+)+)\}\}")
+
+
+def lookup(world, path):
+    """A value by dotted path; in a list a key is an entry's id, else its index."""
+    node = world
+    for key in path.split("."):
+        if isinstance(node, dict):
+            node = node[key]
+        else:
+            hit = [x for x in node if isinstance(x, dict) and str(x.get("id")) == key]
+            node = hit[0] if hit else node[int(key)]
+    return node
+
+
+def resolve(world, node, lang=None):
+    """Replaces {{path}} references: alone the value itself, inside a text its text. A text
+    that embeds a {de, en} value becomes {de, en} itself."""
+    if isinstance(node, dict):
+        if node and set(node) <= set(LANGS):
+            return {k: resolve(world, v, k) for k, v in node.items()}
+        return {k: resolve(world, v, lang) for k, v in node.items()}
+    if isinstance(node, list):
+        return [resolve(world, v, lang) for v in node]
+    if not isinstance(node, str) or "{{" not in node:
+        return node
+    whole = REF.fullmatch(node)
+    if whole:
+        return resolve(world, lookup(world, whole.group(1)), lang)
+    if lang is None and any(isinstance(lookup(world, m), dict) and set(lookup(world, m)) <= set(LANGS) for m in REF.findall(node)):
+        return {l: resolve(world, node, l) for l in LANGS}
+    return REF.sub(lambda m: str(text(resolve(world, lookup(world, m.group(1)), lang), lang or "de")), node)
+
+
 def build():
     world = load()
+    world = resolve(world, world)
     ids = {kind: {x["id"] for x in world[kind]} for kind in ("people", "customers", "projects", "activities")}
     world["timesheets"] = expand_timesheets(world)
     for r in world["timesheets"] + world["running"]:

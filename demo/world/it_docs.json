@@ -670,6 +670,99 @@
       17,
       6,
       23
-    ]
+    ],
+    "ai_script": {
+      "note": "The demo AI's answers and the edits it proposes per batch kind; code names come from hosts (old → name).",
+      "replies": {
+        "secrets": {
+          "de": "Klartext-Werte durch Vaultwarden-Verweise ersetzt.",
+          "en": "Replaced plain-text values with Vaultwarden references."
+        },
+        "names": {
+          "de": "Alte Codenamen durch die Seezeichen-Namen ersetzt.",
+          "en": "Replaced old code names with the sea mark names."
+        },
+        "switch": {
+          "de": "Switch in der Netzwerkübersicht aktualisiert.",
+          "en": "Updated the switch in the network overview."
+        },
+        "borg": {
+          "de": "Verstanden. Restic durch Borg auf [[Nebelhorn]] ersetzt.",
+          "en": "Understood. Replaced Restic with Borg to [[Nebelhorn]]."
+        },
+        "generic": {
+          "de": "Verstanden, in der Demo antwortet eine vorbereitete KI ohne echtes Modell.",
+          "en": "Understood; in the demo a prepared AI answers without a real model."
+        },
+        "question": {
+          "de": "Welche Notizen genau meinst du? Die Demo-KI kennt Secrets, Codenamen und den Switch.",
+          "en": "Which notes exactly? The demo AI knows secrets, code names and the switch."
+        }
+      },
+      "topics": {
+        "secrets": {
+          "de": "Secrets",
+          "en": "Secrets"
+        },
+        "names": {
+          "de": "Namen",
+          "en": "Names"
+        },
+        "switch": {
+          "de": "Netzwerk",
+          "en": "Network"
+        },
+        "borg": {
+          "de": "Backup",
+          "en": "Backup"
+        },
+        "other": "Demo"
+      },
+      "secret_value": "siehe Vaultwarden: Admin",
+      "switch": {
+        "from": "Knotenwerk KS-8, 8 Ports, alle belegt.",
+        "to": "Knotenwerk KS-24, 24 Ports."
+      },
+      "borg": [
+        {
+          "from": "Nächtlich mit Restic",
+          "to": "Nächtlich mit Borg auf [[Nebelhorn]]."
+        },
+        {
+          "from": "Nightly with Restic",
+          "to": "Nightly with Borg to [[Nebelhorn]]."
+        }
+      ]
+    },
+    "review": {
+      "field": "letzte Prüfung",
+      "days": 180
+    },
+    "providers": [
+      {
+        "name": "studio-ki",
+        "kind": "demo",
+        "model": "demo",
+        "local": true
+      },
+      {
+        "name": "claude",
+        "kind": "anthropic",
+        "model": "claude-opus-5",
+        "fallback": "default"
+      },
+      {
+        "name": "ollama",
+        "kind": "openai",
+        "model": "qwen3",
+        "base_url": "http://localhost:11434/v1",
+        "local": true
+      }
+    ],
+    "provider": "studio-ki",
+    "local_only": [
+      "IT/Anleitungen"
+    ],
+    "batch_spacing_min": 47
   }
 }

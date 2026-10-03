@@ -76,17 +76,40 @@
       {
         "name": "Rolle 03 – Övelgönne",
         "frames": 12,
-        "stock": "Farbnegativ 35 mm"
+        "stock": "Farbnegativ 35 mm",
+        "underexposed": {
+          "5": 0.8,
+          "10": 0.9
+        }
       },
       {
         "name": "Rolle 04 – Speiche",
         "frames": 10,
-        "stock": "Farbnegativ 35 mm"
+        "stock": "Farbnegativ 35 mm",
+        "underexposed": {
+          "5": 0.8,
+          "10": 0.9,
+          "7": 0.95
+        }
       },
       {
         "name": "Rolle 05 – Graufeld",
         "frames": 8,
-        "stock": "Farbnegativ 35 mm"
+        "stock": "Farbnegativ 35 mm",
+        "underexposed": {
+          "5": 0.8,
+          "10": 0.9,
+          "7": 0.95
+        }
+      }
+    ],
+    "video_files": [
+      {
+        "name": "hl_s02e03_landungsbruecken_take4.mp4",
+        "seconds": 20,
+        "tone": 330,
+        "size": "1280x720",
+        "rate": 25
       }
     ]
   },

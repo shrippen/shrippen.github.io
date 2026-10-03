@@ -376,7 +376,20 @@
           "en": "Episode 5, beach in fog"
         }
       }
-    ]
+    ],
+    "pay": {
+      "kind": "weekly",
+      "day_rate": 380,
+      "hourly": 38,
+      "catering_deduction": 9.5,
+      "catering_every": 3,
+      "default_break_min": 45,
+      "ruleset_name": "TV FFS 2024"
+    },
+    "travel": {
+      "leave_min": 40,
+      "arrive_min": 5
+    }
   },
   "vendors": [
     {
@@ -1799,5 +1812,107 @@
     "research": true,
     "budget_usd": 5,
     "used_usd": 1.25
+  },
+  "archive": {
+    "note": "Older projects and activities, booked in the same weeks as the current work: their colours clash with current ones or are missing (Kimai Farbfächer).",
+    "projects": [
+      {
+        "customer": "northlight",
+        "name": {
+          "de": "Harbour Lights – Staffel 1",
+          "en": "Harbour Lights – Season 1"
+        },
+        "color": "#fe8019"
+      },
+      {
+        "customer": "speiche",
+        "name": {
+          "de": "Herbstspot",
+          "en": "Autumn commercial"
+        },
+        "color": "#83a598"
+      },
+      {
+        "customer": "elbgruen",
+        "name": {
+          "de": "Jahresbericht-Video",
+          "en": "Annual report video"
+        },
+        "color": "#8ec07c"
+      },
+      {
+        "customer": "studio",
+        "name": "Showreel 2025",
+        "color": null
+      }
+    ],
+    "activities": [
+      {
+        "name": {
+          "de": "Farbkorrektur",
+          "en": "Colour grading"
+        },
+        "color": "#83a598"
+      },
+      {
+        "name": {
+          "de": "Drehvorbereitung",
+          "en": "Shoot prep"
+        },
+        "color": "#d3869b"
+      },
+      {
+        "name": {
+          "de": "Sichtung",
+          "en": "Footage review"
+        },
+        "color": null
+      },
+      {
+        "name": {
+          "de": "Tonschnitt",
+          "en": "Dialogue edit"
+        },
+        "color": "#8ec07c"
+      }
+    ],
+    "bookings": {
+      "weeks": [
+        -6,
+        -1
+      ],
+      "people": [
+        {
+          "user": "mara",
+          "weekday": 1
+        },
+        {
+          "user": "selin",
+          "weekday": 3
+        }
+      ],
+      "slots": [
+        "09:00",
+        "14:00"
+      ],
+      "hours": 2
+    }
+  },
+  "approvals": {
+    "note": "Who approves and locks: Lena approves absences a week before they start, closes the previous month for everyone; trips of last month are approved, Jonas has submitted this month's.",
+    "by": "lena",
+    "days_before": 7,
+    "time": "10:00",
+    "month_lock_time": "18:00",
+    "trips": {
+      "approved_last_month": [
+        "mara",
+        "jonas",
+        "lena"
+      ],
+      "submitted_this_month": [
+        "jonas"
+      ]
+    }
   }
 }

@@ -34,7 +34,7 @@ shrippen.github.io/
 │   ├── preview/           ← local preview server and UI, todos.json
 │   └── tools/             ← build-overview.py, make-social.py
 ├── demo/
-│   ├── world.json         ← the demo world (source), world.py builds dist/
+│   ├── world/             ← the demo world (source, one file per topic), world.py builds dist/
 │   ├── lib/, dist/        ← loaders and the built copies for the projects
 │   ├── kimai/             ← shared Kimai demo instance for all Kimai plugins
 │   └── tools/             ← sync-demo.py, check-demo.py, screenshots.py, use-shots.py (.venv for playwright)

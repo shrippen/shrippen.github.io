@@ -1,0 +1,131 @@
+{
+  "graufeld": {
+    "note": "Second shooting area: fog, marsh and mud flats at the Elbe mouth, about 110 km from the studio. Places: graufeld-lighthouse, kolk, moorhof, sendehaus.",
+    "description": {
+      "de": "Moor- und Wattlandschaft an der Elbmündung, oft im Nebel. Ein stillgelegter Leuchtturm, ein Kolk im Moor, ein Rasthof und das alte Sendehaus.",
+      "en": "Marsh and mud flats at the Elbe mouth, often in fog. A disused lighthouse, a pool in the moor, a roadside inn and the old broadcasting house."
+    },
+    "series": {
+      "de": "Nachtwache: Eine Krimiautorin verschwindet in Graufeld. Ihre Manuskriptseiten tauchen wieder auf und beschreiben, was noch nicht passiert ist.",
+      "en": "Nightwatch: a crime writer vanishes in Graufeld. Her manuscript pages turn up again and describe what has not happened yet."
+    },
+    "author": "Ilva Brandes",
+    "contact": {
+      "name": "Hinnerk Aalders",
+      "role": {
+        "de": "Leuchtturmwärter a. D., Sendehaus",
+        "en": "Retired lighthouse keeper, Sendehaus"
+      }
+    },
+    "radio_show": {
+      "name": "Graufeld nach Mitternacht",
+      "slot": "00:00–03:00",
+      "about": {
+        "de": "Nachtprogramm des Sendehauses: Anrufe, Sagen, Seewetter.",
+        "en": "The Sendehaus night programme: calls, legends, shipping forecast."
+      }
+    },
+    "weather": [
+      {
+        "day": -10,
+        "place": "graufeld-lighthouse",
+        "from": "17:00",
+        "to": "10:00",
+        "event": {
+          "de": "NEBEL",
+          "en": "FOG"
+        },
+        "headline": {
+          "de": "Amtliche WARNUNG vor NEBEL",
+          "en": "Official WARNING of FOG"
+        },
+        "severity": "moderate"
+      },
+      {
+        "day": 3,
+        "place": "graufeld-lighthouse",
+        "from": "18:00",
+        "to": "09:00",
+        "event": {
+          "de": "NEBEL",
+          "en": "FOG"
+        },
+        "headline": {
+          "de": "Amtliche WARNUNG vor NEBEL",
+          "en": "Official WARNING of FOG"
+        },
+        "severity": "moderate"
+      }
+    ]
+  },
+  "oddities": {
+    "note": "Hidden layer, an homage to Alan Wake. Use it quietly in corners of a demo (logs, backups, sensors, notes), never explain it in the UI. Motif: 03:13 and seven minutes.",
+    "time": "03:13",
+    "minutes": 7,
+    "manuscript_pages": [
+      {
+        "page": 3,
+        "found": -12,
+        "place": "harbour-pier",
+        "text": {
+          "de": "Das Nebelhorn setzte aus. Sieben Sekunden lang hörte niemand die Elbe.",
+          "en": "The foghorn stopped. For seven seconds nobody heard the Elbe."
+        }
+      },
+      {
+        "page": 7,
+        "found": -5,
+        "place": "studio",
+        "text": {
+          "de": "Theo nahm die Nacht am Kolk auf. Auf dem Band war es länger dunkel, als die Nacht dauerte.",
+          "en": "Theo recorded the night at the Kolk. On the tape it stayed dark longer than the night lasted."
+        }
+      },
+      {
+        "page": 12,
+        "found": -2,
+        "place": "moorhof",
+        "text": {
+          "de": "Der Transporter fand den Weg zurück nicht. Er nahm einen anderen.",
+          "en": "The van could not find the way back. It took another one."
+        }
+      },
+      {
+        "page": 19,
+        "found": 0,
+        "place": "graufeld-lighthouse",
+        "text": {
+          "de": "Wenn das Licht um 3:13 erlischt, zähl bis sieben.",
+          "en": "When the light goes out at 3:13, count to seven."
+        }
+      }
+    ],
+    "night_outage": {
+      "service": {
+        "de": "Sendehaus-Stream",
+        "en": "Sendehaus stream"
+      },
+      "place": "sendehaus",
+      "nights": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ]
+    },
+    "flicker": {
+      "place": "graufeld-lighthouse",
+      "sensor": {
+        "de": "Leuchtfeuer",
+        "en": "Beacon"
+      }
+    },
+    "returning_file": {
+      "path": "/srv/footage/nachtwache/seite-7.pdf",
+      "deleted": -5,
+      "back": -4
+    }
+  }
+}

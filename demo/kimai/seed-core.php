@@ -52,33 +52,34 @@ $pref = static function (User $user, string $name, string $value) use ($em): voi
 
 // --- Users: the image created Mara (ADMINMAIL) as "admin"; the others share her password hash.
 $userRepo = $em->getRepository(User::class);
-$mara = $userRepo->findOneBy(['email' => 'mara@studio-weber.example.test']);
+$owner = $w['people'][0];      // Mara, the studio's owner
+$mara = $userRepo->findOneBy(['email' => $owner['email']]);
 $users = [];
 foreach ($w['people'] as $person) {
-    $user = $person['id'] === 'mara' ? $mara : new User();
+    $user = $person['id'] === $owner['id'] ? $mara : new User();
     $user->setUserIdentifier($person['id']);
     $user->setEmail($person['email']);
     $user->setAlias($person['name']);
     $user->setTitle($world->t($person['title']));
     $user->setColor($person['color']);
     $user->setEnabled(true);
-    if ($person['id'] !== 'mara') {
+    if ($person['id'] !== $owner['id']) {
         $user->setPassword($mara->getPassword());
         $user->setRoles([$person['kimai_role']]);
     }
-    $user->setWorkStartingDay(new DateTime('2024-01-01', $zone));
+    $user->setWorkStartingDay(new DateTime($person['since'], $zone));
     $perDay = (int) round($person['hours_per_week'] / 5 * 3600);
     foreach (['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] as $day) {
         $user->{"setWorkHours$day"}($perDay);
     }
-    $user->setHolidaysPerYear(30);
+    $user->setHolidaysPerYear($person['holidays_per_year']);
     $user->setWorkContractMode('day');
     $em->persist($user);
     $pref($user, '__wizards__', 'intro,profile');
     $pref($user, 'language', $lang);
     $pref($user, 'locale', $lang);
     $pref($user, 'timezone', $w['timezone']);
-    $pref($user, 'hourly_rate', '85');
+    $pref($user, 'hourly_rate', (string) $person['hourly_rate']);
     $users[$person['id']] = $user;
 }
 

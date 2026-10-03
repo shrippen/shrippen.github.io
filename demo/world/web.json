@@ -1,0 +1,200 @@
+{
+  "sites": {
+    "note": "Umami: the shop's views collapsed against the week before. detail: pages and referrers of the week; days = base + a wobble.",
+    "url": "https://stats.demo",
+    "sites": [
+      {
+        "id": "1",
+        "name": "Blog",
+        "domain": "blog.demo",
+        "views": 1840,
+        "visitors": 610,
+        "prev_views": 1720,
+        "prev_visit": 590
+      },
+      {
+        "id": "2",
+        "name": "Shop",
+        "domain": "shop.demo",
+        "views": 120,
+        "visitors": 41,
+        "prev_views": 980,
+        "prev_visit": 305
+      }
+    ],
+    "detail": {
+      "1": {
+        "pages": [
+          {
+            "name": "/",
+            "n": 820
+          },
+          {
+            "name": "/projekte/licht-an",
+            "n": 412
+          },
+          {
+            "name": "/kontakt",
+            "n": 160
+          }
+        ],
+        "referrers": [
+          {
+            "name": "–",
+            "n": 540
+          },
+          {
+            "name": "google.com",
+            "n": 210
+          },
+          {
+            "name": "instagram.com",
+            "n": 64
+          }
+        ],
+        "day_base": 50
+      },
+      "2": {
+        "pages": [
+          {
+            "name": "/",
+            "n": 120
+          },
+          {
+            "name": "/impressum",
+            "n": 12
+          }
+        ],
+        "referrers": [
+          {
+            "name": "–",
+            "n": 96
+          }
+        ],
+        "day_base": 4
+      }
+    }
+  },
+  "feeds": {
+    "note": "FreshRSS: one feed has been silent for over a year.",
+    "url": "https://rss.demo",
+    "unread": 812,
+    "feeds": [
+      {
+        "id": "feed/1",
+        "title": "heise online",
+        "category": "News",
+        "unread": 540,
+        "newest": "@-0d"
+      },
+      {
+        "id": "feed/2",
+        "title": "Go Blog",
+        "category": "Tech",
+        "unread": 12,
+        "newest": "@-9d"
+      },
+      {
+        "id": "feed/3",
+        "title": {
+          "de": "Altes Projektblog",
+          "en": "Old project blog"
+        },
+        "category": "Tech",
+        "unread": 0,
+        "newest": "@-400d"
+      },
+      {
+        "id": "feed/4",
+        "title": "Selfhosted Weekly",
+        "category": "Tech",
+        "unread": 260,
+        "newest": "@-2d"
+      }
+    ]
+  },
+  "bookmarks": {
+    "note": "Linkwarden: two bookmarks match tiles on the IT board, Grafana is missing there.",
+    "url": "https://links.demo",
+    "collections": [
+      "Homelab"
+    ],
+    "links": [
+      {
+        "name": "Kimai",
+        "url": "https://www.kimai.org/",
+        "collection": "Homelab",
+        "created": "@-30d"
+      },
+      {
+        "name": "Invoice Ninja",
+        "url": "https://invoiceninja.com",
+        "collection": "Homelab",
+        "created": "@-3d"
+      },
+      {
+        "name": "Grafana",
+        "url": "https://grafana.com",
+        "collection": "Homelab",
+        "created": "@-1d"
+      }
+    ]
+  },
+  "mail": {
+    "note": "The inbox's invoices: the hosting one matches an expense, the software one does not.",
+    "mailbox": "INBOX",
+    "scanned": 214,
+    "invoices": [
+      {
+        "uid": 1,
+        "date": "@-4d",
+        "sender": "{{vendors.nordhost.name}}",
+        "addr": "billing@{{vendors.nordhost.domain}}",
+        "domain": "{{vendors.nordhost.domain}}",
+        "subject": {
+          "de": "Ihre Rechnung R0012345",
+          "en": "Your invoice R0012345"
+        },
+        "amount": "{{vendors.nordhost.monthly}}",
+        "attachments": [
+          "Rechnung_R0012345.pdf"
+        ]
+      },
+      {
+        "uid": 2,
+        "date": "@-9d",
+        "sender": "{{vendors.farbraum.name}}",
+        "addr": "sales@{{vendors.farbraum.domain}}",
+        "domain": "{{vendors.farbraum.domain}}",
+        "subject": "Invoice for your order",
+        "amount": 289,
+        "attachments": [
+          "invoice.pdf"
+        ]
+      }
+    ]
+  },
+  "calendar": {
+    "note": "Mara's calendar: a customer appointment two days ago, a call today, a private one in three days.",
+    "events": [
+      {
+        "start": "@date-2 14:00",
+        "title": {
+          "de": "Drehplan {{customers.northlight.name}}",
+          "en": "Shooting plan {{customers.northlight.name}}"
+        }
+      },
+      {
+        "start": "@date+0 16:00",
+        "title": "Call {{customers.speiche.name}}"
+      },
+      {
+        "start": "@date+3 14:00",
+        "title": {
+          "de": "Zahnarzt",
+          "en": "Dentist"
+        }
+      }
+    ]
+  }
+}

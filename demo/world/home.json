@@ -1,0 +1,245 @@
+{
+  "smart_home": {
+    "note": "Home Assistant at Mara's: the bathroom window sensor's battery is low, a plug is unavailable, a core update waits. history: the living room warms through the day, the office light is on during work hours.",
+    "url": "https://home.demo",
+    "entities": [
+      {
+        "id": "binary_sensor.keller_wasser",
+        "name": {
+          "de": "Keller Wasser",
+          "en": "Basement water"
+        },
+        "domain": "binary_sensor",
+        "state": "off",
+        "device_class": "moisture",
+        "changed": "@-200h"
+      },
+      {
+        "id": "light.buero",
+        "name": {
+          "de": "Büro Licht",
+          "en": "Office light"
+        },
+        "domain": "light",
+        "state": "on",
+        "changed": "@-1h"
+      },
+      {
+        "id": "sensor.fenster_bad_batterie",
+        "name": {
+          "de": "Fenster Bad Batterie",
+          "en": "Bathroom window battery"
+        },
+        "domain": "sensor",
+        "state": "8",
+        "unit": "%",
+        "device_class": "battery",
+        "changed": "@-5h"
+      },
+      {
+        "id": "sensor.wohnzimmer_temperatur",
+        "name": {
+          "de": "Wohnzimmer",
+          "en": "Living room"
+        },
+        "domain": "sensor",
+        "state": "21.4",
+        "unit": "°C",
+        "device_class": "temperature",
+        "changed": "@-0h"
+      },
+      {
+        "id": "sensor.zigbee_steckdose_power",
+        "name": {
+          "de": "Steckdose Leistung",
+          "en": "Plug power"
+        },
+        "domain": "sensor",
+        "state": "unavailable",
+        "unit": "W",
+        "changed": "@-30h"
+      },
+      {
+        "id": "switch.kaffeemaschine",
+        "name": {
+          "de": "Kaffeemaschine",
+          "en": "Coffee machine"
+        },
+        "domain": "switch",
+        "state": "off",
+        "changed": "@-3h"
+      },
+      {
+        "id": "update.home_assistant_core_update",
+        "name": "Home Assistant Core",
+        "domain": "update",
+        "state": "on",
+        "changed": "@-20h"
+      }
+    ],
+    "history": {
+      "temperature": {
+        "entity": "sensor.wohnzimmer_temperatur",
+        "base": 19.5,
+        "swing": 2
+      },
+      "light": {
+        "entity": "light.buero",
+        "on_from": 8,
+        "on_to": 18
+      }
+    }
+  },
+  "pantry": {
+    "note": "Grocy: yoghurt has expired, coffee is missing, the bathroom is overdue.",
+    "url": "https://grocy.demo",
+    "expired": [
+      {
+        "name": {
+          "de": "Joghurt",
+          "en": "Yoghurt"
+        },
+        "due": "@date-2"
+      }
+    ],
+    "soon": [
+      {
+        "name": {
+          "de": "Milch",
+          "en": "Milk"
+        },
+        "due": "@date+0"
+      },
+      {
+        "name": {
+          "de": "Brot",
+          "en": "Bread"
+        },
+        "due": "@date+2"
+      }
+    ],
+    "missing": [
+      {
+        "name": {
+          "de": "Kaffee",
+          "en": "Coffee"
+        },
+        "missing": 1
+      }
+    ],
+    "chores": [
+      {
+        "name": {
+          "de": "Bad putzen",
+          "en": "Clean the bathroom"
+        },
+        "due": "@-30h"
+      },
+      {
+        "name": {
+          "de": "Pflanzen gießen",
+          "en": "Water the plants"
+        },
+        "due": "@+30h"
+      }
+    ]
+  },
+  "kitchen": {
+    "note": "Tandoor: the shopping list holds what Grocy runs out of, and the week's meal plan.",
+    "url": "https://tandoor.demo",
+    "items": [
+      {
+        "id": 1,
+        "food": {
+          "de": "Milch",
+          "en": "Milk"
+        },
+        "amount": 2,
+        "unit": "l",
+        "category": {
+          "de": "Kühlregal",
+          "en": "Chilled"
+        }
+      },
+      {
+        "id": 2,
+        "food": {
+          "de": "Brot",
+          "en": "Bread"
+        },
+        "amount": 1,
+        "category": {
+          "de": "Bäckerei",
+          "en": "Bakery"
+        }
+      }
+    ],
+    "meals": [
+      {
+        "day": "@date+0",
+        "title": {
+          "de": "Linsensuppe",
+          "en": "Lentil soup"
+        },
+        "type": {
+          "de": "Mittagessen",
+          "en": "Lunch"
+        }
+      },
+      {
+        "day": "@date+2",
+        "title": {
+          "de": "Ofengemüse",
+          "en": "Roast vegetables"
+        },
+        "type": {
+          "de": "Abendessen",
+          "en": "Dinner"
+        }
+      }
+    ]
+  },
+  "energy": {
+    "note": "Tibber: hourly prices for today and tomorrow (base + swing over the day, grid and tax included), daily use with outdoor temperature.",
+    "url": "https://api.tibber.com/v1-beta/gql",
+    "home": {
+      "de": "Zuhause",
+      "en": "Home"
+    },
+    "currency": "EUR",
+    "level": "CHEAP",
+    "price": {
+      "base": 0.24,
+      "swing": 0.08,
+      "grid_and_tax": 0.17
+    },
+    "day": {
+      "kwh": 7,
+      "cost": 2,
+      "cost_step": 0.3,
+      "temp_c": 18,
+      "temp_step": 2
+    }
+  },
+  "weather": {
+    "note": "German weather service warnings for the studio's city.",
+    "url": "https://api.brightsky.dev",
+    "place": "{{studio.city}}",
+    "warnings": [
+      {
+        "id": "demo-1",
+        "event": {
+          "de": "STURMBÖEN",
+          "en": "GALE GUSTS"
+        },
+        "headline": {
+          "de": "Amtliche WARNUNG vor STURMBÖEN",
+          "en": "Official WARNING of GALE GUSTS"
+        },
+        "severity": "moderate",
+        "onset": "@+0m",
+        "expire": "@+8h"
+      }
+    ]
+  }
+}

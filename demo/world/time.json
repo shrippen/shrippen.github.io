@@ -1,0 +1,970 @@
+{
+  "timesheet_weeks": {
+    "from_week": -8,
+    "to_week": 1,
+    "exported_before_day": -21,
+    "note": "Each person has week templates; week w uses templates[w mod n]. Rows: [weekday 0=Mon, project, activity, start, end, description]. Days covered by an absence or a public holiday are skipped. Consumers drop rows after 'now'.",
+    "templates": {
+      "mara": [
+        [
+          [
+            0,
+            "admin",
+            "meeting",
+            "09:00",
+            "09:45",
+            {
+              "de": "Wochenplanung mit dem Team",
+              "en": "Weekly planning with the team"
+            }
+          ],
+          [
+            0,
+            "harbour",
+            "prep",
+            "10:00",
+            "13:00",
+            {
+              "de": "Drehplan Folge 4 „Nebelhorn“ abstimmen",
+              "en": "Align the shooting schedule for episode 4 “Foghorn”"
+            }
+          ],
+          [
+            0,
+            "spring",
+            "meeting",
+            "14:00",
+            "15:30",
+            {
+              "de": "Storyboard „Licht an“ mit Speiche abnehmen",
+              "en": "“Lights on” storyboard sign-off with Speiche"
+            }
+          ],
+          [
+            1,
+            "harbour",
+            "shoot",
+            "07:30",
+            "17:30",
+            {
+              "de": "Dreh Landungsbrücken, Nebelszenen",
+              "en": "Shoot at Landungsbrücken, fog scenes"
+            }
+          ],
+          [
+            2,
+            "tidenhub",
+            "edit",
+            "09:00",
+            "12:30",
+            {
+              "de": "Feinschnitt Interviews Feuerschiff",
+              "en": "Fine cut of the light vessel interviews"
+            }
+          ],
+          [
+            2,
+            "spring",
+            "prep",
+            "09:40",
+            "12:10",
+            {
+              "de": "Motivsuche Werkstatt bei Nacht",
+              "en": "Night location scout at the workshop"
+            }
+          ],
+          [
+            2,
+            "admin",
+            "bookkeeping",
+            "14:00",
+            "16:00",
+            {
+              "de": "Belege zuordnen",
+              "en": "Match receipts"
+            }
+          ],
+          [
+            3,
+            "harbour",
+            "shoot",
+            "08:00",
+            "18:00",
+            {
+              "de": "Dreh Övelgönne in der Dämmerung",
+              "en": "Shoot at Övelgönne at dusk"
+            }
+          ],
+          [
+            4,
+            "showreel",
+            "edit",
+            "10:00",
+            "12:00",
+            {
+              "de": "Showreel: Nachtszenen",
+              "en": "Showreel: night scenes"
+            }
+          ],
+          [
+            4,
+            "tidenhub",
+            "meeting",
+            "13:00",
+            "14:30",
+            {
+              "de": "Rohschnitt-Abnahme Elbfeuer",
+              "en": "Rough cut review with Elbfeuer"
+            }
+          ],
+          [
+            4,
+            "trailer",
+            "edit",
+            "14:45",
+            "17:30",
+            {
+              "de": "Trailer-Schnitt für Donaulicht",
+              "en": "Trailer edit for Donaulicht"
+            }
+          ]
+        ],
+        [
+          [
+            0,
+            "admin",
+            "meeting",
+            "09:00",
+            "09:45",
+            {
+              "de": "Wochenplanung mit dem Team",
+              "en": "Weekly planning with the team"
+            }
+          ],
+          [
+            0,
+            "spring",
+            "prep",
+            "10:00",
+            "12:30",
+            {
+              "de": "Casting Nachtkurier",
+              "en": "Casting the night courier"
+            }
+          ],
+          [
+            1,
+            "spring",
+            "shoot",
+            "08:00",
+            "16:30",
+            {
+              "de": "Dreh Speiche-Werkstatt: Licht aus, Dynamo an",
+              "en": "Shoot at the Speiche workshop: lights off, dynamo on"
+            }
+          ],
+          [
+            2,
+            "tidenhub",
+            "prep",
+            "09:00",
+            "11:00",
+            {
+              "de": "Interviewfragen Stiftung Elbfeuer",
+              "en": "Interview questions for Elbfeuer"
+            }
+          ],
+          [
+            2,
+            "admin",
+            "bookkeeping",
+            "13:00",
+            "15:30",
+            {
+              "de": "Rechnungen Northlight",
+              "en": "Invoices for Northlight"
+            }
+          ],
+          [
+            3,
+            "harbour",
+            "prep",
+            "09:30",
+            "13:00",
+            {
+              "de": "Dispo Folge 5 „Drei Uhr dreizehn“",
+              "en": "Call sheet episode 5 “Three Thirteen”"
+            }
+          ],
+          [
+            3,
+            "tidenhub",
+            "shoot",
+            "14:00",
+            "18:00",
+            {
+              "de": "Dreh am Feuerschiff, HafenCity",
+              "en": "Shoot on the light vessel, HafenCity"
+            }
+          ],
+          [
+            4,
+            "spring",
+            "edit",
+            "09:00",
+            "13:00",
+            {
+              "de": "Schnittfassung 1",
+              "en": "Edit version 1"
+            }
+          ],
+          [
+            4,
+            "nachtwache",
+            "meeting",
+            "14:00",
+            "16:00",
+            {
+              "de": "Auftakt mit dem Sendehaus Graufeld",
+              "en": "Kick-off with Sendehaus Graufeld"
+            }
+          ]
+        ]
+      ],
+      "jonas": [
+        [
+          [
+            0,
+            "harbour",
+            "prep",
+            "09:00",
+            "15:00",
+            {
+              "de": "Kamera-Check, Nachtobjektive testen",
+              "en": "Camera check, testing the night lenses"
+            }
+          ],
+          [
+            1,
+            "harbour",
+            "shoot",
+            "07:00",
+            "18:30",
+            {
+              "de": "Dreh Landungsbrücken, Nebelszenen",
+              "en": "Shoot at Landungsbrücken, fog scenes"
+            }
+          ],
+          [
+            2,
+            "harbour",
+            "shoot",
+            "07:00",
+            "17:00",
+            {
+              "de": "Dreh Fischmarkt im Morgennebel",
+              "en": "Shoot at the fish market in the morning fog"
+            }
+          ],
+          [
+            3,
+            "harbour",
+            "shoot",
+            "08:00",
+            "19:00",
+            {
+              "de": "Dreh Övelgönne in der Dämmerung",
+              "en": "Shoot at Övelgönne at dusk"
+            }
+          ],
+          [
+            4,
+            "showreel",
+            "edit",
+            "10:00",
+            "13:00",
+            {
+              "de": "Kamera-Reel sichten",
+              "en": "Review the camera reel"
+            }
+          ],
+          [
+            4,
+            "nachtwache",
+            "prep",
+            "14:00",
+            "18:00",
+            {
+              "de": "Motivsuche Leuchtturm Graufeld",
+              "en": "Location scout at the Graufeld lighthouse"
+            }
+          ]
+        ],
+        [
+          [
+            0,
+            "spring",
+            "prep",
+            "09:00",
+            "13:00",
+            {
+              "de": "Licht-Setup: nur das Fahrradlicht",
+              "en": "Lighting setup: the bike light only"
+            }
+          ],
+          [
+            1,
+            "spring",
+            "shoot",
+            "07:30",
+            "16:30",
+            {
+              "de": "Dreh Speiche-Werkstatt: Licht aus, Dynamo an",
+              "en": "Shoot at the Speiche workshop: lights off, dynamo on"
+            }
+          ],
+          [
+            2,
+            "harbour",
+            "shoot",
+            "06:00",
+            "16:00",
+            {
+              "de": "Dreh Hafenfähre im Nebel",
+              "en": "Shoot on the harbour ferry in fog"
+            }
+          ],
+          [
+            3,
+            "tidenhub",
+            "shoot",
+            "13:00",
+            "18:30",
+            {
+              "de": "Dreh am Feuerschiff, HafenCity",
+              "en": "Shoot on the light vessel, HafenCity"
+            }
+          ],
+          [
+            4,
+            "harbour",
+            "shoot",
+            "15:00",
+            "23:30",
+            {
+              "de": "Nachtdreh Speicherstadt",
+              "en": "Night shoot in Speicherstadt"
+            }
+          ]
+        ]
+      ],
+      "selin": [
+        [
+          [
+            0,
+            "tidenhub",
+            "edit",
+            "09:00",
+            "13:00",
+            {
+              "de": "Material der Nachtdrehs sichten",
+              "en": "Review the night shoot footage"
+            }
+          ],
+          [
+            0,
+            "tidenhub",
+            "edit",
+            "13:30",
+            "16:30",
+            {
+              "de": "Interviews schneiden",
+              "en": "Cut the interviews"
+            }
+          ],
+          [
+            1,
+            "harbour",
+            "edit",
+            "09:00",
+            "17:00",
+            {
+              "de": "Schnitt Folge 3 „Irrlicht“",
+              "en": "Edit episode 3 “Will-o'-the-Wisp”"
+            }
+          ],
+          [
+            2,
+            "harbour",
+            "edit",
+            "09:00",
+            "13:00",
+            {
+              "de": "Schnitt Folge 3 „Irrlicht“",
+              "en": "Edit episode 3 “Will-o'-the-Wisp”"
+            }
+          ],
+          [
+            3,
+            "spring",
+            "edit",
+            "09:00",
+            "17:00",
+            {
+              "de": "Farbkorrektur Spot, Nachtlook",
+              "en": "Colour grading the spot, night look"
+            }
+          ]
+        ],
+        [
+          [
+            0,
+            "harbour",
+            "edit",
+            "09:00",
+            "17:00",
+            {
+              "de": "Schnitt Folge 4 „Nebelhorn“",
+              "en": "Edit episode 4 “Foghorn”"
+            }
+          ],
+          [
+            1,
+            "harbour",
+            "edit",
+            "09:00",
+            "17:00",
+            {
+              "de": "Schnitt Folge 4 „Nebelhorn“",
+              "en": "Edit episode 4 “Foghorn”"
+            }
+          ],
+          [
+            2,
+            "tidenhub",
+            "edit",
+            "09:00",
+            "13:00",
+            {
+              "de": "Feinschnitt",
+              "en": "Fine cut"
+            }
+          ],
+          [
+            3,
+            "showreel",
+            "edit",
+            "09:00",
+            "15:00",
+            {
+              "de": "Showreel-Schnitt",
+              "en": "Showreel edit"
+            }
+          ],
+          [
+            4,
+            "nachtwache",
+            "edit",
+            "09:00",
+            "12:00",
+            {
+              "de": "Kolk-Aufnahmen sichten",
+              "en": "Review the Kolk footage"
+            }
+          ]
+        ]
+      ],
+      "theo": [
+        [
+          [
+            1,
+            "harbour",
+            "shoot",
+            "07:30",
+            "17:30",
+            {
+              "de": "Originalton Landungsbrücken",
+              "en": "Location sound at Landungsbrücken"
+            }
+          ],
+          [
+            2,
+            "tidenhub",
+            "sound",
+            "10:00",
+            "16:00",
+            {
+              "de": "Tonmischung Interviews",
+              "en": "Sound mix of the interviews"
+            }
+          ],
+          [
+            3,
+            "harbour",
+            "shoot",
+            "08:00",
+            "18:00",
+            {
+              "de": "Originalton Övelgönne",
+              "en": "Location sound at Övelgönne"
+            }
+          ],
+          [
+            4,
+            "harbour",
+            "sound",
+            "10:00",
+            "14:00",
+            {
+              "de": "Score: Nebelhorn, 03:13",
+              "en": "Score: Nebelhorn, 03:13"
+            }
+          ]
+        ],
+        [
+          [
+            0,
+            "spring",
+            "sound",
+            "10:00",
+            "15:00",
+            {
+              "de": "Sounddesign Spot: Dynamo-Surren",
+              "en": "Sound design for the spot: dynamo hum"
+            }
+          ],
+          [
+            2,
+            "harbour",
+            "sound",
+            "10:00",
+            "17:00",
+            {
+              "de": "Mischung Folge 3",
+              "en": "Mix episode 3"
+            }
+          ],
+          [
+            3,
+            "tidenhub",
+            "shoot",
+            "13:00",
+            "18:30",
+            {
+              "de": "Originalton Feuerschiff",
+              "en": "Location sound on the light vessel"
+            }
+          ],
+          [
+            1,
+            "nachtwache",
+            "sound",
+            "21:00",
+            "23:30",
+            {
+              "de": "Nachtatmo am Kolk",
+              "en": "Night ambience at the Kolk"
+            }
+          ]
+        ]
+      ],
+      "lena": [
+        [
+          [
+            0,
+            "admin",
+            "meeting",
+            "09:00",
+            "09:45",
+            {
+              "de": "Wochenplanung mit dem Team",
+              "en": "Weekly planning with the team"
+            }
+          ],
+          [
+            0,
+            "harbour",
+            "prep",
+            "10:00",
+            "17:00",
+            {
+              "de": "Drehgenehmigungen für die Nachtdrehs",
+              "en": "Permits for the night shoots"
+            }
+          ],
+          [
+            1,
+            "harbour",
+            "shoot",
+            "07:00",
+            "18:30",
+            {
+              "de": "Set-Aufnahmeleitung",
+              "en": "Set management"
+            }
+          ],
+          [
+            2,
+            "admin",
+            "bookkeeping",
+            "09:00",
+            "12:00",
+            {
+              "de": "Reisekosten",
+              "en": "Travel expenses"
+            }
+          ],
+          [
+            3,
+            "harbour",
+            "shoot",
+            "07:30",
+            "18:30",
+            {
+              "de": "Set-Aufnahmeleitung",
+              "en": "Set management"
+            }
+          ],
+          [
+            4,
+            "spring",
+            "prep",
+            "09:00",
+            "14:00",
+            {
+              "de": "Requisiten: Laternen, Handscheinwerfer",
+              "en": "Props: lanterns, floodlights"
+            }
+          ]
+        ],
+        [
+          [
+            0,
+            "admin",
+            "meeting",
+            "09:00",
+            "09:45",
+            {
+              "de": "Wochenplanung mit dem Team",
+              "en": "Weekly planning with the team"
+            }
+          ],
+          [
+            0,
+            "spring",
+            "prep",
+            "10:00",
+            "16:00",
+            {
+              "de": "Dispo Werkstattdreh",
+              "en": "Call sheet for the workshop shoot"
+            }
+          ],
+          [
+            1,
+            "spring",
+            "shoot",
+            "07:30",
+            "16:30",
+            {
+              "de": "Set-Aufnahmeleitung",
+              "en": "Set management"
+            }
+          ],
+          [
+            2,
+            "harbour",
+            "travel",
+            "08:00",
+            "09:00",
+            {
+              "de": "Fahrt Northlight-Büro",
+              "en": "Drive to the Northlight office"
+            }
+          ],
+          [
+            2,
+            "harbour",
+            "meeting",
+            "09:00",
+            "11:30",
+            {
+              "de": "Produktionsbesprechung",
+              "en": "Production meeting"
+            }
+          ],
+          [
+            3,
+            "tidenhub",
+            "prep",
+            "09:00",
+            "15:00",
+            {
+              "de": "Drehgenehmigung Feuerschiff",
+              "en": "Light vessel shooting permit"
+            }
+          ],
+          [
+            4,
+            "nachtwache",
+            "prep",
+            "09:00",
+            "13:00",
+            {
+              "de": "Drehgenehmigung Leuchtturm",
+              "en": "Lighthouse shooting permit"
+            }
+          ]
+        ]
+      ]
+    }
+  },
+  "running": [
+    {
+      "user": "mara",
+      "project": "spring",
+      "activity": "prep",
+      "start": "13:15",
+      "description": {
+        "de": "Drehbuch „Licht an“ überarbeiten",
+        "en": "Revise the “Lights on” script"
+      }
+    },
+    {
+      "user": "selin",
+      "project": "tidenhub",
+      "activity": "edit",
+      "start": "13:30",
+      "description": {
+        "de": "Feinschnitt Interviews Feuerschiff",
+        "en": "Fine cut of the light vessel interviews"
+      }
+    }
+  ],
+  "absences": [
+    {
+      "user": "selin",
+      "type": "holiday",
+      "from": -32,
+      "to": -26,
+      "status": "approved",
+      "comment": {
+        "de": "Sommerurlaub",
+        "en": "Summer holiday"
+      }
+    },
+    {
+      "user": "selin",
+      "type": "holiday",
+      "from": 10,
+      "to": 14,
+      "status": "approved",
+      "comment": {
+        "de": "Herbsturlaub",
+        "en": "Autumn holiday"
+      }
+    },
+    {
+      "user": "theo",
+      "type": "sickness",
+      "from": -3,
+      "to": -2,
+      "status": "approved",
+      "comment": {
+        "de": "",
+        "en": ""
+      }
+    },
+    {
+      "user": "lena",
+      "type": "holiday",
+      "from": 24,
+      "to": 28,
+      "status": "pending",
+      "comment": {
+        "de": "Städtereise",
+        "en": "City trip"
+      }
+    },
+    {
+      "user": "jonas",
+      "type": "time_off",
+      "from": -9,
+      "to": -9,
+      "status": "approved",
+      "comment": {
+        "de": "Ausgleich Nachtdreh",
+        "en": "Time off after the night shoot"
+      }
+    },
+    {
+      "user": "mara",
+      "type": "holiday",
+      "from": 38,
+      "to": 42,
+      "status": "pending",
+      "comment": {
+        "de": "Herbstferien",
+        "en": "Autumn break"
+      }
+    },
+    {
+      "user": "jonas",
+      "type": "holiday",
+      "from": 17,
+      "to": 18,
+      "status": "rejected",
+      "comment": {
+        "de": "Nachtdreh Folge 6",
+        "en": "Night shoot of episode 6"
+      }
+    },
+    {
+      "user": "theo",
+      "type": "holiday",
+      "from": 3,
+      "to": 4,
+      "status": "approved",
+      "comment": {
+        "de": "Brückentage",
+        "en": "Long weekend"
+      }
+    }
+  ],
+  "public_holidays": {
+    "region": "DE-HH",
+    "dates": {
+      "2025-01-01": {
+        "de": "Neujahr",
+        "en": "New Year's Day"
+      },
+      "2025-04-18": {
+        "de": "Karfreitag",
+        "en": "Good Friday"
+      },
+      "2025-04-21": {
+        "de": "Ostermontag",
+        "en": "Easter Monday"
+      },
+      "2025-05-01": {
+        "de": "Tag der Arbeit",
+        "en": "Labour Day"
+      },
+      "2025-05-29": {
+        "de": "Christi Himmelfahrt",
+        "en": "Ascension Day"
+      },
+      "2025-06-09": {
+        "de": "Pfingstmontag",
+        "en": "Whit Monday"
+      },
+      "2025-10-03": {
+        "de": "Tag der Deutschen Einheit",
+        "en": "German Unity Day"
+      },
+      "2025-10-31": {
+        "de": "Reformationstag",
+        "en": "Reformation Day"
+      },
+      "2025-12-25": {
+        "de": "1. Weihnachtstag",
+        "en": "Christmas Day"
+      },
+      "2025-12-26": {
+        "de": "2. Weihnachtstag",
+        "en": "Boxing Day"
+      },
+      "2026-01-01": {
+        "de": "Neujahr",
+        "en": "New Year's Day"
+      },
+      "2026-04-03": {
+        "de": "Karfreitag",
+        "en": "Good Friday"
+      },
+      "2026-04-06": {
+        "de": "Ostermontag",
+        "en": "Easter Monday"
+      },
+      "2026-05-01": {
+        "de": "Tag der Arbeit",
+        "en": "Labour Day"
+      },
+      "2026-05-14": {
+        "de": "Christi Himmelfahrt",
+        "en": "Ascension Day"
+      },
+      "2026-05-25": {
+        "de": "Pfingstmontag",
+        "en": "Whit Monday"
+      },
+      "2026-10-03": {
+        "de": "Tag der Deutschen Einheit",
+        "en": "German Unity Day"
+      },
+      "2026-10-31": {
+        "de": "Reformationstag",
+        "en": "Reformation Day"
+      },
+      "2026-12-25": {
+        "de": "1. Weihnachtstag",
+        "en": "Christmas Day"
+      },
+      "2026-12-26": {
+        "de": "2. Weihnachtstag",
+        "en": "Boxing Day"
+      },
+      "2027-01-01": {
+        "de": "Neujahr",
+        "en": "New Year's Day"
+      },
+      "2027-03-26": {
+        "de": "Karfreitag",
+        "en": "Good Friday"
+      },
+      "2027-03-29": {
+        "de": "Ostermontag",
+        "en": "Easter Monday"
+      },
+      "2027-05-01": {
+        "de": "Tag der Arbeit",
+        "en": "Labour Day"
+      },
+      "2027-05-06": {
+        "de": "Christi Himmelfahrt",
+        "en": "Ascension Day"
+      },
+      "2027-05-17": {
+        "de": "Pfingstmontag",
+        "en": "Whit Monday"
+      },
+      "2027-10-03": {
+        "de": "Tag der Deutschen Einheit",
+        "en": "German Unity Day"
+      },
+      "2027-10-31": {
+        "de": "Reformationstag",
+        "en": "Reformation Day"
+      },
+      "2027-12-25": {
+        "de": "1. Weihnachtstag",
+        "en": "Christmas Day"
+      },
+      "2027-12-26": {
+        "de": "2. Weihnachtstag",
+        "en": "Boxing Day"
+      }
+    }
+  },
+  "standby_timer": {
+    "note": "Jonas' timer when no shoot day is running (Plasmai).",
+    "user": "jonas",
+    "project": "showreel",
+    "activity": "edit",
+    "minutes_ago": 85,
+    "description": {
+      "de": "Kamera-Reel schneiden",
+      "en": "Cut the camera reel"
+    }
+  }
+}

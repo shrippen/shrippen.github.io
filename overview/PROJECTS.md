@@ -17,7 +17,7 @@ Tracking list: which landing pages follow the shared design. The central stylesh
 | Kurrent | https://shrippen.github.io/Kurrent/ | central | Extended page in `Kurrent/docs/index.html` (views, Quick Add, flow, FAQ, roadmap; v0.4.0); on branch `landing-page-redesign` |
 | PaperTTY | https://shrippen.github.io/PaperTTY/ | central | Extended page in `PaperTTY/docs/index.html` (three inline SVG graphics, modes, how it works, install, options, FAQ); no photos yet |
 | FrameWidge | https://shrippen.github.io/FrameWidge/ | central | Extended page in `FrameWidge/docs/index.html` (tab showcases, tray, flow, install, config, FAQ); notices are `.callout` |
-| PaperNinja | https://shrippen.github.io/PaperNinja/ | central | Extended page in `PaperNinja/docs/index.html` (scoring, screens, flow, config, security, FAQ; two screenshots) |
+| PaperNinja | https://shrippen.github.io/PaperNinja/ | central | Extended page in `PaperNinja/docs/index.html` (scoring, screens, flow, config, security, FAQ; two screenshots); not listed on the overview page (removed from `projects.json` on request) |
 | dolphin-davinci-audio-tools | https://shrippen.github.io/dolphin-davinci-audio-tools/ | central | Migrated locally; conversions table uses `.table`; has a "Why this exists" section (Resolve on Linux has no AAC) |
 | kimai-holiday-bundle | https://shrippen.github.io/kimai-holiday-bundle/ | central | Extended page in `Kimai Holiday Plugin/docs/index.html` (absences, working times, calendar, holidays, install, FAQ); permissions table and API `.codeblock` |
 | companion-mpris | https://shrippen.github.io/companion-mpris/ | central | New page in `companion/mpris/docs/`; one screenshot |

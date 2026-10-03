@@ -53,7 +53,7 @@ WORLD = json.loads((REPO / "demo" / "world.json").read_text(encoding="utf-8"))
 CHROMIUM = os.environ.get("CHROMIUM", "/usr/bin/chromium")
 READY_TIMEOUT = 300
 # Projects with a demo that are not on the overview page (overview/sites.json).
-EXTRA = [{"id": "hansei", "name": "Hansei", "dir": "hansei"}]
+EXTRA = [{"id": "hansei", "name": "Hansei", "dir": "hansei"}, {"id": "invoke-hack", "name": "HK Invoke Hack", "dir": "Invoke Hack"}]
 
 
 def sites():

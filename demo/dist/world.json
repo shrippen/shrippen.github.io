@@ -2812,6 +2812,173 @@
    "$ _"
   ]
  },
+ "speaker": {
+  "name": "Leuchtfeuer",
+  "hostname": "leuchtfeuer",
+  "room": {
+   "de": "Studio, Schnittplatz",
+   "en": "Studio, edit desk"
+  },
+  "volume": 32,
+  "muted": false,
+  "temp_c": 61,
+  "uptime_days": 9,
+  "wifi": {
+   "ssid": "StudioWeber",
+   "bssid": "a4:2b:b0:5d:03:13",
+   "freq": 5500,
+   "rssi": -58,
+   "link_mbps": 433,
+   "loss_pct": 0,
+   "rtt_ms": 3,
+   "gateway": "192.168.10.1",
+   "log": [
+    "02:41:55 Verbindung schlecht an a4:2b:b0:5d:03:0a (Verlust 48 %)",
+    "02:42:20 wechsle zu a4:2b:b0:5d:03:13 (5500 MHz, -61 dBm)",
+    "02:42:32 Wechsel erfolgreich (Verlust 0 %, 4 ms)"
+   ]
+  },
+  "radio": [
+   {
+    "name": "Sendehaus Graufeld",
+    "url": "https://stream.sendehaus-graufeld.example.test/live.mp3"
+   },
+   {
+    "name": "Radio Elbe",
+    "url": "https://stream.radio-elbe.example.test/128.mp3"
+   },
+   {
+    "name": "Hafenfunk",
+    "url": "https://stream.hafenfunk.example.test/aac"
+   }
+  ],
+  "playing": {
+   "radio": 0,
+   "title": {
+    "de": "Graufeld nach Mitternacht, Wiederholung",
+    "en": "Graufeld after midnight, repeat"
+   }
+  },
+  "alarms": [
+   {
+    "name": {
+     "de": "Drehtag",
+     "en": "Shoot day"
+    },
+    "time": "05:45",
+    "days": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "enabled": true,
+    "source": "radio:0",
+    "volume": 45,
+    "ramp_secs": 90,
+    "snooze_min": 9,
+    "max_mins": 30
+   },
+   {
+    "name": {
+     "de": "Abfahrt Landungsbrücken",
+     "en": "Leave for Landungsbrücken"
+    },
+    "time": "07:30",
+    "days": [
+     1,
+     3
+    ],
+    "enabled": true,
+    "source": "tone",
+    "volume": 0,
+    "ramp_secs": 0,
+    "snooze_min": 5,
+    "max_mins": 5
+   },
+   {
+    "name": {
+     "de": "Wochenende",
+     "en": "Weekend"
+    },
+    "time": "09:00",
+    "days": [
+     6,
+     0
+    ],
+    "enabled": false,
+    "source": "radio:1",
+    "volume": 30,
+    "ramp_secs": 120,
+    "snooze_min": 10,
+    "max_mins": 60
+   }
+  ],
+  "timers": [
+   {
+    "name": {
+     "de": "Kaffee",
+     "en": "Coffee"
+    },
+    "total_secs": 240,
+    "elapsed_secs": 95
+   },
+   {
+    "name": {
+     "de": "Nebelmaschine aufheizen",
+     "en": "Fog machine warm-up"
+    },
+    "total_secs": 900,
+    "elapsed_secs": 310
+   }
+  ],
+  "buttons": {
+   "mic": {
+    "short": "smart"
+   }
+  },
+  "button_log": [
+   {
+    "name": "mic",
+    "value": "0",
+    "ago_secs": 420,
+    "action": "smart"
+   },
+   {
+    "name": "volumeup",
+    "value": "1",
+    "ago_secs": 1300
+   },
+   {
+    "name": "bluetooth",
+    "value": "0",
+    "ago_secs": 5400
+   }
+  ],
+  "mqtt": {
+   "host": "studio-pi.studio-weber.example.test",
+   "port": 1883,
+   "user": "leuchtfeuer",
+   "discovery": "homeassistant",
+   "connected": true
+  },
+  "led": {
+   "mode": "vu",
+   "brightness": 60,
+   "scheme": "amber"
+  },
+  "services_running": [
+   "librespot",
+   "gmediarender",
+   "sendspin-player",
+   "castrecv",
+   "shairport-sync",
+   "bluetoothd",
+   "btagent",
+   "bluealsa"
+  ]
+ },
  "dashboard": {
   "title": "Studio Weber",
   "services": [

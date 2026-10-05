@@ -3451,6 +3451,7 @@
  "location": {
   "note": "Dawarich: Mara's visits at Northlight on the client days (bookkeeping), the areas home and Northlight, yearly stats; the track drives home → Northlight before a visit and back after it. day: a weekday, weekend: a Saturday (both as tracks with transportation modes).",
   "url": "https://dawarich.demo",
+  "person": "mara",
   "home": "home-mara",
   "site": "northlight-office",
   "visit": {

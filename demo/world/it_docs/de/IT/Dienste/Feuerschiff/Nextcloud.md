@@ -1,4 +1,6 @@
 ---
+Compose:
+  - https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/nextcloud/compose.yaml
 Gerät: "[[Feuerschiff]]"
 URLs: [cloud.studio-weber.example.test]
 letzte Prüfung: {{day:-420}}

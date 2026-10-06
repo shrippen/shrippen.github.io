@@ -1,4 +1,6 @@
 ---
+Compose:
+  - https://git.demo/studio/docker-compose-boje/src/branch/main/dawarich/compose.yaml
 deprecated: true
 ---
 # Dawarich

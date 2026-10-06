@@ -1514,7 +1514,7 @@
     }
   },
   "code": {
-    "note": "Gitea (issues, reviews, a failed workflow, a stale mirror, commits per week) GitHub and the KDE Store (downloads_daily: downloads per day, oldest first, today last; a spike after a release).",
+    "note": "Gitea (issues, reviews, a failed workflow, a stale mirror, commits per week; compose stacks of docker-compose-<host>, matched against it_docs by the notes' Compose links: gitea, kimai and stirling-pdf undocumented, dawarich only in a deprecated note, paperless-ai linked but gone; the notes come from it_docs, docs_url is the vault in Gitea) GitHub and the KDE Store (downloads_daily: downloads per day, oldest first, today last; a spike after a release).",
     "gitea": {
       "url": "https://git.demo",
       "user": "mara",
@@ -1598,6 +1598,87 @@
           "repo": "studio/website",
           "remote": "https://github.com/studio/website.git",
           "synced": "@-20m"
+        }
+      ],
+      "stacks_read": true,
+      "notes_read": true,
+      "docs_url": "https://git.demo/studio/it-docs/src/branch/main/",
+      "stacks": [
+        {
+          "host": "boje", "name": "dawarich", "repo": "studio/docker-compose-boje", "path": "dawarich/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-boje/src/branch/main/dawarich/compose.yaml",
+          "services": [
+            {"name": "app", "image": "freikin/dawarich:0.30.6", "ports": ["3000:3000"]},
+            {"name": "db", "image": "postgis/postgis:17-3.5", "ports": []}
+          ]
+        },
+        {
+          "host": "boje", "name": "uptime-kuma", "repo": "studio/docker-compose-boje", "path": "uptime-kuma/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-boje/src/branch/main/uptime-kuma/compose.yaml",
+          "services": [
+            {"name": "uptime-kuma", "image": "louislam/uptime-kuma:2.0.2", "ports": ["3001:3001"]}
+          ]
+        },
+        {
+          "host": "feuerschiff", "name": "invoiceninja", "repo": "studio/docker-compose-feuerschiff", "path": "invoiceninja/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/invoiceninja/compose.yaml",
+          "services": [
+            {"name": "app", "image": "invoiceninja/invoiceninja-debian:5.12", "ports": ["8012:80"]},
+            {"name": "db", "image": "mariadb:11.4", "ports": []}
+          ]
+        },
+        {
+          "host": "feuerschiff", "name": "kimai", "repo": "studio/docker-compose-feuerschiff", "path": "kimai/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/kimai/compose.yaml",
+          "services": [
+            {"name": "kimai", "image": "kimai/kimai2:apache-2.40", "ports": ["8001:8001"]},
+            {"name": "db", "image": "mariadb:11.4", "ports": []}
+          ]
+        },
+        {
+          "host": "feuerschiff", "name": "nextcloud", "repo": "studio/docker-compose-feuerschiff", "path": "nextcloud/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/nextcloud/compose.yaml",
+          "services": [
+            {"name": "app", "image": "nextcloud:31-apache", "ports": ["8080:80"]},
+            {"name": "db", "image": "postgres:16", "ports": []}
+          ]
+        },
+        {
+          "host": "feuerschiff", "name": "stirling-pdf", "repo": "studio/docker-compose-feuerschiff", "path": "stirling-pdf/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/stirling-pdf/compose.yaml",
+          "services": [
+            {"name": "stirling-pdf", "image": "stirlingtools/stirling-pdf:1.4", "ports": ["8090:8080"]}
+          ]
+        },
+        {
+          "host": "nebelhorn", "name": "gitea", "repo": "studio/docker-compose-nebelhorn", "path": "gitea/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-nebelhorn/src/branch/main/gitea/compose.yaml",
+          "services": [
+            {"name": "gitea", "image": "gitea/gitea:1.24", "ports": ["3000:3000", "2222:22"]}
+          ]
+        },
+        {
+          "host": "nebelhorn", "name": "immich", "repo": "studio/docker-compose-nebelhorn", "path": "immich/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-nebelhorn/src/branch/main/immich/compose.yaml",
+          "services": [
+            {"name": "server", "image": "ghcr.io/immich-app/immich-server:v2.1", "ports": ["2283:2283"]},
+            {"name": "db", "image": "ghcr.io/immich-app/postgres:16", "ports": []}
+          ]
+        },
+        {
+          "host": "nebelhorn", "name": "newt-nebelhorn", "repo": "studio/docker-compose-nebelhorn", "path": "newt-nebelhorn/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-nebelhorn/src/branch/main/newt-nebelhorn/compose.yaml",
+          "services": [
+            {"name": "newt", "image": "fosrl/newt:1.5", "ports": []}
+          ]
+        },
+        {
+          "host": "nebelhorn", "name": "paperless-ngx", "repo": "studio/docker-compose-nebelhorn", "path": "paperless-ngx/compose.yaml",
+          "url": "https://git.demo/studio/docker-compose-nebelhorn/src/branch/main/paperless-ngx/compose.yaml",
+          "services": [
+            {"name": "webserver", "image": "ghcr.io/paperless-ngx/paperless-ngx:2.18", "ports": ["8000:8000"]},
+            {"name": "broker", "image": "redis:8", "ports": []}
+          ]
         }
       ]
     },

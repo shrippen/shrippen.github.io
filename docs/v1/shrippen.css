@@ -1590,6 +1590,19 @@ a.hint-card>.title:hover,.hint-card>a.title:hover{color:var(--link)}
    .axis labels the scale on the left (text-anchor end); durations are written as h:mm */
 .chart .c{fill:var(--c);stroke:var(--c)}
 .chart .axis{text-anchor:end}
+/* Value axis beside a stretched chart (1.15): SVG text distorts under preserveAspectRatio="none",
+   so the scale is HTML. .chart-frame > .chart-axis (labels top to bottom, e.g. max, half, 0; a first
+   .unit names the unit) + the chart or .chart-wrap. In a .detail-block the frame takes the chart's height */
+.chart-frame{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.3rem .4rem;align-items:stretch}
+.chart-axis{display:flex;flex-direction:column;justify-content:space-between;text-align:right;font-family:var(--font-mono);font-size:.6rem;line-height:1;color:var(--fg3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chart-axis .unit{letter-spacing:.08em;text-transform:uppercase}
+/* .is-rows: one label centred on each row (categories, e.g. the weekdays of a .heat) */
+.chart-axis.is-rows{justify-content:space-around;text-align:left}
+.chart-frame>:is(.chart,.chart-wrap),.chart-frame>.chart-wrap>svg.chart{min-width:0;height:100%}
+.chart-frame>.detail-ticks{grid-column:2}
+.detail-block>.chart-frame:has(>:is(.chart,.chart-wrap)){height:8rem;grid-template-rows:minmax(0,1fr)}.detail-hero .chart-frame:has(>:is(.chart,.chart-wrap)){height:13rem}
+/* Read-out of single elements (1.15): data-tip="Label · value" on a bar, cell or strip in a .chart-wrap[data-readout] */
+.chart-wrap[data-readout] [data-tip]:hover{opacity:.75}
 /* Week timeline: one row per day over the hours, entries as blocks in their colour, the sum right.
    <b> day, .track (+ .today) with <i style="--from:8.25;--to:12;--c:…"> blocks and .now (--at),
    <small> the sum (.is-zero muted). --start and --span set the window (0 and 24 h) */
@@ -1663,7 +1676,7 @@ a.chip,a.chip:hover{text-decoration:none}
    The spark end mark as a zero-length path <path class="end" d="M x y h0"> stays square.
    .bar.is-prev is the last period (dashed outline, no fill); .goal.is-danger a limit (red).
    Wide viewBoxes (e.g. 0 0 1000 200) scale text down: set --chart-text in viewBox units */
-.chart .line,.chart .grid,.chart .goal,.chart .probe,.chart .now,.spark path{vector-effect:non-scaling-stroke}
+.chart .line,.chart .grid,.chart .goal,.chart .probe,.chart .mark,.chart .now,.spark path{vector-effect:non-scaling-stroke}
 .spark .end{fill:none;stroke:var(--d4);stroke-width:5px;stroke-linecap:square}
 .chart .bar.is-prev{fill:none;stroke-width:1.5;stroke-dasharray:4 3;vector-effect:non-scaling-stroke}
 .chart .bar.is-prev:not(.s1,.s2,.s3,.s4,.s5,.s6,.c){stroke:var(--fg3)}
@@ -2067,3 +2080,16 @@ details.help.is-right>.help-text{left:auto;right:-.5rem}
   .foot-brand img{width:64px;height:64px}
   .foot-cols{gap:2rem}
 }
+/* Topic icon: one line icon per tile group (data-topic), drawn in the text colour; it follows font-size */
+.topic-icon{display:inline-block;flex:none;width:1.1em;height:1.1em;vertical-align:-.2em;background:currentColor;-webkit-mask:var(--topic-icon) center/contain no-repeat;mask:var(--topic-icon) center/contain no-repeat}
+.topic-icon[data-topic="overview"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Crect x='3' y='3' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1.5'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1.5'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="work"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Crect x='3' y='7' width='18' height='13' rx='2'/%3E%3Cpath d='M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="analysis"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M4 20h16M7 17v-5M12 17V6M17 17v-8'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="homelab"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Crect x='3' y='4' width='18' height='7' rx='2'/%3E%3Crect x='3' y='13' width='18' height='7' rx='2'/%3E%3Cpath d='M7 7.5h.01M7 16.5h.01'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="network"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Ccircle cx='12' cy='5' r='2.5'/%3E%3Ccircle cx='5' cy='19' r='2.5'/%3E%3Ccircle cx='19' cy='19' r='2.5'/%3E%3Cpath d='M12 7.5v4M12 11.5l-6 5M12 11.5l6 5'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="security"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="media"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='M10 9.5v5l4.5-2.5z'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="home"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="world"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c3 3 3 15 0 18-3-3-3-15 0-18'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="dev"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14'/%3E%3C/svg%3E")}
+.topic-icon[data-topic="links"]{--topic-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1'/%3E%3C/svg%3E")}

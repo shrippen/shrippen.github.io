@@ -1,4 +1,6 @@
 ---
+Compose:
+  - https://git.demo/studio/docker-compose-nebelhorn/src/branch/main/immich/compose.yaml
 Gerät: "[[Nebelhorn]]"
 URLs: [fotos.studio-weber.example.test]
 Backup via: Borg

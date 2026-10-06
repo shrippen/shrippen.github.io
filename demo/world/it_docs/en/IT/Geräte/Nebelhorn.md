@@ -1,4 +1,6 @@
 ---
+Compose:
+  - https://git.demo/studio/docker-compose-nebelhorn/src/branch/main/newt-nebelhorn/compose.yaml
 IPs: [192.168.40.10]
 Inventar: SRV-002
 ---

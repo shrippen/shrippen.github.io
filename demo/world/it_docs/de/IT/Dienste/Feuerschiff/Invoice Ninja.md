@@ -1,4 +1,6 @@
 ---
+Compose:
+  - https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/invoiceninja/compose.yaml
 Gerät: "[[Feuerschiff]]"
 URLs: [rechnung.studio-weber.example.test]
 letzte Prüfung: {{day:-30}}

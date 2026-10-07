@@ -124,7 +124,7 @@ Screenshots are taken once per language.
 | `it.json` | inventory, laptop (with its render job), terminal, speaker (with everything its web UI shows), dashboard; servers and services: `monitoring`, `server`, `virtualization`, `storage`, `disk_health`, `containers`, `stacks`, `backups`, `certs`, `domains`, `mail_blacklist`, `dns`, `gateway`, `vpn`, `tailnet`, `tunnel`, `speed`, `identity`, `passwords`, `cloud`, `downloads`, `code`, `json_api`, `heartbeats`, `prometheus`, `vulnerabilities`, `ci`, `backup_server`, `file_backups`, `image_updates`, `proxy_routes`, `dns_technitium`, `fritzbox` |
 | `home.json` | `smart_home`, `pantry`, `kitchen`, `energy`, `weather`, `power` |
 | `web.json` | `sites`, `feeds`, `bookmarks`, `mail`, `calendar` |
-| `media.json` | the score, players, audio and video files, film rolls (`media`), `photos`, `library`, `series` |
+| `media.json` | the score, players, audio and video files, film rolls (`media`), `photos`, `library`, `series`, `listening` |
 | `story.json` | Graufeld, the hidden layer |
 | `it_docs.json` | Hansei's vault: hosts, rules, batches, review and AI providers, the demo AI's script; note texts in `it_docs/<lang>/` |
 

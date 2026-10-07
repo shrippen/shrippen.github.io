@@ -118,7 +118,7 @@ Screenshots are taken once per language.
 | File | Keys |
 |---|---|
 | `world.json` | studio, people (with working terms and commute), teams, time anchor, currency, password, `known_but_internal` |
-| `business.json` | customers, projects, activities, film engagement (with pay terms), vendors, receipts, tasks; `bookkeeping` (the time and invoice scenario), `documents` (incl. the receipt scans), `assets_state`, `bank`, `subscriptions`, `suggestions`, `archive` (older projects with clashing colours), `approvals` |
+| `business.json` | customers, projects, activities, film engagement (with pay terms), vendors, receipts, tasks; `bookkeeping` (the time and invoice scenario), `documents` (incl. the receipt scans), `assets_state`, `bank`, `subscriptions`, `suggestions`, `archive` (older projects with clashing colours), `approvals`, `todo` (Vikunja) |
 | `time.json` | timesheet week templates, running timers, `standby_timer`, absences, public holidays |
 | `travel.json` | places, vehicles, trips, rentals, `logbook` (how trips and rentals are booked), `location` (visits, track and one tracked day) |
 | `it.json` | inventory, laptop (with its render job), terminal, speaker (with everything its web UI shows), dashboard; servers and services: `monitoring`, `server`, `virtualization`, `storage`, `disk_health`, `containers`, `stacks`, `backups`, `certs`, `domains`, `mail_blacklist`, `dns`, `gateway`, `vpn`, `tailnet`, `tunnel`, `speed`, `identity`, `passwords`, `cloud`, `downloads`, `code`, `json_api`, `heartbeats`, `prometheus`, `vulnerabilities`, `ci`, `backup_server`, `file_backups`, `image_updates`, `proxy_routes`, `dns_technitium`, `fritzbox` |

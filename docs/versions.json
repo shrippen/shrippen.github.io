@@ -1,0 +1,45 @@
+{
+  "format": 1,
+  "projects": {
+    "andon": {
+      "version": "0.7.0",
+      "date": "2026-10-07",
+      "url": "https://github.com/shrippen/andon/releases/tag/v0.7.0"
+    },
+    "dolphin-davinci": {
+      "version": "1.2.1",
+      "date": "2026-09-20",
+      "url": "https://github.com/shrippen/dolphin-davinci-audio-tools/releases/tag/v1.2.1"
+    },
+    "framewidge": {
+      "version": "1.2",
+      "date": "2026-09-20",
+      "url": "https://github.com/shrippen/FrameWidge/releases/tag/1.2"
+    },
+    "kader": {
+      "version": "0.3.0",
+      "date": "2026-09-26",
+      "url": "https://github.com/shrippen/kader/releases/tag/v0.3.0"
+    },
+    "kimai-anfahrten": {
+      "version": "0.10.0",
+      "date": "2026-10-05",
+      "url": "https://github.com/shrippen/kimai-anfahrten/releases/tag/v0.10.0"
+    },
+    "kimai-drehzettel": {
+      "version": "0.2.0",
+      "date": "2026-10-01",
+      "url": "https://github.com/shrippen/kimai-drehzettel-bundle/releases/tag/v0.2.0"
+    },
+    "kimai-farbfaecher": {
+      "version": "0.1.0",
+      "date": "2026-09-26",
+      "url": "https://github.com/shrippen/kimai-farbfaecher-bundle/releases/tag/v0.1.0"
+    },
+    "plasmai": {
+      "version": "2.5.3",
+      "date": "2026-10-06",
+      "url": "https://github.com/shrippen/Plasmai/releases/tag/v2.5.3"
+    }
+  }
+}

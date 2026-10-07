@@ -915,7 +915,7 @@
     ]
   },
   "stacks": {
-    "note": "Komodo: three servers, the backup Pi unreachable; paperless' last deploy failed.",
+    "note": "Komodo: three servers, the backup Pi unreachable; paperless-ngx' last deploy failed. Komodo runs paperless-ai from the Nebelhorn repo, where its directory is gone, and does not run newt-nebelhorn (IT docs: deployed without repo, not deployed).",
     "url": "https://komodo.demo",
     "servers_total": 3,
     "servers_healthy": 2,
@@ -927,15 +927,29 @@
         "updates": [
           "immich-server",
           "immich-machine-learning"
-        ]
+        ],
+        "repo": "studio/docker-compose-nebelhorn",
+        "images": {
+          "server": "ghcr.io/immich-app/immich-server:v2.0"
+        }
       },
       {
-        "name": "paperless",
-        "state": "unhealthy"
+        "name": "paperless-ngx",
+        "state": "unhealthy",
+        "repo": "studio/docker-compose-nebelhorn"
       },
       {
         "name": "gitea",
-        "state": "running"
+        "state": "running",
+        "repo": "studio/docker-compose-nebelhorn"
+      },
+      {
+        "name": "paperless-ai",
+        "state": "running",
+        "repo": "studio/docker-compose-nebelhorn",
+        "images": {
+          "paperless-ai": "clusterzx/paperless-ai:3.0"
+        }
       }
     ],
     "alerts": [
@@ -977,7 +991,7 @@
         "by": "mara",
         "ok": true
       },
-      "paperless": {
+      "paperless-ngx": {
         "at": "@-26h",
         "operation": "DeployStack",
         "by": "lena",
@@ -1623,7 +1637,7 @@
           "host": "feuerschiff", "name": "invoiceninja", "repo": "studio/docker-compose-feuerschiff", "path": "invoiceninja/compose.yaml",
           "url": "https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/invoiceninja/compose.yaml",
           "services": [
-            {"name": "app", "image": "invoiceninja/invoiceninja-debian:5.12", "ports": ["8012:80"]},
+            {"name": "app", "image": "invoiceninja/invoiceninja-debian:5.12", "ports": ["8012:80"], "labels": {"caddy": "rechnungen.studio-weber.example.test"}},
             {"name": "db", "image": "mariadb:11.4", "ports": []}
           ]
         },
@@ -1639,7 +1653,7 @@
           "host": "feuerschiff", "name": "nextcloud", "repo": "studio/docker-compose-feuerschiff", "path": "nextcloud/compose.yaml",
           "url": "https://git.demo/studio/docker-compose-feuerschiff/src/branch/main/nextcloud/compose.yaml",
           "services": [
-            {"name": "app", "image": "nextcloud:31-apache", "ports": ["8080:80"]},
+            {"name": "app", "image": "nextcloud:31-apache", "ports": ["8080:80"], "labels": {"caddy": "cloud.studio-weber.example.test"}},
             {"name": "db", "image": "postgres:16", "ports": []}
           ]
         },
@@ -1661,7 +1675,7 @@
           "host": "nebelhorn", "name": "immich", "repo": "studio/docker-compose-nebelhorn", "path": "immich/compose.yaml",
           "url": "https://git.demo/studio/docker-compose-nebelhorn/src/branch/main/immich/compose.yaml",
           "services": [
-            {"name": "server", "image": "ghcr.io/immich-app/immich-server:v2.1", "ports": ["2283:2283"]},
+            {"name": "server", "image": "ghcr.io/immich-app/immich-server:v2.1", "ports": ["2283:2283"], "labels": {"caddy": "fotos.studio-weber.example.test"}},
             {"name": "db", "image": "ghcr.io/immich-app/postgres:16", "ports": []}
           ]
         },

@@ -1712,6 +1712,7 @@
     },
     "github": {
       "url": "https://api.github.com",
+      "owner": "studio",
       "notifications": 4,
       "repos": [
         {

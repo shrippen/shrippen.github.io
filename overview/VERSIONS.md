@@ -37,13 +37,33 @@ Run it after tagging a release and commit `docs/versions.json` with the release'
 
 ## Where a project uses it
 
-Only where nothing else announces updates: Kimai plugins (installed by copying), tarballs, AppImages, self-built releases. Not for builds from F-Droid, Flathub, the AUR or the KDE Store (Discover); there the package manager is in charge and a project leaves the check out of that build.
+Wherever nothing else announces updates:
+
+| Gets the hint | No hint (the platform announces updates) |
+|---|---|
+| Kimai plugins (installed by copying) | Flathub, F-Droid, app stores |
+| Docker images (`docker pull` says nothing by itself) | KDE Store (Discover), AUR |
+| AppImage, Windows `.exe`, tarballs, `pip`/`install.sh` installs | HACS, Home Assistant add-ons |
+| self-built releases, device packages | |
+
+One project often has both kinds of build; the check is a build switch that the store builds leave out (checked like the demo exclusion).
+
+## Clients
+
+| Client | Where it runs | Shows |
+|---|---|---|
+| `kit.update_hint` (Kante kit 0.8) | Kimai, in the admin's browser | kit hint card |
+| `KanteUpdateCheck` (Kante 1.22) | Qt Quick / Kirigami apps, Plasmoids | `KanteCallout` |
+| server side, own code | self-hosted web apps (Docker, device daemons, local web UIs) | Kante `.callout.has-x` |
+
+**Server side:** a web app with a Content-Security-Policy (`connect-src 'self'`) must not fetch from the browser, so its backend asks instead: at most once a day, cached in its data folder, silent on failure, the same comparison and checks as above (format 1, `https` links). It shows the hint only to admins, as a dismissible callout with a link (`<div class="callout has-x">` with `.callout-x`, Kante README); dismissing hides it until the next version.
 
 Rules for every client:
 
 - at most one request per project per day; failures stay silent
 - a plain GET of `versions.json`: no parameters, no cookies, nothing that identifies a user or an installation
-- can be switched off, and the README says what is sent where
+- only a hint with a link; never downloads or installs anything
+- can be switched off, and the README says what is fetched from where
 - off in demo mode (no network access there)
 
 ## No counting

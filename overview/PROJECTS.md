@@ -63,9 +63,25 @@ the pages where no demo shot replaces them. Still by hand: the Dolphin context m
 (native KDE windows) and the Companion button page (companion-mpris does not start as a dev module in
 Companion 5.0.6). Kintsugi is known but stays internal, so it has no demo and no page.
 
+## Changelog on every landing page
+
+Every landing page has a `#changes` section (Kante `.changelog`, see `templates/landing.html` in Kante), linked from the nav and the footer. Each release adds an entry at the top, in every language of the page:
+
+- a lead: what the release is about, in one or two sentences
+- the changes grouped as New, Improved, Fixed and Note (breaking changes, steps the user must take), each point with what changed for the user and why
+- graphics wherever possible: a screenshot from the demo world per visible change (`docs/shots/release-<version>-<name>-<lang>.webp`), a diagram (`.flow` or inline SVG) for changes inside
+- a link to all changes (the compare view between the two tags)
+
+The same text goes into the release notes on Gitea. From the fourth entry on, the oldest move into `details.changelog-more`. A release is done when the landing page shows it.
+
+| Project | Changelog |
+|---|---|
+| Andon | yes (from 0.4.0) |
+
 ## Adding a project
 
 1. Start from [`templates/landing.html`](https://github.com/shrippen/Kante/blob/main/templates/landing.html) in Kante and link the central stylesheet.
 2. Add a row to the table above.
 3. Add the project to `overview/sites.json` (id, name, folder, page URL) and to `overview/projects.json` (group, tagline, `page_live`), then run `./build.sh` so it appears on the overview page. Set `page_live` to `true` once its GitHub Pages site is enabled and merged.
 4. Give it a demo mode on the shared demo world (`demo/tools/sync-demo.py`, add the project to `TARGETS`) and a `demo/shots.json`, then take the screenshots with `demo/tools/screenshots.py <id>`.
+5. Give the page a `#changes` section (see "Changelog on every landing page") and fill it with the first release.

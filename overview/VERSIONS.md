@@ -42,10 +42,10 @@ Only where nothing else announces updates: Kimai plugins (installed by copying),
 Rules for every client:
 
 - at most one request per project per day; failures stay silent
-- the request carries only `?p=<id>&v=<version>` and nothing that identifies a user or an installation
+- a plain GET of `versions.json`: no parameters, no cookies, nothing that identifies a user or an installation
 - can be switched off, and the README says what is sent where
 - off in demo mode (no network access there)
 
-## Counting (open)
+## No counting
 
-The `p` and `v` parameters allow counting active installations per version from the server's access log: per day, the number of distinct addresses per `p`/`v`, then the addresses are discarded. GitHub Pages has no access log, so counting needs `versions.json` served from an own host as well (with `Access-Control-Allow-Origin: *`, which GitHub Pages already sends); the clients then point to that host. Not decided yet.
+The update check counts nothing and sends nothing back. How often a project is used is read from the download counts of the releases (Gitea, GitHub, KDE Store).

@@ -915,7 +915,7 @@
     ]
   },
   "stacks": {
-    "note": "Komodo: three servers, the backup Pi unreachable; paperless-ngx' last deploy failed. Komodo runs paperless-ai from the Nebelhorn repo, where its directory is gone, and does not run newt-nebelhorn (IT docs: deployed without repo, not deployed).",
+    "note": "Komodo: three servers, the backup Pi unreachable; paperless-ngx' last deploy failed; Mara deployed the showreel while its build was red. Komodo runs paperless-ai from the Nebelhorn repo, where its directory is gone, and does not run newt-nebelhorn (IT docs: deployed without repo, not deployed).",
     "url": "https://komodo.demo",
     "servers_total": 3,
     "servers_healthy": 2,
@@ -950,6 +950,12 @@
         "images": {
           "paperless-ai": "clusterzx/paperless-ai:3.0"
         }
+      },
+      {
+        "name": "showreel",
+        "state": "running",
+        "repo": "studio/showreel",
+        "branch": "main"
       }
     ],
     "alerts": [
@@ -1002,8 +1008,42 @@
         "operation": "DeployStack",
         "by": "mara",
         "ok": true
+      },
+      "showreel": {
+        "at": "@-4h",
+        "operation": "DeployStack",
+        "by": "mara",
+        "ok": true
       }
-    }
+    },
+    "deployed": [
+      {
+        "stack": "showreel",
+        "at": "@-4h",
+        "commit": "7c1e9a4",
+        "by": "mara",
+        "ok": true
+      },
+      {
+        "stack": "paperless",
+        "at": "@-26h",
+        "by": "lena",
+        "ok": false
+      },
+      {
+        "stack": "immich",
+        "at": "@-6d",
+        "by": "mara",
+        "ok": true
+      },
+      {
+        "stack": "showreel",
+        "at": "@-6d",
+        "commit": "52d0b17",
+        "by": "mara",
+        "ok": true
+      }
+    ]
   },
   "backups": {
     "note": "Borg backup server (the laptop has been offline for six days) and the database dumps (PG Back Web).",
@@ -2046,28 +2086,32 @@
             "status": "failure",
             "started": "@-5h",
             "seconds": 512,
-            "event": "push"
+            "event": "push",
+            "commit": "7c1e9a4e2b9f03d1"
           },
           {
             "number": 40,
             "status": "failure",
             "started": "@-1d1h",
             "seconds": 498,
-            "event": "push"
+            "event": "push",
+            "commit": "c03f6a1d7e88b245"
           },
           {
             "number": 39,
             "status": "success",
             "started": "@-4d",
             "seconds": 530,
-            "event": "push"
+            "event": "push",
+            "commit": "9a41e0c2b6d7f310"
           },
           {
             "number": 38,
             "status": "success",
             "started": "@-6d",
             "seconds": 521,
-            "event": "tag"
+            "event": "tag",
+            "commit": "52d0b17a9c3e6f48"
           }
         ]
       },
@@ -2094,13 +2138,19 @@
     ]
   },
   "backup_server": {
-    "note": "Proxmox Backup Server on the NAS: VM 101 (Home Assistant) has not been backed up for nine days, container 105 was deleted in Proxmox but its backups remain, the last verify of the store found a missing chunk.",
+    "note": "Proxmox Backup Server on the NAS: VM 101 (Home Assistant) has not been backed up for nine days, container 105 was deleted in Proxmox but its backups remain, the last verify of the store found a missing chunk. The archive store sits on the NAS pool tank (option pools): PBS sees it at 39 %, the pool is 88 % full.",
     "url": "https://pbs.demo:8007",
     "datastores": [
       {
         "store": "nebelhorn",
         "total": 2000000000000,
         "used": 1840000000000
+      },
+      {
+        "store": "archiv",
+        "pool": "tank",
+        "total": 3100000000000,
+        "used": 1200000000000
       }
     ],
     "groups": [
@@ -2127,6 +2177,13 @@
         "comment": "render-test",
         "last": "@-40d",
         "count": 8
+      },
+      {
+        "store": "archiv",
+        "type": "host",
+        "id": "nas-config",
+        "last": "@-6h",
+        "count": 30
       }
     ],
     "verify": [
@@ -2362,15 +2419,37 @@
     ]
   },
   "fritzbox": {
-    "note": "The FRITZ!Box behind the firewall reconnected 40 minutes ago; the VDSL line syncs at 250 Mbit/s.",
+    "note": "The FRITZ!Box behind the firewall reconnects every night at 04:02 (the provider's forced reconnect, uptime counted from there); the VDSL line syncs at 250 Mbit/s. Reconnects of the last weeks: mostly short, twice a run caught the line down (47 and 14 minutes).",
     "url": "https://fritz.demo:49443",
     "status": "Connected",
-    "uptime": 2400,
+    "since": "@date-0 04:02",
     "last_error": "ERROR_NONE",
     "model": "FRITZ!Box 7590",
     "down_sync": 250000,
     "up_sync": 40000,
     "down_max": 292000,
-    "up_max": 46000
+    "up_max": 46000,
+    "reconnects": [
+      {
+        "up": "@-27d20h"
+      },
+      {
+        "up": "@-21d3h"
+      },
+      {
+        "down": "@-16d5h",
+        "up": "@-16d4h13m"
+      },
+      {
+        "up": "@-11d22h"
+      },
+      {
+        "down": "@-6d2h30m",
+        "up": "@-6d2h16m"
+      },
+      {
+        "up": "@-2d20h"
+      }
+    ]
   }
 }

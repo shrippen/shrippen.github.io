@@ -268,5 +268,99 @@
         "since": "@-1h"
       }
     ]
+  },
+  "fediverse": {
+    "note": "The studio's Mastodon account: followers grow slowly, two unread notifications (a mention and a new follower). The Timecode Clock 2.1 was announced; the website's release v0.12.0 six days ago was not.",
+    "url": "https://social.studio-weber.example.test",
+    "software": "Mastodon",
+    "version": "4.4.3",
+    "account": {
+      "acct": "studio",
+      "display_name": "Studio Weber",
+      "url": "https://social.studio-weber.example.test/@studio",
+      "followers": 412,
+      "following": 118,
+      "statuses": 231,
+      "followers_daily": [
+        1,
+        0,
+        2,
+        1,
+        0,
+        0,
+        3,
+        1,
+        1,
+        0,
+        2,
+        0,
+        1,
+        4,
+        6,
+        2,
+        1,
+        0,
+        1,
+        0,
+        2,
+        1,
+        0,
+        1,
+        1,
+        0,
+        2,
+        1,
+        0,
+        1
+      ]
+    },
+    "notifications": [
+      {
+        "type": "mention",
+        "from": "elbefilmclub@film.example.test",
+        "text": {
+          "de": "Habt ihr die Timecode-Uhr auch für Plasma 5?",
+          "en": "Is the timecode clock available for Plasma 5 too?"
+        },
+        "at": "@-3h",
+        "unread": true
+      },
+      {
+        "type": "follow",
+        "from": "nordlicht@social.example.test",
+        "at": "@-9h",
+        "unread": true
+      },
+      {
+        "type": "favourite",
+        "from": "mara@social.example.test",
+        "at": "@-1d",
+        "unread": false
+      },
+      {
+        "type": "reblog",
+        "from": "kdecommunity@floss.example.test",
+        "at": "@-14d",
+        "unread": false
+      }
+    ],
+    "statuses": [
+      {
+        "text": {
+          "de": "Hinter den Kulissen: Farbabnahme für Harbour Lights, Folge 4.",
+          "en": "Behind the scenes: colour review for Harbour Lights, episode 4."
+        },
+        "url": "https://social.studio-weber.example.test/@studio/113000000000000002",
+        "at": "@-2d"
+      },
+      {
+        "text": {
+          "de": "Timecode Clock 2.1 ist im KDE Store: Bildrate je Projekt, dunkles Ziffernblatt. https://store.kde.org/p/2391004",
+          "en": "Timecode Clock 2.1 is in the KDE Store: frame rate per project, dark face. https://store.kde.org/p/2391004"
+        },
+        "url": "https://social.studio-weber.example.test/@studio/113000000000000001",
+        "at": "@-14d"
+      }
+    ]
   }
 }

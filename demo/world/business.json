@@ -1914,5 +1914,66 @@
         "jonas"
       ]
     }
+  },
+  "todo": {
+    "note": "Vikunja: the studio's to-dos. The invoice for the image film is two days overdue, the colour review of episode 4 is due tomorrow; the showreel's music edit was done two days ago without time booked in Kimai.",
+    "url": "https://vikunja.demo",
+    "projects": [
+      {
+        "id": 1,
+        "title": "Studio"
+      },
+      {
+        "id": 2,
+        "title": "{{projects.harbour.name}}"
+      },
+      {
+        "id": 3,
+        "title": "{{projects.showreel.name}}"
+      }
+    ],
+    "tasks": [
+      {
+        "title": {
+          "de": "Rechnung Imagefilm schreiben",
+          "en": "Write the image film invoice"
+        },
+        "project": 1,
+        "due": "@date-2",
+        "done": false,
+        "priority": 3
+      },
+      {
+        "title": {
+          "de": "Farbabnahme Folge 4",
+          "en": "Colour review episode 4"
+        },
+        "project": 2,
+        "due": "@date+1",
+        "done": false,
+        "priority": 2
+      },
+      {
+        "title": {
+          "de": "Steuerunterlagen sortieren",
+          "en": "Sort the tax papers"
+        },
+        "project": 1,
+        "due": "@date+9",
+        "done": false,
+        "priority": 1
+      },
+      {
+        "title": {
+          "de": "Musikschnitt Showreel",
+          "en": "Showreel music edit"
+        },
+        "project": 3,
+        "due": "@date-3",
+        "done": true,
+        "done_at": "@-2d",
+        "priority": 2
+      }
+    ]
   }
 }

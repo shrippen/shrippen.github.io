@@ -130,6 +130,35 @@
       ]
     }
   ],
+  "circle": [
+    {
+      "id": "emi",
+      "name": "Emi Hartmann",
+      "alias": "Emi",
+      "email": "emi.hartmann@example.test",
+      "city": "Hamburg-Ottensen",
+      "relation": {
+        "de": "Lenas Nachbarin im Haus am Kranichweg; kennt das Studio von den Hoffesten",
+        "en": "Lena's neighbour on Kranichweg; knows the studio from the courtyard parties"
+      },
+      "title": {
+        "de": "Logistikplanerin",
+        "en": "Logistics planner"
+      },
+      "languages": [
+        "de",
+        "ja",
+        "en"
+      ],
+      "note": {
+        "de": "Japanische Mutter, in Hamburg aufgewachsen: spricht fließend Familien-Japanisch, aber kein 敬語 und kaum Kanji. Übt für ein Vorstellungsgespräch bei einer japanischen Firma in Düsseldorf.",
+        "en": "Japanese mother, grew up in Hamburg: fluent family Japanese, but no keigo and few kanji. Practises for a job interview with a Japanese company in Düsseldorf."
+      },
+      "shows_up_in": [
+        "Kaiwa"
+      ]
+    }
+  ],
   "known_but_internal": [
     "Kintsugi"
   ]

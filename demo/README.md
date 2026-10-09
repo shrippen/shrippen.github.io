@@ -44,7 +44,8 @@ mouth (`graufeld`, places `graufeld-lighthouse`, `kolk`, `moorhof`, `sendehaus`)
 shoots *Nachtwache* there for the Sendehaus Graufeld, a small regional broadcaster in an old
 radio station: a crime writer (Ilva Brandes) vanishes, and her manuscript pages turn up
 describing what has not happened yet. The Sendehaus runs a night programme, *Graufeld nach
-Mitternacht*. Contact is Hinnerk Aalders, a retired lighthouse keeper. Fog warnings for the
+Mitternacht*, filmed live and mixed as the Sendehaus stream (`graufeld.stream`, lmix's demo
+show: inputs, outputs, what is on air). Contact is Hinnerk Aalders, a retired lighthouse keeper. Fog warnings for the
 shooting days are in `graufeld.weather`. Graufeld adds to the world; the Hamburg projects,
 people and names stay as they are.
 
@@ -125,7 +126,7 @@ Screenshots are taken once per language.
 | `home.json` | `smart_home`, `pantry`, `kitchen`, `energy`, `weather`, `power`, `esphome` |
 | `web.json` | `sites`, `feeds`, `bookmarks`, `mail`, `calendar`, `news`, `twitch`, `fediverse`, `lemmy` |
 | `media.json` | the score, players, audio and video files, film rolls (`media`), `photos`, `library`, `series`, `listening` |
-| `story.json` | Graufeld, the hidden layer |
+| `story.json` | Graufeld (with `stream`, the night programme as a live production), the hidden layer |
 | `it_docs.json` | Hansei's vault: hosts, rules, batches, review and AI providers, the demo AI's script; note texts in `it_docs/<lang>/` |
 
 Every section says what it is for in a `note` (left out of release samples). Service
@@ -167,6 +168,7 @@ data in releases; each project's release build checks that).
 | PaperTTY | `demo/start.sh` (renders the demo session with the Bitmap driver) |
 | andon | `./start.sh demo` |
 | Hansei | `demo/start.sh [de\|en] [tui]` (demo build, own vault from `it_docs`, scripted AI) |
+| lmix | `demo/start.sh [de\|en]` (engine, lmix-core and the Qt Console with the Sendehaus stream; synthetic pictures) |
 
 ## Screenshots
 
@@ -199,4 +201,4 @@ the others use `screenshot_today`.
 ## Not included
 
 **Kintsugi** is known but stays internal for the foreseeable future, so it has no demo
-data and no screenshots. Rakugo has no UI; lmix and Public Arcade are not covered yet.
+data and no screenshots. Rakugo has no UI; Public Arcade is not covered yet.

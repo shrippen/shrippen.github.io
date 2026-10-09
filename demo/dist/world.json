@@ -8190,7 +8190,108 @@
     },
     "severity": "moderate"
    }
-  ]
+  ],
+  "stream": {
+   "note": "The Sendehaus stream: the night programme filmed live in the old broadcasting house and mixed with lmix (lmix demo). Pictures are synthetic: the demo renders each input from `pattern` (a videotestsrc pattern) with its name and `tone` (Hz, 0 = none). `on` says what is on program and preview; outputs with `running` are started.",
+   "show": "Graufeld nach Mitternacht",
+   "file": "graufeld-nach-mitternacht.lmix",
+   "inputs": [
+    {
+     "id": "studio",
+     "name": {
+      "de": "Studio",
+      "en": "Studio"
+     },
+     "kind": "camera",
+     "color": "red",
+     "pattern": "ball",
+     "tone": 220
+    },
+    {
+     "id": "guest",
+     "name": "Hinnerk Aalders",
+     "kind": "guest",
+     "color": "blue",
+     "pattern": "pinwheel",
+     "tone": 330
+    },
+    {
+     "id": "lighthouse",
+     "name": {
+      "de": "Leuchtturm",
+      "en": "Lighthouse"
+     },
+     "kind": "camera",
+     "color": "yellow",
+     "pattern": "snow",
+     "tone": 0
+    },
+    {
+     "id": "forecast",
+     "name": {
+      "de": "Seewetter",
+      "en": "Shipping forecast"
+     },
+     "kind": "graphic",
+     "color": "cyan",
+     "pattern": "gradient",
+     "tone": 0
+    },
+    {
+     "id": "trailer",
+     "name": {
+      "de": "Trailer Nachtwache",
+      "en": "Nightwatch trailer"
+     },
+     "kind": "clip",
+     "color": "purple",
+     "pattern": "circular",
+     "tone": 440
+    },
+    {
+     "id": "music",
+     "name": "Ebbe",
+     "kind": "music",
+     "color": "green",
+     "pattern": "",
+     "tone": 196
+    }
+   ],
+   "on": {
+    "program": "studio",
+    "preview": "lighthouse"
+   },
+   "outputs": [
+    {
+     "id": "stream",
+     "name": {
+      "de": "Sendehaus-Stream",
+      "en": "Sendehaus stream"
+     },
+     "kind": "srt",
+     "running": true
+    },
+    {
+     "id": "recording",
+     "name": {
+      "de": "Mitschnitt",
+      "en": "Recording"
+     },
+     "kind": "record",
+     "running": true
+    },
+    {
+     "id": "iso",
+     "name": {
+      "de": "ISO Leuchtturm",
+      "en": "ISO lighthouse"
+     },
+     "kind": "record",
+     "input": "lighthouse",
+     "running": false
+    }
+   ]
+  }
  },
  "oddities": {
   "note": "Hidden layer, an homage to Alan Wake. Use it quietly in corners of a demo (logs, backups, sensors, notes), never explain it in the UI. Motif: 03:13 and seven minutes.",

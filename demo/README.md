@@ -14,11 +14,11 @@ addresses use `example.test`, brands and products are invented.
 
 | Person | Role | Kimai role | Shows up in |
 |---|---|---|---|
-| Mara Weber | Owner, producer | super admin | Plasmai, Kurrent, PaperNinja, Abrechnung, Anfahrten, andon |
-| Jonas Brandt | Camera | user | Drehzettel (employed by Northlight for Harbour Lights), Anfahrten |
-| Selin Aydın | Editing | user | Holiday (holidays), running timer |
-| Theo Lindqvist | Sound and music | user | Holiday (sick days), score in companion-mpris, audio in dolphin |
-| Lena Kraus | Production assistant | team lead | approvals in Holiday and Anfahrten |
+| Mara Weber | Owner, producer | super admin | Plasmai, Kurrent, PaperNinja, Abrechnung, Anfahrten, andon, Kaiwa |
+| Jonas Brandt | Camera | user | Drehzettel (employed by Northlight for Harbour Lights), Anfahrten, Kaiwa |
+| Selin Aydın | Editing | user | Holiday (holidays), running timer, Kaiwa |
+| Theo Lindqvist | Sound and music | user | Holiday (sick days), score in companion-mpris, audio in dolphin, Kaiwa |
+| Lena Kraus | Production assistant | team lead | approvals in Holiday and Anfahrten, Kaiwa |
 
 | Customer | Project |
 |---|---|
@@ -36,6 +36,10 @@ generated audio clips, synthetic film rolls, receipts from invented vendors. Sup
 studio pays regularly (`vendors`: mobile, hosting, software, energy, music) and its IT (`inventory`:
 assets, licences, disks) are invented too; only the edit laptop is a real model, as in
 FrameWidge.
+
+### The circle
+
+`circle` holds people the studio knows outside the team, with no Kimai account and no timesheets. **Emi Hartmann** (`emi`) is Lena's neighbour on Kranichweg: Japanese mother, grew up in Hamburg, fluent family Japanese but no keigo and few kanji; she practises for a job interview with a Japanese company in Düsseldorf. She is one of Kaiwa's QA personas, like Mara, Selin, Theo, Jonas, Lena and Hinnerk Aalders from Graufeld.
 
 ### Graufeld
 

@@ -1599,7 +1599,7 @@
     ]
   },
   "bank": {
-    "note": "Sure: one income matches the open invoice, the health insurance payment is overdue.",
+    "note": "Sure: one income matches the open invoice, the health insurance payment is overdue; the studio supplies of last week lack a category, an older booking of the same shop has one.",
     "url": "https://money.demo",
     "currency": "EUR",
     "net_worth": 48210,
@@ -1686,6 +1686,20 @@
         "expense": true,
         "category": "{{vendors.nordhost.kind}}",
         "merchant": "{{vendors.nordhost.name}}",
+        "account": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        }
+      },
+      {
+        "id": "t6",
+        "date": "@date-70",
+        "name": "{{receipts.2.vendor}}",
+        "amount": -249,
+        "category": {
+          "de": "Technik",
+          "en": "Equipment"
+        },
         "account": {
           "de": "Geschäftskonto",
           "en": "Business account"

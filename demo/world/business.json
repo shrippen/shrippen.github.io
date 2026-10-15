@@ -1696,7 +1696,7 @@
       {
         "name": "{{vendors.nordhost.name}}",
         "status": "active",
-        "amount": "{{vendors.nordhost.monthly}}",
+        "amount": 44.9,
         "expense": true,
         "next": "@date+25",
         "last": "@date-5"
@@ -1734,7 +1734,7 @@
     ]
   },
   "subscriptions": {
-    "note": "Wallos: the studio's suppliers plus its domain; the software subscription the bank knows is missing here on purpose.",
+    "note": "Wallos: the studio's suppliers plus its domain; the software subscription the bank knows is missing here on purpose, the streaming is in twice and the server has its old price.",
     "url": "https://wallos.demo",
     "currency": "EUR",
     "subs": [
@@ -1752,6 +1752,10 @@
         "monthly": 2,
         "next": "@date+21",
         "category": "{{vendors.nordhost.kind}}"
+      },
+      {
+        "vendor": "wellenklang",
+        "next": "@date+9"
       },
       {
         "vendor": "wellenklang",

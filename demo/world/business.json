@@ -1599,7 +1599,7 @@
     ]
   },
   "bank": {
-    "note": "Sure: one income matches the open invoice, the health insurance payment is overdue.",
+    "note": "Sure: one income matches the open invoice, the health insurance payment is overdue; the studio supplies of last week lack a category, an older booking of the same shop has one.",
     "url": "https://money.demo",
     "currency": "EUR",
     "net_worth": 48210,
@@ -1690,13 +1690,27 @@
           "de": "Geschäftskonto",
           "en": "Business account"
         }
+      },
+      {
+        "id": "t6",
+        "date": "@date-70",
+        "name": "{{receipts.2.vendor}}",
+        "amount": -249,
+        "category": {
+          "de": "Technik",
+          "en": "Equipment"
+        },
+        "account": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        }
       }
     ],
     "recurring": [
       {
         "name": "{{vendors.nordhost.name}}",
         "status": "active",
-        "amount": "{{vendors.nordhost.monthly}}",
+        "amount": 44.9,
         "expense": true,
         "next": "@date+25",
         "last": "@date-5"
@@ -1734,7 +1748,7 @@
     ]
   },
   "subscriptions": {
-    "note": "Wallos: the studio's suppliers plus its domain; the software subscription the bank knows is missing here on purpose.",
+    "note": "Wallos: the studio's suppliers plus its domain; the software subscription the bank knows is missing here on purpose, the streaming is in twice and the server has its old price.",
     "url": "https://wallos.demo",
     "currency": "EUR",
     "subs": [
@@ -1752,6 +1766,10 @@
         "monthly": 2,
         "next": "@date+21",
         "category": "{{vendors.nordhost.kind}}"
+      },
+      {
+        "vendor": "wellenklang",
+        "next": "@date+9"
       },
       {
         "vendor": "wellenklang",

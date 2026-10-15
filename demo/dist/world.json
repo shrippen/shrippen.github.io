@@ -1687,6 +1687,41 @@
  "assets_state": {
   "note": "Snipe-IT states of the first four inventory assets: the notebook's warranty ends soon, the NAS is past end of life and overdue for an audit, the fourth should have come back from Jonas. Licences: the first expires soon, the second has free seats.",
   "url": "https://assets.demo",
+  "models": [
+   {
+    "id": 1,
+    "name": "Framework Laptop 13"
+   },
+   {
+    "id": 2,
+    "name": "Speicherwerk NS-4"
+   },
+   {
+    "id": 3,
+    "name": {
+     "de": "Sonstiges Netzwerkgerät",
+     "en": "Other network device"
+    }
+   }
+  ],
+  "statuses": [
+   {
+    "id": 1,
+    "name": {
+     "de": "Bereit",
+     "en": "Ready"
+    },
+    "kind": "deployable"
+   },
+   {
+    "id": 2,
+    "name": {
+     "de": "Ausstehend",
+     "en": "Pending"
+    },
+    "kind": "pending"
+   }
+  ],
   "assets": [
    {
     "status": {
@@ -8781,7 +8816,7 @@
   }
  },
  "feeds": {
-  "note": "FreshRSS: one feed has been silent for over a year.",
+  "note": "FreshRSS: one feed has been silent for over a year; release feeds announce newer versions of two pinned images.",
   "url": "https://rss.demo",
   "unread": 812,
   "feeds": [
@@ -8815,6 +8850,22 @@
     "category": "Tech",
     "unread": 260,
     "newest": "@-2d"
+   }
+  ],
+  "releases": [
+   {
+    "feed": "feed/5",
+    "repo": "freika/dawarich",
+    "version": "0.30.9",
+    "link": "https://github.com/Freika/dawarich/releases/tag/0.30.9",
+    "published": "@-3d"
+   },
+   {
+    "feed": "feed/6",
+    "repo": "stirling-tools/stirling-pdf",
+    "version": "v1.5.0",
+    "link": "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v1.5.0",
+    "published": "@-6d"
    }
   ]
  },

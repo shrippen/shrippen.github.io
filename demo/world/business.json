@@ -1611,7 +1611,7 @@
     ]
   },
   "bank": {
-    "note": "Sure: one income matches the open invoice, the health insurance payment is overdue; the studio supplies of last week lack a category, an older booking of the same shop has one.",
+    "note": "Sure: one income matches the open invoice, the health insurance payment is overdue; the studio supplies of last week lack a category, an older booking of the same shop has one. The software subscription is paid from the business account but has no recurring expense in Invoice Ninja.",
     "url": "https://money.demo",
     "currency": "EUR",
     "net_worth": 48210,
@@ -1712,6 +1712,19 @@
           "de": "Technik",
           "en": "Equipment"
         },
+        "account": {
+          "de": "Geschäftskonto",
+          "en": "Business account"
+        }
+      },
+      {
+        "id": "t7",
+        "date": "@date-19",
+        "name": "{{vendors.farbraum.contract}}",
+        "amount": "{{vendors.farbraum.monthly}}",
+        "expense": true,
+        "category": "{{vendors.farbraum.kind}}",
+        "merchant": "{{vendors.farbraum.name}}",
         "account": {
           "de": "Geschäftskonto",
           "en": "Business account"

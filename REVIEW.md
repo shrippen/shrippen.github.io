@@ -20,7 +20,8 @@ or another project notices:
   code or tests (people, Studio Weber, Northlight, Harbour Lights, vendors,
   film rolls, the van's plate) changes without those projects; a
   `{{path}}` reference that does not resolve; a `{de, en}` text missing
-  one side; a date that is not a day offset from the anchor; a key in two
+  one side; a calendar date that is neither a day offset from the anchor nor an
+  `@…` or `{{day:N}}` value (`demo/README.md`, Values); a key in two
   `world/` files; `dist/` not rebuilt.
 - **Leaks the real:** a real person, customer, address, mail (only
   `example.test`) or brand in the demo world or a screenshot.
@@ -33,14 +34,24 @@ or another project notices:
 - Kante rule: no design change in `docs/v1/` or in the overview's own
   styles; a missing element goes into Kante first. The overview uses
   Kante's roles, no raw colours or fonts (`check-tokens.py` in `build.sh`).
-- `docs/` matches its sources: after a change to `overview/projects.json`
-  or to Kante, `./build.sh` ran and `docs/` is committed; after a change
-  to `demo/world/`, `demo/dist/` is rebuilt (`world.py build`).
+- `docs/` matches its sources: after a change to `overview/projects.json`,
+  `overview/sites.json`, a project icon or Kante, `./build.sh` ran and
+  `docs/` is committed; after a change to `demo/world/`, `demo/dist/` is
+  rebuilt (`world.py build`) and the copies in the projects are synced
+  (`demo/tools/sync-demo.py`, `check-demo.py` clean), or the PR names the
+  projects that follow.
 - Release rule: a release log on a landing page has a lead, New /
   Improved / Fixed / Note, a screenshot per visible change in every
   language (details in `overview/PROJECTS.md`).
 - `world.py`, `lib/world.js` and `lib/DemoWorld.php` keep the same
   runtime rules; the preview server stays bound to 127.0.0.1.
+
+## What the owner confirms here
+
+"What is published" (rule in `agent.md`) means here: a new page, site or
+URL on shrippen.github.io, a change to `docs/versions.json` (update checks
+of the apps) or to `docs/social-preview.png`. A `docs/` rebuilt from
+`overview/` data or from Kante does not count.
 
 ## Skip
 

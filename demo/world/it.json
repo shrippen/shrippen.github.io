@@ -124,15 +124,14 @@
         3600
       ]
     },
-    "tdp_watts": 28,
     "charging": {
       "rate_ma": 2100,
       "voltage_mv": 16800
     },
-    "epp": "balance_performance",
+    "power_profile": "performance",
     "history_min": 30,
     "log": [
-      "framework-control demo",
+      "framewidged demo",
       "fan curve active (APU)",
       "charge limit {charge_limit} %"
     ],

@@ -1613,7 +1613,7 @@
     ]
   },
   "kept_state": {
-    "note": "Kept, the studio's inventory as andon reads it: the same four assets as Snipe-IT plus the fire extinguisher. The laptop's invoice is a Paperless link, the NAS has its receipt as an attached link, the phone's link points to a Paperless document that is gone (999), the monitor has no receipt. The extinguisher's check is due in 20 days; the agenda carries Kept's own lead times.",
+    "note": "Kept, the studio's inventory as andon reads it: the same four assets as Snipe-IT, with the same warranty ends and useful lives, plus the fire extinguisher. The laptop's invoice is a Paperless link, the NAS has its receipt as an attached file, the phone's link points to a Paperless document that is gone (999), the monitor has no receipt. The extinguisher's check is due in 20 days; the agenda carries Kept's own lead times.",
     "url": "https://kept.demo",
     "writable": true,
     "locations": [
@@ -1621,16 +1621,16 @@
     ],
     "things": [
       {"id": "th-laptop", "code": "K7D2QX", "name": "{{inventory.assets.0.name}}", "model": "{{inventory.assets.0.model}}", "type": "{{inventory.assets.0.category}}", "location": "Studio",
-       "bought": "@date-30", "price": "{{inventory.assets.0.cost}}", "currency": "EUR", "warranty_ends": "@date+700", "life": 36,
+       "bought": "@date-30", "price": "{{inventory.assets.0.cost}}", "currency": "EUR", "warranty_ends": "@date+10", "life": 12,
        "receipts": [{"role": "invoice", "url": "https://docs.demo/documents/412/details", "doc_id": 412, "paperless": "https://docs.demo"}]},
       {"id": "th-nas", "code": "N4S2HB", "name": "{{inventory.assets.1.name}}", "model": "{{inventory.assets.1.model}}", "type": "{{inventory.assets.1.category}}", "location": "Studio",
        "bought": "@date-1900", "price": "{{inventory.assets.1.cost}}", "currency": "EUR", "warranty_ends": "@date-800", "life": 36,
-       "receipts": [{"role": "receipt", "url": "https://docs.demo/documents/88/details"}]},
+       "receipts": [{"role": "receipt", "url": "https://kept.demo/files/nas-kassenbon.pdf"}]},
       {"id": "th-phone", "code": "M0W7PH", "name": "{{inventory.assets.2.name}}", "model": "{{inventory.assets.2.model}}", "type": "{{inventory.assets.2.category}}", "location": "Studio",
        "bought": "@date-500", "price": "{{inventory.assets.2.cost}}", "currency": "EUR", "warranty_ends": "@date+230", "life": 60,
        "receipts": [{"role": "invoice", "url": "https://docs.demo/documents/999/details", "doc_id": 999, "paperless": "https://docs.demo"}]},
       {"id": "th-monitor", "code": "LB27QM", "name": "{{inventory.assets.3.name}}", "model": "{{inventory.assets.3.model}}", "type": "{{inventory.assets.3.category}}", "location": "Studio",
-       "bought": "@date-60", "price": "{{inventory.assets.3.cost}}", "currency": "EUR", "life": 36},
+       "bought": "@date-60", "price": "{{inventory.assets.3.cost}}", "currency": "EUR", "life": 12},
       {"id": "th-extinguisher", "code": "FL0SCH", "name": {"de": "Feuerlöscher Studio", "en": "Studio fire extinguisher"}, "type": {"de": "Sicherheit", "en": "Safety"}, "location": "Studio",
        "expires": "@date+20"}
     ],

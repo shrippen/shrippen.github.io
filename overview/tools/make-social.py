@@ -40,6 +40,7 @@ COPY = {
     "kante": ("Kante", "The shrippen design system"),
     "hansei": ("Hansei", "Review every AI edit to your notes"),
     "leuchtfeuer": ("Leuchtfeuer", "A smart speaker from any small computer"),
+    "resolve-vst": ("resolve-vst", "VST plug-ins, AAC and N-RAW for DaVinci Resolve on Linux"),
 }
 
 

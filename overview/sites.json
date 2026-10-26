@@ -17,5 +17,6 @@
   {"id": "kante", "name": "Kante", "dir": "Kante", "url": "https://shrippen.github.io/Kante/"},
   {"id": "andon", "name": "Andon", "dir": "andon", "url": "https://shrippen.github.io/andon/"},
   {"id": "hansei", "name": "Hansei", "dir": "hansei", "url": "https://shrippen.github.io/hansei/"},
-  {"id": "leuchtfeuer", "name": "Leuchtfeuer", "dir": "Leuchtfeuer", "url": "https://shrippen.github.io/leuchtfeuer/"}
+  {"id": "leuchtfeuer", "name": "Leuchtfeuer", "dir": "Leuchtfeuer", "url": "https://shrippen.github.io/leuchtfeuer/"},
+  {"id": "resolve-vst", "name": "resolve-vst", "dir": "resolve-vst", "url": "https://shrippen.github.io/resolve-vst/"}
 ]

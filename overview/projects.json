@@ -109,6 +109,15 @@
       }
     },
     {
+      "id": "resolve-linux-vst",
+      "group": "tools",
+      "page_live": true,
+      "tagline": {
+        "en": "VST2 and VST3 plug-ins for DaVinci Resolve on Linux, plus AAC import and render and Nikon N-RAW, through one preload library.",
+        "de": "VST2- und VST3-Plugins für DaVinci Resolve unter Linux, dazu AAC-Import und -Render und Nikon N-RAW, über eine Preload-Bibliothek."
+      }
+    },
+    {
       "id": "papertty",
       "group": "tools",
       "page_live": true,

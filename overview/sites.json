@@ -18,5 +18,5 @@
   {"id": "andon", "name": "Andon", "dir": "andon", "url": "https://shrippen.github.io/andon/"},
   {"id": "hansei", "name": "Hansei", "dir": "hansei", "url": "https://shrippen.github.io/hansei/"},
   {"id": "leuchtfeuer", "name": "Leuchtfeuer", "dir": "Leuchtfeuer", "url": "https://shrippen.github.io/leuchtfeuer/"},
-  {"id": "resolve-vst", "name": "resolve-vst", "dir": "resolve-vst", "url": "https://shrippen.github.io/resolve-linux-vst/"}
+  {"id": "resolve-linux-vst", "name": "resolve-linux-vst", "dir": "resolve-vst", "url": "https://shrippen.github.io/resolve-linux-vst/"}
 ]

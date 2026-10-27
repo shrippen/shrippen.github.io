@@ -109,7 +109,7 @@
       }
     },
     {
-      "id": "resolve-vst",
+      "id": "resolve-linux-vst",
       "group": "tools",
       "page_live": false,
       "tagline": {

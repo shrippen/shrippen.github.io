@@ -1740,6 +1740,12 @@
         "date": "@date-8",
         "name": "{{receipts.2.vendor}}",
         "amount": -899,
+        "tags": [
+          {
+            "de": "Studio",
+            "en": "Studio"
+          }
+        ],
         "account": {
           "de": "Geschäftskonto",
           "en": "Business account"

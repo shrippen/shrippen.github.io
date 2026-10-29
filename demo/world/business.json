@@ -853,6 +853,7 @@
           "en": "Export edit version 2"
         },
         "due": 4,
+        "time": "10:00-11:00",
         "priority": 5,
         "labels": [
           "post"
@@ -880,6 +881,7 @@
           "en": "Match September receipts"
         },
         "due": 3,
+        "time": "10:00-11:00",
         "priority": 5,
         "labels": [
           "orga"
@@ -919,6 +921,7 @@
           "en": "Scan film rolls 03 and 04"
         },
         "due": 2,
+        "time": "09:00-10:30",
         "priority": 5,
         "labels": [
           "post"
@@ -1059,6 +1062,7 @@
           "en": "Buy more batteries for the floodlights"
         },
         "due": 3,
+        "time": "15:00-16:30",
         "priority": 5,
         "labels": [
           "shoot"

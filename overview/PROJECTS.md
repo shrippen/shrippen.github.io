@@ -74,12 +74,30 @@ Every landing page has a `#changes` section (Kante `.changelog`, see `templates/
 - graphics wherever possible: a screenshot from the demo world per visible change (`docs/shots/release-<version>-<name>-<lang>.webp`), a diagram (`.flow` or inline SVG) for changes inside
 - a link to all changes (the compare view between the two tags)
 
-The same text goes into the release notes on Gitea. From the fourth entry on, the oldest move into `details.changelog-more`. A release is done when the landing page shows it.
+The source is `CHANGELOG.md` at the repo root: one section `## [X.Y.Z] — YYYY-MM-DD` per release, newest first, holding exactly the release notes (`### English` and `### Deutsch`, each with the lead, `####` groups and the compare link). The same text goes into the release notes on Gitea and GitHub: a release workflow takes the section for the tag's version as the GitHub notes and stops when it is missing. Every repo's `agent.md` states this rule. Write the section before the tag. From the fourth entry on, the oldest move into `details.changelog-more`. Bump the footer version (linked to `#changes`). A release is done when the landing page shows it.
 
-| Project | Changelog |
+Releases from before this rule are backfilled from the history and the old notes, without graphics. Pages of projects without a release (the overview, Hansei) get the section with their first release.
+
+| Project | Changelog from |
 |---|---|
-| Andon | yes (from 0.4.0) |
-| resolve-linux-vst | yes (from 0.1.0) |
+| Andon | 0.4.0 |
+| Companion MPRIS | 1.0.0 |
+| Dolphin Davinci Audio Tools | 1.0.0 |
+| FrameWidge | 1.0 |
+| Kader | 0.1 |
+| Kante | 1.27 (no tags; older versions in the README) |
+| Kimai Abrechnung | 1.0.0 |
+| Kimai Anfahrten | 0.10.0 |
+| Kimai Drehzettel | 0.1.0 |
+| Kimai Farbfächer | 0.1.0 (CHANGELOG only: the landing page is not published yet) |
+| Kimai Holiday Bundle | 1.0.0 |
+| Knust | 1.5.0 (Gitea/GitHub releases only for 1.5.0) |
+| Kurrent | 0.1.0 |
+| Leuchtfeuer | 1.0.2 (1.0.0 and 1.0.1 never built) |
+| PaperTTY | 1.0.0 (the fork's own; upstream history below it) |
+| Plasmai | 1.0.0 |
+| resolve-linux-vst | 1.0.0 |
+| Hansei, overview | no release yet |
 
 ## Adding a project
 

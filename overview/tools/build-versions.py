@@ -9,6 +9,7 @@ Format and clients: overview/VERSIONS.md.
 Usage: python3 overview/tools/build-versions.py   (after tagging a release; needs tea and network)
 """
 import json
+import re
 import subprocess
 import sys
 import urllib.error
@@ -22,6 +23,7 @@ OUT = REPO / "docs" / "versions.json"
 GITHUB = "https://github.com/shrippen"
 GITEA = "https://git.arianw.de/"
 FORMAT = 1
+VERSION_TAG = re.compile(r"v?\d")
 
 
 def gitea_repo(folder):
@@ -47,6 +49,13 @@ def latest_release(repo):
     return data
 
 
+def tag_date(folder, tag):
+    """Date of the tagged commit: releases created later for an old tag keep their real date."""
+    result = subprocess.run(["git", "-C", str(folder), "log", "-1", "--format=%cs", tag],
+                            capture_output=True, text=True)
+    return result.stdout.strip() if result.returncode == 0 else None
+
+
 def on_mirror(url):
     try:
         with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=10) as response:
@@ -69,12 +78,15 @@ def main():
         if release is None:
             continue
         tag = release["tag_name"]
+        # Only the project's own versions ("v1.2.3", "1.3"); "knust-v1.5.0" in Kante is Knust's
+        if not VERSION_TAG.match(tag):
+            continue
         url = f"{GITHUB}/{github}/releases/tag/{tag}"
         if not on_mirror(url):
             print(f"warning: {site['id']} {tag} is not on the GitHub mirror yet: {url}", file=sys.stderr)
         projects[site["id"]] = {
             "version": tag.removeprefix("v"),
-            "date": release["published_at"][:10],
+            "date": tag_date(ROOT / site["dir"], tag) or release["published_at"][:10],
             "url": url,
         }
     data = {"format": FORMAT, "projects": dict(sorted(projects.items()))}

@@ -89,7 +89,7 @@ Releases from before this rule are backfilled from the history and the old notes
 | Kimai Abrechnung | 1.0.0 |
 | Kimai Anfahrten | 0.10.0 |
 | Kimai Drehzettel | 0.1.0 |
-| Kimai Farbfächer | 0.1.0 (CHANGELOG only: the landing page is not published yet) |
+| Kimai Farbfächer | 0.1.0 |
 | Kimai Holiday Bundle | 1.0.0 |
 | Knust | 1.5.0 (Gitea/GitHub releases only for 1.5.0) |
 | Kurrent | 0.1.0 |

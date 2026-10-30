@@ -26,7 +26,7 @@ Tracking list: which landing pages follow the shared design. The central stylesh
 | kimai-drehzettel-bundle | https://shrippen.github.io/kimai-drehzettel-bundle/ | central | New page in `Kimai Drehzettel/docs/index.html` (status banner "Early development", features with ready/planned tags, timesheet showcase, flow, TV FFS rules `.table`, phases, FAQ); mockup SVG instead of a screenshot; page is on `main`, not on `landing-page-redesign` |
 | kimai-anfahrten | https://shrippen.github.io/kimai-anfahrten/ | central | New page in `Kimai Anfahrten/docs/index.html` (callout "calculation aid, not tax advice", features, Dawarich, logbook, tax, team showcases with the README screenshots, flow, install, permissions `.table`, FAQ); `page_live` false, the roadmap postpones Pages |
 | Hansei | https://shrippen.github.io/hansei/ | central | Page in `hansei/docs/index.html` (callout "built with AI assistance and still young", demo screenshots `board.webp`, `review.webp`); repo made public and mirrored to GitHub in October 2026 |
-| Leuchtfeuer | https://shrippen.github.io/leuchtfeuer/ | central | Page in `Leuchtfeuer/docs/index.html` (callout on flashing the Invoke, features, devices, demo screenshots `overview.webp`, `settings.webp`); install guide links to Gitea |
+| Leuchtfeuer | https://shrippen.github.io/leuchtfeuer/ | central | Page in `Leuchtfeuer/docs/index.html` (callout on flashing the Invoke, features, devices, demo screenshots `overview.webp`, `settings.webp`) |
 | resolve-linux-vst | https://shrippen.github.io/resolve-linux-vst/ | central | Page in `resolve-vst/docs/index.html` (local folder `resolve-vst`) (callout "independent, relies on Resolve internals, built with AI assistance", features, flow and gaps `.table`, install, FAQ); no own GUI, so no demo mode and no screenshots |
 
 "central" means the page links the central stylesheet and script. **Not live yet**: every project has the new page on the branch `landing-page-redesign` (pushed to the Gitea `origin`, based on `main`, or `master` for kimai-holiday-bundle), so nothing goes live before it is merged. The stylesheet only resolves once GitHub Pages is enabled for the repo `shrippen.github.io` (Settings → Pages → `main`, `/docs`) and the built `docs/v1/` is pushed; do that first, then merge the branches.
@@ -74,12 +74,30 @@ Every landing page has a `#changes` section (Kante `.changelog`, see `templates/
 - graphics wherever possible: a screenshot from the demo world per visible change (`docs/shots/release-<version>-<name>-<lang>.webp`), a diagram (`.flow` or inline SVG) for changes inside
 - a link to all changes (the compare view between the two tags)
 
-The same text goes into the release notes on Gitea. From the fourth entry on, the oldest move into `details.changelog-more`. A release is done when the landing page shows it.
+The source is `CHANGELOG.md` at the repo root: one section `## [X.Y.Z] — YYYY-MM-DD` per release, newest first, holding exactly the release notes (`### English` and `### Deutsch`, each with the lead, `####` groups and the compare link). The same text goes into the release notes on Gitea and GitHub: a release workflow takes the section for the tag's version as the GitHub notes and stops when it is missing. Every repo's `agent.md` states this rule. The tool is `scripts/release-notes.sh` (`X.Y.Z` prints the notes, `--check` checks the headings in CI on every push), a copy of Kante's `tools/release-notes.sh`, synced with `tools/sync-release-notes.sh` there. Write the section before the tag. From the fourth entry on, the oldest move into `details.changelog-more`. Bump the footer version (linked to `#changes`). A release is done when the landing page shows it.
 
-| Project | Changelog |
+Releases from before this rule are backfilled from the history and the old notes, without graphics. Pages of projects without a release (the overview, Hansei) get the section with their first release.
+
+| Project | Changelog from |
 |---|---|
-| Andon | yes (from 0.4.0) |
-| resolve-linux-vst | yes (from 0.1.0) |
+| Andon | 0.4.0 |
+| Companion MPRIS | 1.0.0 |
+| Dolphin Davinci Audio Tools | 1.0.0 |
+| FrameWidge | 1.0 |
+| Kader | 0.1 |
+| Kante | 1.27 (no tags; older versions in the README) |
+| Kimai Abrechnung | 1.0.0 |
+| Kimai Anfahrten | 0.10.0 |
+| Kimai Drehzettel | 0.1.0 |
+| Kimai Farbfächer | 0.1.0 |
+| Kimai Holiday Bundle | 1.0.0 |
+| Knust | 1.5.0 (Gitea/GitHub releases only for 1.5.0) |
+| Kurrent | 0.1.0 |
+| Leuchtfeuer | 1.0.2 (1.0.0 and 1.0.1 never built) |
+| PaperTTY | 1.0.0 (the fork's own; upstream history below it) |
+| Plasmai | 1.0.0 |
+| resolve-linux-vst | 1.0.0 |
+| Hansei, overview | no release yet |
 
 ## Adding a project
 

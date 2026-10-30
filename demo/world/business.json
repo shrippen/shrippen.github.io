@@ -670,6 +670,7 @@
     }
   ],
   "tasks": {
+    "note": "VTODOs and appointments for Kurrent. items: due/start are day offsets from the anchor Monday, completed a day offset, percent 0-100; time \"HH:MM-HH:MM\" (only with due) makes a task a time block on its due day. events: day offset with start and end as \"HH:MM\"; no task block overlaps an appointment of the same day.",
     "collections": [
       {
         "id": "harbour",
@@ -853,6 +854,7 @@
           "en": "Export edit version 2"
         },
         "due": 4,
+        "time": "10:00-11:00",
         "priority": 5,
         "labels": [
           "post"
@@ -880,6 +882,7 @@
           "en": "Match September receipts"
         },
         "due": 3,
+        "time": "10:00-11:00",
         "priority": 5,
         "labels": [
           "orga"
@@ -919,6 +922,7 @@
           "en": "Scan film rolls 03 and 04"
         },
         "due": 2,
+        "time": "09:00-10:30",
         "priority": 5,
         "labels": [
           "post"
@@ -1059,6 +1063,7 @@
           "en": "Buy more batteries for the floodlights"
         },
         "due": 3,
+        "time": "15:00-16:30",
         "priority": 5,
         "labels": [
           "shoot"

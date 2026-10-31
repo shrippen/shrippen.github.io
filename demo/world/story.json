@@ -159,7 +159,7 @@
       ]
     },
     "reading": {
-      "note": "Nachtwache read live in the Sendehaus: the lmix demo of moods (lmix's Moods page). `layers` are what a mood sets. A group has a `base` and `variants` that name only the layers they change (null: off). `light` is the hall's brightness in % (0 = dark); a sound is a clip the demo renders from `tone` (Hz) under its `name`. `collections` pick moods (`group` or `group/variant`) and one-shots for a part of the evening; `now` and `before` are the moods set when the screenshot is taken.",
+      "note": "Nachtwache read live in the Sendehaus: the lmix demo of moods (lmix's Moods page). `layers` are what a mood sets. A group has a `base` and `variants` that name only the layers they change (null: off). `light` is the hall's brightness in % (0 = dark); a sound is a clip the demo renders from `tone` (Hz) under its `name`. `collections` pick moods (`group` or `group/variant`) and one-shots for a part of the evening; `before` is set first, then `now`: `now` is the mood on the page and `before` the one it came from (its Back).",
       "name": {
         "de": "Nachtwache – Lesung im Sendehaus",
         "en": "Nightwatch – a reading at the Sendehaus"
@@ -237,7 +237,7 @@
             "light": 15,
             "atmo": {
               "name": "{{media.audio_files.2.name}}",
-              "tone": 110
+              "tone": "{{media.audio_files.2.tone}}"
             },
             "music": {
               "name": "{{media.tracks.2.title}}",
@@ -282,7 +282,7 @@
             "light": 10,
             "atmo": {
               "name": "{{media.audio_files.5.name}}",
-              "tone": 98
+              "tone": "{{media.audio_files.5.tone}}"
             }
           },
           "variants": [
@@ -319,7 +319,7 @@
             "de": "Jingle Mitternacht",
             "en": "Midnight jingle"
           },
-          "tone": 392
+          "tone": "{{media.audio_files.6.tone}}"
         },
         {
           "id": "horn",
@@ -327,7 +327,7 @@
             "de": "Nebelhorn",
             "en": "Foghorn"
           },
-          "tone": 110
+          "tone": "{{media.audio_files.2.tone}}"
         }
       ],
       "collections": [

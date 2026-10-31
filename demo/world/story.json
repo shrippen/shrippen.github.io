@@ -157,6 +157,217 @@
           "running": false
         }
       ]
+    },
+    "reading": {
+      "note": "Nachtwache read live in the Sendehaus: the lmix demo of moods (lmix's Moods page). `layers` are what a mood sets. A group has a `base` and `variants` that name only the layers they change (null: off). `light` is the hall's brightness in % (0 = dark); a sound is a clip the demo renders from `tone` (Hz) under its `name`. `collections` pick moods (`group` or `group/variant`) and one-shots for a part of the evening; `now` and `before` are the moods set when the screenshot is taken.",
+      "name": {
+        "de": "Nachtwache – Lesung im Sendehaus",
+        "en": "Nightwatch – a reading at the Sendehaus"
+      },
+      "layers": [
+        {
+          "id": "light",
+          "name": {
+            "de": "Saallicht",
+            "en": "Hall light"
+          }
+        },
+        {
+          "id": "atmo",
+          "name": {
+            "de": "Atmo",
+            "en": "Ambience"
+          }
+        },
+        {
+          "id": "music",
+          "name": {
+            "de": "Musik",
+            "en": "Music"
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "sendehaus",
+          "name": {
+            "de": "Sendehaus",
+            "en": "Sendehaus"
+          },
+          "color": "cyan",
+          "base": {
+            "light": 60,
+            "music": {
+              "name": "{{media.tracks.0.title}}",
+              "tone": 196
+            }
+          },
+          "variants": [
+            {
+              "id": "onair",
+              "name": {
+                "de": "Auf Sendung",
+                "en": "On air"
+              },
+              "layers": {
+                "light": 25,
+                "music": null
+              }
+            },
+            {
+              "id": "interval",
+              "name": {
+                "de": "Pause",
+                "en": "Interval"
+              },
+              "layers": {
+                "light": 80
+              }
+            }
+          ]
+        },
+        {
+          "id": "lighthouse",
+          "name": {
+            "de": "Leuchtturm",
+            "en": "Lighthouse"
+          },
+          "color": "yellow",
+          "base": {
+            "light": 15,
+            "atmo": {
+              "name": "{{media.audio_files.2.name}}",
+              "tone": 110
+            },
+            "music": {
+              "name": "{{media.tracks.2.title}}",
+              "tone": 262
+            }
+          },
+          "variants": [
+            {
+              "id": "fog",
+              "name": {
+                "de": "Nebel",
+                "en": "Fog"
+              },
+              "layers": {
+                "light": 8
+              }
+            },
+            {
+              "id": "storm",
+              "name": {
+                "de": "Sturm",
+                "en": "Storm"
+              },
+              "layers": {
+                "light": 3,
+                "music": {
+                  "name": "{{media.tracks.1.title}}",
+                  "tone": 147
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "kolk",
+          "name": {
+            "de": "Kolk",
+            "en": "Kolk"
+          },
+          "color": "green",
+          "base": {
+            "light": 10,
+            "atmo": {
+              "name": "{{media.audio_files.5.name}}",
+              "tone": 98
+            }
+          },
+          "variants": [
+            {
+              "id": "wisp",
+              "name": {
+                "de": "Irrlicht",
+                "en": "Will-o'-the-wisp"
+              },
+              "layers": {
+                "light": 30
+              }
+            },
+            {
+              "id": "three13",
+              "name": {
+                "de": "Drei Uhr dreizehn",
+                "en": "Three thirteen"
+              },
+              "layers": {
+                "music": {
+                  "name": "{{media.tracks.3.title}}",
+                  "tone": 175
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "oneshots": [
+        {
+          "id": "jingle",
+          "name": {
+            "de": "Jingle Mitternacht",
+            "en": "Midnight jingle"
+          },
+          "tone": 392
+        },
+        {
+          "id": "horn",
+          "name": {
+            "de": "Nebelhorn",
+            "en": "Foghorn"
+          },
+          "tone": 110
+        }
+      ],
+      "collections": [
+        {
+          "id": "part1",
+          "name": {
+            "de": "Erster Teil",
+            "en": "Part one"
+          },
+          "moods": [
+            "sendehaus",
+            "sendehaus/onair",
+            "lighthouse",
+            "lighthouse/fog"
+          ],
+          "oneshots": [
+            "jingle"
+          ]
+        },
+        {
+          "id": "part2",
+          "name": {
+            "de": "Zweiter Teil",
+            "en": "Part two"
+          },
+          "moods": [
+            "lighthouse/storm",
+            "kolk",
+            "kolk/wisp",
+            "kolk/three13",
+            "sendehaus/interval"
+          ],
+          "oneshots": [
+            "jingle",
+            "horn"
+          ]
+        }
+      ],
+      "now": "lighthouse/fog",
+      "before": "lighthouse"
     }
   },
   "oddities": {

@@ -100,8 +100,8 @@
       "group": "tools",
       "page_live": true,
       "tagline": {
-        "en": "Brings your Pebble's health data from Health Connect into your own HealthLog, in the background.",
-        "de": "Bringt die Gesundheitsdaten deiner Pebble aus Health Connect im Hintergrund in dein eigenes HealthLog."
+        "en": "Brings your health data into your own HealthLog in the background: on Android from Health Connect, on Plasma Mobile straight from the Pebble.",
+        "de": "Bringt deine Gesundheitsdaten im Hintergrund in dein eigenes HealthLog: auf Android aus Health Connect, auf Plasma Mobile direkt von der Pebble."
       }
     },
     {

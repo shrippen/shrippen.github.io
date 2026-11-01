@@ -96,6 +96,15 @@
       }
     },
     {
+      "id": "kladde",
+      "group": "tools",
+      "page_live": true,
+      "tagline": {
+        "en": "Brings your Pebble's health data from Health Connect into your own HealthLog, in the background.",
+        "de": "Bringt die Gesundheitsdaten deiner Pebble aus Health Connect im Hintergrund in dein eigenes HealthLog."
+      }
+    },
+    {
       "id": "leuchtfeuer",
       "group": "tools",
       "page_live": true,

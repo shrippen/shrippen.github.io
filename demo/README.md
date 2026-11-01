@@ -130,6 +130,7 @@ Screenshots are taken once per language.
 | `home.json` | `smart_home`, `pantry`, `kitchen`, `energy`, `weather`, `power`, `esphome` |
 | `web.json` | `sites`, `feeds`, `bookmarks`, `mail`, `calendar`, `news`, `twitch`, `fediverse`, `lemmy` |
 | `media.json` | the score, players, audio and video files, film rolls (`media`), `photos`, `library`, `series`, `listening` |
+| `health.json` | `health`: Mara's watch (steps, sleep, pulse, resting pulse, mood by day), her readings (weight, blood pressure, body fat), last night's sleep stages, the Android sync status; for Kladde |
 | `story.json` | Graufeld (with `stream`, the night programme as a live production, and `reading`, a live reading with moods for lmix's Moods page), the hidden layer |
 | `it_docs.json` | Hansei's vault: hosts, rules, batches, review and AI providers, the demo AI's script; note texts in `it_docs/<lang>/` |
 
@@ -172,6 +173,7 @@ data in releases; each project's release build checks that).
 | PaperTTY | `demo/start.sh` (renders the demo session with the Bitmap driver) |
 | andon | `./start.sh demo` |
 | Hansei | `demo/start.sh [de\|en] [tui]` (demo build, own vault from `it_docs`, scripted AI) |
+| Kladde | `demo/start.sh [de\|en]` (demo build `-DKLADDE_DEMO=ON`: an in-process HealthLog answers from `health`, signed in as Mara) |
 | lmix | `demo/start.sh [de\|en]` (engine, lmix-core and the Qt Console with the Sendehaus stream; synthetic pictures) |
 
 ## Screenshots

@@ -39,7 +39,7 @@ COPY = {
     "kimai-knust": ("Knust", "A Kimai theme in the shrippen design"),
     "kante": ("Kante", "The shrippen design system"),
     "hansei": ("Hansei", "Review every AI edit to your notes"),
-    "kladde": ("Kladde", "Your Pebble's health data in your own HealthLog"),
+    "kladde": ("Kladde", "Your health data in your own HealthLog"),
     "leuchtfeuer": ("Leuchtfeuer", "A smart speaker from any small computer"),
     "resolve-linux-vst": ("resolve-linux-vst", "VST plug-ins, AAC and N-RAW for DaVinci Resolve on Linux"),
 }

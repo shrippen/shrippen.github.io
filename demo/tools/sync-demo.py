@@ -37,6 +37,7 @@ TARGETS = {
     "hansei": ("hansei", [("world.json", "internal/demo/world.json")]),
     "invoke-hack": ("Invoke Hack", [("world.json", "demo/world.json")]),
     "lmix": ("lmix", [("world.json", "demo/world.json")]),
+    "kladde": ("Kladde", [("world.json", "demo/world.json")]),
 }
 # The shared Kimai demo instance lives in this repo and reads demo/dist/ directly.
 

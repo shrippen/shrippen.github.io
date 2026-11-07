@@ -105,6 +105,15 @@
       }
     },
     {
+      "id": "mitori",
+      "group": "tools",
+      "page_live": false,
+      "tagline": {
+        "en": "The exam programmes of Aikido Shinki Rengo, Daitoryu and Shinki Toho on phone, tablet and desktop: practise, rate, take notes, mock exams, courses and grades.",
+        "de": "Die Prüfungsprogramme von Aikido Shinki Rengo, Daitoryu und Shinki Toho auf Telefon, Tablet und Desktop: üben, einschätzen, Notizen, Probeprüfung, Lehrgänge und Grade."
+      }
+    },
+    {
       "id": "leuchtfeuer",
       "group": "tools",
       "page_live": true,

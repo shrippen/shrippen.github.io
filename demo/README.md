@@ -39,7 +39,7 @@ FrameWidge.
 
 ### The circle
 
-`circle` holds people the studio knows outside the team, with no Kimai account and no timesheets. **Emi Hartmann** (`emi`) is Lena's neighbour on Kranichweg: Japanese mother, grew up in Hamburg, fluent family Japanese but no keigo and few kanji; she practises for a job interview with a Japanese company in Düsseldorf. She is one of Kaiwa's QA personas, like Mara, Selin, Theo, Jonas, Lena and Hinnerk Aalders from Graufeld.
+`circle` holds people the studio knows outside the team, with no Kimai account and no timesheets. **Emi Hartmann** (`emi`) is Lena's neighbour on Kranichweg: Japanese mother, grew up in Hamburg, fluent family Japanese but no keigo and few kanji; she practises for a job interview with a Japanese company in Düsseldorf. She is one of Kaiwa's QA personas, like Mara, Selin, Theo, Jonas, Lena and Hinnerk Aalders from Graufeld. In Mitori she trains Aikido at the Dojo Ottensen (made up) and has begun Shinki Toho, the sword (`dojo`).
 
 ### Graufeld
 
@@ -131,6 +131,7 @@ Screenshots are taken once per language.
 | `web.json` | `sites`, `feeds`, `bookmarks`, `mail`, `calendar`, `news`, `twitch`, `fediverse`, `lemmy` |
 | `media.json` | the score, players, audio and video files, film rolls (`media`), `photos`, `library`, `series`, `listening` |
 | `health.json` | `health`: Mara's watch (steps, sleep, pulse, resting pulse, mood by day), her readings (weight, blood pressure, body fat), last night's sleep stages, the Android sync status with the app order for sleep and trainings; for Kladde |
+| `dojo.json` | `dojo`: Emi's Aikido and Shinki Toho practice as Mitori shows it (ratings of programme entries, notes, mock exams, passed grades, the course calendar, a course notebook, the planned exam); for Mitori |
 | `story.json` | Graufeld (with `stream`, the night programme as a live production, and `reading`, a live reading with moods for lmix's Moods page), the hidden layer |
 | `it_docs.json` | Hansei's vault: hosts, rules, batches, review and AI providers, the demo AI's script; note texts in `it_docs/<lang>/` |
 
@@ -174,6 +175,7 @@ data in releases; each project's release build checks that).
 | andon | `./start.sh demo` |
 | Hansei | `demo/start.sh [de\|en] [tui]` (demo build, own vault from `it_docs`, scripted AI) |
 | Kladde | `demo/start.sh [de\|en]` (demo build `-DKLADDE_DEMO=ON`: an in-process HealthLog answers from `health`, signed in as Mara) |
+| Mitori | `demo/start.sh [de\|en] [leinen\|kante\|shinki]` (demo build `-DMITORI_DEMO=ON`: Emi's practice from `dojo`, scratch folders, no videos, the course calendar from a local file) |
 | lmix | `demo/start.sh [de\|en]` (engine, lmix-core and the Qt Console with the Sendehaus stream; synthetic pictures) |
 
 ## Screenshots

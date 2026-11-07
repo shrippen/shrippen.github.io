@@ -97,6 +97,7 @@ Releases from before this rule are backfilled from the history and the old notes
 | Kladde | 0.1.0 |
 | Kurrent | 0.1.0 |
 | Leuchtfeuer | 1.0.2 (1.0.0 and 1.0.1 never built) |
+| Mitori | 0.1.0 |
 | PaperTTY | 1.0.0 (the fork's own; upstream history below it) |
 | Plasmai | 1.0.0 |
 | resolve-linux-vst | 1.0.0 |

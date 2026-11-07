@@ -33,7 +33,7 @@ SOURCE = HERE / "world"
 #   it        devices, hosts, services, network       home      smart home, kitchen, energy
 #   web       sites, feeds, links, mail               media     music, photos, library
 #   story     Graufeld, the hidden layer              it_docs   Hansei's vault (texts in it_docs/)
-PARTS = ("world", "business", "time", "travel", "it", "home", "web", "media", "story", "health", "it_docs")
+PARTS = ("world", "business", "time", "travel", "it", "home", "web", "media", "story", "health", "dojo", "it_docs")
 VAULT = SOURCE / "it_docs"
 DIST = HERE / "dist" / "world.json"
 LANGS = ("de", "en")

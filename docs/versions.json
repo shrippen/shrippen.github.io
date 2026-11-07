@@ -66,6 +66,11 @@
       "date": "2026-10-10",
       "url": "https://github.com/shrippen/leuchtfeuer/releases/tag/v1.0.2"
     },
+    "mitori": {
+      "version": "0.1.0",
+      "date": "2026-11-07",
+      "url": "https://github.com/shrippen/mitori-app/releases/tag/v0.1.0"
+    },
     "papertty": {
       "version": "1.0.0",
       "date": "2026-09-10",

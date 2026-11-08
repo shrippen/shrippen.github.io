@@ -3,10 +3,10 @@
 
 For each project in overview/sites.json whose folder sits next to this repo and whose `origin`
 is on git.arianw.de, asks Gitea for the latest release (no drafts, no pre-releases) through
-`tea api` (login git.arianw.de) and links the release page on the GitHub mirror, because the
+`gt api` (the Gitea CLI, logged in to git.arianw.de) and links the release page on the GitHub mirror, because the
 Gitea repos are not public. Warns when the mirror does not have the release yet.
 Format and clients: overview/VERSIONS.md.
-Usage: python3 overview/tools/build-versions.py   (after tagging a release; needs tea and network)
+Usage: python3 overview/tools/build-versions.py   (after tagging a release; needs gt and network)
 """
 import json
 import re
@@ -22,6 +22,7 @@ ROOT = REPO.parent
 OUT = REPO / "docs" / "versions.json"
 GITHUB = "https://github.com/shrippen"
 GITEA = "https://git.arianw.de/"
+GITEA_API = GITEA + "api/v1"
 FORMAT = 1
 VERSION_TAG = re.compile(r"v?\d")
 
@@ -38,7 +39,7 @@ def gitea_repo(folder):
 
 
 def latest_release(repo):
-    result = subprocess.run(["tea", "api", "--login", "git.arianw.de", f"/repos/{repo}/releases/latest"],
+    result = subprocess.run(["gt", "api", f"{GITEA_API}/repos/{repo}/releases/latest"],
                             capture_output=True, text=True, cwd=REPO)
     try:
         data = json.loads(result.stdout)

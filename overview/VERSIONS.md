@@ -30,7 +30,7 @@ Comparison: the parts of `version` separated by `.` are compared as numbers (`0.
 ## Building
 
 ```bash
-python3 overview/tools/build-versions.py   # needs tea (login git.arianw.de) and network
+python3 overview/tools/build-versions.py   # needs gt (logged in to git.arianw.de) and network
 ```
 
 Run it after tagging a release and commit `docs/versions.json` with the release's landing-page update. It reads the latest Gitea release of each project in `sites.json` whose folder sits next to this repo and warns when the GitHub mirror does not have the release yet. `./build.sh` does not run it, because it needs the network and a Gitea login.

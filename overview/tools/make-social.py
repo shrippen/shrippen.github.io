@@ -42,6 +42,8 @@ COPY = {
     "kladde": ("Kladde", "Your health data in your own HealthLog"),
     "leuchtfeuer": ("Leuchtfeuer", "A smart speaker from any small computer"),
     "resolve-linux-vst": ("resolve-linux-vst", "VST plug-ins, AAC and N-RAW for DaVinci Resolve on Linux"),
+    "andon": ("Andon", "Self-hosted start page with status and hints"),
+    "mitori": ("Mitori", "Aikido exam programmes on every device"),
 }
 
 

@@ -72,7 +72,12 @@ def main():
         github = site.get("repo") or site["url"].split("shrippen.github.io/", 1)[1].split("/", 1)[0]
         if not github or "/" in github:
             continue
-        repo = gitea_repo(ROOT / site["dir"])
+        folder = ROOT / site["dir"]
+        if not folder.is_dir():
+            # a wrong "dir" would silently drop the project from versions.json
+            print(f"warning: {site['id']}: folder {folder} not found, skipped", file=sys.stderr)
+            continue
+        repo = gitea_repo(folder)
         if repo is None:
             continue
         release = latest_release(repo)
@@ -87,7 +92,7 @@ def main():
             print(f"warning: {site['id']} {tag} is not on the GitHub mirror yet: {url}", file=sys.stderr)
         projects[site["id"]] = {
             "version": tag.removeprefix("v"),
-            "date": tag_date(ROOT / site["dir"], tag) or release["published_at"][:10],
+            "date": tag_date(folder, tag) or release["published_at"][:10],
             "url": url,
         }
     data = {"format": FORMAT, "projects": dict(sorted(projects.items()))}

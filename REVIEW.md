@@ -1,7 +1,7 @@
 # Review guide
 
-Every PR is reviewed by a new Claude agent before it is merged (rule in
-`agent.md`, owner 18.10.2026). The agent knows nothing of the session that
+Every PR is reviewed by a new Claude agent before it is merged (skill `pr-review`,
+owner 18.10.2026). The agent knows nothing of the session that
 wrote the change: it gets the PR's intent, its diff and the repository, and
 this file. The owner does not read code; this review is the second reader.
 
@@ -48,7 +48,7 @@ or another project notices:
 
 ## What the owner confirms here
 
-"What is published" (rule in `agent.md`) means here: a new page, site or
+"What is published" (rule in `RULES.md`) means here: a new page, site or
 URL on shrippen.github.io, a change to `docs/versions.json` (update checks
 of the apps) or to `docs/social-preview.png`. A `docs/` rebuilt from
 `overview/` data or from Kante does not count.

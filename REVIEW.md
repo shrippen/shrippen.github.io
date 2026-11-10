@@ -51,7 +51,9 @@ or another project notices:
 "What is published" (rule in `RULES.md`) means here: a new page, site or
 URL on shrippen.github.io, a change to `docs/versions.json` (update checks
 of the apps) or to `docs/social-preview.png`. A `docs/` rebuilt from
-`overview/` data or from Kante does not count.
+`overview/` data or from Kante does not count. A `docs/versions.json`
+entry for a release the owner ordered, once it is out, counts as
+confirmed by that order (skill `release-changelog`).
 
 ## Skip
 

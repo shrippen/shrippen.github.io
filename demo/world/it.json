@@ -3010,7 +3010,7 @@
           ],
           "changes": [
             {
-              "day": -1,
+              "day": "@date-1",
               "summary": {
                 "de": "12 Drehtage, 1 neu, 0 geändert, 0 entfernt",
                 "en": "12 shooting days, 1 new, 0 changed, 0 removed"
@@ -3021,7 +3021,7 @@
               }
             },
             {
-              "day": -13,
+              "day": "@date-13",
               "summary": {
                 "de": "11 Drehtage, 2 neu, 0 geändert, 1 entfernt",
                 "en": "11 shooting days, 2 new, 0 changed, 1 removed"
@@ -3034,7 +3034,7 @@
           ],
           "failures": [
             {
-              "day": -17,
+              "day": "@date-17",
               "state": "fail",
               "recover": true
             }
@@ -3262,12 +3262,12 @@
           ],
           "failures": [
             {
-              "day": -2,
+              "day": "@date-2",
               "state": "timeout",
               "recover": true
             },
             {
-              "day": -9,
+              "day": "@date-9",
               "state": "timeout",
               "recover": false
             }
@@ -3279,8 +3279,8 @@
         "kind": "job",
         "config": {
           "name": {
-            "de": "Dyndns → Nordhost",
-            "en": "Dyndns → Nordhost"
+            "de": "Dyndns → {{vendors.nordhost.name}}",
+            "en": "Dyndns → {{vendors.nordhost.name}}"
           },
           "description": {
             "de": "Öffentliche IP des Studio-Anschlusses beim DNS-Anbieter eintragen",
@@ -3333,7 +3333,7 @@
           ],
           "changes": [
             {
-              "day": -1,
+              "day": "@date-1",
               "at": "14:20",
               "summary": {
                 "de": "IP geändert: 203.0.113.42 → 203.0.113.57",
@@ -3358,8 +3358,8 @@
             "en": "Night recordings → Nebelhorn"
           },
           "description": {
-            "de": "Neue Audio- und Videodateien vom Schnitt-Laptop auf das NAS Nebelhorn kopieren",
-            "en": "Copies new audio and video files from the edit laptop to the NAS Nebelhorn"
+            "de": "Neue Audio- und Videodateien von der Speicherkarte auf das NAS Nebelhorn kopieren",
+            "en": "Copies new audio and video files from the memory card to the NAS Nebelhorn"
           },
           "tags": [
             "dreh",
@@ -3373,7 +3373,7 @@
             "NEBELHORN_RSYNC_PASSWORD"
           ],
           "env": {
-            "SOURCE": "/media/nacht",
+            "SOURCE": "/media/karte",
             "TARGET": "nebelhorn.demo::dreh"
           }
         },
@@ -3385,8 +3385,8 @@
           },
           "output": [
             {
-              "de": "3 neue Dateien in /media/nacht",
-              "en": "3 new files in /media/nacht"
+              "de": "3 neue Dateien in /media/karte",
+              "en": "3 new files in /media/karte"
             },
             {
               "de": "rsync nach nebelhorn.demo::dreh",
@@ -3419,8 +3419,8 @@
           ],
           "output": [
             {
-              "de": "{start} Suche neue Dateien in /media/nacht",
-              "en": "{start} Looking for new files in /media/nacht"
+              "de": "{start} Suche neue Dateien in /media/karte",
+              "en": "{start} Looking for new files in /media/karte"
             },
             {
               "de": "{start} rsync nach nebelhorn.demo::dreh",
@@ -3710,7 +3710,7 @@
           ],
           "failures": [
             {
-              "day": -12,
+              "day": "@date-12",
               "state": "fail",
               "exit": 2
             }

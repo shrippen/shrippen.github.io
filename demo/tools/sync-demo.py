@@ -39,6 +39,7 @@ TARGETS = {
     "lmix": ("lmix", [("world.json", "demo/world.json")]),
     "kladde": ("Kladde", [("world.json", "demo/world.json")]),
     "mitori": ("mitori-app", [("world.json", "demo/world.json")]),
+    "jidoka": ("jidoka", [("world.json", "internal/demo/world.json")]),
 }
 # The shared Kimai demo instance lives in this repo and reads demo/dist/ directly.
 

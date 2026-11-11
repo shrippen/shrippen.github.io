@@ -126,7 +126,7 @@ Screenshots are taken once per language.
 | `business.json` | customers, projects, activities, film engagement (with pay terms), vendors, receipts, tasks; `bookkeeping` (the time and invoice scenario), `documents` (incl. the receipt scans), `assets_state`, `kept_state` (Kept: receipts, Paperless links, agenda), `bank`, `subscriptions`, `suggestions`, `archive` (older projects with clashing colours), `approvals`, `todo` (Vikunja), `depot` (Ghostfolio) |
 | `time.json` | timesheet week templates, running timers, `standby_timer`, absences, public holidays |
 | `travel.json` | places, vehicles, trips, rentals, `logbook` (how trips and rentals are booked), `location` (visits, track and one tracked day) |
-| `it.json` | inventory, laptop (with its render job), terminal, speaker (with everything its web UI shows), dashboard; servers and services: `monitoring`, `server`, `virtualization`, `storage`, `disk_health`, `containers`, `stacks`, `backups`, `certs`, `domains`, `mail_blacklist`, `dns`, `gateway`, `vpn`, `tailnet`, `tunnel`, `speed`, `identity`, `passwords`, `cloud`, `downloads`, `code`, `json_api`, `heartbeats`, `prometheus`, `vulnerabilities`, `ci`, `backup_server`, `file_backups`, `image_updates`, `proxy_routes`, `dns_technitium`, `fritzbox`, `llm_usage` |
+| `it.json` | inventory, laptop (with its render job), terminal, speaker (with everything its web UI shows), dashboard; servers and services: `monitoring`, `server`, `virtualization`, `storage`, `disk_health`, `containers`, `stacks`, `backups`, `certs`, `domains`, `mail_blacklist`, `dns`, `gateway`, `vpn`, `tailnet`, `tunnel`, `speed`, `identity`, `passwords`, `cloud`, `downloads`, `code`, `json_api`, `heartbeats`, `prometheus`, `vulnerabilities`, `ci`, `backup_server`, `file_backups`, `image_updates`, `proxy_routes`, `dns_technitium`, `fritzbox`, `llm_usage`, `jobs` (Jidoka: settings, jobs and watches with run patterns, secrets, flags, alerts, deliveries, audit) |
 | `home.json` | `smart_home`, `pantry`, `kitchen`, `energy`, `weather`, `power`, `esphome` |
 | `web.json` | `sites`, `feeds`, `bookmarks`, `mail`, `calendar`, `news`, `twitch`, `fediverse`, `lemmy` |
 | `media.json` | the score, players, audio and video files, film rolls (`media`), `photos`, `library`, `series`, `listening` |
@@ -177,6 +177,7 @@ data in releases; each project's release build checks that).
 | Kladde | `demo/start.sh [de\|en]` (demo build `-DKLADDE_DEMO=ON`: an in-process HealthLog answers from `health`, signed in as Mara) |
 | Mitori | `demo/start.sh [de\|en] [leinen\|kante\|shinki]` (demo build `-DMITORI_DEMO=ON`: Emi's practice from `dojo`, scratch folders, no videos, the course calendar from a local file) |
 | lmix | `demo/start.sh [de\|en]` (engine, lmix-core and the Qt Console with the Sendehaus stream; synthetic pictures) |
+| Jidoka | `go run ./cmd/jidoka demo [de\|en]` (non-release build: jobs folder and 30 days of runs from `jobs`, channels point to `.invalid` hosts) |
 
 ## Screenshots
 

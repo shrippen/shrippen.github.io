@@ -59,8 +59,9 @@ pages. The projects themselves are checkouts next to this repository.
   is a demo, not a release: the Kimai plug-ins start their demo through
   `demo/kimai/reset.sh` here, one shared Kimai for all of them.
 - This repository reads the projects only through their folders named in `sites.json`.
-  Kante, the source of the design, is found in one way everywhere: `KANTE_DIR`, by
-  default `../Kante`.
+  That holds for Kante as a project too (its icon, releases, preview image).
+- Kante as the source of the design (its build for `docs/v1/`, its palette, its token
+  check) is found in one way: `KANTE_DIR`, by default `../Kante`.
 - Design comes from Kante: `docs/v1/` is never changed here, and no tool copies a colour
   or font by hand; it reads Kante's palette.
 - `overview/` and `demo/` know each other only through `overview/sites.json`.
@@ -85,8 +86,8 @@ pages. The projects themselves are checkouts next to this repository.
   (`AUDIT.md`, finding 2).
 - The overview page names the groups by hand besides reading them
   (`AUDIT.md`, finding 3).
-- The preview-image tool copies colours from Kante's palette by hand and fixes Kante's
-  folder (`AUDIT.md`, finding 4).
+- The preview-image tool copies colours from Kante's palette by hand and reads Kante's
+  fonts from the fixed folder `../Kante` instead of `KANTE_DIR` (`AUDIT.md`, finding 4).
 - The visitor counter's id and the stylesheet's address stand in two tools
   (`AUDIT.md`, finding 5).
 - Projects and their folders are listed in five places (`AUDIT.md`, finding 6).

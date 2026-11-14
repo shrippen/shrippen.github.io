@@ -5,6 +5,7 @@
 #      Kante (design system, Knust, Kimai plugin kit) lives in its own repo: https://github.com/shrippen/Kante
 #   2. Overview page: docs/index.html from overview/projects.json (overview/tools/build-overview.py)
 #   3. Token check of the overview page with Kante's checker (no raw colours or fonts)
+#   4. Structure limits (tools/structure-check.py, limits in structure.baseline); there is no CI
 set -euo pipefail
 cd "$(dirname "$0")"
 KANTE="${KANTE_DIR:-../Kante}"
@@ -17,3 +18,4 @@ cp -r "$KANTE/docs/v1" docs/v1
 echo "copied docs/v1 from $KANTE ($(git -C "$KANTE" describe --always --dirty 2>/dev/null || echo unknown))"
 python3 overview/tools/build-overview.py
 python3 "$KANTE/tools/check-tokens.py" docs/index.html
+pipx run tools/structure-check.py

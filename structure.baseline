@@ -2,6 +2,7 @@
 # never grow; a raised or new entry needs its reason in the PR. Rewrite with --update.
 # Lines: exclude<TAB>glob | path<TAB>function or - for the file<TAB>metric=value ...
 exclude	docs/v1/*
+exclude	demo/dist/*
 demo/tools/screenshots.py	_wait_ready	nesting=5
 demo/tools/screenshots.py	main	ccn=44 length=86 nesting=5
 demo/tools/screenshots.py	web_shots	nesting=5

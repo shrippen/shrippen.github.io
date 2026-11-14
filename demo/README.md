@@ -133,6 +133,7 @@ Screenshots are taken once per language.
 | `health.json` | `health`: Mara's watch (steps, sleep, pulse, resting pulse, mood by day), her readings (weight, blood pressure, body fat), last night's sleep stages, the Android sync status with the app order for sleep and trainings; for Kladde |
 | `dojo.json` | `dojo`: Emi's Aikido and Shinki Toho practice as Mitori shows it (ratings of programme entries, notes, mock exams, passed grades, the course calendar, a course notebook, the planned exam); for Mitori |
 | `story.json` | Graufeld (with `stream`, the night programme as a live production, and `reading`, a live reading with moods for lmix's Moods page), the hidden layer |
+| `klappe.json` | `klappe`: Klappe's example project, scene 14 of *Nachtwache* in the Graufeld lighthouse (roles, the watch room's set, script, blocking, cameras, lights, shots), in the field names and units of Klappe's project format; for Klappe |
 | `it_docs.json` | Hansei's vault: hosts, rules, batches, review and AI providers, the demo AI's script; note texts in `it_docs/<lang>/` |
 
 Every section says what it is for in a `note` (left out of release samples). Service
@@ -177,6 +178,7 @@ data in releases; each project's release build checks that).
 | Kladde | `demo/start.sh [de\|en]` (demo build `-DKLADDE_DEMO=ON`: an in-process HealthLog answers from `health`, signed in as Mara) |
 | Mitori | `demo/start.sh [de\|en] [leinen\|kante\|shinki]` (demo build `-DMITORI_DEMO=ON`: Emi's practice from `dojo`, scratch folders, no videos, the course calendar from a local file) |
 | lmix | `demo/start.sh [de\|en]` (engine, lmix-core and the Qt Console with the Sendehaus stream; synthetic pictures) |
+| Klappe | `demo/start.sh [de\|en]` (the app as it is, own settings and cache folders, a copy of the example project generated from `klappe`) |
 | Jidoka | `go run ./cmd/jidoka demo [de\|en]` (non-release build: jobs folder and 30 days of runs from `jobs`, channels point to `.invalid` hosts) |
 
 ## Screenshots

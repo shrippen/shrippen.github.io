@@ -160,7 +160,9 @@ projects. `python3 demo/tools/check-demo.py` reports stale copies.
 ## Starting a project with demo data
 
 The demo is internal: it only exists to take screenshots and never ships (no option, command or
-data in releases; each project's release build checks that).
+data in releases; each project's release build checks that). One exception, decided by the
+owner on 2026-11-14: Klappe ships the example project that its generator derives from `klappe`
+(the scene only, without `note`); its demo mode (`demo/start.sh`, `shots.json`) does not ship.
 
 | Project | Command |
 |---|---|

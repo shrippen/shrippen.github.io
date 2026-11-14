@@ -1,0 +1,11 @@
+# What is over a structure limit today (tools/structure-check.py). An entry may shrink,
+# never grow; a raised or new entry needs its reason in the PR. Rewrite with --update.
+# Lines: exclude<TAB>glob | path<TAB>function or - for the file<TAB>metric=value ...
+exclude	docs/v1/*
+demo/tools/screenshots.py	_wait_ready	nesting=5
+demo/tools/screenshots.py	main	ccn=44 length=86 nesting=5
+demo/tools/screenshots.py	web_shots	nesting=5
+demo/tools/sync-demo.py	main	ccn=17
+demo/world.py	resolve	ccn=17
+overview/preview/server.py	auto_todos	ccn=27
+overview/tools/build-overview.py	page	length=92

@@ -141,7 +141,7 @@
                 "character": "waerter",
                 "marks": [
                   {"at_s": 3.0, "at": {"x_m": 5.2, "y_m": 3.0}, "facing_deg": 180.0, "pose": "standing", "hold_s": 0.0, "arrival": "appear"},
-                  {"at_s": 8.0, "at": {"x_m": 4.0, "y_m": 3.5}, "facing_deg": 203.0, "pose": "standing", "hold_s": 28.0, "via": {"x_m": 4.7, "y_m": 3.6}},
+                  {"at_s": 8.0, "at": {"x_m": 4.0, "y_m": 3.5}, "facing_deg": 203.0, "pose": "standing", "hold_s": 28.0, "via": [{"x_m": 4.65, "y_m": 3.425}]},
                   {"at_s": 38.0, "at": {"x_m": 3.1, "y_m": 3.1}, "facing_deg": 270.0, "pose": "standing", "hold_s": 2.0}
                 ]
               }

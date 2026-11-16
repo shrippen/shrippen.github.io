@@ -285,5 +285,45 @@
         }
       ]
     }
+  },
+  "splats": {
+    "note": "Klecks: scenes the studio turns into Gaussian splats for Blender. Klecks renders the photos and the clip from the room below (demo/render_room.py in Blender, the clip with ffmpeg in demo/prepare.py), never real footage. Room colours come from the Kante palette (gold accents).",
+    "library": {
+      "de": "Splats",
+      "en": "Splats"
+    },
+    "scenes": [
+      {
+        "id": "kajuete",
+        "project": "tidenhub",
+        "place": "hafencity",
+        "name": {
+          "de": "Feuerschiff-Kajüte",
+          "en": "Light vessel cabin"
+        },
+        "photos": {
+          "prefix": "DSC_",
+          "first": 4101,
+          "count": 36,
+          "size": "1920x1280",
+          "suffix": ".jpg"
+        },
+        "clip": {
+          "name": "elbfeuer_kajuete_rundgang.mp4",
+          "seconds": 8,
+          "rate": 25,
+          "size": "1920x1080"
+        },
+        "room": {
+          "width_m": 4.0,
+          "depth_m": 3.0,
+          "height_m": 2.2,
+          "wall": "#d08a55",
+          "floor": "#3b3229",
+          "ceiling": "#cdc2ae",
+          "lamp": "#fabd2f"
+        }
+      }
+    ]
   }
 }

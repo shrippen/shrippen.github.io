@@ -35,6 +35,7 @@ TARGETS = {
     "kader": ("kader", [("world.json", "demo/world.json")]),
     "andon": ("andon", [("world.json", "internal/sources/demoworld/world.json")]),
     "hansei": ("hansei", [("world.json", "internal/demo/world.json")]),
+    "klecks": ("Klecks", [("world.json", "demo/world.json")]),
     "invoke-hack": ("Invoke Hack", [("world.json", "demo/world.json")]),
     "lmix": ("lmix", [("world.json", "demo/world.json")]),
     "kladde": ("Kladde", [("world.json", "demo/world.json")]),

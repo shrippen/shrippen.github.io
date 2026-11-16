@@ -10985,6 +10985,46 @@
    ]
   }
  },
+ "splats": {
+  "note": "Klecks: scenes the studio turns into Gaussian splats for Blender. The photos and the clip are rendered from the room below (demo/make_media.py in Klecks), never real footage.",
+  "library": {
+   "de": "Splats",
+   "en": "Splats"
+  },
+  "scenes": [
+   {
+    "id": "kajuete",
+    "project": "tidenhub",
+    "place": "hafencity",
+    "name": {
+     "de": "Feuerschiff Kajüte",
+     "en": "Light vessel cabin"
+    },
+    "photos": {
+     "prefix": "DSC_",
+     "first": 4101,
+     "count": 36,
+     "size": "1920x1280",
+     "suffix": ".jpg"
+    },
+    "clip": {
+     "name": "elbfeuer_kajuete_rundgang.mp4",
+     "seconds": 8,
+     "rate": 25,
+     "size": "1920x1080"
+    },
+    "room": {
+     "width_m": 4.0,
+     "depth_m": 3.0,
+     "height_m": 2.2,
+     "wall": "#7a5a40",
+     "floor": "#3b2b1f",
+     "ceiling": "#d8cdb8",
+     "lamp": "#ffb46a"
+    }
+   }
+  ]
+ },
  "graufeld": {
   "note": "Second shooting area: fog, marsh and mud flats at the Elbe mouth, about 110 km from the studio. Places: graufeld-lighthouse, kolk, moorhof, sendehaus.",
   "description": {

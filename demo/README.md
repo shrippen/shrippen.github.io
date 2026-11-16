@@ -181,6 +181,7 @@ owner on 2026-11-14: Klappe ships the example project that its generator derives
 | Mitori | `demo/start.sh [de\|en] [leinen\|kante\|shinki]` (demo build `-DMITORI_DEMO=ON`: Emi's practice from `dojo`, scratch folders, no videos, the course calendar from a local file) |
 | lmix | `demo/start.sh [de\|en]` (engine, lmix-core and the Qt Console with the Sendehaus stream; synthetic pictures) |
 | Klappe | `demo/start.sh [de\|en]` (the app as it is, own settings and cache folders, a copy of the example project generated from `klappe`) |
+| Klecks | `demo/start.sh [de\|en]` (own home with library and settings; the room of `splats` rendered to photos and a clip in Blender, copied to `Aufnahmen/`) |
 | Jidoka | `go run ./cmd/jidoka demo [de\|en]` (non-release build: jobs folder and 30 days of runs from `jobs`, channels point to `.invalid` hosts) |
 
 ## Screenshots

@@ -82,9 +82,9 @@
       "url": "https://github.com/shrippen/Plasmai/releases/tag/v2.7.0"
     },
     "resolve-linux-vst": {
-      "version": "1.1.1",
-      "date": "2026-11-16",
-      "url": "https://github.com/shrippen/resolve-linux-vst/releases/tag/v1.1.1"
+      "version": "2.0.0",
+      "date": "2026-11-27",
+      "url": "https://github.com/shrippen/resolve-linux-vst/releases/tag/v2.0.0"
     }
   }
 }
